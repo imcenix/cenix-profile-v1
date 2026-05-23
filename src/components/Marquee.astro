@@ -1,0 +1,25 @@
+---
+interface Props {
+  items?: string[];
+}
+
+const {
+  items = [
+    'BRANDING',
+    'CREATIVE DIRECTION',
+    'GRAPHIC DESIGN',
+    'VISUAL IDENTITY',
+    'WEB DESIGN',
+    'ART DIRECTION',
+  ],
+} = Astro.props;
+
+// Duplicate for seamless loop
+const loop = [...items, ...items];
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {loop.map((item) => <span class="marquee-item">{item}</span>)}
+  </div>
+</div>

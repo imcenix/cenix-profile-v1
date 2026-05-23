@@ -1,0 +1,136 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEmbedInfo, platformLabel } from '../../utils/embed';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog'))
+    .filter((p) => !p.id.startsWith('_template'))
+    // Shorts don't get their own page — they open in a modal on /#blog
+    .filter((p) => p.data.type !== 'short');
+
+  posts.sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+  return posts.map((post, index) => ({
+    params: { slug: post.data.slug },
+    props: {
+      post,
+      prev: index > 0 ? posts[index - 1] : null,
+      next: index < posts.length - 1 ? posts[index + 1] : null,
+    },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+
+const info = getEmbedInfo(post.data.url ?? null);
+const folder = post.id.split('/')[0];
+const heroImage = post.data.thumbnail ? `/blog/${folder}/${post.data.thumbnail}` : '';
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+---
+
+<BaseLayout title={`${post.data.title} — Cenix`} description={post.data.excerpt ?? undefined} activeNav="blog">
+  <main class="project-page blog-detail">
+    <!-- Header -->
+    <header class="project-header">
+      <div class="container">
+        <a href="/#blog" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span>
+          Back to Blog
+        </a>
+
+        <span class="project-category">
+          {post.data.category ?? (post.data.type === 'vlog' ? 'V-Log' : 'Article')}
+        </span>
+
+        <h1 class="project-title">{post.data.title}</h1>
+        {post.data.excerpt && <p class="project-subtitle">{post.data.excerpt}</p>}
+
+        <div class="project-meta">
+          <div class="project-meta-item">
+            <span class="project-meta-label">Published</span>
+            <span class="project-meta-value">{formatDate(post.data.date)}</span>
+          </div>
+          {post.data.tags.length > 0 && (
+            <div class="project-meta-item">
+              <span class="project-meta-label">Tags</span>
+              <div class="project-tools">
+                {post.data.tags.map((t) => <span class="project-tool">{t}</span>)}
+              </div>
+            </div>
+          )}
+          {info.platform !== 'unknown' && (
+            <div class="project-meta-item">
+              <span class="project-meta-label">Source</span>
+              <span class="project-meta-value">{platformLabel(info.platform)}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- V-LOG: YouTube embed up top -->
+    {post.data.type === 'vlog' && info.embedUrl && (
+      <section class="project-body">
+        <div class="container">
+          <div class="vlog-embed">
+            <iframe
+              src={info.embedUrl}
+              title={post.data.title}
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- BODY: markdown content (article description / vlog description) -->
+    <section class="project-body">
+      <div class="container">
+        {heroImage && post.data.type === 'article' && (
+          <img src={heroImage} alt={post.data.title} class="blog-detail-hero" />
+        )}
+        <Content />
+      </div>
+    </section>
+
+    <!-- Prev / Next -->
+    <nav class="project-nav" aria-label="Post navigation">
+      <div class="container">
+        <div class="project-nav-inner">
+          {prev ? (
+            <a href={`/blog/${prev.data.slug}/`} class="project-nav-prev">
+              <span class="project-nav-label">← Previous</span>
+              <span class="project-nav-title">{prev.data.title}</span>
+            </a>
+          ) : (
+            <a href="/#blog" class="project-nav-prev">
+              <span class="project-nav-label">← All posts</span>
+              <span class="project-nav-title">Blog</span>
+            </a>
+          )}
+          {next ? (
+            <a href={`/blog/${next.data.slug}/`} class="project-nav-next" style="text-align: right;">
+              <span class="project-nav-label">Next →</span>
+              <span class="project-nav-title">{next.data.title}</span>
+            </a>
+          ) : (
+            <a href="/#blog" class="project-nav-next" style="text-align: right;">
+              <span class="project-nav-label">All posts →</span>
+              <span class="project-nav-title">Blog</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </nav>
+  </main>
+</BaseLayout>

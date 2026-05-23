@@ -1,0 +1,269 @@
+---
+import { getCollection } from 'astro:content';
+import { getEmbedInfo, platformLabel } from '../utils/embed';
+
+const all = (await getCollection('blog')).filter((p) => !p.id.startsWith('_template'));
+
+all.sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.date.localeCompare(a.data.date);
+});
+
+const folderSlug = (id: string) => id.split('/')[0];
+
+interface CardData {
+  modalId: string;
+  type: 'article' | 'vlog' | 'short';
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  thumbnailUrl: string;
+  embedUrl: string;
+  sourceUrl: string;
+  platform: string;
+  detailUrl: string;
+}
+
+const cards: CardData[] = all.map((post) => {
+  const folder = folderSlug(post.id);
+  const info = getEmbedInfo(post.data.url ?? null);
+  const thumbnailFile = post.data.thumbnail || '';
+  const thumbnailUrl = thumbnailFile
+    ? `/blog/${folder}/${thumbnailFile}`
+    : info.thumbnailUrl;
+
+  return {
+    modalId: `blog-${post.data.slug}`,
+    type: post.data.type,
+    slug: post.data.slug,
+    title: post.data.title,
+    date: post.data.date,
+    excerpt: post.data.excerpt ?? '',
+    category: post.data.category ?? (
+      post.data.type === 'article' ? 'Article'
+      : post.data.type === 'vlog' ? 'V-Log'
+      : 'Reel'
+    ),
+    tags: post.data.tags ?? [],
+    thumbnailUrl,
+    embedUrl: info.embedUrl,
+    sourceUrl: info.sourceUrl,
+    platform: info.platform,
+    detailUrl: `/blog/${post.data.slug}/`,
+  };
+});
+
+const articleVlogCards = cards.filter((c) => c.type !== 'short');
+const reelCards = cards.filter((c) => c.type === 'short');
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+---
+
+<section id="blog" class="section section-dark blog-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Blog</span>
+      <h2 class="section-title">Chronicles &amp; Madness</h2>
+    </div>
+
+    <!-- ===== ROW 1 — Articles + V-Logs ===== -->
+    <div class="row-group" data-row="articles">
+      <div class="row-group-head">
+        <h3 class="row-group-title">
+          <span class="row-group-mark" aria-hidden="true">✦</span>
+          Articles &amp; V-Logs
+          <span class="row-group-count">{articleVlogCards.length}</span>
+        </h3>
+        <div class="row-group-controls">
+          <button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button>
+          <button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button>
+          <a class="row-see-all" href="/blog/">See all →</a>
+        </div>
+      </div>
+
+      {articleVlogCards.length === 0 ? (
+        <div class="row-group-empty">
+          <span class="placeholder-tag">No articles yet</span>
+          <p>Add a folder under <code>assets/blog/</code> with <code>type: article</code> or <code>vlog</code>.</p>
+        </div>
+      ) : (
+        <div class="row-track">
+          {articleVlogCards.map((card) => (
+            <a class="blog-card blog-card--wide" data-type={card.type} href={card.detailUrl}>
+              <div class="blog-card-media">
+                {card.thumbnailUrl ? (
+                  <img src={card.thumbnailUrl} alt={card.title} loading="lazy" />
+                ) : (
+                  <div class="blog-card-placeholder" aria-hidden="true">
+                    <span>{card.type === 'vlog' ? '▶ Video' : 'Article'}</span>
+                  </div>
+                )}
+                {card.type === 'vlog' && <span class="blog-card-play" aria-hidden="true">▶</span>}
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-meta">{card.category} · {formatDate(card.date)}</span>
+                <h4 class="blog-card-title">{card.title}</h4>
+                {card.excerpt && <p class="blog-card-excerpt">{card.excerpt}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <!-- ===== ROW 2 — Reels (vertical 9:16) ===== -->
+    <div class="row-group" data-row="reels">
+      <div class="row-group-head">
+        <h3 class="row-group-title">
+          <span class="row-group-mark" aria-hidden="true">✦</span>
+          Reels
+          <span class="row-group-count">{reelCards.length}</span>
+        </h3>
+        <div class="row-group-controls">
+          <button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button>
+          <button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button>
+          <a class="row-see-all" href="/blog/reels/">See all →</a>
+        </div>
+      </div>
+
+      {reelCards.length === 0 ? (
+        <div class="row-group-empty">
+          <span class="placeholder-tag">No reels yet</span>
+          <p>Add a folder under <code>assets/blog/</code> with <code>type: short</code>.</p>
+        </div>
+      ) : (
+        <div class="row-track">
+          {reelCards.map((card) => (
+            <button
+              type="button"
+              class="blog-card blog-card--reel"
+              data-type={card.type}
+              data-modal={card.modalId}
+            >
+              <div class="blog-card-media">
+                {card.thumbnailUrl ? (
+                  <img src={card.thumbnailUrl} alt={card.title} loading="lazy" />
+                ) : (
+                  <div class="blog-card-placeholder" aria-hidden="true">
+                    <span>{platformLabel(card.platform as any)}</span>
+                  </div>
+                )}
+                <span class="blog-card-play" aria-hidden="true">▶</span>
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-meta">{card.category}</span>
+                <h4 class="blog-card-title">{card.title}</h4>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Short modals ===== -->
+{reelCards.map((card) => (
+  <dialog class="modal modal--short" id={card.modalId} data-platform={card.platform}>
+    <div class="modal-short-inner">
+      <button type="button" class="modal-close" aria-label="Close">×</button>
+      <div class="modal-short-frame">
+        {card.embedUrl ? (
+          <iframe
+            data-src={card.embedUrl}
+            title={card.title}
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen
+            frameborder="0"
+            scrolling="no"
+            loading="lazy"
+          ></iframe>
+        ) : (
+          <div class="modal-short-fallback">
+            <p>Preview not available — open on {platformLabel(card.platform as any)}.</p>
+            {card.sourceUrl && (
+              <a class="btn btn-primary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
+                Watch on {platformLabel(card.platform as any)}
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+      <div class="modal-short-meta">
+        <span class="modal-eyebrow">{card.category} · {formatDate(card.date)}</span>
+        <h3 class="modal-short-title">{card.title}</h3>
+        {card.excerpt && <p class="modal-short-excerpt">{card.excerpt}</p>}
+        {card.sourceUrl && (
+          <a class="modal-short-link" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
+            Watch on {platformLabel(card.platform as any)} ↗
+          </a>
+        )}
+      </div>
+    </div>
+  </dialog>
+))}
+
+<script>
+  // ----- Horizontal scroll: prev/next arrow buttons per row -----
+  document.querySelectorAll<HTMLElement>('.row-group').forEach((row) => {
+    const track = row.querySelector<HTMLElement>('.row-track');
+    if (!track) return;
+    row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dir = btn.dataset.dir === 'prev' ? -1 : 1;
+        const delta = Math.max(track.clientWidth * 0.85, 240);
+        track.scrollBy({ left: dir * delta, behavior: 'smooth' });
+      });
+    });
+
+    // Disable arrows when reaching ends
+    const updateArrows = () => {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      const x = track.scrollLeft;
+      row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn) => {
+        const dir = btn.dataset.dir;
+        if (dir === 'prev') btn.toggleAttribute('disabled', x <= 1);
+        if (dir === 'next') btn.toggleAttribute('disabled', x >= max);
+      });
+    };
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  });
+
+  // ----- Lazy-load Short iframe only when modal opens -----
+  document.querySelectorAll<HTMLDialogElement>('.modal--short').forEach((dialog) => {
+    const iframe = dialog.querySelector<HTMLIFrameElement>('iframe');
+    const closeBtn = dialog.querySelector<HTMLButtonElement>('.modal-close');
+    const realSrc = iframe?.dataset.src ?? '';
+
+    const setIframe = () => {
+      if (!iframe) return;
+      if (dialog.open && !iframe.hasAttribute('src')) iframe.setAttribute('src', realSrc);
+      if (!dialog.open && iframe.hasAttribute('src')) iframe.removeAttribute('src');
+    };
+
+    closeBtn?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    const observer = new MutationObserver(setIframe);
+    observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-modal^="blog-"]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const id = trigger.dataset.modal;
+      const dialog = id ? document.getElementById(id) as HTMLDialogElement | null : null;
+      if (dialog?.showModal) dialog.showModal();
+    });
+  });
+</script>

@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+import PortfolioModals from './PortfolioModals.astro';
+
+// Project list for the row (sorted: featured first, then by date desc)
+const projects = (await getCollection('portfolio'))
+  .filter((p) => !p.id.startsWith('_template'));
+
+projects.sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.date.localeCompare(a.data.date);
+});
+
+const folderSlug = (id: string) => id.split('/')[0];
+
+// Reuse company logos from About section
+let logos: string[] = [];
+try {
+  const logoDir = path.resolve('./assets/about-me/logos');
+  if (fs.existsSync(logoDir)) {
+    logos = fs.readdirSync(logoDir)
+      .filter((f) => /\.(png|jpg|jpeg|svg|webp)$/i.test(f))
+      .sort();
+  }
+} catch {
+  /* ignore */
+}
+---
+
+<section id="portfolio" class="section section-light portfolio-teaser">
+  <div class="container">
+    <div class="portfolio-teaser-inner">
+      <span class="section-label section-label--center">Portfolio</span>
+      <h2 class="portfolio-teaser-title">Featured <span class="portfolio-teaser-nowrap">Portfolio<span class="portfolio-teaser-mark">®</span></span></h2>
+      <p class="portfolio-teaser-text">
+        A curated collection of brand identity systems, UI/UX work, and creative direction projects
+        from a decade of designing for Vietnam's leading groups.
+      </p>
+      <a href="/portfolio/" class="btn btn-primary portfolio-teaser-cta">View portfolio</a>
+    </div>
+
+    {logos.length > 0 && (
+      <div class="portfolio-teaser-logos">
+        <p class="portfolio-teaser-logos-label">Also work with these companies:</p>
+        <div class="portfolio-teaser-logos-track">
+          {[...logos, ...logos].map((file) => (
+            <img
+              src={`/logos/${file}`}
+              alt={file.replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ')}
+              class="portfolio-teaser-logo"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Project row — scrollable thumbnails, click opens modal -->
+    {projects.length > 0 && (
+      <div class="row-group portfolio-row-group">
+        <div class="row-group-head">
+          <h3 class="row-group-title">
+            <span class="row-group-mark" aria-hidden="true">✦</span>
+            Selected works
+            <span class="row-group-count">{projects.length}</span>
+          </h3>
+          <div class="row-group-controls">
+            <button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button>
+            <button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button>
+            <a class="row-see-all" href="/portfolio/">See all →</a>
+          </div>
+        </div>
+
+        <div class="row-track portfolio-row-track">
+          {projects.map((p) => {
+            const folder = folderSlug(p.id);
+            const thumbnailUrl = `/portfolio/${folder}/${p.data.thumbnail}`;
+            return (
+              <button
+                type="button"
+                class="portfolio-card portfolio-card--tile"
+                data-category={p.data.category}
+                data-modal={`portfolio-${p.data.slug}`}
+              >
+                <div class="portfolio-tile-head">
+                  <h4 class="portfolio-tile-title">{p.data.title}</h4>
+                  <span class="portfolio-tile-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 17L17 7M9 7h8v8"/>
+                    </svg>
+                  </span>
+                </div>
+                <span class="portfolio-tile-category">{p.data.category}</span>
+                <div class="portfolio-tile-thumb">
+                  <img src={thumbnailUrl} alt={p.data.title} loading="lazy" />
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<!-- Render all portfolio modals once — opened via data-modal triggers above -->
+<PortfolioModals />

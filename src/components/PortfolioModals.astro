@@ -1,0 +1,102 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const projects = (await getCollection('portfolio'))
+  .filter((p) => !p.id.startsWith('_template'));
+
+// Pre-render each project body once at build time
+const rendered = await Promise.all(
+  projects.map(async (p) => ({
+    project: p,
+    Content: (await render(p)).Content,
+  }))
+);
+---
+
+{rendered.map(({ project, Content }) => {
+  const { data } = project;
+  return (
+    <dialog class="modal modal--portfolio" id={`portfolio-${data.slug}`} aria-labelledby={`portfolio-${data.slug}-title`}>
+      <div class="modal-portfolio-inner">
+        <button type="button" class="modal-close modal-close--floating" aria-label="Close">×</button>
+
+        <header class="modal-portfolio-header">
+          <span class="modal-eyebrow">{data.category}</span>
+          <h2 class="modal-portfolio-title" id={`portfolio-${data.slug}-title`}>{data.title}</h2>
+          {data.subtitle && (
+            <p class="modal-portfolio-sub">{data.subtitle}</p>
+          )}
+
+          <div class="modal-portfolio-meta">
+            <div class="modal-portfolio-meta-item">
+              <span class="modal-portfolio-meta-label">Year</span>
+              <span class="modal-portfolio-meta-value">{data.date}</span>
+            </div>
+            <div class="modal-portfolio-meta-item">
+              <span class="modal-portfolio-meta-label">Role</span>
+              <span class="modal-portfolio-meta-value">{data.role}</span>
+            </div>
+            {data.tools.length > 0 && (
+              <div class="modal-portfolio-meta-item">
+                <span class="modal-portfolio-meta-label">Tools</span>
+                <div class="project-tools">
+                  {data.tools.map((tool) => <span class="project-tool">{tool}</span>)}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {(data.behance_url || data.live_url) && (
+            <div class="modal-portfolio-actions">
+              {data.behance_url && (
+                <a class="btn btn-outline" href={data.behance_url} target="_blank" rel="noopener noreferrer">
+                  View on Behance
+                </a>
+              )}
+              {data.live_url && (
+                <a class="btn btn-primary" href={data.live_url} target="_blank" rel="noopener noreferrer">
+                  Visit Live Site
+                </a>
+              )}
+            </div>
+          )}
+        </header>
+
+        <div class="modal-portfolio-body">
+          <Content />
+        </div>
+      </div>
+    </dialog>
+  );
+})}
+
+<script>
+  // Open / close handlers for portfolio modals
+  document.querySelectorAll<HTMLElement>('[data-modal^="portfolio-"]').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = trigger.dataset.modal;
+      if (!id) return;
+      const dialog = document.getElementById(id) as HTMLDialogElement | null;
+      if (dialog?.showModal) dialog.showModal();
+      else if (dialog) dialog.setAttribute('open', '');
+      // Prevent body scroll while open
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  document.querySelectorAll<HTMLDialogElement>('.modal--portfolio').forEach((dialog) => {
+    const closeBtn = dialog.querySelector('.modal-close');
+    const close = () => {
+      dialog.close();
+      document.body.style.overflow = '';
+    };
+    closeBtn?.addEventListener('click', close);
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) close();
+    });
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = '';
+    });
+  });
+</script>

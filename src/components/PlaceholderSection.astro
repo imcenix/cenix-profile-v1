@@ -1,0 +1,30 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  title: string;
+  description?: string;
+  variant?: 'dark' | 'light';
+}
+
+const {
+  id,
+  label,
+  title,
+  description = 'Phase 2 content will populate here. Edit the corresponding markdown in `assets/about-me/` to update.',
+  variant = 'dark',
+} = Astro.props;
+---
+
+<section id={id} class={`section section-${variant}`}>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">{label}</span>
+      <h2 class="section-title">{title}</h2>
+    </div>
+    <div class="section-placeholder">
+      <span class="placeholder-tag">Wiring in next pass</span>
+      <p>{description}</p>
+    </div>
+  </div>
+</section>

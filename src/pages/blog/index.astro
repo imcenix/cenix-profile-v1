@@ -1,0 +1,142 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Articles & V-Logs only — Reels live on /blog/reels/ because their
+// 9:16 vertical layout doesn't mix well with wide 16:10 cards.
+const all = (await getCollection('blog'))
+  .filter((p) => !p.id.startsWith('_template'))
+  .filter((p) => p.data.type !== 'short');
+
+all.sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.date.localeCompare(a.data.date);
+});
+
+const folderSlug = (id: string) => id.split('/')[0];
+
+const cards = all.map((post) => {
+  const folder = folderSlug(post.id);
+  const thumbnailFile = post.data.thumbnail || '';
+  const thumbnailUrl = thumbnailFile
+    ? `/blog/${folder}/${thumbnailFile}`
+    : '';
+
+  return {
+    type: post.data.type as 'article' | 'vlog',
+    slug: post.data.slug,
+    title: post.data.title,
+    date: post.data.date,
+    excerpt: post.data.excerpt ?? '',
+    category: post.data.category ?? (post.data.type === 'article' ? 'Article' : 'V-Log'),
+    thumbnailUrl,
+    detailUrl: `/blog/${post.data.slug}/`,
+  };
+});
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+
+const counts = {
+  all: cards.length,
+  article: cards.filter((c) => c.type === 'article').length,
+  vlog: cards.filter((c) => c.type === 'vlog').length,
+};
+---
+
+<BaseLayout title="Articles & V-Logs — Cenix" activeNav="blog">
+  <main class="project-page blog-listing">
+    <header class="project-header">
+      <div class="container">
+        <a href="/" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span>
+          Back to Home
+        </a>
+        <span class="project-category">Blog</span>
+        <h1 class="project-title">Articles &amp; V-Logs</h1>
+        <p class="project-subtitle">
+          Long-form thinking, behind-the-scenes vlogs, and case study writeups
+          on brand, design, and creative direction.
+        </p>
+      </div>
+    </header>
+
+    <section class="project-body">
+      <div class="container">
+        <!-- Filter tabs — Article / V-Log only -->
+        <div class="blog-filters" role="tablist" aria-label="Filter by type">
+          <button type="button" class="blog-filter is-active" data-filter="all" role="tab" aria-selected="true">
+            All <span class="blog-filter-count">{counts.all}</span>
+          </button>
+          <button type="button" class="blog-filter" data-filter="article" role="tab" aria-selected="false">
+            Articles <span class="blog-filter-count">{counts.article}</span>
+          </button>
+          <button type="button" class="blog-filter" data-filter="vlog" role="tab" aria-selected="false">
+            V-Logs <span class="blog-filter-count">{counts.vlog}</span>
+          </button>
+          <a class="blog-filter blog-filter--link" href="/blog/reels/">
+            Reels →
+          </a>
+        </div>
+
+        {cards.length === 0 ? (
+          <div class="section-placeholder">
+            <span class="placeholder-tag">No articles yet</span>
+            <p>Add a folder under <code>assets/blog/</code> with <code>type: article</code> or <code>vlog</code>.</p>
+          </div>
+        ) : (
+          <div class="blog-grid blog-grid--listing">
+            {cards.map((card) => (
+              <a class="blog-card blog-card--wide" data-type={card.type} href={card.detailUrl}>
+                <div class="blog-card-media">
+                  {card.thumbnailUrl ? (
+                    <img src={card.thumbnailUrl} alt={card.title} loading="lazy" />
+                  ) : (
+                    <div class="blog-card-placeholder" aria-hidden="true">
+                      <span>{card.type === 'vlog' ? '▶ Video' : 'Article'}</span>
+                    </div>
+                  )}
+                  {card.type === 'vlog' && <span class="blog-card-play" aria-hidden="true">▶</span>}
+                </div>
+                <div class="blog-card-content">
+                  <span class="blog-card-meta">{card.category} · {formatDate(card.date)}</span>
+                  <h3 class="blog-card-title">{card.title}</h3>
+                  {card.excerpt && <p class="blog-card-excerpt">{card.excerpt}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>('.blog-filter[data-filter]');
+    const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+
+    const setFilter = (filter: string) => {
+      filterButtons.forEach((b) => {
+        const active = b.dataset.filter === filter;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      cards.forEach((card) => {
+        const t = card.dataset.type ?? '';
+        const show = filter === 'all' || t === filter;
+        card.classList.toggle('blog-card--hidden', !show);
+      });
+    };
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => setFilter(btn.dataset.filter ?? 'all'));
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('type');
+    if (initial && ['article', 'vlog'].includes(initial)) setFilter(initial);
+  </script>
+</BaseLayout>

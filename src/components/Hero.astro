@@ -1,0 +1,87 @@
+---
+interface Stat {
+  num: string;
+  label: string;
+  /** If set, override `num` with a value computed from the current year.
+      Renders `<currentYear - yearsFrom>+` at build time AND on page load. */
+  yearsFrom?: number;
+}
+
+interface Props {
+  stats?: Stat[];
+  /** Year your career started — used to compute Years Experience.
+      Baseline: in 2026 this gives 21, and ticks +1 every Jan 1. */
+  careerStartYear?: number;
+  quote?: string;
+  quoteAuthor?: string;
+  portraitSrc?: string;
+  portraitAlt?: string;
+}
+
+const {
+  careerStartYear = 2005,
+  quote = "Aesthetics is not just how it looks — it's the art of the first impression.",
+  quoteAuthor = 'Cenix',
+  portraitSrc = '/images/cenix-cutout.png',
+  portraitAlt = 'Cenix — Creative Director portrait',
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+const yearsExperience = currentYear - careerStartYear;
+
+const stats: Stat[] = Astro.props.stats ?? [
+  { num: `${yearsExperience}+`, label: 'Years Experience', yearsFrom: careerStartYear },
+  { num: '100+',                 label: 'Personnel Managed' },
+  { num: '60+',                  label: 'Projects Delivered' },
+];
+---
+
+<section id="home" class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <!-- LEFT: Quote+CTA centered vertically | Stats anchored 50px above marquee -->
+      <div class="hero-left">
+        <div class="hero-middle">
+          <blockquote class="hero-quote">
+            <span class="hero-quote-mark" aria-hidden="true">"</span>
+            {quote}
+            <cite>— {quoteAuthor}</cite>
+          </blockquote>
+
+          <a href="#portfolio" class="btn btn-primary hero-cta">
+            See My Work
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          {stats.map((stat) => (
+            <div class="stat">
+              <span
+                class="stat-num"
+                data-years-from={stat.yearsFrom ? String(stat.yearsFrom) : undefined}
+              >{stat.num}</span>
+              <span class="stat-label">
+                {stat.label.split(' ').map((word) => (
+                  <span class="stat-label-word">{word}</span>
+                ))}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- RIGHT: Transparent PNG portrait floats in front of the
+           animated CREATIVE DIRECTOR title. -->
+      <div class="hero-portrait-wrap">
+        <h1 class="hero-title">
+          <span>CREATIVE</span>
+          <span>DIRECTOR</span>
+        </h1>
+        <div class="hero-portrait no-duotone" id="hero-portrait">
+          <img src={portraitSrc} alt={portraitAlt} loading="eager" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

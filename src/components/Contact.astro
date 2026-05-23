@@ -1,0 +1,80 @@
+---
+interface Props {
+  email?: string;
+}
+
+const { email = 'cenix@imcenix.com' } = Astro.props;
+---
+
+<section id="contact" class="section section-light contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT — copy / features / CTA -->
+      <div class="contact-left">
+        <span class="contact-eyebrow">
+          <span class="contact-eyebrow-icon" aria-hidden="true">✉</span>
+          Contact Now
+        </span>
+
+        <h2 class="contact-title">Contact Me!</h2>
+
+        <p class="contact-subtitle">
+          Let's create something amazing together! Reach out — I'd love
+          to hear about your project and ideas.
+        </p>
+
+        <hr class="contact-divider" />
+
+        <ul class="contact-features">
+          <li><span class="contact-feature-mark" aria-hidden="true">+</span> 24/7 Full Time Support</li>
+          <li><span class="contact-feature-mark" aria-hidden="true">+</span> Available Worldwide</li>
+        </ul>
+
+        <a class="btn btn-primary contact-cta" href={`mailto:${email}`}>Contact now</a>
+      </div>
+
+      <!-- RIGHT — form -->
+      <div class="contact-right">
+        <form class="contact-form" id="contact-form" action={`mailto:${email}`} method="post" enctype="text/plain">
+          <span class="contact-form-corner contact-form-corner--tl" aria-hidden="true"></span>
+          <span class="contact-form-corner contact-form-corner--br" aria-hidden="true"></span>
+
+          <label class="contact-field">
+            <span class="contact-field-label">Name *</span>
+            <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+          </label>
+
+          <label class="contact-field">
+            <span class="contact-field-label">Email *</span>
+            <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+
+          <label class="contact-field">
+            <span class="contact-field-label">Message *</span>
+            <textarea name="message" rows="6" placeholder="Tell me about your project…" required></textarea>
+          </label>
+
+          <button type="submit" class="contact-submit">Submit Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ email }}>
+  // Submit via mailto: with form data — works without backend.
+  // For a real submission endpoint, swap the action with Formspree / Netlify Forms.
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get('name') ?? '').toString().trim();
+    const from = (data.get('email') ?? '').toString().trim();
+    const message = (data.get('message') ?? '').toString().trim();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name || from}`);
+    const body = encodeURIComponent(
+      `From: ${name} <${from}>\n\n${message}\n\n— Sent from imcenix.com`
+    );
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  });
+</script>

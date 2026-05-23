@@ -1,0 +1,262 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: 'home' | 'about' | 'portfolio' | 'blog' | 'contact';
+}
+
+const {
+  title,
+  description = 'Cenix — Creative Director. Portfolio, case studies, and writings on brand, design, and visual storytelling.',
+  activeNav = 'home',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Favicon — blue rounded square with lime border + white "C" -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Stack+Sans+Headline:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-page={activeNav}>
+    <Nav activeNav={activeNav} />
+    <slot />
+    <Footer />
+
+    <!-- Custom cursor (hidden on touch devices via CSS) -->
+    <div class="cursor cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+    <script>
+      // ====================================================================
+      // 0. Static updates (year, dynamic years experience)
+      // ====================================================================
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      document.querySelectorAll<HTMLElement>('[data-years-from]').forEach((el) => {
+        const startYear = parseInt(el.dataset.yearsFrom ?? '', 10);
+        if (Number.isFinite(startYear)) {
+          const years = new Date().getFullYear() - startYear;
+          el.textContent = `${years}+`;
+        }
+      });
+
+      // ====================================================================
+      // 1. Nav: mobile toggle + scroll-spy + sticky shadow
+      // ====================================================================
+      const nav = document.getElementById('nav');
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navMenu.classList.toggle('open');
+          navToggle.classList.toggle('open', isOpen);
+          navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+        navMenu.addEventListener('click', (e) => {
+          const target = e.target as HTMLElement;
+          if (target.closest('.nav-link')) {
+            navMenu.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      if (sections.length > 1) {
+        const setActive = (id: string) => {
+          navLinks.forEach((link) => {
+            const href = link.getAttribute('href') ?? '';
+            link.classList.toggle('active', href === `#${id}` || href === `/#${id}`);
+          });
+        };
+        const spy = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) setActive(entry.target.id);
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
+        sections.forEach((s) => spy.observe(s));
+      }
+
+      const onScroll = () => {
+        if (!nav) return;
+        const scrolled = window.scrollY > 80;
+        nav.classList.toggle('is-scrolled', scrolled);
+        nav.style.boxShadow = scrolled ? '0 4px 20px rgba(0,0,0,0.15)' : 'none';
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // ====================================================================
+      // 2. Slide-text on .nav-link + .btn enhancements
+      //    .nav-link / .btn text → wrapped in a 2-row stack for hover slide.
+      //    .btn → also gets a `.btn-circle` with arrow icon on the right.
+      // ====================================================================
+      const wrapSlideText = (el: Element) => {
+        if (el.querySelector('.slide-text')) return;
+        const childNodes = Array.from(el.childNodes);
+        for (const node of childNodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = (node.textContent ?? '').trim();
+            if (!text) continue;
+            const wrap = document.createElement('span');
+            wrap.className = 'slide-text';
+            wrap.innerHTML =
+              `<span class="slide-text-row">${text}</span>` +
+              `<span class="slide-text-row" aria-hidden="true">${text}</span>`;
+            node.replaceWith(wrap);
+            break;
+          }
+        }
+      };
+      document.querySelectorAll('.nav-link, .btn').forEach(wrapSlideText);
+
+      // Add circle-with-arrow to every .btn (replace legacy .btn-arrow span).
+      const ARROW_SVG =
+        '<svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" ' +
+        'stroke="currentColor" stroke-width="2.5" stroke-linecap="round" ' +
+        'stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+      document.querySelectorAll('.btn').forEach((btn) => {
+        if (btn.querySelector('.btn-circle')) return;
+        const circle = document.createElement('span');
+        circle.className = 'btn-circle';
+        circle.innerHTML = ARROW_SVG;
+        // Replace legacy plain-text arrow span if present
+        const legacy = btn.querySelector('.btn-arrow');
+        if (legacy) legacy.replaceWith(circle);
+        else btn.appendChild(circle);
+      });
+
+      // ====================================================================
+      // 3. Custom cursor (lerp follower + dot, grows on interactive elements)
+      // ====================================================================
+      const dot = document.getElementById('cursor-dot');
+      const follower = document.getElementById('cursor-follower');
+      const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+      if (dot && follower && hasFinePointer) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let followX = mouseX;
+        let followY = mouseY;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        });
+
+        const tick = () => {
+          followX += (mouseX - followX) * 0.18;
+          followY += (mouseY - followY) * 0.18;
+          follower.style.transform = `translate3d(${followX}px, ${followY}px, 0) translate(-50%, -50%)`;
+          requestAnimationFrame(tick);
+        };
+        tick();
+
+        // Grow on interactive elements
+        const interactiveSelector =
+          'a, button, .card, .portfolio-card, .stat, .modal-close, input, textarea, label, [role="button"]';
+        document.body.addEventListener('mouseover', (e) => {
+          if ((e.target as Element).closest(interactiveSelector)) {
+            follower.classList.add('cursor-follower--grow');
+          }
+        });
+        document.body.addEventListener('mouseout', (e) => {
+          if ((e.target as Element).closest(interactiveSelector)) {
+            follower.classList.remove('cursor-follower--grow');
+          }
+        });
+
+        // Hide while leaving viewport
+        document.addEventListener('mouseleave', () => {
+          dot.style.opacity = '0';
+          follower.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+          dot.style.opacity = '1';
+          follower.style.opacity = '1';
+        });
+
+        document.documentElement.classList.add('has-custom-cursor');
+      }
+
+      // ====================================================================
+      // 4. Scroll reveal (fade + rise) on first entry into viewport
+      // ====================================================================
+      const revealSelectors = [
+        '.section-header',
+        '.about-top',
+        '.about-block',
+        '.logo-marquee',
+        '.section-placeholder',
+        '.project-header',
+        '.project-body img',
+      ];
+      // For these grids, each child gets data-reveal with a stagger delay
+      const cardStaggerSelectors = ['.card-grid', '.portfolio-grid'];
+
+      // Tag elements with data-reveal (skip if already in initial viewport with no offset)
+      revealSelectors.forEach((sel) => {
+        document.querySelectorAll(sel).forEach((el) => el.setAttribute('data-reveal', ''));
+      });
+
+      // Add staggered delay to children of card grids
+      cardStaggerSelectors.forEach((sel) => {
+        document.querySelectorAll<HTMLElement>(sel).forEach((grid) => {
+          const items = grid.querySelectorAll<HTMLElement>(':scope > *');
+          items.forEach((item, i) => {
+            item.setAttribute('data-reveal', '');
+            item.style.setProperty('--reveal-delay', `${i * 0.06}s`);
+          });
+        });
+      });
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('in-view'));
+      } else {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+        );
+        document.querySelectorAll('[data-reveal]').forEach((el) => revealObserver.observe(el));
+      }
+    </script>
+  </body>
+</html>

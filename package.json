@@ -1,0 +1,20 @@
+{
+  "name": "cenix-profile",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Cenix — Creative Director portfolio website",
+  "scripts": {
+    "predev": "node ./scripts/link-assets.mjs",
+    "dev": "astro dev",
+    "prebuild": "node ./scripts/link-assets.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

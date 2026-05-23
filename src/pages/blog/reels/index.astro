@@ -1,0 +1,184 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getEmbedInfo, platformLabel } from '../../../utils/embed';
+
+// Reels-only listing — vertical 9:16 cards, opens short modal on click.
+// Lives under /blog/reels/ so Astro's static route resolution beats
+// /blog/[slug] (no post can have slug "reels").
+const all = (await getCollection('blog'))
+  .filter((p) => !p.id.startsWith('_template'))
+  .filter((p) => p.data.type === 'short');
+
+all.sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.date.localeCompare(a.data.date);
+});
+
+const folderSlug = (id: string) => id.split('/')[0];
+
+const cards = all.map((post) => {
+  const folder = folderSlug(post.id);
+  const info = getEmbedInfo(post.data.url ?? null);
+  const thumbnailFile = post.data.thumbnail || '';
+  const thumbnailUrl = thumbnailFile
+    ? `/blog/${folder}/${thumbnailFile}`
+    : info.thumbnailUrl;
+
+  return {
+    modalId: `blog-${post.data.slug}`,
+    slug: post.data.slug,
+    title: post.data.title,
+    date: post.data.date,
+    excerpt: post.data.excerpt ?? '',
+    category: post.data.category ?? 'Reel',
+    thumbnailUrl,
+    embedUrl: info.embedUrl,
+    sourceUrl: info.sourceUrl,
+    platform: info.platform,
+  };
+});
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+---
+
+<BaseLayout title="Reels — Cenix" activeNav="blog">
+  <main class="project-page blog-listing blog-listing--reels">
+    <header class="project-header">
+      <div class="container">
+        <a href="/" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span>
+          Back to Home
+        </a>
+        <span class="project-category">Reels</span>
+        <h1 class="project-title">Reels</h1>
+        <p class="project-subtitle">
+          Quick tips, behind-the-scenes, and creative process snippets —
+          best watched vertical.
+        </p>
+      </div>
+    </header>
+
+    <section class="project-body">
+      <div class="container">
+        <!-- Cross-link back to articles + V-Logs -->
+        <div class="blog-filters" role="tablist" aria-label="Switch list">
+          <a class="blog-filter blog-filter--link" href="/blog/">
+            ← Articles &amp; V-Logs
+          </a>
+          <span class="blog-filter is-active" aria-current="page">
+            Reels <span class="blog-filter-count">{cards.length}</span>
+          </span>
+        </div>
+
+        {cards.length === 0 ? (
+          <div class="section-placeholder">
+            <span class="placeholder-tag">No reels yet</span>
+            <p>Add a folder under <code>assets/blog/</code> with <code>type: short</code>.</p>
+          </div>
+        ) : (
+          <div class="blog-grid blog-grid--reels">
+            {cards.map((card) => (
+              <button
+                type="button"
+                class="blog-card blog-card--reel"
+                data-modal={card.modalId}
+              >
+                <div class="blog-card-media">
+                  {card.thumbnailUrl ? (
+                    <img src={card.thumbnailUrl} alt={card.title} loading="lazy" />
+                  ) : (
+                    <div class="blog-card-placeholder" aria-hidden="true">
+                      <span>{platformLabel(card.platform as any)}</span>
+                    </div>
+                  )}
+                  <span class="blog-card-play" aria-hidden="true">▶</span>
+                </div>
+                <div class="blog-card-content">
+                  <span class="blog-card-meta">{card.category} · {formatDate(card.date)}</span>
+                  <h3 class="blog-card-title">{card.title}</h3>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <!-- Short modals -->
+  {cards.map((card) => (
+    <dialog class="modal modal--short" id={card.modalId} data-platform={card.platform}>
+      <div class="modal-short-inner">
+        <button type="button" class="modal-close" aria-label="Close">×</button>
+        <div class="modal-short-frame">
+          {card.embedUrl ? (
+            <iframe
+              data-src={card.embedUrl}
+              title={card.title}
+              allow="autoplay; encrypted-media; fullscreen"
+              allowfullscreen
+              frameborder="0"
+              scrolling="no"
+              loading="lazy"
+            ></iframe>
+          ) : (
+            <div class="modal-short-fallback">
+              <p>Preview not available — open on {platformLabel(card.platform as any)}.</p>
+              {card.sourceUrl && (
+                <a class="btn btn-primary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
+                  Watch on {platformLabel(card.platform as any)}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+        <div class="modal-short-meta">
+          <span class="modal-eyebrow">{card.category} · {formatDate(card.date)}</span>
+          <h3 class="modal-short-title">{card.title}</h3>
+          {card.excerpt && <p class="modal-short-excerpt">{card.excerpt}</p>}
+          {card.sourceUrl && (
+            <a class="modal-short-link" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
+              Watch on {platformLabel(card.platform as any)} ↗
+            </a>
+          )}
+        </div>
+      </div>
+    </dialog>
+  ))}
+
+  <script>
+    // Open/close Short modals + lazy-load iframes only while visible
+    document.querySelectorAll<HTMLDialogElement>('.modal--short').forEach((dialog) => {
+      const iframe = dialog.querySelector<HTMLIFrameElement>('iframe');
+      const closeBtn = dialog.querySelector<HTMLButtonElement>('.modal-close');
+      const realSrc = iframe?.dataset.src ?? '';
+
+      const setIframe = () => {
+        if (!iframe) return;
+        if (dialog.open && !iframe.hasAttribute('src')) iframe.setAttribute('src', realSrc);
+        if (!dialog.open && iframe.hasAttribute('src')) iframe.removeAttribute('src');
+      };
+
+      closeBtn?.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      const observer = new MutationObserver(setIframe);
+      observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-modal^="blog-"]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const id = trigger.dataset.modal;
+        const dialog = id ? document.getElementById(id) as HTMLDialogElement | null : null;
+        if (dialog?.showModal) dialog.showModal();
+      });
+    });
+  </script>
+</BaseLayout>

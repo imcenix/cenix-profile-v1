@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PortfolioModals from '../../components/PortfolioModals.astro';
+
+const projects = (await getCollection('portfolio'))
+  .filter((p) => !p.id.startsWith('_template'));
+
+projects.sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return b.data.date.localeCompare(a.data.date);
+});
+
+const folderSlug = (id: string) => id.split('/')[0];
+const categories = Array.from(new Set(projects.map((p) => p.data.category))).sort();
+---
+
+<BaseLayout title="Portfolio — Cenix" activeNav="portfolio">
+  <main class="project-page portfolio-listing">
+    <header class="project-header portfolio-listing-header">
+      <div class="container">
+        <a href="/" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span>
+          Back to Home
+        </a>
+
+        <span class="project-category">Portfolio</span>
+        <h1 class="project-title">Featured Works<span class="portfolio-teaser-mark">*</span></h1>
+        <p class="project-subtitle">
+          From brand identity to product UX — each piece reflects two decades of building
+          creative direction for Vietnam's most ambitious companies.
+        </p>
+      </div>
+    </header>
+
+    <section class="project-body">
+      <div class="container">
+        <div class="portfolio-filters" role="tablist" aria-label="Filter portfolio by category">
+          <button type="button" class="blog-filter is-active" data-filter="all" role="tab" aria-selected="true">
+            All <span class="blog-filter-count">{projects.length}</span>
+          </button>
+          {categories.map((cat) => (
+            <button type="button" class="blog-filter" data-filter={cat} role="tab" aria-selected="false">
+              {cat}
+              <span class="blog-filter-count">{projects.filter((p) => p.data.category === cat).length}</span>
+            </button>
+          ))}
+        </div>
+
+        {projects.length === 0 ? (
+          <div class="section-placeholder">
+            <span class="placeholder-tag">No projects yet</span>
+            <p>Add a project folder under <code>assets/portfolio/</code>.</p>
+          </div>
+        ) : (
+          <div class="portfolio-grid portfolio-grid--listing">
+            {projects.map((p) => {
+              const folder = folderSlug(p.id);
+              const thumbnailUrl = `/portfolio/${folder}/${p.data.thumbnail}`;
+              return (
+                <button
+                  type="button"
+                  class="portfolio-card portfolio-card--tile"
+                  data-category={p.data.category}
+                  data-modal={`portfolio-${p.data.slug}`}
+                >
+                  <div class="portfolio-tile-head">
+                    <h3 class="portfolio-tile-title">{p.data.title}</h3>
+                    <span class="portfolio-tile-arrow" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M9 7h8v8"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="portfolio-tile-category">{p.data.category}</span>
+                  <div class="portfolio-tile-thumb">
+                    <img src={thumbnailUrl} alt={p.data.title} loading="lazy" />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <!-- All portfolio modals rendered once — opened by data-modal triggers above -->
+  <PortfolioModals />
+
+  <script>
+    // Filter chips
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>('.portfolio-filters .blog-filter');
+    const cards = document.querySelectorAll<HTMLElement>('.portfolio-card');
+
+    const setFilter = (filter: string) => {
+      filterButtons.forEach((b) => {
+        const active = b.dataset.filter === filter;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      cards.forEach((card) => {
+        const cat = card.dataset.category ?? '';
+        const show = filter === 'all' || cat === filter;
+        card.classList.toggle('blog-card--hidden', !show);
+      });
+    };
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => setFilter(btn.dataset.filter ?? 'all'));
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('category');
+    if (initial) setFilter(initial);
+  </script>
+</BaseLayout>
