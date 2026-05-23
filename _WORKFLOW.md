@@ -5,9 +5,13 @@
 ## Cài Obsidian Mobile (làm 1 lần)
 
 1. App Store → cài **Obsidian**
-2. Mở app → **Open vault** → **Create new vault** → **Open folder as vault**
-3. Files → **iCloud Drive** → **CenixWebsite** → **Cenix Profile** → **Open**
+2. Mở app → **Use my existing vault** → chọn **iCloud**
+3. Sẽ thấy vault **"Cenix Profile"** xuất hiện → tap để mở
 4. Done. Vault giờ đã sync với Mac.
+
+**Lưu ý:** project phải nằm trong folder `iCloud Drive/Obsidian/`
+(path đầy đủ: `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Cenix Profile/`)
+để Obsidian iOS auto-detect được.
 
 ## Cấu trúc folder vault
 
