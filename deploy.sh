@@ -29,6 +29,23 @@ set +a
 : "${SFTP_REMOTE_PATH:?Missing SFTP_REMOTE_PATH in .env}"
 SFTP_PORT="${SFTP_PORT:-22}"
 
+# ----- Auto-commit any uncommitted changes -----
+# Every deploy creates a git snapshot so anh có thể quay xe về bất kỳ deploy nào.
+if command -v git >/dev/null 2>&1 && [ -d .git ]; then
+  if [ -n "$(git status --porcelain)" ]; then
+    echo ""
+    echo "📝 Auto-committing changes before deploy..."
+    git add -A
+    git -c user.email="${GIT_EMAIL:-cenix@imcenix.com}" \
+        -c user.name="${GIT_NAME:-Cenix}" \
+        commit -m "deploy $(date '+%Y-%m-%d %H:%M:%S')" >/dev/null
+    echo "✓ Snapshot saved: $(git log -1 --format='%h %s')"
+    echo ""
+  else
+    echo "✓ Working tree clean — no auto-commit needed."
+  fi
+fi
+
 # ----- Astro build -----
 if [ ! -d node_modules ]; then
   echo "Installing dependencies (first run only)..."
@@ -63,7 +80,13 @@ mirror --reverse --verbose --delete --parallel=4 \
   $LOCAL_SRC "$SFTP_REMOTE_PATH"
 bye
 EOF
-  echo "Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
+  echo ""
+  echo "✅ Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
+  echo ""
+  # Native macOS notification (silent if osascript missing)
+  if command -v osascript >/dev/null 2>&1; then
+    osascript -e "display notification \"Site live at https://${SITE_DOMAIN:-imcenix.com}\" with title \"Cenix — Deploy complete\" sound name \"Glass\"" 2>/dev/null || true
+  fi
   exit 0
 fi
 
@@ -73,7 +96,13 @@ if command -v sshpass >/dev/null 2>&1 && command -v rsync >/dev/null 2>&1; then
     --exclude='.DS_Store' --exclude='*.log' \
     -e "ssh -p $SFTP_PORT -o StrictHostKeyChecking=accept-new" \
     "$LOCAL_SRC" "$SFTP_USER@$SFTP_HOST:$SFTP_REMOTE_PATH"
-  echo "Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
+  echo ""
+  echo "✅ Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
+  echo ""
+  # Native macOS notification (silent if osascript missing)
+  if command -v osascript >/dev/null 2>&1; then
+    osascript -e "display notification \"Site live at https://${SITE_DOMAIN:-imcenix.com}\" with title \"Cenix — Deploy complete\" sound name \"Glass\"" 2>/dev/null || true
+  fi
   exit 0
 fi
 

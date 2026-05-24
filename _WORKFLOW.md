@@ -1,28 +1,41 @@
 # Workflow viết bài cho imcenix.com
 
-> File này chỉ là hướng dẫn cá nhân, không xuất hiện trên website.
+> Mac-only workflow. Phone editing có thể setup sau khi mua Obsidian Sync
+> ($4/tháng) hoặc dùng Apple Notes làm bản nháp rồi paste vào Obsidian Mac.
 
-## Cài Obsidian Mobile (làm 1 lần)
+## Setup ban đầu
 
-1. App Store → cài **Obsidian**
-2. Mở app → **Use my existing vault** → chọn **iCloud**
-3. Sẽ thấy vault **"Cenix Profile"** xuất hiện → tap để mở
-4. Done. Vault giờ đã sync với Mac.
+**1. Project path:**
 
-**Lưu ý:** project phải nằm trong folder `iCloud Drive/Obsidian/`
-(path đầy đủ: `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Cenix Profile/`)
-để Obsidian iOS auto-detect được.
+```
+~/Documents/Cenix_Projects/Cenix/Cenix x Claude/Cenix Profile/
+```
+
+**2. Terminal alias** (đã có trong `~/.zshrc`, nếu chưa thì thêm vào):
+
+```bash
+alias cenix='cd "$HOME/Documents/Cenix_Projects/Cenix/Cenix x Claude/Cenix Profile"'
+```
+
+Sau khi thêm: `source ~/.zshrc` để reload. Từ giờ gõ `cenix` là vào thẳng project.
+
+**3. Obsidian Mac:**
+
+- Mở Obsidian.app → Open vault → Open folder as vault
+- Navigate Files → Documents → Cenix_Projects → Cenix → Cenix x Claude → **Cenix Profile**
+- Open
 
 ## Cấu trúc folder vault
 
 ```
 Cenix Profile/
 ├─ _WORKFLOW.md           ← file này
+├─ Publish.command        ← double-click để deploy
 ├─ .obsidian/
 │  └─ templates/          ← 4 template insert sẵn
 ├─ assets/
 │  ├─ blog/               ← TẠO POST MỚI Ở ĐÂY
-│  │  ├─ _template/       ← không sửa, dùng để tham khảo
+│  │  ├─ _template/       ← không sửa, để tham khảo
 │  │  └─ 2026-04-bai-cua-toi/
 │  │     ├─ post.md
 │  │     └─ thumbnail.jpg
@@ -37,11 +50,11 @@ Cenix Profile/
 
 ---
 
-## Tạo bài Blog mới (từ phone HOẶC Mac)
+## Tạo bài Blog mới
 
 ### Bước 1 — Tạo folder cho post
 
-Trong Obsidian, **right-click** (mobile: long-press) folder `assets/blog/` → **New folder** → đặt tên theo format:
+Trong Obsidian Mac, right-click folder `assets/blog/` → **New folder** → đặt tên theo format:
 
 ```
 YYYY-MM-slug-bai
@@ -55,7 +68,7 @@ Vào folder vừa tạo → **New note** → đặt tên **`post`** (chỉ "post
 
 ### Bước 3 — Insert template
 
-Mở file `post.md` → command palette (Cmd+P trên Mac, hoặc icon "command" mobile) → gõ **"Insert template"** → chọn:
+Mở file `post.md` → **Cmd+P** (command palette) → gõ **"Insert template"** → chọn:
 
 - **Blog Article** — bài viết text dài
 - **Blog V-Log** — embed video YouTube
@@ -65,21 +78,22 @@ Template tự fill date hôm nay. Anh sửa **title**, **slug**, **excerpt**.
 
 ### Bước 4 — Thumbnail
 
-- **Mac:** drag-drop file ảnh vào folder post trong Obsidian
-- **Phone:** chụp/chọn ảnh từ Photos → Share → Save to Files → vào folder post
+Drag file ảnh từ Desktop/Finder vào folder post trong Obsidian sidebar. Đặt tên là **`thumbnail.jpg`** (hoặc `.png`).
 
-Đặt tên ảnh là **`thumbnail.jpg`** (hoặc `.png`).
+### Bước 5 — Publish
 
-### Bước 5 — Publish (chỉ trên Mac)
+**Cách A — Double-click Publish.command:**
+
+Trong Finder hoặc Obsidian, double-click file `Publish.command` ở root project.
+
+**Cách B — Terminal:**
 
 ```bash
-cenix                           # alias đã setup
-git add .
-git commit -m "new post: ..."
-./deploy.sh
+cenix
+./Publish.command
 ```
 
-Site live trong ~30 giây ở imcenix.com.
+Site update tại imcenix.com trong ~60 giây.
 
 ---
 
@@ -89,7 +103,7 @@ Tương tự bước Blog nhưng:
 
 - Folder: `assets/portfolio/XX-ten-project/` (XX = số thứ tự)
 - File: `project.md`
-- Template: **Portfolio Project**
+- Template: **Portfolio Project** (Cmd+P → Insert template)
 - Thumbnail: `thumbnail.png` (tỷ lệ 1.28:1, chuẩn Behance)
 - Long mockup: `images/long-mockup.png`
 
@@ -103,19 +117,20 @@ Tương tự bước Blog nhưng:
 - **Experience.md** — danh sách công ty (mỗi h2 = 1 công ty)
 - **Projects.md** — side projects (mỗi h2 = 1 project)
 
-Edit trực tiếp các file này. Đẩy lên bằng `./deploy.sh` như trên.
+Edit trực tiếp các file. Publish như trên.
 
 ---
 
 ## Quay xe (Git rollback)
 
-Nếu lỡ xoá hay sửa hỏng cái gì:
+Mỗi lần `./Publish.command` chạy, git tự commit snapshot. Nếu lỡ xoá hay sửa hỏng:
 
 ```bash
-git log --oneline                # xem history
+cenix
+git log --oneline                # xem history các deploy
 git checkout abc1234 -- assets/  # restore folder assets từ commit cũ
-# HOẶC
-git reset --hard abc1234         # quay HẲN về snapshot cũ (cẩn thận!)
+# HOẶC quay HẲN về snapshot cũ:
+git reset --hard abc1234         # cẩn thận! mất commits sau đó
 ```
 
 ---
@@ -128,3 +143,13 @@ Slug là URL bài viết / project. Phải:
 - Dùng dấu gạch ngang `-`, không dùng `_` hay space
 - Không dấu tiếng Việt: `hanh-trinh` ✓ không phải `hành-trình`
 - Ngắn gọn 3-6 từ
+
+---
+
+## Sau này nếu muốn viết trên phone
+
+3 lựa chọn:
+
+1. **Obsidian Sync** ($4/tháng) — official, hoàn hảo, không phải fight iCloud
+2. **GitHub + Working Copy** (~$20 one-time iOS app) — git-based sync, advanced
+3. **Self-hosted CMS** — em build sau khi anh cần thiết
