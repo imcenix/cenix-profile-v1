@@ -9,6 +9,7 @@ tools:
   - Figma
   - Illustrator
 featured: true
+order: "4"
 thumbnail: thumbnail.png
 excerpt:
 behance_url: ""

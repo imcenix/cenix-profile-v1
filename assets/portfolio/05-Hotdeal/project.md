@@ -9,6 +9,7 @@ tools:
   - Photoshop
   - Illustrator
 featured: false
+order: "6"
 thumbnail: thumbnail.png
 excerpt:
 behance_url: ""

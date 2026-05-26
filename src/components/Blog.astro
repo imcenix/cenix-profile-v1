@@ -1,13 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import { getEmbedInfo, platformLabel } from '../utils/embed';
+import { sortByManualOrder } from '../utils/sortContent';
 
 const all = (await getCollection('blog')).filter((p) => !p.id.startsWith('_template'));
 
-all.sort((a, b) => {
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return b.data.date.localeCompare(a.data.date);
-});
+sortByManualOrder(all);
 
 const folderSlug = (id: string) => id.split('/')[0];
 

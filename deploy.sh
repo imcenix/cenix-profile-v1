@@ -32,6 +32,9 @@ SFTP_PORT="${SFTP_PORT:-22}"
 # ----- Auto-commit any uncommitted changes -----
 # Every deploy creates a git snapshot so anh có thể quay xe về bất kỳ deploy nào.
 if command -v git >/dev/null 2>&1 && [ -d .git ]; then
+  # Clear any stale .lock files left behind by previous crashed git runs.
+  rm -f .git/*.lock .git/objects/*.lock 2>/dev/null || true
+
   if [ -n "$(git status --porcelain)" ]; then
     echo ""
     echo "📝 Auto-committing changes before deploy..."

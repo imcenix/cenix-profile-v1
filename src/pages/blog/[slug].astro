@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEmbedInfo, platformLabel } from '../../utils/embed';
+import { sortByManualOrder } from '../../utils/sortContent';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog'))
@@ -9,7 +10,7 @@ export async function getStaticPaths() {
     // Shorts don't get their own page — they open in a modal on /#blog
     .filter((p) => p.data.type !== 'short');
 
-  posts.sort((a, b) => b.data.date.localeCompare(a.data.date));
+  sortByManualOrder(posts);
 
   return posts.map((post, index) => ({
     params: { slug: post.data.slug },

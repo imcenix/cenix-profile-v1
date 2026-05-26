@@ -76,6 +76,14 @@ Mở file `post.md` → **Cmd+P** (command palette) → gõ **"Insert template"*
 
 Template tự fill date hôm nay. Anh sửa **title**, **slug**, **excerpt**.
 
+Muốn tự set thứ tự hiển thị thì thêm/sửa trong frontmatter:
+
+```yaml
+order: 1
+```
+
+Số nhỏ hiện trước. Bài không có `order` sẽ tự xếp sau nhóm có `order`, rồi fallback theo `featured` và `date`.
+
 ### Bước 4 — Thumbnail
 
 Drag file ảnh từ Desktop/Finder vào folder post trong Obsidian sidebar. Đặt tên là **`thumbnail.jpg`** (hoặc `.png`).
@@ -106,6 +114,14 @@ Tương tự bước Blog nhưng:
 - Template: **Portfolio Project** (Cmd+P → Insert template)
 - Thumbnail: `thumbnail.png` (tỷ lệ 1.28:1, chuẩn Behance)
 - Long mockup: `images/long-mockup.png`
+
+Muốn tự set thứ tự hiển thị portfolio thì sửa trong `project.md`:
+
+```yaml
+order: 1
+```
+
+Số nhỏ hiện trước. Project không có `order` sẽ tự xếp sau nhóm có `order`, rồi fallback theo `featured` và `date`.
 
 ---
 

@@ -1,6 +1,16 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const orderSchema = z
+  .union([z.number(), z.string()])
+  .nullable()
+  .optional()
+  .transform((value) => {
+    if (value === null || value === undefined || value === '') return null;
+    const order = Number(value);
+    return Number.isFinite(order) ? order : null;
+  });
+
 /**
  * Portfolio collection
  * ---------------------
@@ -24,6 +34,8 @@ const portfolio = defineCollection({
     category: z.string(),
     role: z.string(),
     tools: z.array(z.string()).default([]),
+    // Optional manual display order. Smaller numbers appear first.
+    order: orderSchema,
     featured: z.boolean().default(false),
     thumbnail: z.string(),
     excerpt: z.string().nullable().optional(),
@@ -88,6 +100,8 @@ const blog = defineCollection({
     excerpt: z.string().nullable().optional(),
     // Tags shown as small pills on the card
     tags: z.array(z.string()).default([]),
+    // Optional manual display order. Smaller numbers appear first.
+    order: orderSchema,
     featured: z.boolean().default(false),
     // Optional explicit category override (defaults to type-based label)
     category: z.string().nullable().optional(),

@@ -3,15 +3,13 @@ import { getCollection } from 'astro:content';
 import fs from 'node:fs';
 import path from 'node:path';
 import PortfolioModals from './PortfolioModals.astro';
+import { sortByManualOrder } from '../utils/sortContent';
 
-// Project list for the row (sorted: featured first, then by date desc)
+// Project list for the row (manual order first, then featured/date)
 const projects = (await getCollection('portfolio'))
   .filter((p) => !p.id.startsWith('_template'));
 
-projects.sort((a, b) => {
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return b.data.date.localeCompare(a.data.date);
-});
+sortByManualOrder(projects);
 
 const folderSlug = (id: string) => id.split('/')[0];
 

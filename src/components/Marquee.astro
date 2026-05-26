@@ -18,8 +18,10 @@ const {
 const loop = [...items, ...items];
 ---
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    {loop.map((item) => <span class="marquee-item">{item}</span>)}
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee-track">
+      {loop.map((item) => <span class="marquee-item">{item}</span>)}
+    </div>
   </div>
 </div>

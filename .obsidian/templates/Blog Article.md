@@ -8,6 +8,7 @@ thumbnail: "thumbnail.jpg"
 excerpt: "1-2 câu mô tả ngắn hiển thị dưới thumbnail."
 tags: []
 featured: false
+# order: 1   # (tùy chọn) số nhỏ hiện trước. Bỏ comment để dùng.
 category: ""
 ---
 

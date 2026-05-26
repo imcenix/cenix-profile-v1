@@ -2,14 +2,12 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PortfolioModals from '../../components/PortfolioModals.astro';
+import { sortByManualOrder } from '../../utils/sortContent';
 
 const projects = (await getCollection('portfolio'))
   .filter((p) => !p.id.startsWith('_template'));
 
-projects.sort((a, b) => {
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return b.data.date.localeCompare(a.data.date);
-});
+sortByManualOrder(projects);
 
 const folderSlug = (id: string) => id.split('/')[0];
 const categories = Array.from(new Set(projects.map((p) => p.data.category))).sort();

@@ -28,6 +28,9 @@ tools: ["Figma", "Photoshop", "Illustrator"]
 # Featured? — set true to pin in the top "highlights" row on Home/Portfolio
 featured: false
 
+# Manual display order (smaller number appears first). Leave blank to sort by featured/date.
+order:
+
 # Thumbnail filename (must exist in this same folder, Behance ratio 1.28:1 ideal)
 thumbnail: "thumbnail.jpg"
 

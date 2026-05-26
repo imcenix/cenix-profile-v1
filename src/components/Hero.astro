@@ -1,4 +1,7 @@
 ---
+import { statSync } from 'node:fs';
+import { join } from 'node:path';
+
 interface Stat {
   num: string;
   label: string;
@@ -18,11 +21,16 @@ interface Props {
   portraitAlt?: string;
 }
 
+const portraitVersion = Math.floor(
+  statSync(join(process.cwd(), 'assets/images/cenix-cutout.png')).mtimeMs
+);
+const defaultPortraitSrc = `/images/cenix-cutout.png?v=${portraitVersion}`;
+
 const {
   careerStartYear = 2005,
   quote = "Aesthetics is not just how it looks — it's the art of the first impression.",
   quoteAuthor = 'Cenix',
-  portraitSrc = '/images/cenix-cutout.png',
+  portraitSrc = defaultPortraitSrc,
   portraitAlt = 'Cenix — Creative Director portrait',
 } = Astro.props;
 

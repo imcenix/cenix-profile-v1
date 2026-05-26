@@ -8,6 +8,7 @@ thumbnail: "thumbnail.jpg"
 excerpt: "Mô tả ngắn về video."
 tags: []
 featured: false
+# order: 1   # (tùy chọn) số nhỏ hiện trước. Bỏ comment để dùng.
 category: ""
 ---
 

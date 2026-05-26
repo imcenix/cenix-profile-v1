@@ -35,6 +35,9 @@ tags: []
 # Pin to top of feed?
 featured: false
 
+# Manual display order (smaller number appears first). Leave blank to sort by featured/date.
+order:
+
 # Optional override for the small category label on the card
 category: ""
 ---

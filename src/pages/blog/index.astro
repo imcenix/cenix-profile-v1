@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sortByManualOrder } from '../../utils/sortContent';
 
 // Articles & V-Logs only — Reels live on /blog/reels/ because their
 // 9:16 vertical layout doesn't mix well with wide 16:10 cards.
@@ -8,10 +9,7 @@ const all = (await getCollection('blog'))
   .filter((p) => !p.id.startsWith('_template'))
   .filter((p) => p.data.type !== 'short');
 
-all.sort((a, b) => {
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return b.data.date.localeCompare(a.data.date);
-});
+sortByManualOrder(all);
 
 const folderSlug = (id: string) => id.split('/')[0];
 

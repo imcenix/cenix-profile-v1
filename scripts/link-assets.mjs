@@ -7,7 +7,7 @@
 // Runs automatically before `npm run dev` and `npm run build`
 // (see "predev" / "prebuild" scripts in package.json).
 
-import { symlink, rm, mkdir, cp, stat } from 'node:fs/promises';
+import { symlink, rm, mkdir, cp, stat, chmod, readdir, lstat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,6 +23,21 @@ const targets = [
   { from: path.join(ASSETS, 'blog'),             to: path.join(PUBLIC, 'blog')      },
 ];
 
+async function normalizePermissions(targetPath) {
+  const info = await lstat(targetPath);
+
+  if (info.isDirectory()) {
+    await chmod(targetPath, 0o755);
+    const entries = await readdir(targetPath);
+    await Promise.all(entries.map((entry) => normalizePermissions(path.join(targetPath, entry))));
+    return;
+  }
+
+  if (info.isFile()) {
+    await chmod(targetPath, 0o644);
+  }
+}
+
 await mkdir(PUBLIC, { recursive: true });
 
 for (const { from, to } of targets) {
@@ -33,6 +48,8 @@ for (const { from, to } of targets) {
     console.warn(`Skipping: ${path.relative(ROOT, from)} does not exist`);
     continue;
   }
+
+  await normalizePermissions(from);
 
   // Remove any existing target (symlink, file, or folder)
   await rm(to, { recursive: true, force: true });

@@ -11,9 +11,12 @@ interface Props {
 
 const {
   title,
-  description = 'Cenix — Creative Director. Portfolio, case studies, and writings on brand, design, and visual storytelling.',
+  description = 'Cenix - Personal Profile. Portfolio, case studies, and writings on brand, design, and visual storytelling.',
   activeNav = 'home',
 } = Astro.props;
+
+const siteUrl = 'https://imcenix.com';
+const ogImage = `${siteUrl}/images/cenix-og.jpg`;
 ---
 
 <!DOCTYPE html>
@@ -23,6 +26,22 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicon — blue rounded square with lime border + white "C" -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -177,7 +196,10 @@ const {
         const tick = () => {
           followX += (mouseX - followX) * 0.18;
           followY += (mouseY - followY) * 0.18;
-          follower.style.transform = `translate3d(${followX}px, ${followY}px, 0) translate(-50%, -50%)`;
+          const radius = follower.offsetWidth / 2 + 6;
+          const safeX = Math.min(Math.max(followX, radius), window.innerWidth - radius);
+          const safeY = Math.min(Math.max(followY, radius), window.innerHeight - radius);
+          follower.style.transform = `translate3d(${safeX}px, ${safeY}px, 0) translate(-50%, -50%)`;
           requestAnimationFrame(tick);
         };
         tick();

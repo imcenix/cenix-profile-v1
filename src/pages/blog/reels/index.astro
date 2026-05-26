@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getEmbedInfo, platformLabel } from '../../../utils/embed';
+import { sortByManualOrder } from '../../../utils/sortContent';
 
 // Reels-only listing — vertical 9:16 cards, opens short modal on click.
 // Lives under /blog/reels/ so Astro's static route resolution beats
@@ -10,10 +11,7 @@ const all = (await getCollection('blog'))
   .filter((p) => !p.id.startsWith('_template'))
   .filter((p) => p.data.type === 'short');
 
-all.sort((a, b) => {
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return b.data.date.localeCompare(a.data.date);
-});
+sortByManualOrder(all);
 
 const folderSlug = (id: string) => id.split('/')[0];
 

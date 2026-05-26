@@ -7,6 +7,7 @@ category: "Branding"
 role: "Creative Director · UI/UX"
 tools: ["Figma", "Photoshop", "Illustrator"]
 featured: false
+# order: 1   # (tùy chọn) số nhỏ hiện trước. Bỏ comment để dùng.
 thumbnail: "thumbnail.png"
 excerpt: "1 câu mô tả ngắn cho thumbnail."
 behance_url: ""

@@ -8,6 +8,7 @@ excerpt: This wasn’t really about building a website. It was about translating
 tags:
   - blog
 featured: true
+order:
 category: Article
 ---
 # This wasn’t really about building a website. It was about translating a way of seeing into something you can scroll through without breaking it.
