@@ -168,6 +168,12 @@ html {
   scroll-padding-top: var(--nav-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Modern clip — doesn't create scroll port, but clips overflow.
+     Mobile Safari sometimes ignores body overflow-x:hidden, so we
+     apply it at <html> too. Combined with body's overflow-x:hidden
+     this guarantees NO horizontal scroll on any device. */
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 body {
@@ -176,7 +182,8 @@ body {
   line-height: 1.5;
   color: var(--color-black);
   background: var(--color-white);
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 img {
@@ -819,7 +826,10 @@ body[data-page="home"] .nav.is-scrolled {
 .marquee-band {
   position: relative;
   z-index: 4;
-  overflow: visible;
+  /* Clip the rotated + scaleX(1.08) marquee so it never causes horizontal
+     scroll on mobile. The band has enough padding to fit the marquee's
+     shadow + tilt without visible clipping. */
+  overflow: hidden;
   padding: 1.55rem 0 2rem;
   margin: -4.65rem 0 -1.65rem;
   background:
