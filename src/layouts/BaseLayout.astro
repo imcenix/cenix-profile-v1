@@ -24,6 +24,11 @@ const ogImage = `${siteUrl}/images/cenix-og.jpg`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- iOS Safari + Chrome mobile: paint the top browser chrome blue so
+         the safe-area above the hero doesn't render as white when you
+         pull-to-refresh or land on the page. -->
+    <meta name="theme-color" content="#2540ff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={siteUrl} />
