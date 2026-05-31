@@ -56,10 +56,20 @@ const stats: Stat[] = Astro.props.stats ?? [
             <cite>— {quoteAuthor}</cite>
           </blockquote>
 
-          <a href="#portfolio" class="btn btn-primary hero-cta">
-            See My Work
-            <span class="btn-arrow" aria-hidden="true">→</span>
-          </a>
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary hero-cta">
+              See My Work
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a
+              href="/images/Cenix_CV_CD_2025.pdf"
+              class="btn btn-cv hero-cv"
+              download="Cenix_CV_CD_2025.pdf"
+            >
+              Download My CV
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
 
         <div class="hero-stats">
