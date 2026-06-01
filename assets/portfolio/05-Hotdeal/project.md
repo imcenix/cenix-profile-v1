@@ -9,10 +9,10 @@ tools:
   - Photoshop
   - Illustrator
 featured: false
-order: "6"
+order: 5
 thumbnail: thumbnail.png
 excerpt:
-behance_url: ""
-live_url: ""
+behance_url:
+live_url:
 ---
 ![Hotdeal — Full case study](/portfolio/05-hotdeal/images/long-mockup.png)
