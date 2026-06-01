@@ -9,10 +9,10 @@ tools:
   - Photoshop
   - Illustrator
 featured: true
-order: "1"
+order: 1
 thumbnail: thumbnail.png
 excerpt:
-behance_url: ""
-live_url: ""
+behance_url:
+live_url:
 ---
 ![Amai — Full case study](/portfolio/03-amai/images/long-mockup.png)
