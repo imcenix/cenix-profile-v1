@@ -9,10 +9,10 @@ tools:
   - Figma
   - Illustrator
 featured: true
-order: "4"
+order: 3
 thumbnail: thumbnail.png
 excerpt:
-behance_url: ""
-live_url: ""
+behance_url:
+live_url:
 ---
 ![Grow Arena — Full case study](/portfolio/02-growarena/images/long-mockup.png)
