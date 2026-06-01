@@ -9,10 +9,10 @@ tools:
   - Photoshop
   - Illustrator
 featured: false
-order: "7"
+order: 7
 thumbnail: thumbnail.jpg
 excerpt:
-behance_url: ""
-live_url: ""
+behance_url:
+live_url:
 ---
 ![V-Studio — Full case study](/portfolio/07-park-ix/images/long-mockup.jpg)
