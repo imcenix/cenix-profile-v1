@@ -10,11 +10,11 @@ tools:
   - Illustrator
   - Photoshop
 featured: true
-order: "3"
+order: 2
 thumbnail: thumbnail.png
 excerpt:
-behance_url: ""
-live_url: ""
+behance_url:
+live_url:
 ---
 
 ![Primal Performance Lab — Full case study](/portfolio/01-primal-performance-lab/images/long-mockup.png)
