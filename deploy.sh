@@ -73,36 +73,26 @@ echo "Deploying ${SITE_DOMAIN:-site} -> ${SFTP_HOST}:${SFTP_REMOTE_PATH}"
 if command -v lftp >/dev/null 2>&1; then
   echo "Using lftp..."
 
+  ROOT_DIR="${SFTP_REMOTE_PATH%/}"
+  SITE_DIR="$ROOT_DIR/site"
   set +e
   lftp -u "$SFTP_USER,$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
 set cmd:fail-exit no
 set sftp:auto-confirm yes
 set net:max-retries 2
-set net:timeout 15
+set net:timeout 20
+# Profile V1 -> /site (folder tự chứa, gồm cả /cms; không đụng web khác)
+mkdir -p "$SITE_DIR"
 mirror --reverse --verbose --delete --parallel=4 \
   --exclude-glob .DS_Store \
-  --exclude-glob .htaccess \
   --exclude-glob *.log \
-  --exclude-glob yum \
-  --exclude-glob yum/** \
-  --exclude-glob restaurants \
-  --exclude-glob restaurants/** \
-  --exclude-glob _astro/index.* \
-  --exclude-glob images/bubble-chat \
-  --exclude-glob images/bubble-chat/** \
-  --exclude-glob images/cenix-characters \
-  --exclude-glob images/cenix-characters/** \
-  --exclude-glob images/foods-intro \
-  --exclude-glob images/foods-intro/** \
-  --exclude-glob images/icons \
-  --exclude-glob images/icons/** \
-  --exclude-glob images/cenix\ food* \
-  --exclude-glob images/favicon.png \
-  $LOCAL_SRC "$SFTP_REMOTE_PATH"
-cd "$SFTP_REMOTE_PATH"
-chmod -R 755 cms
-chmod 755 cms cms/icons cms/assets
-chmod 644 cms/icons/*.png
+  $LOCAL_SRC "$SITE_DIR"
+# Router theo tên miền đặt ở docroot (Profile là hub, quản lý file này)
+put -O "$ROOT_DIR" .deploy/root.htaccess
+rm -f "$ROOT_DIR/.htaccess"
+mv "$ROOT_DIR/root.htaccess" "$ROOT_DIR/.htaccess"
+# Quyền đọc cho web server (sửa lỗi 403)
+chmod -R 755 "$SITE_DIR"
 bye
 EOF
   set -e
