@@ -79,8 +79,28 @@ set net:max-retries 2
 set net:timeout 15
 mirror --reverse --verbose --delete --parallel=4 \
   --exclude-glob .DS_Store \
+  --exclude-glob .htaccess \
   --exclude-glob *.log \
+  --exclude-glob yum \
+  --exclude-glob yum/** \
+  --exclude-glob restaurants \
+  --exclude-glob restaurants/** \
+  --exclude-glob _astro/index.* \
+  --exclude-glob images/bubble-chat \
+  --exclude-glob images/bubble-chat/** \
+  --exclude-glob images/cenix-characters \
+  --exclude-glob images/cenix-characters/** \
+  --exclude-glob images/foods-intro \
+  --exclude-glob images/foods-intro/** \
+  --exclude-glob images/icons \
+  --exclude-glob images/icons/** \
+  --exclude-glob images/cenix\ food* \
+  --exclude-glob images/favicon.png \
   $LOCAL_SRC "$SFTP_REMOTE_PATH"
+cd "$SFTP_REMOTE_PATH"
+chmod -R 755 cms
+chmod 755 cms/icons
+chmod 644 cms/icons/*.png
 bye
 EOF
   echo ""
