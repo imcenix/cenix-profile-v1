@@ -73,7 +73,9 @@ echo "Deploying ${SITE_DOMAIN:-site} -> ${SFTP_HOST}:${SFTP_REMOTE_PATH}"
 if command -v lftp >/dev/null 2>&1; then
   echo "Using lftp..."
 
+  set +e
   lftp -u "$SFTP_USER,$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
+set cmd:fail-exit no
 set sftp:auto-confirm yes
 set net:max-retries 2
 set net:timeout 15
@@ -99,10 +101,11 @@ mirror --reverse --verbose --delete --parallel=4 \
   $LOCAL_SRC "$SFTP_REMOTE_PATH"
 cd "$SFTP_REMOTE_PATH"
 chmod -R 755 cms
-chmod 755 cms/icons
+chmod 755 cms cms/icons cms/assets
 chmod 644 cms/icons/*.png
 bye
 EOF
+  set -e
   echo ""
   echo "✅ Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
   echo ""
