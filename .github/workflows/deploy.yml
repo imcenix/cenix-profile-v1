@@ -3,16 +3,6 @@ name: Deploy Profile
 on:
   push:
     branches: [main]
-    paths:
-      - 'assets/**'
-      - 'public/**'
-      - 'scripts/**'
-      - 'src/**'
-      - '.deploy/root.htaccess'
-      - 'astro.config.mjs'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'tsconfig.json'
   workflow_dispatch:
 
 concurrency:
@@ -25,11 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_DOMAIN: imcenix.com
-      SFTP_HOST: ${{ secrets.SFTP_HOST }}
+      SFTP_HOST: ${{ secrets.SFTP_HOST || '45.32.110.164' }}
       SFTP_PORT: ${{ secrets.SFTP_PORT || '22' }}
-      SFTP_USER: ${{ secrets.SFTP_USER }}
+      SFTP_USER: ${{ secrets.SFTP_USER || 'cenix' }}
       SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
-      SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+      SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH || 'web/imcenix.com/public_html' }}
+      CENIX_HOSTING: ${{ secrets.CENIX_HOSTING }}
 
     steps:
       - name: Checkout
@@ -50,24 +41,90 @@ jobs:
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
+      - name: Load Cenix hosting secret bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          trim() {
+            local value="$1"
+            value="${value#"${value%%[![:space:]]*}"}"
+            value="${value%"${value##*[![:space:]]}"}"
+            printf '%s' "$value"
+          }
+          strip_quotes() {
+            local value="$1"
+            if [[ "$value" == \"*\" && "$value" == *\" ]]; then
+              value="${value:1:${#value}-2}"
+            elif [[ "$value" == \'*\' && "$value" == *\' ]]; then
+              value="${value:1:${#value}-2}"
+            fi
+            printf '%s' "$value"
+          }
+
+          if [[ -z "${CENIX_HOSTING:-}" ]]; then
+            exit 0
+          fi
+
+          bundle_has_pairs=0
+          while IFS= read -r raw_line || [[ -n "$raw_line" ]]; do
+            line="${raw_line%$'\r'}"
+            [[ -z "$line" || "$line" == \#* || "$line" != *=* ]] && continue
+
+            key="$(trim "${line%%=*}")"
+            value="$(strip_quotes "$(trim "${line#*=}")")"
+            case "$key" in
+              SFTP_HOST|SFTP_PORT|SFTP_USER|SFTP_PASSWORD|SFTP_REMOTE_PATH)
+                if [[ -n "${!key:-}" ]]; then
+                  continue
+                fi
+                {
+                  echo "$key<<__CENIX_SECRET__"
+                  echo "$value"
+                  echo "__CENIX_SECRET__"
+                } >> "$GITHUB_ENV"
+                bundle_has_pairs=1
+                ;;
+            esac
+          done <<< "$CENIX_HOSTING"
+
+          if [[ "$bundle_has_pairs" -eq 0 && -z "${SFTP_PASSWORD:-}" ]]; then
+            {
+              echo "SFTP_PASSWORD<<__CENIX_SECRET__"
+              echo "$CENIX_HOSTING"
+              echo "__CENIX_SECRET__"
+            } >> "$GITHUB_ENV"
+          fi
+
+      - name: Validate SFTP host
+        run: |
+          set -euo pipefail
+          test -n "$SFTP_HOST" || (echo "Missing SFTP_HOST secret" && exit 1)
+          test -n "$SFTP_PORT" || (echo "Missing SFTP_PORT secret" && exit 1)
+
+      - name: Validate SFTP user
+        run: |
+          set -euo pipefail
+          test -n "$SFTP_USER" || (echo "Missing SFTP_USER secret" && exit 1)
+
+      - name: Validate SFTP password
+        run: |
+          set -euo pipefail
+          test -n "$SFTP_PASSWORD" || (echo "Missing SFTP_PASSWORD secret" && exit 1)
+
       - name: Deploy to /site
         run: |
           set -euo pipefail
           ROOT_DIR="${SFTP_REMOTE_PATH%/}"
           SITE_DIR="$ROOT_DIR/site"
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<LFTP
-          set cmd:fail-exit yes
-          set sftp:auto-confirm yes
-          set net:max-retries 2
-          set net:timeout 20
-          mkdir -p "$SITE_DIR"
-          mirror --reverse --verbose --delete --parallel=4 \
-            --exclude-glob .DS_Store \
-            --exclude-glob *.log \
-            dist/ "$SITE_DIR"
-          put -O "$ROOT_DIR" .deploy/root.htaccess
-          rm -f "$ROOT_DIR/.htaccess"
-          mv "$ROOT_DIR/root.htaccess" "$ROOT_DIR/.htaccess"
-          chmod -R 755 "$SITE_DIR"
-          bye
-          LFTP
+          lftp -c "
+            set cmd:fail-exit yes;
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 20;
+            open -u \"$SFTP_USER\",\"$SFTP_PASSWORD\" -p \"$SFTP_PORT\" \"sftp://$SFTP_HOST\";
+            mirror --reverse --verbose --delete --parallel=4 \
+              --exclude-glob .DS_Store \
+              --exclude-glob '*.log' \
+              dist/ '$SITE_DIR';
+            put -O '$ROOT_DIR' .deploy/.htaccess;
+          "

@@ -1,0 +1,16 @@
+# ============================================================
+#  Cenix host router - 1 docroot, moi web 1 folder rieng
+#  Dat o docroot (public_html/.htaccess). Profile deploy tu upload.
+#  Them web moi: copy 1 block "yum" cho subdomain moi, doi ten folder.
+# ============================================================
+RewriteEngine On
+
+# --- FoodStation: yum.imcenix.com -> /yum/ ---
+RewriteCond %{HTTP_HOST} ^yum\.imcenix\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/yum/ [NC]
+RewriteRule ^(.*)$ /yum/$1 [L]
+
+# --- Mac dinh (imcenix.com, www, subdomain chua khai bao) -> /site/ ---
+#     Profile V1 + CMS (imcenix.com/cms = /site/cms) nam trong /site
+RewriteCond %{REQUEST_URI} !^/(site|yum)/ [NC]
+RewriteRule ^(.*)$ /site/$1 [L]
