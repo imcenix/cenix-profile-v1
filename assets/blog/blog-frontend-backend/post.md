@@ -4,7 +4,7 @@ title: "Cơ Bản Về Các Công Nghệ Web: Frontend, Backend & CMS"
 date: 2026-06-04
 type: article
 slug: basic-tech
-thumbnail: frontend-backend.png
+thumbnail: frontend-backend-169.png
 ---
 # Cơ Bản Về Các Công Nghệ Web: Frontend, Backend & CMS
 
