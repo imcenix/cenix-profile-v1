@@ -45,6 +45,22 @@ const stats: Stat[] = Astro.props.stats ?? [
 ---
 
 <section id="home" class="hero">
+  <!-- Video background — autoplay muted loop, fills hero, behind tint. -->
+  <video
+    class="hero-video"
+    src="/background-clip/01.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+  ></video>
+
+  <!-- Brand-blue tint on top of video — keeps the #2540ff identity
+       even when the video has other colors. -->
+  <div class="hero-tint" aria-hidden="true"></div>
+
   <div class="hero-inner">
     <div class="hero-grid">
       <!-- LEFT: Quote+CTA centered vertically | Stats anchored 50px above marquee -->

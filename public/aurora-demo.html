@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Video Background — Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      color: #fff;
+      background: #2540ff;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .hero-tint {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 80% at 8% 12%,  rgba(10, 20, 90, 0.55), transparent 70%),
+        radial-gradient(ellipse 80% 80% at 92% 88%, rgba(10, 20, 90, 0.55), transparent 70%),
+        rgba(37, 64, 255, 0.55);
+    }
+
+    .demo {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .demo h1 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      color: #c8ff00;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    .demo h1 span { color: #fff; }
+    .demo p {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      max-width: 50ch;
+      opacity: 0.95;
+      line-height: 1.55;
+    }
+    .demo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <video class="hero-video"
+           src="/background-clip/01.mp4"
+           autoplay muted loop playsinline preload="auto"
+           aria-hidden="true"></video>
+    <div class="hero-tint" aria-hidden="true"></div>
+
+    <div class="demo">
+      <span class="demo-pill">✦ Video BG + #2540ff Tint</span>
+      <h1>CREATIVE <span>DIRECTOR</span></h1>
+      <p>
+        Real .mp4 video plays behind. Brand-blue overlay maintains
+        #2540ff identity. Darker corners for vignette + text contrast.
+      </p>
+    </div>
+  </section>
+</body>
+</html>

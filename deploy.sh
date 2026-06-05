@@ -1,138 +1,50 @@
 #!/usr/bin/env bash
 # =============================================================
-#  Cenix Profile — Astro build + SFTP deployment
-#  1. Runs `npm run build` to produce ./dist
-#  2. Mirrors ./dist to remote public_html via SFTP
-#  Credentials live in .env (gitignored).
+#  Cenix Profile V1 — Deploy (AN TOÀN)
+#  Chỉ đẩy CODE lên GitHub. GitHub Actions tự build + deploy /site.
+#  KHÔNG build, KHÔNG SFTP trực tiếp từ máy → không thể ghi đè/xóa
+#  nội dung tạo từ CMS (Actions luôn build từ repo đầy đủ).
 # =============================================================
-
-set -e
-
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR"
+cd "$SCRIPT_DIR" || exit 1
 
-# ----- Load .env -----
-if [ ! -f .env ]; then
-  echo "Missing .env in $SCRIPT_DIR"
-  echo "   Copy .env.example to .env and fill in credentials."
+echo ""
+echo "🌐 Cenix Profile V1 — Publish code"
+echo ""
+
+if ! command -v git >/dev/null 2>&1 || [ ! -d .git ]; then
+  echo "❌ Đây không phải git repo."; exit 1
+fi
+
+rm -f .git/*.lock .git/refs/heads/*.lock 2>/dev/null || true
+git config pull.rebase false 2>/dev/null || true
+
+# 1) Lưu thay đổi code dưới máy
+if [ -n "$(git status --porcelain)" ]; then
+  echo "📝 Lưu thay đổi..."
+  git add -A
+  git -c user.email="cenix@imcenix.com" -c user.name="Cenix" \
+      commit -m "publish $(date '+%Y-%m-%d %H:%M:%S')"
+else
+  echo "✓ Không có thay đổi mới dưới máy."
+fi
+
+# 2) Kéo nội dung mới nhất từ GitHub (gồm nội dung tạo bằng CMS)
+echo "⬇️  Đồng bộ từ GitHub..."
+if ! git pull --no-rebase --no-edit; then
+  echo ""
+  echo "❌ git pull bị xung đột. Dữ liệu vẫn AN TOÀN (chưa deploy gì)."
+  echo "   Mở Terminal xử lý xung đột rồi chạy lại."
   exit 1
 fi
 
-set -a
-# shellcheck disable=SC1091
-. ./.env
-set +a
-
-: "${SFTP_HOST:?Missing SFTP_HOST in .env}"
-: "${SFTP_USER:?Missing SFTP_USER in .env}"
-: "${SFTP_PASSWORD:?Missing SFTP_PASSWORD in .env}"
-: "${SFTP_REMOTE_PATH:?Missing SFTP_REMOTE_PATH in .env}"
-SFTP_PORT="${SFTP_PORT:-22}"
-
-# ----- Auto-commit any uncommitted changes -----
-# Every deploy creates a git snapshot so anh có thể quay xe về bất kỳ deploy nào.
-if command -v git >/dev/null 2>&1 && [ -d .git ]; then
-  # Clear any stale .lock files left behind by previous crashed git runs.
-  rm -f .git/*.lock .git/objects/*.lock 2>/dev/null || true
-
-  if [ -n "$(git status --porcelain)" ]; then
-    echo ""
-    echo "📝 Auto-committing changes before deploy..."
-    git add -A
-    git -c user.email="${GIT_EMAIL:-cenix@imcenix.com}" \
-        -c user.name="${GIT_NAME:-Cenix}" \
-        commit -m "deploy $(date '+%Y-%m-%d %H:%M:%S')" >/dev/null
-    echo "✓ Snapshot saved: $(git log -1 --format='%h %s')"
-    echo ""
-  else
-    echo "✓ Working tree clean — no auto-commit needed."
-  fi
+# 3) Đẩy lên GitHub → Actions tự build + deploy /site (+ router .htaccess)
+echo "⬆️  Đẩy lên GitHub..."
+if ! git push; then
+  echo "❌ git push lỗi (xem ở trên)."; exit 1
 fi
 
-# ----- Astro build -----
-if [ ! -d node_modules ]; then
-  echo "Installing dependencies (first run only)..."
-  npm install
-fi
-
-echo "Building site with Astro..."
-npm run build
-
-if [ ! -d dist ]; then
-  echo "Build failed: ./dist not found"
-  exit 1
-fi
-
-echo "Build complete. ./dist size: $(du -sh dist | cut -f1)"
-
-# ----- Upload ./dist via SFTP -----
-LOCAL_SRC="./dist/"
-
-echo "Deploying ${SITE_DOMAIN:-site} -> ${SFTP_HOST}:${SFTP_REMOTE_PATH}"
-
-if command -v lftp >/dev/null 2>&1; then
-  echo "Using lftp..."
-
-  ROOT_DIR="${SFTP_REMOTE_PATH%/}"
-  SITE_DIR="$ROOT_DIR/site"
-  set +e
-  lftp -u "$SFTP_USER,$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
-set cmd:fail-exit no
-set sftp:auto-confirm yes
-set net:max-retries 2
-set net:timeout 20
-# Profile V1 -> /site (folder tự chứa, gồm cả /cms; không đụng web khác)
-mkdir -p "$SITE_DIR"
-mirror --reverse --verbose --delete --parallel=4 \
-  --exclude-glob .DS_Store \
-  --exclude-glob *.log \
-  $LOCAL_SRC "$SITE_DIR"
-# Router theo tên miền đặt ở docroot (Profile là hub, quản lý file này)
-put -O "$ROOT_DIR" .deploy/root.htaccess
-rm -f "$ROOT_DIR/.htaccess"
-mv "$ROOT_DIR/root.htaccess" "$ROOT_DIR/.htaccess"
-# Quyền đọc cho web server (sửa lỗi 403)
-chmod -R 755 "$SITE_DIR"
-bye
-EOF
-  set -e
-  echo ""
-  echo "✅ Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
-  echo ""
-  # Native macOS notification (silent if osascript missing)
-  if command -v osascript >/dev/null 2>&1; then
-    osascript -e "display notification \"Site live at https://${SITE_DOMAIN:-imcenix.com}\" with title \"Cenix — Deploy complete\" sound name \"Glass\"" 2>/dev/null || true
-  fi
-  exit 0
-fi
-
-if command -v sshpass >/dev/null 2>&1 && command -v rsync >/dev/null 2>&1; then
-  echo "Using rsync + sshpass..."
-  sshpass -p "$SFTP_PASSWORD" rsync -avz --delete \
-    --exclude='.DS_Store' --exclude='*.log' \
-    -e "ssh -p $SFTP_PORT -o StrictHostKeyChecking=accept-new" \
-    "$LOCAL_SRC" "$SFTP_USER@$SFTP_HOST:$SFTP_REMOTE_PATH"
-  echo ""
-  echo "✅ Deploy complete -> https://${SITE_DOMAIN:-your-domain}"
-  echo ""
-  # Native macOS notification (silent if osascript missing)
-  if command -v osascript >/dev/null 2>&1; then
-    osascript -e "display notification \"Site live at https://${SITE_DOMAIN:-imcenix.com}\" with title \"Cenix — Deploy complete\" sound name \"Glass\"" 2>/dev/null || true
-  fi
-  exit 0
-fi
-
-cat <<MSG
-Neither 'lftp' nor 'sshpass + rsync' is installed.
-
-Install one of these on macOS (Homebrew):
-
-   # Recommended:
-   brew install lftp
-
-   # Or:
-   brew install hudochenkov/sshpass/sshpass
-
-Then run ./deploy.sh again.
-MSG
-exit 1
+echo ""
+echo "✅ Đã đẩy code lên GitHub. GitHub Actions đang tự build + deploy imcenix.com."
+echo "   Theo dõi: https://github.com/imcenix/cenix-profile-v1/actions"
+echo ""

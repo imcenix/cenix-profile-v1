@@ -5,16 +5,24 @@
 
 /* ----- Design Tokens ----- */
 :root {
-  /* Colors */
-  --color-blue: #2540ff;
-  --color-blue-dark: #1a30d6;
-  --color-lime: #c8ff00;
-  --color-lime-dark: #a8d900;
-  --color-black: #0a0a0a;
-  --color-white: #ffffff;
-  --color-offwhite: #f4f4ee;
-  --color-gray: #1a1a1a;
-  --color-text-muted: rgba(255, 255, 255, 0.7);
+  /* Colors — Brand blue + lime (original). Aurora effects layer extra
+     cyan / indigo / neon-blue glows on top via mix-blend-mode. */
+  --color-blue:        #2540ff;
+  --color-blue-dark:   #1a30d6;
+  --color-blue-light:  #3a55ff;
+  --color-lime:        #c8ff00;
+  --color-lime-dark:   #a8d900;
+
+  /* Aurora glow palette — used inside the aurora orbs */
+  --color-cyan:        #00e5ff;
+  --color-neon-blue:   #1d4ed8;
+  --color-indigo:      #6366f1;
+
+  --color-black:       #0a0a0a;
+  --color-white:       #ffffff;
+  --color-offwhite:    #f4f4ee;
+  --color-gray:        #1a1a1a;
+  --color-text-muted:  rgba(255, 255, 255, 0.7);
 
   /* Typography */
   --font-display: 'Stack Sans Headline', 'Anton', 'Bebas Neue', 'Impact', sans-serif;
@@ -175,7 +183,7 @@ html {
   overflow-x: clip;
   max-width: 100vw;
   /* iOS Safari rubber-band over-scroll above the page reveals the html
-     background. Paint it blue so it stays consistent with the hero. */
+     background. Paint it brand blue so the bounce matches hero base. */
   background: var(--color-blue);
 }
 
@@ -538,74 +546,57 @@ body[data-page="home"] .nav.is-scrolled {
 
 /* ----- Hero ----- */
 .hero {
-  /* Layered backdrop:
-     - Base diagonal gradient (dark → blue → lighter blue)
-     - Two big soft radial highlights (top-left bright, bottom-right deep)
-     This gives the Runway-style "blurred light through fabric" feel even
-     before the animated bokeh layer kicks in. */
+  /* Brand blue fallback (in case video fails) — the video + overlay sit
+     on top via .hero-video / .hero-tint. */
   background:
-    /* Top-left deep shadow — pulls that corner darker than the base
-       diagonal already does, so there's no "silvery" feel. */
-    radial-gradient(ellipse 70% 60% at 10% 15%, rgba(10, 20, 90, 0.7), transparent 70%),
-    /* Bottom-right deep shadow for symmetry / depth. */
-    radial-gradient(ellipse 80% 80% at 88% 85%, rgba(20, 35, 140, 0.65), transparent 65%),
     linear-gradient(135deg,
       var(--color-blue-dark) 0%,
-      var(--color-blue) 60%,
-      #4a65ff 100%);
+      var(--color-blue)      50%,
+      var(--color-blue-light) 100%);
   color: var(--color-white);
   padding-top: var(--nav-height);
   padding-bottom: 3.4rem;
   position: relative;
-  overflow: visible;
+  overflow: hidden;        /* clip video to the hero box */
+  isolation: isolate;
 }
 
-/* Drifting bokeh blobs — large, low-blur so the motion is actually
-   perceptible. 18s alternate cycle keeps it gentle, not distracting.
-   TOP blobs are now DARK (deep navy) so the top of the hero stays
-   uniformly dark — no more "bright dot" reading at the top. The bright
-   tones are moved to the lower half where the marquee sits. */
-.hero::before {
-  content: '';
+/* ── HERO VIDEO BACKGROUND ───────────────────────────────────────
+   Real .mp4 video fills the hero (cover, muted, loop, playsinline).
+   A brand-blue tint sits on top to keep the #2540ff identity.
+================================================================= */
+.hero-video {
   position: absolute;
-  inset: -15%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  object-fit: cover;
   pointer-events: none;
-  background:
-    radial-gradient(circle 420px at 18% 28%, rgba(25, 45, 150, 0.32), transparent 72%),
-    radial-gradient(circle 520px at 82% 22%, rgba(30, 55, 170, 0.28), transparent 72%),
-    radial-gradient(circle 380px at 65% 78%, rgba(200, 255, 0, 0.13), transparent 70%),
-    radial-gradient(circle 460px at 28% 82%, rgba(70, 110, 255, 0.45), transparent 72%);
-  filter: blur(36px);
-  animation: hero-bg-drift 18s ease-in-out infinite alternate;
 }
 
-/* Dot grid overlay — denser, brighter, faster drift so the texture reads
-   as "moving silk dots" rather than a static halftone. Fades toward the
-   bottom so it doesn't fight the marquee transition. */
-.hero::after {
-  content: '';
+.hero-tint {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background-image:
-    radial-gradient(circle at 1px 1px,
-      rgba(255, 255, 255, 0.16) 1.2px,
-      transparent 1.8px);
-  background-size: 22px 22px;
-  animation: hero-dot-drift 28s linear infinite;
-  opacity: 1;
-  mask-image:
-    linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.45) 70%,
-      transparent 100%);
-  -webkit-mask-image:
-    linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.45) 70%,
-      transparent 100%);
+  background:
+    /* Darker corners for vignette + reading contrast on text */
+    radial-gradient(ellipse 80% 80% at 8% 12%,  rgba(10, 20, 90, 0.55), transparent 70%),
+    radial-gradient(ellipse 80% 80% at 92% 88%, rgba(10, 20, 90, 0.55), transparent 70%),
+    /* Main brand-blue wash — color the whole video into our #2540ff */
+    rgba(37, 64, 255, 0.55);
+}
+
+/* Legacy aurora wrap kept hidden — left in CSS so nothing breaks if
+   markup still references it elsewhere. */
+.aurora-wrap {
+  display: none;
+}
+
+/* Aurora orbs removed — video bg + .hero-tint replace them. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { display: none; }
 }
 
 @keyframes hero-bg-drift {
@@ -627,12 +618,13 @@ body[data-page="home"] .nav.is-scrolled {
 
 .hero-inner {
   /* Tight top — content sits close under the nav.
-     No bottom padding — portrait extends flush with marquee. */
+     No bottom padding — portrait extends flush with marquee.
+     z-index 3 keeps content above the particle canvas (z-index 2). */
   padding: 0 var(--padding-x);
   max-width: var(--container-max);
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Two-column hero: LEFT (quote / CTA / stats)  |  RIGHT (portrait).
@@ -985,7 +977,9 @@ body[data-page="home"] .nav.is-scrolled {
 .about-section {
   padding-top: clamp(2.5rem, 5vw, 4.5rem);
   position: relative;
-  overflow: hidden;
+  /* overflow-x: clip lets us hide the decorative ::before halo on the
+     right WITHOUT breaking position: sticky inside (.stack-card). */
+  overflow-x: clip;
 }
 
 .about-section::before {
@@ -1117,6 +1111,240 @@ body[data-page="home"] .nav.is-scrolled {
 .about-subhead-mark {
   color: var(--color-lime);
   font-size: 1.25rem;
+}
+
+/* ============================================
+   EXPERIENCE + PROJECTS STACK (digitop.vn pattern)
+   2-column: left = sticky heading, right = sticky stacked cards.
+   Cards pile up like a deck of papers as user scrolls; only after
+   the last card pins does the page continue scrolling normally.
+   ============================================ */
+.stack-wrap {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.95fr) minmax(0, 1.25fr);
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+  align-items: start;
+  position: relative;
+}
+
+/* LEFT — sticky heading column */
+.stack-side {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+  padding-right: 1rem;
+}
+
+.stack-side-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-lime);
+}
+
+.stack-side-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.2vw, 5.35rem);
+  line-height: 1.08;
+  letter-spacing: 0.005em;
+  color: var(--color-white);
+}
+
+.stack-side-desc {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 48ch;
+}
+
+.stack-side-hint {
+  margin-top: 0.5rem;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.55);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* RIGHT — sticky stack of cards.
+   gap: <something> creates the scroll distance between pins.
+   Each card has top: <base> + (i × step) so they fan out as they pile. */
+.stack-cards {
+  display: flex;
+  flex-direction: column;
+  /* Gap = scroll distance between pins. Halved for tighter rhythm. */
+  gap: clamp(1rem, 3vh, 2.25rem);
+  --stack-top: calc(var(--nav-height) + 2rem);
+  --stack-step: 18px;
+}
+
+.stack-card {
+  position: sticky;
+  /* Each card pins slightly lower than previous one — that's why later
+     cards visibly "stack on top" of earlier ones with a tab showing. */
+  top: calc(var(--stack-top) + var(--i) * var(--stack-step));
+  display: grid;
+  /* HORIZONTAL: number | text block | View Detail — all in one row */
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+  /* +20% vertical padding so card feels less mỏng */
+  padding: 1.35rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 1px solid rgba(10, 10, 10, 0.07);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 14px 26px rgba(10, 20, 80, 0.07),
+    0 3px 8px rgba(10, 20, 80, 0.03);
+  color: var(--color-black);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Wrap period+title+sub in a flex column so they stack vertically
+   while sitting in the middle column of the parent grid. */
+.stack-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+/* Experience — LIME accent (gradient bên phải + số/period/arrow lime) */
+.stack-card[data-kind="exp"] {
+  background:
+    radial-gradient(ellipse 55% 130% at 100% 50%,
+      rgba(200, 255, 0, 0.28), transparent 60%),
+    linear-gradient(135deg, #ffffff 0%, #fbffe9 100%);
+}
+.stack-card[data-kind="exp"] .stack-card-num    { color: var(--color-lime-dark); }
+.stack-card[data-kind="exp"] .stack-card-period { color: var(--color-lime-dark); }
+.stack-card[data-kind="exp"] .stack-card-cta    { color: var(--color-black); }
+.stack-card[data-kind="exp"] .stack-card-arrow {
+  background: var(--color-lime);
+  color: var(--color-black);
+}
+
+/* Side Projects — BLUE accent (gradient bên phải + số/period/arrow blue) */
+.stack-card[data-kind="proj"] {
+  background:
+    radial-gradient(ellipse 55% 130% at 100% 50%,
+      rgba(37, 64, 255, 0.18), transparent 60%),
+    linear-gradient(135deg, #ffffff 0%, #f4f6ff 100%);
+}
+.stack-card[data-kind="proj"] .stack-card-num    { color: var(--color-blue); }
+.stack-card[data-kind="proj"] .stack-card-period { color: var(--color-blue); }
+.stack-card[data-kind="proj"] .stack-card-cta    { color: var(--color-black); }
+.stack-card[data-kind="proj"] .stack-card-arrow {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.stack-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 22px 40px rgba(10, 20, 80, 0.14),
+    0 8px 14px rgba(10, 20, 80, 0.05);
+}
+
+/* Number "01" — small outlined circle, left column, vertically centered */
+.stack-card-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-feature-settings: 'tnum';
+  flex-shrink: 0;
+  /* Color set per data-kind below */
+}
+
+.stack-card-period {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* Accent color per data-kind */
+}
+
+.stack-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  color: var(--color-black);
+  margin-top: 0.1rem;
+}
+
+.stack-card-sub {
+  font-size: var(--fs-sm);
+  line-height: 1.35;
+  color: rgba(10, 10, 10, 0.65);
+}
+
+/* CTA — right column, vertically centered with the body */
+.stack-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stack-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85em;
+  transition: transform 0.25s ease;
+}
+
+.stack-card:hover .stack-card-arrow {
+  transform: rotate(-15deg) scale(1.05);
+}
+
+/* Mobile: collapse to single column, disable sticky stack */
+@media (max-width: 900px) {
+  .stack-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .stack-side {
+    position: relative;
+    top: auto;
+    padding-right: 0;
+  }
+  .stack-cards {
+    gap: 1.25rem;
+  }
+  .stack-card {
+    position: relative;
+    top: auto;
+    min-height: auto;
+  }
 }
 
 /* --- Card grid (Experience + Side Projects) --- */
