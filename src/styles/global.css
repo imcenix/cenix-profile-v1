@@ -3293,3 +3293,11 @@ body[data-page="home"] .nav.is-scrolled {
     font-size: 5.2rem;
   }
 }
+
+/* ── Prose tables (soan tu CMS) ─────────────────────────────────────────── */
+.project-body table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-family: var(--font-body); font-size: 0.95rem; color: rgba(255, 255, 255, 0.85); }
+.project-body table th, .project-body table td { border: 1px solid rgba(255, 255, 255, 0.18); padding: 0.6rem 0.9rem; text-align: left; vertical-align: top; }
+.project-body table th { background: rgba(255, 255, 255, 0.06); font-weight: 700; color: #fff; }
+.project-body table p { margin: 0; }
+.project-body table.no-line th, .project-body table.no-line td { border: none; padding: 0.3rem 0.9rem 0.3rem 0; }
+.project-body table.no-line th { background: transparent; }
