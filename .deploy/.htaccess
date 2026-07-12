@@ -10,7 +10,12 @@ RewriteCond %{HTTP_HOST} ^yum\.imcenix\.com$ [NC]
 RewriteCond %{REQUEST_URI} !^/yum/ [NC]
 RewriteRule ^(.*)$ /yum/$1 [L]
 
+# --- Game Station: game.imcenix.com -> /game/ ---
+RewriteCond %{HTTP_HOST} ^game\.imcenix\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/game/ [NC]
+RewriteRule ^(.*)$ /game/$1 [L]
+
 # --- Mac dinh (imcenix.com, www, subdomain chua khai bao) -> /site/ ---
 #     Profile V1 + CMS (imcenix.com/cms = /site/cms) nam trong /site
-RewriteCond %{REQUEST_URI} !^/(site|yum)/ [NC]
+RewriteCond %{REQUEST_URI} !^/(site|yum|game)/ [NC]
 RewriteRule ^(.*)$ /site/$1 [L]
