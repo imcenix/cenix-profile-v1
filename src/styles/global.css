@@ -2925,6 +2925,12 @@ body[data-page="home"] .nav.is-scrolled {
   color: var(--color-lime);
 }
 
+.blog-detail .project-title {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: .96;
+  text-wrap: balance;
+}
+
 .project-subtitle {
   font-size: clamp(1.125rem, 1.8vw, 1.5rem);
   font-weight: 400;
@@ -3072,13 +3078,16 @@ body[data-page="home"] .nav.is-scrolled {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: center;
-  max-width: 1100px;
-  margin: 4rem auto;
+  align-items: start;
+  width: calc((100% + min(70ch, 100%)) / 2);
+  max-width: none;
+  margin: 4rem 0;
 }
 .project-body .editorial-split-quote-card {
   position: relative;
-  min-height: 430px;
+  min-height: 0;
+  height: fit-content;
+  align-self: start;
   margin: 0;
   padding: 7rem clamp(2rem, 4vw, 4rem) 4rem;
   border: 0;
@@ -3116,12 +3125,16 @@ body[data-page="home"] .nav.is-scrolled {
 .project-body .editorial-copy p { max-width: none; margin-left: 0; margin-right: 0; }
 .project-body .editorial-copy > :first-child { margin-top: 0; }
 .project-body .editorial-copy > :last-child { margin-bottom: 0; }
+.project-body .editorial-split-quote.quote-right {
+  margin-left: calc((100% - min(70ch, 100%)) / 2);
+}
 .project-body .editorial-split-quote.quote-right .editorial-split-quote-card { order: 2; }
 .project-body .editorial-split-quote.quote-right .editorial-copy { order: 1; }
 
 @media (max-width: 760px) {
-  .project-body .editorial-split-quote { grid-template-columns: 1fr; margin: 2.8rem auto; }
-  .project-body .editorial-split-quote-card { min-height: 340px; padding: 6rem 2rem 3.5rem; }
+  .project-body .editorial-split-quote { grid-template-columns: 1fr; width: 100%; margin: 2.8rem auto; }
+  .project-body .editorial-split-quote.quote-right { margin-left: auto; }
+  .project-body .editorial-split-quote-card { min-height: 0; height: fit-content; padding: 6rem 2rem 3.5rem; }
   .project-body .editorial-split-quote.quote-right .editorial-split-quote-card,
   .project-body .editorial-split-quote.quote-right .editorial-copy { order: initial; }
   .project-body blockquote:not(.editorial-split-quote-card) { padding: 4rem 1.8rem 3.5rem; }
