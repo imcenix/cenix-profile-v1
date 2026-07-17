@@ -2927,7 +2927,8 @@ body[data-page="home"] .nav.is-scrolled {
 
 .blog-detail .project-title {
   font-size: clamp(2.5rem, 6vw, 5.5rem);
-  line-height: .96;
+  line-height: 1.05;
+  letter-spacing: .01em;
   text-wrap: balance;
 }
 
