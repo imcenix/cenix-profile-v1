@@ -61,6 +61,7 @@ const ogImage = `${siteUrl}/images/cenix-og.jpg`;
     />
   </head>
   <body data-page={activeNav}>
+    <script is:inline src="/analytics.js" data-site="profile" defer></script>
     <Nav activeNav={activeNav} />
     <slot />
     <Footer />
