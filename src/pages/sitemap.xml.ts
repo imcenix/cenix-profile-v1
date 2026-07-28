@@ -13,13 +13,12 @@ const xmlEscape = (value: string) =>
 export async function GET() {
   const posts = (await getCollection('blog'))
     .filter((post) => !post.id.startsWith('_template'))
-    .filter((post) => post.data.type !== 'short');
+    .filter((post) => post.data.type === 'article');
 
   const staticUrls = [
     SITE + '/',
     SITE + '/portfolio/',
     SITE + '/blog/',
-    SITE + '/blog/reels/',
   ];
 
   const entries = [
