@@ -1,10 +1,10 @@
 ---
-title: "Căn bản prompt hình ảnh — nhờ Claude viết, đem xài khắp nơi"
+title: Căn bản Prompt hình ảnh
 slug: prompt-hinh-anh-can-ban
 date: 2026-08-01
 type: article
-thumbnail: thumbnail.svg
-excerpt: "Tự gõ prompt hoài mà ảnh ra chẳng giống trong đầu? Để Tui chỉ mấy fen cách nhờ Claude viết prompt cho thật chuẩn ý, rồi bê nguyên qua Midjourney, DALL·E hay app tạo ảnh nào cũng chạy ngon."
+thumbnail: generated-image-1-1.png
+excerpt: Tự gõ prompt hoài mà ảnh ra chẳng giống trong đầu? Để Tui chỉ mấy fen cách nhờ Claude viết prompt cho thật chuẩn ý, rồi bê nguyên qua Midjourney, DALL·E hay app tạo ảnh nào cũng chạy ngon.
 tags:
   - Prompt
   - AI
