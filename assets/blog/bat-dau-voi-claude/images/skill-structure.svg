@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="Cấu trúc một skill: thư mục chứa file SKILL.md gồm name, description và phần hướng dẫn">
+  <rect width="1000" height="540" fill="#efece3"/>
+
+  <text x="60" y="66" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="24" font-weight="700" fill="#14110d">Một skill trông như thế nào</text>
+  <rect x="60" y="80" width="46" height="4" fill="#c8ff00"/>
+
+  <!-- folder -->
+  <g font-family="'Be Vietnam Pro', Arial, sans-serif">
+    <rect x="60" y="120" width="360" height="360" rx="10" fill="#ffffff" stroke="#d8d4c8" stroke-width="1.5"/>
+    <text x="90" y="168" font-size="22" font-weight="700" fill="#14110d">📁 ten-skill/</text>
+
+    <rect x="90" y="196" width="300" height="150" rx="8" fill="#0a0a0a"/>
+    <text x="112" y="230" font-size="20" font-weight="700" fill="#c8ff00">SKILL.md</text>
+    <text x="112" y="266" font-family="ui-monospace, 'Courier New', monospace" font-size="16" fill="#e8e8e8">name: ten-skill</text>
+    <text x="112" y="294" font-family="ui-monospace, 'Courier New', monospace" font-size="16" fill="#e8e8e8">description: khi nào dùng</text>
+    <text x="112" y="322" font-family="ui-monospace, 'Courier New', monospace" font-size="16" fill="#8f8f8f">— hướng dẫn Claude làm gì —</text>
+
+    <text x="90" y="392" font-size="17" fill="#6a6357">tuỳ chọn, thêm khi cần:</text>
+    <text x="108" y="422" font-size="17" fill="#14110d">└─ scripts/  (script chạy sẵn)</text>
+    <text x="108" y="452" font-size="17" fill="#14110d">└─ references/  (tài liệu kèm)</text>
+  </g>
+
+  <!-- arrow -->
+  <g>
+    <line x1="440" y1="300" x2="560" y2="300" stroke="#2540ff" stroke-width="3"/>
+    <path d="M560 300 l-16 -9 v18 z" fill="#2540ff"/>
+    <text x="452" y="286" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="15" font-weight="600" fill="#2540ff">Claude đọc</text>
+    <text x="452" y="322" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="15" font-weight="600" fill="#2540ff">description</text>
+  </g>
+
+  <!-- result -->
+  <g font-family="'Be Vietnam Pro', Arial, sans-serif">
+    <rect x="590" y="200" width="350" height="150" rx="10" fill="#eef1f8" stroke="#c9d2ea" stroke-width="1.5"/>
+    <text x="620" y="252" font-size="22" font-weight="700" fill="#14110d">Tự bật đúng lúc</text>
+    <text x="620" y="292" font-family="'Lora', Georgia, serif" font-size="19" fill="#4a443b">Gặp việc khớp mô tả,</text>
+    <text x="620" y="320" font-family="'Lora', Georgia, serif" font-size="19" fill="#4a443b">Claude tự áp skill — bạn</text>
+    <text x="620" y="348" font-family="'Lora', Georgia, serif" font-size="19" fill="#4a443b">không cần nhắc lại.</text>
+  </g>
+</svg>

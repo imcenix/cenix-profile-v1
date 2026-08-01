@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="1000" height="660" role="img" aria-label="Bốn mảnh của một prompt hình ảnh: Nhân vật, Môi trường, Cảm xúc, Câu chuyện xoay quanh một prompt chuẩn ở trung tâm">
+  <rect width="1000" height="660" fill="#efece3"/>
+
+  <text x="500" y="52" text-anchor="middle" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="24" font-weight="700" fill="#14110d">Bốn mảnh ghép nên một prompt chuẩn</text>
+
+  <!-- connectors -->
+  <g stroke="#c8bfae" stroke-width="2">
+    <line x1="330" y1="175" x2="430" y2="285"/>
+    <line x1="670" y1="175" x2="570" y2="285"/>
+    <line x1="330" y1="500" x2="430" y2="390"/>
+    <line x1="670" y1="500" x2="570" y2="390"/>
+  </g>
+
+  <!-- center -->
+  <circle cx="500" cy="337" r="86" fill="#14110d"/>
+  <text x="500" y="325" text-anchor="middle" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="800" fill="#d7ff4f">PROMPT</text>
+  <text x="500" y="357" text-anchor="middle" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="800" fill="#ffffff">CHUẨN</text>
+
+  <!-- Nhân vật (pastel pink) -->
+  <g>
+    <rect x="70" y="90" width="290" height="120" rx="14" fill="#fbdfe8"/>
+    <text x="94" y="132" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="700" fill="#8a3556">Nhân vật</text>
+    <text x="94" y="162" font-family="'Lora', Georgia, serif" font-size="16" fill="#5a4550">Ai / vật gì? Tuổi, trang phục,</text>
+    <text x="94" y="185" font-family="'Lora', Georgia, serif" font-size="16" fill="#5a4550">dáng vẻ, điểm đặc trưng.</text>
+  </g>
+
+  <!-- Môi trường (pastel green) -->
+  <g>
+    <rect x="640" y="90" width="290" height="120" rx="14" fill="#dbf1e0"/>
+    <text x="664" y="132" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="700" fill="#2f6b45">Môi trường</text>
+    <text x="664" y="162" font-family="'Lora', Georgia, serif" font-size="16" fill="#3f5646">Ở đâu? Ánh sáng, thời gian,</text>
+    <text x="664" y="185" font-family="'Lora', Georgia, serif" font-size="16" fill="#3f5646">bối cảnh xung quanh.</text>
+  </g>
+
+  <!-- Cảm xúc (pastel amber) -->
+  <g>
+    <rect x="70" y="465" width="290" height="120" rx="14" fill="#fdeecb"/>
+    <text x="94" y="507" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="700" fill="#8a5a1a">Cảm xúc</text>
+    <text x="94" y="537" font-family="'Lora', Georgia, serif" font-size="16" fill="#5f4d33">Tông cảm xúc &amp; không khí:</text>
+    <text x="94" y="560" font-family="'Lora', Georgia, serif" font-size="16" fill="#5f4d33">ấm, buồn, hoài niệm, kịch tính...</text>
+  </g>
+
+  <!-- Câu chuyện (pastel lavender) -->
+  <g>
+    <rect x="640" y="465" width="290" height="120" rx="14" fill="#e2e3fb"/>
+    <text x="664" y="507" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="21" font-weight="700" fill="#414099">Câu chuyện</text>
+    <text x="664" y="537" font-family="'Lora', Georgia, serif" font-size="16" fill="#454664">Đang xảy ra chuyện gì?</text>
+    <text x="664" y="560" font-family="'Lora', Georgia, serif" font-size="16" fill="#454664">Hành động, khoảnh khắc chính.</text>
+  </g>
+</svg>

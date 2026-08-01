@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import remarkRewriteImages from './scripts/remark-rewrite-images.mjs';
+import rehypeBlogFigures from './scripts/rehype-blog-figures.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,5 +18,6 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkRewriteImages],
+    rehypePlugins: [rehypeBlogFigures],
   },
 });

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Bắt đầu với Claude — hướng dẫn cho người mới">
+  <rect width="1200" height="750" fill="#0a0a0a"/>
+  <g fill="none" stroke="#1c1c1c" stroke-width="1">
+    <line x1="0" y1="188" x2="1200" y2="188"/>
+    <line x1="0" y1="562" x2="1200" y2="562"/>
+  </g>
+  <text x="90" y="150" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#c8ff00">IMCENIX · HƯỚNG DẪN</text>
+  <g font-family="'Be Vietnam Pro', Arial, sans-serif" font-weight="800" fill="#ffffff">
+    <text x="86" y="360" font-size="118" letter-spacing="-2">Bắt đầu với</text>
+    <rect x="86" y="404" width="512" height="96" fill="#c8ff00"/>
+    <text x="104" y="478" font-size="118" letter-spacing="-2" fill="#0a0a0a">Claude</text>
+  </g>
+  <text x="90" y="640" font-family="'Lora', Georgia, serif" font-style="italic" font-size="40" fill="#b8b3a8">Tạo project · Định hình · Viết skill đầu tiên</text>
+  <text x="1110" y="695" text-anchor="end" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="22" letter-spacing="3" fill="#4a4a4a">imcenix.com</text>
+</svg>
