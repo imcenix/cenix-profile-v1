@@ -3276,12 +3276,12 @@ body[data-page="home"] .nav.is-scrolled {
 
 /* ----- Footer ----- */
 .footer {
-  background: var(--color-black);
+  background: var(--color-blue);
   color: var(--color-white);
   padding: 2rem 0;
   text-align: center;
   font-size: var(--fs-sm);
-  opacity: 0.7;
+  opacity: 0.95;
 }
 
 /* ----- Responsive ----- */
