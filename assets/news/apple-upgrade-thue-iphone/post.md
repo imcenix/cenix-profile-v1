@@ -5,6 +5,7 @@ category: cong-nghe
 date: 2026-07-28
 author: Cenix
 excerpt: "Apple vừa ra Upgrade: khách ở Mỹ có thể thuê iPhone và các sản phẩm khác thay vì bỏ tiền mua trọn. Một cú xoay mô hình kinh doanh đáng để ý."
+cover: cover.svg
 source_name: CNBC
 source_url: https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html
 ---

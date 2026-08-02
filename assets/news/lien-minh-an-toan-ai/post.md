@@ -5,6 +5,7 @@ category: xu-huong
 date: 2026-07-27
 author: Cenix
 excerpt: "Hàng loạt ông lớn bắt tay nhau lập sáng kiến an toàn cho các mô hình mở, giữa lúc dư âm một vụ tấn công mạng vẫn chưa lắng."
+cover: cover.svg
 source_name: CNBC
 source_url: https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html
 ---

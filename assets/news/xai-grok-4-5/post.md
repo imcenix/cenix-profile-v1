@@ -5,6 +5,7 @@ category: ai
 date: 2026-07-08
 author: Cenix
 excerpt: "Elon Musk gọi Grok 4.5 là 'mô hình đẳng cấp Opus nhưng nhanh hơn, tiết kiệm token hơn, rẻ hơn'. Con số giá thì đúng là dễ thở thật."
+cover: cover.svg
 source_name: llm-stats
 source_url: https://llm-stats.com/llm-updates
 ---

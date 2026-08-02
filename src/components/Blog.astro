@@ -7,14 +7,25 @@ const cards=posts.map((post)=>{const folder=post.id.split('/')[0];return {...pos
 const formatDate=(iso:string)=>new Date(iso).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
 ---
 <section id="blog" class="section section-dark blog-section"><div class="container">
-  <div class="section-header"><span class="section-label">Blog</span><h2 class="section-title">Ideas &amp; Insights</h2></div>
+  <div class="section-header section-header--row">
+    <div class="section-header-lead"><span class="section-label">Blog</span><h2 class="section-title">Ideas &amp; Insights</h2></div>
+    <div class="row-group-controls"><button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button><button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button><a class="row-see-all" href="/blog/">See all →</a></div>
+  </div>
   <div class="row-group" data-row="articles">
-    <div class="row-group-head">
-      <div class="row-group-controls"><button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button><button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button><a class="row-see-all" href="/blog/">See all →</a></div>
-    </div>
     {cards.length===0?<div class="row-group-empty"><span class="placeholder-tag">No articles yet</span></div>:<div class="row-track">{cards.map((card)=><a class="blog-card blog-card--wide" href={card.detailUrl}><div class="blog-card-media">{card.thumbnailUrl?<img src={card.thumbnailUrl} alt={card.title} loading="lazy"/>:<div class="blog-card-placeholder" aria-hidden="true"><span>Article</span></div>}</div><div class="blog-card-content"><span class="blog-card-meta">{card.category??'Article'} · {formatDate(card.date)}</span><h4 class="blog-card-title">{card.title}</h4>{card.excerpt&&<p class="blog-card-excerpt">{card.excerpt}</p>}</div></a>)}</div>}
   </div>
 </div></section>
 <script>
-  document.querySelectorAll<HTMLElement>('.row-group').forEach((row)=>{const track=row.querySelector<HTMLElement>('.row-track');if(!track)return;row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn)=>btn.addEventListener('click',()=>track.scrollBy({left:(btn.dataset.dir==='prev'?-1:1)*Math.max(track.clientWidth*.85,240),behavior:'smooth'})));const update=()=>{const max=track.scrollWidth-track.clientWidth-1;row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn)=>btn.toggleAttribute('disabled',btn.dataset.dir==='prev'?track.scrollLeft<=1:track.scrollLeft>=max));};track.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();});
+  (() => {
+    const sec = document.getElementById('blog');
+    const track = sec?.querySelector<HTMLElement>('.row-track');
+    if (!sec || !track) return;
+    const arrows = Array.from(sec.querySelectorAll<HTMLButtonElement>('.row-arrow'));
+    arrows.forEach((btn) => btn.addEventListener('click', () =>
+      track.scrollBy({ left: (btn.dataset.dir === 'prev' ? -1 : 1) * Math.max(track.clientWidth * .85, 240), behavior: 'smooth' })));
+    const update = () => { const max = track.scrollWidth - track.clientWidth - 1; arrows.forEach((btn) => btn.toggleAttribute('disabled', btn.dataset.dir === 'prev' ? track.scrollLeft <= 1 : track.scrollLeft >= max)); };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
 </script>

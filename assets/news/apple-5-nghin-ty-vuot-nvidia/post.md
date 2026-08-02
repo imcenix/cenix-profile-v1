@@ -5,6 +5,7 @@ category: cong-nghe
 date: 2026-07-28
 author: Cenix
 excerpt: "Trong khi cả làng đổ tiền tấn xây hạ tầng AI, Apple chọn đi thuê — rồi lặng lẽ vượt Nvidia thành công ty giá trị nhất hành tinh."
+cover: cover.svg
 source_name: CNBC
 source_url: https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html
 featured: true

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Apple cán mốc 5.000 tỷ đô">
+  <rect width="1200" height="750" fill="#0a0a0a"/>
+  <text x="80" y="120" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#c8ff00">CENIX · NEWS</text>
+  <text x="80" y="164" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="3" fill="#7a7a7a">CÔNG NGHỆ</text>
+  <g font-family="'Be Vietnam Pro', Arial, sans-serif" font-weight="800" fill="#ffffff">
+    <text x="76" y="380" font-size="96" letter-spacing="-2">Apple cán mốc</text>
+    <rect x="80" y="420" width="640" height="86" fill="#c8ff00"/>
+    <text x="98" y="486" font-size="96" letter-spacing="-2" fill="#0a0a0a">5.000 TỶ ĐÔ</text>
+  </g>
+  <text x="80" y="600" font-family="'Lora', Georgia, serif" font-style="italic" font-size="34" fill="#b8b3a8">Vượt Nvidia thành công ty giá trị nhất hành tinh</text>
+  <text x="1120" y="695" text-anchor="end" font-family="'Be Vietnam Pro', Arial, sans-serif" font-size="22" letter-spacing="3" fill="#4a4a4a">imcenix.com</text>
+</svg>
