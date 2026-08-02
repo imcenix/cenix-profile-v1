@@ -2979,16 +2979,15 @@ body[data-page="home"] .nav.is-scrolled {
 
 .blog-detail .project-title {
   color: #fff;
-  max-width: 900px;
+  max-width: none;
   font-size: clamp(2.1rem, 4.2vw, 3.6rem);
   line-height: 1.12;
   letter-spacing: -.015em;
-  text-wrap: balance;
 }
 
 /* Opening standfirst / lede — serif with a lime rule, like the game page */
 .blog-detail .project-subtitle {
-  max-width: 720px;
+  max-width: none;
   margin: 1.8rem 0 2.4rem;
   padding-left: 20px;
   border-left: 3px solid var(--color-lime);
