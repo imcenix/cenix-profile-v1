@@ -1,5 +1,5 @@
 ---
-title: Căn bản Prompt hình ảnh
+title: "Prompt hình ảnh \"sơ khai\""
 slug: prompt-hinh-anh-can-ban
 date: 2026-08-01
 type: article
