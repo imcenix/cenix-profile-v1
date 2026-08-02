@@ -13,17 +13,27 @@ const LABEL: Record<string, string> = {
 export async function getStaticPaths() {
   const items = (await getCollection('news')).filter((p) => !p.id.startsWith('_template'));
   items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
-  return items.map((post, i) => ({
-    params: { slug: post.data.slug },
-    props: {
-      post,
-      prev: i > 0 ? items[i - 1] : null,
-      next: i < items.length - 1 ? items[i + 1] : null,
-    },
-  }));
+  const toCard = (p: (typeof items)[number]) => {
+    const folder = p.id.split('/')[0];
+    return {
+      title: p.data.title,
+      excerpt: p.data.excerpt ?? '',
+      category: p.data.category,
+      date: p.data.date,
+      coverUrl: p.data.cover ? `/news/${folder}/${p.data.cover}` : '',
+      detailUrl: `/news/${p.data.slug}/`,
+    };
+  };
+  return items.map((post) => {
+    const rest = items.filter((p) => p.id !== post.id);
+    const same = rest.filter((p) => p.data.category === post.data.category);
+    const others = rest.filter((p) => p.data.category !== post.data.category);
+    const related = [...same, ...others].slice(0, 3).map(toCard);
+    return { params: { slug: post.data.slug }, props: { post, related } };
+  });
 }
 
-const { post, prev, next } = Astro.props;
+const { post, related } = Astro.props;
 const { Content } = await render(post);
 
 const folder = post.id.split('/')[0];
@@ -86,34 +96,30 @@ const label = LABEL[post.data.category] ?? 'Tin tức';
       </div>
     </section>
 
-    <nav class="project-nav" aria-label="News navigation">
-      <div class="container">
-        <div class="project-nav-inner">
-          {prev ? (
-            <a href={`/news/${prev.data.slug}/`} class="project-nav-prev">
-              <span class="project-nav-label">← Tin trước</span>
-              <span class="project-nav-title">{prev.data.title}</span>
-            </a>
-          ) : (
-            <a href="/news/" class="project-nav-prev">
-              <span class="project-nav-label">← Tất cả</span>
-              <span class="project-nav-title">News</span>
-            </a>
-          )}
-          {next ? (
-            <a href={`/news/${next.data.slug}/`} class="project-nav-next" style="text-align: right;">
-              <span class="project-nav-label">Tin sau →</span>
-              <span class="project-nav-title">{next.data.title}</span>
-            </a>
-          ) : (
-            <a href="/news/" class="project-nav-next" style="text-align: right;">
-              <span class="project-nav-label">Tất cả →</span>
-              <span class="project-nav-title">News</span>
-            </a>
-          )}
+    {related.length > 0 && (
+      <section class="news-related" aria-label="Tin khác">
+        <div class="container">
+          <div class="news-related-head">
+            <h2 class="news-related-title"><span class="mark" aria-hidden="true">✦</span> Tin khác</h2>
+            <a class="news-related-all" href="/news/">Tất cả tin →</a>
+          </div>
+          <div class="news-related-grid">
+            {related.map((card) => (
+              <a class="news-related-card" href={card.detailUrl}>
+                <div class="news-related-media">
+                  {card.coverUrl
+                    ? <img src={card.coverUrl} alt={card.title} loading="lazy" />
+                    : <div class="news-ph2" aria-hidden="true"><span>{LABEL[card.category]}</span></div>}
+                </div>
+                <span class="news-related-meta">{LABEL[card.category]} · {formatDate(card.date)}</span>
+                <h3 class="news-related-h">{card.title}</h3>
+                {card.excerpt && <p class="news-related-dek">{card.excerpt}</p>}
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </nav>
+      </section>
+    )}
   </main>
 </BaseLayout>
 
@@ -128,4 +134,73 @@ const label = LABEL[post.data.category] ?? 'Tin tức';
     color: #6a6357;
   }
   .blog-detail :global(.news-source a) { color: var(--color-blue); }
+
+  /* Related news ("Tin khác") — one row of cards, no horizontal scroll */
+  .news-related {
+    background: var(--color-black);
+    color: #fff;
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+  }
+  .news-related .container { max-width: 1120px; }
+  .news-related-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .news-related-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 0;
+    font-family: var(--font-heading-vn);
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    color: #fff;
+  }
+  .news-related-title .mark { color: var(--color-lime); }
+  .news-related-all {
+    font-family: var(--font-body);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-lime);
+  }
+  .news-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.2rem, 2.5vw, 2rem);
+  }
+  .news-related-card { display: flex; flex-direction: column; gap: .7rem; color: inherit; min-width: 0; }
+  .news-related-media {
+    overflow: hidden;
+    border-radius: 6px;
+    background: #17171a;
+    aspect-ratio: 16 / 10;
+  }
+  .news-related-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .news-related-card:hover .news-related-media img { transform: scale(1.05); }
+  .news-related-meta { font-family: var(--font-body); font-size: .74rem; color: rgba(255,255,255,.5); }
+  .news-related-h {
+    margin: 0;
+    font-family: var(--font-heading-vn);
+    font-weight: 700;
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.25;
+    color: #fff;
+  }
+  .news-related-card:hover .news-related-h { color: var(--color-lime); }
+  .news-related-dek { margin: 0; font-family: var(--font-serif); font-size: .92rem; line-height: 1.5; color: rgba(255,255,255,.62); }
+  .news-ph2 {
+    width: 100%; height: 100%; display: grid; place-items: center;
+    background: repeating-linear-gradient(45deg, #17171a 0 10px, #1e1e22 10px 20px);
+    color: #6a6a72; font-family: var(--font-body); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  }
+  @media (max-width: 760px) {
+    .news-related-grid { grid-template-columns: 1fr; }
+  }
 </style>
