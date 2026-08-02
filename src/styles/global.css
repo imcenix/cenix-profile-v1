@@ -1676,9 +1676,12 @@ body[data-page="home"] .nav.is-scrolled {
   .section-header--row { flex-direction: column; align-items: flex-start; }
 }
 
-/* Article & News detail: centre the dark header column so it lines up with the
-   centred reading column below (fixes header-left / body-centre mismatch). */
-.blog-detail .project-header .container { max-width: 720px; }
+/* Article & News detail: centre the dark header column, leaving ~20% on each
+   side of the container (content spans ~60%). Full width on tablet/mobile. */
+.blog-detail .project-header .container { max-width: 60%; }
+@media (max-width: 1024px) {
+  .blog-detail .project-header .container { max-width: none; }
+}
 
 .row-group-title {
   display: flex;
