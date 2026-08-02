@@ -1,5 +1,5 @@
 ---
-title: "Bắt đầu với Claude — từ project đầu tiên đến skill đầu tiên"
+title: Bắt đầu với Claude - từ Project đến Skill đầu tiên
 slug: bat-dau-voi-claude
 date: 2026-08-01
 type: article
