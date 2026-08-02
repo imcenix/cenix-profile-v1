@@ -1652,7 +1652,7 @@ body[data-page="home"] .nav.is-scrolled {
 /* Striped lime divider between the Blog and News rows.
    The black band uses PADDING (not child margin) so its background fully
    covers the 20px gaps — margin would collapse out and expose the page bg. */
-.section-divider-band { background: var(--color-black); padding: 20px 0; }
+.section-divider-band { background: var(--color-black); padding: 50px 0; }
 .section-divider {
   height: 5px;
   margin: 0;
