@@ -1676,11 +1676,19 @@ body[data-page="home"] .nav.is-scrolled {
   .section-header--row { flex-direction: column; align-items: flex-start; }
 }
 
-/* Article & News detail: centre the dark header column, leaving ~20% on each
-   side of the container (content spans ~60%). Full width on tablet/mobile. */
-.blog-detail .project-header .container { max-width: 60%; }
-@media (max-width: 1024px) {
-  .blog-detail .project-header .container { max-width: none; }
+/* Article & News detail: match the dark header column width to the hero image
+   below it (1000px, centred) so their edges line up. Full width on smaller screens. */
+.blog-detail .project-header .container {
+  max-width: 1000px;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (max-width: 1080px) {
+  .blog-detail .project-header .container {
+    max-width: none;
+    padding-left: var(--padding-x);
+    padding-right: var(--padding-x);
+  }
 }
 
 .row-group-title {
