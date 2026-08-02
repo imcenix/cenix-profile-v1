@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activeNav?: 'home' | 'about' | 'portfolio' | 'blog' | 'contact';
+  activeNav?: 'home' | 'about' | 'portfolio' | 'blog' | 'news' | 'contact';
 }
 
 const { activeNav = 'home' } = Astro.props;
@@ -9,11 +9,12 @@ const { activeNav = 'home' } = Astro.props;
 const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '/index.html';
 const base = isHome ? '' : '/';
 
-const links: Array<{ id: 'home' | 'about' | 'portfolio' | 'blog' | 'contact'; label: string; href: string }> = [
+const links: Array<{ id: 'home' | 'about' | 'portfolio' | 'blog' | 'news' | 'contact'; label: string; href: string }> = [
   { id: 'home',      label: 'Home',      href: `${base}#home` },
   { id: 'about',     label: 'About Me',  href: `${base}#about` },
   { id: 'portfolio', label: 'Portfolio', href: `${base}#portfolio` },
   { id: 'blog',      label: 'Blog',      href: `${base}#blog` },
+  { id: 'news',      label: 'News',      href: `${base}#news` },
   { id: 'contact',   label: 'Contact',   href: `${base}#contact` },
 ];
 ---

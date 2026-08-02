@@ -108,8 +108,43 @@ const blog = defineCollection({
   }),
 });
 
+/**
+ * News collection
+ * ---------------
+ * Daily tech / AI / design news, written in the Cenix voice by the
+ * `cenix-profile-news-daily` scheduled task (and editable in Cenix CMS).
+ * One folder per story under `assets/news/<slug>/`:
+ *   - post.md    (frontmatter + markdown body)
+ *   - cover.*    (cover image, optional)
+ */
+const news = defineCollection({
+  loader: glob({
+    pattern: ['*/post.md', '!_*/post.md'],
+    base: './assets/news',
+    generateId: ({ entry }) => entry.split('/')[0],
+  }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    // cong-nghe = tech & big tech · ai · thiet-ke = design/UI-UX · xu-huong = industry/future
+    category: z.enum(['cong-nghe', 'ai', 'thiet-ke', 'xu-huong']).default('cong-nghe'),
+    date: z.union([z.string(), z.date()]).transform((v) =>
+      typeof v === 'string' ? v : v.toISOString().slice(0, 10)
+    ),
+    excerpt: z.string().nullable().optional(),
+    author: z.string().default('Cenix'),
+    read_minutes: z.number().nullable().optional(),
+    cover: z.string().nullable().optional(),
+    source_name: z.string().nullable().optional(),
+    source_url: z.string().nullable().optional(),
+    order: orderSchema,
+    featured: z.boolean().default(false),
+  }),
+});
+
 export const collections = {
   portfolio,
   'about-me': aboutMe,
   blog,
+  news,
 };

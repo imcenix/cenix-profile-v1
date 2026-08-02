@@ -1,0 +1,187 @@
+/* ───────────────────────────────────────────────────────────────
+   ARTICLE / MAGAZINE DETAIL — shared by Blog detail and News detail
+   Magazine reading layer on the light (cream) body surface.
+   Ported from the Cenix Gaming News detail, adapted to imcenix.
+   Applied via the `.blog-detail` wrapper on both /blog/[slug]
+   and /news/[slug].
+   ─────────────────────────────────────────────────────────────── */
+
+/* Hero image as a framed figure that can carry a caption */
+.blog-detail .blog-detail-hero-fig {
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  max-width: 1000px;
+}
+.blog-detail .blog-detail-hero {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .18);
+}
+
+/* Compact meta line under the title (date · read · source) */
+.blog-detail .blog-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1.15rem;
+  font-family: var(--font-body);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .58);
+}
+.blog-detail .blog-meta-ava {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, #1c1c22 0, #1c1c22 6px, #242430 6px, #242430 12px);
+}
+.blog-detail .blog-meta-line .dot { opacity: .5; }
+
+/* Reading column */
+.blog-detail .magazine-prose {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #26221c;
+  font-family: var(--font-serif);
+  font-size: clamp(1.125rem, 1.15vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+.blog-detail .magazine-prose::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 0 0 2.4rem;
+  background: var(--color-lime);
+}
+.blog-detail .magazine-prose > p { margin: 0 0 1.5em; }
+
+/* Drop cap — first letter spans ~3 lines (body stays normal size) */
+.blog-detail .magazine-prose > p:first-of-type::first-letter {
+  float: left;
+  margin: .06em .12em 0 0;
+  color: var(--color-blue);
+  font-family: var(--font-serif);
+  font-size: 4.7em;
+  font-weight: 700;
+  line-height: .72;
+}
+
+/* Section headings */
+.blog-detail .magazine-prose h1,
+.blog-detail .magazine-prose h2 {
+  position: relative;
+  max-width: none;
+  margin: 2.4em 0 .7em;
+  padding-top: 1.1rem;
+  color: #14110d;
+  font-family: var(--font-heading-vn);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+.blog-detail .magazine-prose h1 { font-size: clamp(2rem, 3.4vw, 2.9rem); }
+.blog-detail .magazine-prose h2 { font-size: clamp(1.6rem, 2.6vw, 2.25rem); }
+.blog-detail .magazine-prose h1::before,
+.blog-detail .magazine-prose h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--color-lime);
+}
+.blog-detail .magazine-prose h3 {
+  max-width: none;
+  margin: 1.9em 0 .5em;
+  color: #14110d;
+  font-family: var(--font-heading-vn);
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.blog-detail .magazine-prose strong { color: #14110d; font-weight: 700; }
+.blog-detail .magazine-prose a {
+  color: #14110d;
+  border-bottom: 1px solid var(--color-blue);
+  text-decoration: none;
+}
+.blog-detail .magazine-prose a:hover { border-bottom-color: var(--color-lime); }
+
+/* Lists */
+.blog-detail .magazine-prose ul,
+.blog-detail .magazine-prose ol {
+  max-width: none;
+  margin: 0 0 1.5em;
+  padding-left: 1.3em;
+}
+.blog-detail .magazine-prose li { margin: .4em 0; padding-left: .2em; }
+.blog-detail .magazine-prose li::marker { color: var(--color-blue); }
+
+/* Horizontal rule as a centred editorial divider */
+.blog-detail .magazine-prose hr {
+  width: 60px;
+  height: 0;
+  margin: 3rem auto;
+  border: 0;
+  border-top: 2px solid rgba(20, 17, 13, .18);
+}
+
+/* Figures & captions */
+.blog-detail .magazine-prose figure.editorial-figure {
+  width: 100%;
+  margin: 2.6rem 0;
+}
+.blog-detail .magazine-prose figure.editorial-figure img {
+  width: 100%;
+  margin: 0;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+}
+.blog-detail .magazine-prose figure.editorial-figure figcaption {
+  margin-top: .85rem;
+  padding-left: 14px;
+  border-left: 2px solid var(--color-lime);
+  color: #6a6357;
+  font-family: var(--font-serif);
+  font-size: .92rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Two-column body block */
+.blog-detail .magazine-prose .editorial-columns {
+  max-width: none;
+  margin: 2.4rem 0;
+  column-count: 2;
+  column-gap: clamp(1.5rem, 3vw, 2.75rem);
+  column-rule: 1px solid rgba(20, 17, 13, .12);
+}
+.blog-detail .magazine-prose .editorial-columns > * { break-inside: avoid; }
+.blog-detail .magazine-prose .editorial-columns > :first-child { margin-top: 0; }
+
+/* Inline images without an explicit caption stay clean & framed */
+.blog-detail .magazine-prose > p:has(> img:only-child) {
+  max-width: none;
+  margin: 3rem 0;
+}
+.blog-detail .magazine-prose > p > img {
+  border-radius: 3px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+}
+
+@media (max-width: 760px) {
+  .blog-detail .magazine-prose { font-size: 1.08rem; line-height: 1.8; }
+  .blog-detail .magazine-prose > p:first-of-type::first-letter { font-size: 4.1em; }
+  .blog-detail .magazine-prose figure.editorial-figure { width: 100%; margin: 2.4rem 0; }
+  .blog-detail .magazine-prose .editorial-columns { column-count: 1; }
+}

@@ -16,6 +16,7 @@ import path from 'node:path';
 const REWRITE_ROOTS = [
   { segment: `${path.sep}assets${path.sep}portfolio${path.sep}`, publicPrefix: 'portfolio' },
   { segment: `${path.sep}assets${path.sep}blog${path.sep}`,      publicPrefix: 'blog'      },
+  { segment: `${path.sep}assets${path.sep}news${path.sep}`,      publicPrefix: 'news'      },
 ];
 
 export default function remarkRewriteImages() {

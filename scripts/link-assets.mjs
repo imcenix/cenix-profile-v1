@@ -21,6 +21,7 @@ const targets = [
   { from: path.join(ASSETS, 'images'),            to: path.join(PUBLIC, 'images')         },
   { from: path.join(ASSETS, 'about-me', 'logos'), to: path.join(PUBLIC, 'logos')          },
   { from: path.join(ASSETS, 'blog'),              to: path.join(PUBLIC, 'blog')           },
+  { from: path.join(ASSETS, 'news'),              to: path.join(PUBLIC, 'news')           },
   { from: path.join(ASSETS, 'background-clip'),   to: path.join(PUBLIC, 'background-clip') },
 ];
 

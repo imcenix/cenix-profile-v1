@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+
+const LABEL: Record<string, string> = {
+  'cong-nghe': 'Công nghệ',
+  'ai': 'AI',
+  'thiet-ke': 'Thiết kế',
+  'xu-huong': 'Xu hướng',
+};
+
+const items = (await getCollection('news')).filter((p) => !p.id.startsWith('_template'));
+items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const cards = items.slice(0, 10).map((post) => {
+  const folder = post.id.split('/')[0];
+  return {
+    ...post.data,
+    coverUrl: post.data.cover ? `/news/${folder}/${post.data.cover}` : '',
+    detailUrl: `/news/${post.data.slug}/`,
+  };
+});
+
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<section id="news" class="section section-dark blog-section news-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">News</span>
+      <h2 class="section-title">Tech · AI · Design</h2>
+    </div>
+    <div class="row-group" data-row="news">
+      <div class="row-group-head">
+        <h3 class="row-group-title"><span class="row-group-mark" aria-hidden="true">✦</span> Tin mới <span class="row-group-count">{cards.length}</span></h3>
+        <div class="row-group-controls">
+          <button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button>
+          <button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button>
+          <a class="row-see-all" href="/news/">See all →</a>
+        </div>
+      </div>
+      {cards.length === 0 ? (
+        <div class="row-group-empty"><span class="placeholder-tag">Chưa có tin — quay lại sau nhé.</span></div>
+      ) : (
+        <div class="row-track">
+          {cards.map((card) => (
+            <a class="blog-card blog-card--wide" href={card.detailUrl}>
+              <div class="blog-card-media">
+                {card.coverUrl
+                  ? <img src={card.coverUrl} alt={card.title} loading="lazy" />
+                  : <div class="blog-card-placeholder" aria-hidden="true"><span>{LABEL[card.category]}</span></div>}
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-meta">{LABEL[card.category]} · {formatDate(card.date)}</span>
+                <h4 class="blog-card-title">{card.title}</h4>
+                {card.excerpt && <p class="blog-card-excerpt">{card.excerpt}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.news-section .row-group').forEach((row) => {
+    const track = row.querySelector<HTMLElement>('.row-track');
+    if (!track) return;
+    row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn) =>
+      btn.addEventListener('click', () =>
+        track.scrollBy({ left: (btn.dataset.dir === 'prev' ? -1 : 1) * Math.max(track.clientWidth * .85, 240), behavior: 'smooth' })
+      )
+    );
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      row.querySelectorAll<HTMLButtonElement>('.row-arrow').forEach((btn) =>
+        btn.toggleAttribute('disabled', btn.dataset.dir === 'prev' ? track.scrollLeft <= 1 : track.scrollLeft >= max)
+      );
+    };
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+</script>

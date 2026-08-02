@@ -1,0 +1,279 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const LABEL: Record<string, string> = {
+  'cong-nghe': 'Công nghệ',
+  'ai': 'AI',
+  'thiet-ke': 'Thiết kế',
+  'xu-huong': 'Xu hướng',
+};
+const CATS = [
+  { key: 'cong-nghe', label: 'Công nghệ' },
+  { key: 'ai', label: 'AI' },
+  { key: 'thiet-ke', label: 'Thiết kế' },
+  { key: 'xu-huong', label: 'Xu hướng' },
+];
+
+const items = (await getCollection('news')).filter((p) => !p.id.startsWith('_template'));
+items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const readMinutes = (body?: string) =>
+  Math.max(1, Math.round((body ?? '').trim().split(/\s+/).filter(Boolean).length / 200));
+
+const cards = items.map((post) => {
+  const folder = post.id.split('/')[0];
+  return {
+    ...post.data,
+    coverUrl: post.data.cover ? `/news/${folder}/${post.data.cover}` : '',
+    detailUrl: `/news/${post.data.slug}/`,
+    minutes: readMinutes(post.body),
+  };
+});
+
+const featuredIndex = Math.max(0, cards.findIndex((c) => c.featured));
+const featured = cards.length ? cards[featuredIndex] : null;
+const rest = cards.filter((_, i) => i !== featuredIndex);
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}`;
+};
+---
+
+<BaseLayout title="News — Cenix" activeNav="news" description="Tin công nghệ, AI, thiết kế & UI/UX — chọn lọc mỗi ngày, kể lại theo giọng Cenix.">
+  <main class="project-page news-listing">
+    <header class="project-header">
+      <div class="container">
+        <a href="/" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span> Back to Home
+        </a>
+        <span class="project-category">News</span>
+        <h1 class="project-title">News</h1>
+        <p class="project-subtitle">
+          Tin công nghệ, AI, thiết kế &amp; UI/UX trên thế giới — Cenix lọc cái hay nhất
+          mỗi ngày rồi kể lại cho gọn, cho dễ đọc.
+        </p>
+      </div>
+    </header>
+
+    <section class="project-body">
+      <div class="container">
+        {cards.length === 0 ? (
+          <div class="news-empty-state"><span class="placeholder-tag">Chưa có tin — quay lại sau nhé.</span></div>
+        ) : (
+          <div class="news-wrap">
+            <div class="news-filters">
+              <button class="news-chip is-active" data-filter="all">Tất cả</button>
+              {CATS.map((c) => <button class="news-chip" data-filter={c.key}>{c.label}</button>)}
+            </div>
+
+            {featured && (
+              <a class="news-feature" href={featured.detailUrl} data-category={featured.category}>
+                <div class="news-feature-media">
+                  {featured.coverUrl
+                    ? <img src={featured.coverUrl} alt={featured.title} loading="eager" />
+                    : <div class="news-ph" aria-hidden="true"><span>{LABEL[featured.category]}</span></div>}
+                </div>
+                <div class="news-feature-body">
+                  <div class="news-feature-tags">
+                    <span class="news-badge">Nổi bật</span>
+                    <span class="news-meta">{LABEL[featured.category]} · {formatDate(featured.date)} · {featured.minutes} phút đọc</span>
+                  </div>
+                  <h2 class="news-feature-title">{featured.title}</h2>
+                  {featured.excerpt && <p class="news-feature-dek">{featured.excerpt}</p>}
+                  <span class="news-readlink">Đọc tin →</span>
+                </div>
+              </a>
+            )}
+
+            <div class="news-list" id="news-list">
+              {rest.map((card) => (
+                <a class="news-row" href={card.detailUrl} data-category={card.category} data-news-row>
+                  <div class="news-row-media">
+                    {card.coverUrl
+                      ? <img src={card.coverUrl} alt={card.title} loading="lazy" />
+                      : <div class="news-ph" aria-hidden="true"><span>{LABEL[card.category]}</span></div>}
+                  </div>
+                  <div class="news-row-body">
+                    <span class="news-meta">{LABEL[card.category]} · {formatDate(card.date)} · {card.minutes} phút</span>
+                    <h3 class="news-row-title">{card.title}</h3>
+                    {card.excerpt && <p class="news-row-dek">{card.excerpt}</p>}
+                  </div>
+                </a>
+              ))}
+              <p class="news-none" id="news-none" hidden>Chưa có tin trong mục này.</p>
+            </div>
+
+            <nav class="news-pagination" id="news-pagination" aria-label="Phân trang" hidden></nav>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .news-listing .news-wrap { max-width: 1120px; margin: 0 auto; }
+
+  .news-filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
+  .news-chip {
+    padding: .5rem 1.1rem;
+    border: 1px solid rgba(20, 17, 13, .16);
+    border-radius: 999px;
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: .82rem;
+    font-weight: 600;
+    color: #4a443b;
+    cursor: pointer;
+    transition: all .18s ease;
+  }
+  .news-chip:hover { border-color: rgba(20, 17, 13, .4); }
+  .news-chip.is-active { background: var(--color-lime); border-color: var(--color-lime); color: #14110d; }
+
+  .news-badge {
+    display: inline-flex;
+    padding: .3rem .7rem;
+    background: var(--color-lime);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+  .news-meta {
+    font-family: var(--font-body);
+    font-size: .78rem;
+    font-weight: 500;
+    color: #6a6357;
+  }
+
+  /* Lead story */
+  .news-feature {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: clamp(1.5rem, 3vw, 2.75rem);
+    align-items: center;
+    margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+    padding-bottom: clamp(2rem, 3vw, 2.75rem);
+    border-bottom: 1px solid rgba(20, 17, 13, .12);
+    color: inherit;
+  }
+  .news-feature-media {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #e7e4da;
+    aspect-ratio: 16 / 10;
+  }
+  .news-feature-media img, .news-row-media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .6s cubic-bezier(.2, .8, .2, 1);
+  }
+  .news-feature:hover .news-feature-media img,
+  .news-row:hover .news-row-media img { transform: scale(1.04); }
+  .news-feature-body { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: .9rem; }
+  .news-feature-tags { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .news-feature-title {
+    font-family: var(--font-heading-vn);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.3vw, 2.1rem);
+    line-height: 1.16;
+    color: #14110d;
+    text-wrap: balance;
+  }
+  .news-feature:hover .news-feature-title { color: var(--color-blue); }
+  .news-feature-dek { max-width: 46ch; font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.6; color: #4a443b; }
+  .news-readlink { font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--color-blue); }
+
+  /* Rows */
+  .news-list { display: flex; flex-direction: column; }
+  .news-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: clamp(1.2rem, 2.5vw, 2rem);
+    padding: 1.6rem 0;
+    border-top: 1px solid rgba(20, 17, 13, .1);
+    color: inherit;
+  }
+  .news-row:first-child { border-top: 0; }
+  .news-row-media { min-width: 0; overflow: hidden; border-radius: 5px; background: #e7e4da; aspect-ratio: 16 / 10; }
+  .news-row-body { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: .5rem; }
+  .news-row-title { font-family: var(--font-heading-vn); font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.2; color: #14110d; }
+  .news-row:hover .news-row-title { color: var(--color-blue); }
+  .news-row-dek { max-width: 62ch; font-family: var(--font-serif); font-size: .95rem; line-height: 1.55; color: #4a443b; }
+
+  .news-ph {
+    width: 100%; height: 100%; display: grid; place-items: center;
+    background: repeating-linear-gradient(45deg, #e7e4da 0 10px, #e0ddd2 10px 20px);
+    color: #9a9284; font-family: var(--font-body); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .news-none { padding: 2.5rem 0; text-align: center; color: #6a6357; font-family: var(--font-body); }
+
+  .news-pagination { display: flex; justify-content: center; gap: .5rem; padding: 2.5rem 0 .5rem; }
+  .news-pagination[hidden] { display: none; }
+  .news-pagination :global(.pg) {
+    min-width: 38px; height: 38px; padding: 0 .7rem;
+    border: 1px solid rgba(20, 17, 13, .18); border-radius: 6px; background: transparent;
+    font-family: var(--font-body); font-size: .85rem; color: #4a443b; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .news-pagination :global(.pg.active) { background: var(--color-lime); border-color: var(--color-lime); color: #14110d; font-weight: 700; }
+
+  @media (max-width: 860px) { .news-feature { grid-template-columns: 1fr; } .news-feature-media { aspect-ratio: 16 / 9; } }
+  @media (max-width: 560px) { .news-row { grid-template-columns: 1fr; } .news-row-media { aspect-ratio: 16 / 9; } }
+</style>
+
+<script>
+  const PAGE_SIZE = 8;
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.news-chip'));
+  const feature = document.querySelector<HTMLElement>('.news-feature');
+  const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-news-row]'));
+  const none = document.getElementById('news-none');
+  const pagination = document.getElementById('news-pagination');
+  let filter = 'all';
+  let page = 1;
+
+  const pgBtn = (label: string, p: number, cls = '') => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = `pg ${cls}`.trim(); b.dataset.page = String(p); b.textContent = label;
+    return b;
+  };
+
+  const render = () => {
+    const matched = rows.filter((r) => filter === 'all' || r.dataset.category === filter);
+    const totalPages = Math.max(1, Math.ceil(matched.length / PAGE_SIZE));
+    page = Math.min(page, totalPages);
+    rows.forEach((r) => { r.style.display = 'none'; });
+    matched.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE).forEach((r) => { r.style.display = ''; });
+
+    if (feature) {
+      const fCat = feature.dataset.category;
+      feature.style.display = (filter === 'all' || fCat === filter) && page === 1 ? '' : 'none';
+    }
+    if (none) none.hidden = matched.length > 0 || (feature && feature.style.display !== 'none');
+
+    if (pagination) {
+      pagination.replaceChildren();
+      if (totalPages <= 1) { pagination.hidden = true; }
+      else {
+        pagination.hidden = false;
+        for (let i = 1; i <= totalPages; i++) pagination.append(pgBtn(String(i), i, i === page ? 'active' : ''));
+      }
+    }
+    chips.forEach((c) => c.classList.toggle('is-active', c.dataset.filter === filter));
+  };
+
+  chips.forEach((c) => c.addEventListener('click', () => { filter = c.dataset.filter || 'all'; page = 1; render(); }));
+  pagination?.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-page]');
+    if (!b) return; page = Number(b.dataset.page) || 1; render();
+    document.getElementById('news-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  render();
+</script>

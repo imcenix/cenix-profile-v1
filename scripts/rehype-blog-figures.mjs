@@ -15,7 +15,7 @@ export default function rehypeBlogFigures() {
       file?.path ?? (Array.isArray(file?.history) ? file.history[0] : '') ?? ''
     ).replace(/\\/g, '/');
 
-    if (!filePath.includes('/assets/blog/')) return;
+    if (!filePath.includes('/assets/blog/') && !filePath.includes('/assets/news/')) return;
 
     walk(tree);
 

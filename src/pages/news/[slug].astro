@@ -1,0 +1,131 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/article.css';
+
+const LABEL: Record<string, string> = {
+  'cong-nghe': 'Công nghệ',
+  'ai': 'AI',
+  'thiet-ke': 'Thiết kế',
+  'xu-huong': 'Xu hướng',
+};
+
+export async function getStaticPaths() {
+  const items = (await getCollection('news')).filter((p) => !p.id.startsWith('_template'));
+  items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  return items.map((post, i) => ({
+    params: { slug: post.data.slug },
+    props: {
+      post,
+      prev: i > 0 ? items[i - 1] : null,
+      next: i < items.length - 1 ? items[i + 1] : null,
+    },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+
+const folder = post.id.split('/')[0];
+const cover = post.data.cover ? `/news/${folder}/${post.data.cover}` : '';
+
+const formatDate = (iso: string) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}`;
+};
+
+const readMinutes = (body?: string) =>
+  Math.max(1, Math.round((body ?? '').trim().split(/\s+/).filter(Boolean).length / 200));
+const minutes = readMinutes(post.body);
+const label = LABEL[post.data.category] ?? 'Tin tức';
+---
+
+<BaseLayout title={`${post.data.title} — Cenix News`} description={post.data.excerpt ?? undefined} activeNav="news">
+  <main class="project-page blog-detail">
+    <header class="project-header">
+      <div class="container">
+        <a href="/news/" class="project-back">
+          <span class="project-back-arrow" aria-hidden="true">←</span>
+          Về trang News
+        </a>
+
+        <span class="project-category">{label}</span>
+
+        <h1 class="project-title">{post.data.title}</h1>
+
+        <div class="blog-meta-line">
+          <span class="blog-meta-ava" aria-hidden="true"></span>
+          <span>{post.data.author ?? 'Cenix'}</span>
+          <span class="dot">·</span>
+          <span>{formatDate(post.data.date)}</span>
+          <span class="dot">·</span>
+          <span>{minutes} phút đọc</span>
+        </div>
+
+        {post.data.excerpt && <p class="project-subtitle">{post.data.excerpt}</p>}
+      </div>
+    </header>
+
+    <section class="project-body">
+      <div class="container">
+        {cover && (
+          <figure class="blog-detail-hero-fig">
+            <img src={cover} alt={post.data.title} class="blog-detail-hero" />
+          </figure>
+        )}
+        <div class="prose magazine-prose">
+          <Content />
+          {post.data.source_url && (
+            <p class="news-source">
+              Nguồn: <a href={post.data.source_url} target="_blank" rel="noopener noreferrer">{post.data.source_name ?? post.data.source_url}</a>
+            </p>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <nav class="project-nav" aria-label="News navigation">
+      <div class="container">
+        <div class="project-nav-inner">
+          {prev ? (
+            <a href={`/news/${prev.data.slug}/`} class="project-nav-prev">
+              <span class="project-nav-label">← Tin trước</span>
+              <span class="project-nav-title">{prev.data.title}</span>
+            </a>
+          ) : (
+            <a href="/news/" class="project-nav-prev">
+              <span class="project-nav-label">← Tất cả</span>
+              <span class="project-nav-title">News</span>
+            </a>
+          )}
+          {next ? (
+            <a href={`/news/${next.data.slug}/`} class="project-nav-next" style="text-align: right;">
+              <span class="project-nav-label">Tin sau →</span>
+              <span class="project-nav-title">{next.data.title}</span>
+            </a>
+          ) : (
+            <a href="/news/" class="project-nav-next" style="text-align: right;">
+              <span class="project-nav-label">Tất cả →</span>
+              <span class="project-nav-title">News</span>
+            </a>
+          )}
+        </div>
+      </div>
+    </nav>
+  </main>
+</BaseLayout>
+
+<style>
+  .blog-detail :global(.news-source) {
+    max-width: 720px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(20, 17, 13, .14);
+    font-family: var(--font-body);
+    font-size: .9rem;
+    color: #6a6357;
+  }
+  .blog-detail :global(.news-source a) { color: var(--color-blue); }
+</style>
