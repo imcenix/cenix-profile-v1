@@ -9,7 +9,7 @@ const formatDate=(iso:string)=>new Date(iso).toLocaleDateString('en-US',{year:'n
 <section id="blog" class="section section-dark blog-section"><div class="container">
   <div class="section-header"><span class="section-label">Blog</span><h2 class="section-title">Ideas &amp; Insights</h2></div>
   <div class="row-group" data-row="articles">
-    <div class="row-group-head"><h3 class="row-group-title"><span class="row-group-mark" aria-hidden="true">✦</span> Articles <span class="row-group-count">{cards.length}</span></h3>
+    <div class="row-group-head">
       <div class="row-group-controls"><button type="button" class="row-arrow" data-dir="prev" aria-label="Scroll left">←</button><button type="button" class="row-arrow" data-dir="next" aria-label="Scroll right">→</button><a class="row-see-all" href="/blog/">See all →</a></div>
     </div>
     {cards.length===0?<div class="row-group-empty"><span class="placeholder-tag">No articles yet</span></div>:<div class="row-track">{cards.map((card)=><a class="blog-card blog-card--wide" href={card.detailUrl}><div class="blog-card-media">{card.thumbnailUrl?<img src={card.thumbnailUrl} alt={card.title} loading="lazy"/>:<div class="blog-card-placeholder" aria-hidden="true"><span>Article</span></div>}</div><div class="blog-card-content"><span class="blog-card-meta">{card.category??'Article'} · {formatDate(card.date)}</span><h4 class="blog-card-title">{card.title}</h4>{card.excerpt&&<p class="blog-card-excerpt">{card.excerpt}</p>}</div></a>)}</div>}

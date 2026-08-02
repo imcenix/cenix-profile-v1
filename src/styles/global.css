@@ -1642,12 +1642,22 @@ body[data-page="home"] .nav.is-scrolled {
 
 .row-group-head {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
+
+/* Striped lime divider between the Blog and News rows */
+.section-divider {
+  height: 5px;
+  margin: 20px 0;
+  background-image: repeating-linear-gradient(45deg, var(--color-lime) 0, var(--color-lime) 4px, transparent 4px, transparent 9px);
+}
+/* Pull the Blog and News blocks together around that divider */
+.blog-section:not(.news-section) { padding-bottom: 0; }
+.news-section { padding-top: 0; }
 
 .row-group-title {
   display: flex;

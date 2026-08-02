@@ -52,10 +52,14 @@ const formatDate = (iso: string) => {
         </a>
         <span class="project-category">News</span>
         <h1 class="project-title">News</h1>
-        <p class="project-subtitle">
-          Tin công nghệ, AI, thiết kế &amp; UI/UX trên thế giới — Cenix lọc cái hay nhất
-          mỗi ngày rồi kể lại cho gọn, cho dễ đọc.
-        </p>
+        <p class="project-subtitle">Daily tech news worth reading — Cenix rounds up the best.</p>
+        <div class="news-hashtags">
+          <span>#Tech</span>
+          <span>#AI</span>
+          <span>#Design</span>
+          <span>#UIUX</span>
+          <span>#Trends</span>
+        </div>
       </div>
     </header>
 
@@ -116,6 +120,15 @@ const formatDate = (iso: string) => {
 </BaseLayout>
 
 <style>
+  .news-listing .news-hashtags { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.2rem; }
+  .news-listing .news-hashtags span {
+    font-family: var(--font-body);
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--color-lime);
+  }
+
   .news-listing .news-wrap { max-width: 1120px; margin: 0 auto; }
 
   .news-filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2rem; }
