@@ -1649,11 +1649,13 @@ body[data-page="home"] .nav.is-scrolled {
   flex-wrap: wrap;
 }
 
-/* Striped lime divider between the Blog and News rows (sits on the black band) */
-.section-divider-band { background: var(--color-black); }
+/* Striped lime divider between the Blog and News rows.
+   The black band uses PADDING (not child margin) so its background fully
+   covers the 20px gaps — margin would collapse out and expose the page bg. */
+.section-divider-band { background: var(--color-black); padding: 20px 0; }
 .section-divider {
   height: 5px;
-  margin: 20px 0;
+  margin: 0;
   background-image: repeating-linear-gradient(45deg, var(--color-lime) 0, var(--color-lime) 4px, transparent 4px, transparent 9px);
 }
 /* Pull the Blog and News blocks together around that divider */
