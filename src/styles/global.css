@@ -3093,6 +3093,14 @@ body[data-page="home"] .nav.is-scrolled {
   margin: 3rem auto 1.25rem;
 }
 
+/* Listing pages reuse .project-body only for its padding/background — the
+   article-prose rules above (centred, max-width) must NOT touch card text. */
+.blog-listing .project-body :is(p, h2, h3, h4),
+.news-listing .project-body :is(p, h2, h3, h4) {
+  max-width: none;
+  margin: 0;
+}
+
 .project-body strong {
   font-weight: 700;
 }
