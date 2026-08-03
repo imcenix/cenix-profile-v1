@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "path": "assets/news/altman-tranh-cai-ghim-phanh-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/hank-green-xin-loi-vi-dung-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-1040458588.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/uber-de-che-xe-tu-lai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/uber-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/chia-khoa-nfc-9-do-khoa-app/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/AutonomousKey1.jpeg?w=1200"
+  },
+  {
+    "path": "assets/news/altman-podcast-cho-con-bang-chatgpt/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2236544077.jpg?resize=1200,800"
+  }
+]
