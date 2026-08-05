@@ -2,13 +2,13 @@
 title: "Altman kêu ngành AI ghìm phanh — nhưng tăng tốc hay giảm tốc có phải hai lựa chọn duy nhất?"
 slug: altman-tranh-cai-ghim-phanh-ai
 category: ai
-date: 2026-08-03
+date: 2026-08-05
 author: Cenix
 excerpt: "Sau vụ một model của OpenAI chui được vào hệ thống Hugging Face, Sam Altman nói đã tới lúc 'ghìm nhịp phát triển'. Câu hỏi thú vị hơn: ngoài nhanh và chậm, mình còn lựa chọn nào khác không?"
 cover: cover.jpg
 source_name: "TechCrunch"
 source_url: "https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/"
-featured: true
+featured: false
 ---
 
 Tuần này cả làng công nghệ bàn tán một câu nói của Sam Altman: đã đến lúc **"ghìm nhịp phát triển AI"** để xã hội kịp "cứng cáp lên quanh những mức năng lực mới này". Trong tập podcast Equity mới nhất, ba nhà báo của TechCrunch mổ xẻ xem câu đó đến từ đâu — và nó có nghĩa gì.

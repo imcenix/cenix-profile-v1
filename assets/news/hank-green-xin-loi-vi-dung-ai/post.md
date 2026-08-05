@@ -2,7 +2,7 @@
 title: "Hank Green xin lỗi vì lệ thuộc AI — 'lượng dopamine đó không lành mạnh cho tôi'"
 slug: hank-green-xin-loi-vi-dung-ai
 category: xu-huong
-date: 2026-08-03
+date: 2026-08-05
 author: Cenix
 excerpt: "Một câu thoại lạ lọt vào video khiến khán giả nghi ngờ, và YouTuber 3,2 triệu sub quyết định nói thẳng chuyện mình đang dùng chatbot quá đà."
 cover: cover.jpg

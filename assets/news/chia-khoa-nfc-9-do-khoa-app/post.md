@@ -2,7 +2,7 @@
 title: "Chiếc chìa khoá 9 đô khoá app gây nghiện — khi thiết kế đánh bại ý chí"
 slug: chia-khoa-nfc-9-do-khoa-app
 category: thiet-ke
-date: 2026-08-03
+date: 2026-08-05
 author: Cenix
 excerpt: "App quản lý thời gian màn hình thất bại vì phụ thuộc vào ý chí. Autonomous Key giải bài toán đó bằng một thứ đơn giản hơn nhiều: bắt anh em phải đứng dậy đi lấy chìa khoá."
 cover: cover.jpg
