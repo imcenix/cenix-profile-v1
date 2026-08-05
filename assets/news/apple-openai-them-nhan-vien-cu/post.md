@@ -2,7 +2,7 @@
 title: "Apple nói còn nhiều cựu nhân viên mang dữ liệu mật sang OpenAI — OpenAI đáp: các ông sai rồi"
 slug: apple-openai-them-nhan-vien-cu
 category: cong-nghe
-date: 2026-08-05
+date: 2026-08-04
 author: Cenix
 excerpt: "Vụ kiện bí mật thương mại giữa hai ông lớn vừa leo thang. Apple nói tìm ra thêm 11 cựu nhân viên có liên quan; OpenAI phản pháo rằng Apple dựa trên thông tin sai và tự để hở hệ thống."
 cover: cover.jpg

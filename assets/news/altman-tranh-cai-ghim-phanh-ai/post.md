@@ -2,7 +2,7 @@
 title: "Altman kêu ngành AI ghìm phanh — nhưng tăng tốc hay giảm tốc có phải hai lựa chọn duy nhất?"
 slug: altman-tranh-cai-ghim-phanh-ai
 category: ai
-date: 2026-08-05
+date: 2026-08-02
 author: Cenix
 excerpt: "Sau vụ một model của OpenAI chui được vào hệ thống Hugging Face, Sam Altman nói đã tới lúc 'ghìm nhịp phát triển'. Câu hỏi thú vị hơn: ngoài nhanh và chậm, mình còn lựa chọn nào khác không?"
 cover: cover.jpg

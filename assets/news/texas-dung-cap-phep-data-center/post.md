@@ -2,7 +2,7 @@
 title: "Texas phanh gấp data center — bang dễ tính nhất nước Mỹ cũng tới ngưỡng chịu đựng"
 slug: texas-dung-cap-phep-data-center
 category: xu-huong
-date: 2026-08-05
+date: 2026-08-04
 author: Cenix
 excerpt: "Hàng đợi đấu nối lưới điện Texas đã phình lên 474 gigawatt, 90% là data center. Thống đốc Greg Abbott quyết định dừng lại và kiểm toán toàn bộ."
 cover: cover.jpg

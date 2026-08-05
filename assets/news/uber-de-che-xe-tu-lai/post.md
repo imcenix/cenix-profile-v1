@@ -2,7 +2,7 @@
 title: "Uber gom hơn 30 công ty xe tự lái — kẻ bán sạch mảng tự lái năm 2020 giờ mua lại cả bàn cờ"
 slug: uber-de-che-xe-tu-lai
 category: cong-nghe
-date: 2026-08-05
+date: 2026-08-01
 author: Cenix
 excerpt: "Sáu năm trước Uber bán đứt bộ phận xe tự lái để tập trung gọi xe. Giờ hãng đứng giữa hơn 30 mối hợp tác robotaxi trải khắp thế giới — mà không tự viết một dòng code lái xe nào."
 cover: cover.jpg

@@ -2,7 +2,7 @@
 title: "Wrinkles — app biến mọi góc phố thành hướng dẫn viên, với một nguyên tắc thiết kế: đừng bắt người dùng nhìn màn hình"
 slug: wrinkles-app-ke-chuyen-dia-diem
 category: thiet-ke
-date: 2026-08-05
+date: 2026-08-04
 author: Cenix
 excerpt: "Ý tưởng nảy ra ở British Museum, khi nhà sáng lập nhận ra mình dành cả buổi tham quan để dò số trên tường khớp với danh sách trong điện thoại."
 cover: cover.png

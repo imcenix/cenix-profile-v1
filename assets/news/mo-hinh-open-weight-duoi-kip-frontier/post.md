@@ -2,7 +2,7 @@
 title: "Mô hình mở đã gần đuổi kịp frontier — nhưng phần phanh thì vẫn bỏ ngỏ"
 slug: mo-hinh-open-weight-duoi-kip-frontier
 category: ai
-date: 2026-08-05
+date: 2026-08-04
 author: Cenix
 excerpt: "Báo cáo mới của SaferAI cho thấy GLM-5.2 của Z.ai chỉ còn cách các mô hình dẫn đầu vài tháng về năng lực — nhưng từ chối gần như không có bài kiểm tra an toàn nào."
 cover: cover.png

@@ -2,7 +2,7 @@
 title: "Altman khoe dùng ChatGPT làm podcast cho con — internet đáp gọn: 'Hay là nói chuyện với tụi nhỏ đi?'"
 slug: altman-podcast-cho-con-bang-chatgpt
 category: ai
-date: 2026-08-05
+date: 2026-08-01
 author: Cenix
 excerpt: "CEO OpenAI hào hứng chia sẻ một 'use case hay ho' cho phụ huynh. Câu trả lời khiến bài gốc lu mờ chỉ vỏn vẹn một câu hỏi."
 cover: cover.jpg

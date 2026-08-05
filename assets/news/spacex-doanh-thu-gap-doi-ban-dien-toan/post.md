@@ -2,7 +2,7 @@
 title: "SpaceX nhân đôi doanh thu nhờ bán sức tính cho Anthropic và Google — hãng tên lửa giờ kiếm tiền bằng AI"
 slug: spacex-doanh-thu-gap-doi-ban-dien-toan
 category: cong-nghe
-date: 2026-08-05
+date: 2026-08-04
 author: Cenix
 excerpt: "Báo cáo quý đầu tiên sau IPO: doanh thu 7,8 tỷ đô, tăng 92%. Gần 2 tỷ trong phần tăng thêm đến từ mảng AI. Nhưng cổ phiếu thì đang dưới giá chào sàn."
 cover: cover.jpg
