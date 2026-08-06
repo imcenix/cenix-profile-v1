@@ -8,7 +8,7 @@ excerpt: "Vụ kiện bí mật thương mại giữa hai ông lớn vừa leo t
 cover: cover.jpg
 source_name: "TechCrunch"
 source_url: "https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/"
-featured: true
+featured: false
 ---
 
 Vụ kiện bí mật thương mại Apple ↔ OpenAI vừa sang nấc thang mới. Trong hồ sơ mới nộp toà, Apple xin **lệnh cấm sơ bộ** nhằm chặn OpenAI tiếp tục phát triển thiết bị AI hoặc các sản phẩm dựa trên công nghệ của Apple, đồng thời xin quyền thu thập chứng cứ khẩn cấp.

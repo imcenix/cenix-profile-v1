@@ -38,5 +38,25 @@
   {
     "path": "assets/news/spacex-doanh-thu-gap-doi-ban-dien-toan/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/06/gwynne-shotwell-spacex.jpg?resize=1200,801"
+  },
+  {
+    "path": "assets/news/jeff-dean-roi-google-discovery-loop/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-1197130647.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/meta-muse-code-agent-lap-trinh/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/10/GettyImages-2235448056.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/reddit-giam-vai-tro-karma/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/02/GettyImages-1048288996.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/apple-private-relay-lo-ip/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/11/GettyImages-1237753209.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/shopify-ai-search-tang-doanh-so/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/05/ShopifyIPO2-e1683204509217.jpg?resize=1200,675"
   }
 ]
