@@ -23,7 +23,7 @@ Khi phân tích, Rippling phát hiện **10–15% nhân viên tạo ra khoảng 
 
 MacInnis nói thẳng một điều Cenix nghĩ mấy fen nên ghi lại: các nhà cung cấp inference "hoàn toàn không có động lực giúp bạn kiểm soát chi tiêu. Họ có mọi động lực để nó thành một khoản chi mất kiểm soát, và đó chính xác là điều họ làm."
 
-Rippling xử lý bằng cách đàm phán trần chi tiêu với Cursor, OpenAI và Anthropic, rồi tự dựng một AI gateway định tuyến prompt sang model rẻ mà đủ tốt. Kết quả: chi tiêu token rơi từ **40% xuống còn khoảng 15%** ngân sách nhân sự, trong khi lượng dùng gần như không đổi — tháng 7 vẫn tiêu **600 tỷ token**, ngang tháng 4, nhưng chi phí chỉ còn **37%** so với tháng 4.
+Rippling xử lý bằng cách đàm phán trần chi tiêu với Cursor, OpenAI và Anthropic, rồi tự dựng một AI gateway định tuyến prompt sang model rẻ mà đủ tốt. Kết quả: chi tiêu token rơi từ **40% xuống còn khoảng 15%** ngân sách nhân sự, trong khi lượng dùng gần như không đổi. Tháng cao điểm công ty tiêu **605 tỷ token**; tháng 7 vẫn ở mức **600 tỷ token**, nhưng chi phí chỉ còn **37%** so với tháng 4 — nhờ định tuyến sang model phù hợp hơn.
 
 Điểm gai góc nhất của sản phẩm: dashboard sẽ chỉ ra "kỹ sư nào chi tiêu AI cao mà đồng nghiệp lại thường xuyên bắt làm lại trong code review". Nói cách khác, xài nhiều không còn là điểm cộng — phải chứng minh được đầu ra.
 
