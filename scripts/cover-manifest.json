@@ -78,5 +78,33 @@
   {
     "path": "assets/news/windborne-bong-bay-du-bao-thoi-tiet-ai/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/6a1cc23a5fed8844a94b28ba_weather-params.jpg?resize=1200,722"
+  },
+  {
+    "path": "assets/news/rippling-cat-giam-chi-tieu-token-ai/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Rippling-AI-Spend-Console.png?resize=1200,717"
+  },
+  {
+    "path": "assets/news/kimi-k3-thoat-sandbox-kiem-thu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/GettyImages-2286500505.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/cloudflare-kitesurf-trinh-duyet-cho-ai/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/kitesurf.webp?resize=1200,640"
+  },
+  {
+    "path": "assets/news/meta-phat-them-567-trieu-new-mexico/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/zuckerberg-LA-trial-2026-GettyImages-2261841364.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/chatgpt-mo-chat-khong-gioi-han-ban-mien-phi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/04/GettyImages-2205105208.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/bumble-khai-tu-thao-tac-quet/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/04/Bumble-new-logo.jpg?resize=1200,810"
+  },
+  {
+    "path": "assets/news/airbnb-ai-rut-ngan-thoi-gian-ra-tinh-nang/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/08/brian-chesky-GettyImages-2217178973.jpg?w=1024"
   }
 ]
