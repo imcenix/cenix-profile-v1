@@ -106,5 +106,29 @@
   {
     "path": "assets/news/airbnb-ai-rut-ngan-thoi-gian-ra-tinh-nang/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2025/08/brian-chesky-GettyImages-2217178973.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/openai-ham-phanh-astra-nguong-cyber/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/wacom-movinkpad-11-cua-vao-ve-so/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Wacom-Movinkpad.webp?w=1024"
+  },
+  {
+    "path": "assets/news/kindle-scribe-colorsoft-danh-gia/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/kindle-scribe-colorsoft.jpg?resize=1200,900"
+  },
+  {
+    "path": "assets/news/google-doi-cach-dat-ten-nhom-hacker/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/10/GettyImages-1337404394.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/framework-lo-du-lieu-toan-bo-khach-hang/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/02/Framework-Desktop-2.jpg?resize=1200,900"
+  },
+  {
+    "path": "assets/news/spacex-terafab-chay-bang-khi-dot/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/2026_08_05_terafab_01_c491ff0b4d.jpg?resize=1200,675"
   }
 ]
