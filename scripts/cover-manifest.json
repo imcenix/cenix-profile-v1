@@ -182,5 +182,29 @@
   {
     "path": "assets/news/ceva-logistics-lo-du-lieu-khach-hang/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/shipping-2288991285.jpg?resize=1200,878"
+  },
+  {
+    "path": "assets/news/nvidia-500-ty-do-tai-tro-wall-street/cover.jpg",
+    "url": "https://fortune.com/img-assets/wp-content/uploads/2026/08/GettyImages-2286326398-e1786453751304.jpg?resize=1200,600"
+  },
+  {
+    "path": "assets/news/gemini-1-ty-nguoi-dung/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/gemini-app-GettyImages-2276204472-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/anthropic-thuy-van-van-ban-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2278736523.jpeg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/brad-lightcap-roi-openai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/brad-lightcap-GettyImages-2147824375-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/river-ai-goi-1-1-ty-usd/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/07/money-firehose.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/kyoto-fusioneering-unity-3/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/UNITY-3-kyoto-fusioneering.jpg?resize=1200,675"
   }
 ]
