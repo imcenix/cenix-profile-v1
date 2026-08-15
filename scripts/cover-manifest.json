@@ -230,5 +230,29 @@
   {
     "path": "assets/news/shieldbreak-zero-day-windows/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2022/06/moshed-windows-11.jpg?resize=1200,752"
+  },
+  {
+    "path": "assets/news/agent-ai-tranh-dia-ban-anthropic/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-1354100261.jpg?resize=1200,600"
+  },
+  {
+    "path": "assets/news/microsoft-khai-tu-mico-gop-copilot/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/10/Mico-1.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/x-mo-nguon-thuat-toan-shadowban/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/08/twitter-x-logo-musk-1.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/apple-tra-tien-bao-chi-cho-siri/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/06/apple-on-phone.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/instagram-doi-wordmark-2026/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/instagram-new-wordmark-august-2026.jpeg?w=1080"
+  },
+  {
+    "path": "assets/news/databricks-5-ty-dinh-gia-190-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/04/Ali_Ghodsi.jpg?resize=1200,1200"
   }
 ]
