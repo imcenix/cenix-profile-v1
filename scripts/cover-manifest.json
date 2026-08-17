@@ -254,5 +254,25 @@
   {
     "path": "assets/news/databricks-5-ty-dinh-gia-190-ty/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2021/04/Ali_Ghodsi.jpg?resize=1200,1200"
+  },
+  {
+    "path": "assets/news/stripe-mua-openrouter-7-ty/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/04/Stripe-resized.webp?resize=1200,674"
+  },
+  {
+    "path": "assets/news/amodei-khung-hoang-niem-tin-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/spacex-chot-thuong-vu-cursor/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/cursor.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/zuckerberg-tuong-lai-ai-cho-moi-nguoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2239280474.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/kiem-tra-tai-khoan-ai-bi-hack/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/broken-lock.jpg?resize=1200,823"
   }
 ]
