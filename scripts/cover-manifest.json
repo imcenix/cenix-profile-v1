@@ -264,15 +264,35 @@
     "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024"
   },
   {
-    "path": "assets/news/spacex-chot-thuong-vu-cursor/cover.jpg",
-    "url": "https://techcrunch.com/wp-content/uploads/2026/07/cursor.jpg?resize=1200,800"
-  },
-  {
     "path": "assets/news/zuckerberg-tuong-lai-ai-cho-moi-nguoi/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2239280474.jpg?resize=1200,800"
   },
   {
     "path": "assets/news/kiem-tra-tai-khoan-ai-bi-hack/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/broken-lock.jpg?resize=1200,823"
+  },
+  {
+    "path": "assets/news/spacex-dong-thuong-vu-cursor/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/cursor.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/google-tat-watermark-anh-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/gemini-app-GettyImages-2276204472-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/apple-thu-15-phan-tram-ngoai-app-store/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2234130980.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/xe-tai-tu-lai-cao-toc-california/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/KODIAK_GEN5_HIGHWAY_3.jpg?resize=1200,801"
+  },
+  {
+    "path": "assets/news/paypal-ban-minh-cho-stripe-advent/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/10/GettyImages-1584248812.jpg?w=1200"
+  },
+  {
+    "path": "assets/news/kushner-canh-bao-cuong-nhiet-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2184416821.jpg?w=1024"
   }
 ]
