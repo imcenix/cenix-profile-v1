@@ -366,5 +366,33 @@
   {
     "path": "assets/news/amazon-prime-air-gan-500-thanh-pho/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/amazon-prime-air-2026.jpg?w=1200"
+  },
+  {
+    "path": "assets/news/ox-alpha-mo-hinh-an-danh-openrouter/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/02/magnifying-glasses-Getty.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/inherent-faraday-27-ty-tham-so/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/inherent-labs-cofounders-credit-Anna-Gordon.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/uber-phat-825-trieu-euro-thuat-toan/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2018/10/uber-thumb.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/ai-lab-thieu-ke-hoach-nhot-model/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2019/07/kill-switch-ransomware.jpg?resize=1200,638"
+  },
+  {
+    "path": "assets/news/flock-camera-giam-sat-phan-ung-du-luan/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/flock-camera-pole.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/train-ai-bang-sach-ban-quyen-phap-ly/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/06/GettyImages-1303811813.jpg?resize=1200,749"
+  },
+  {
+    "path": "assets/news/pixel-11-pro-xl-danh-gia-nang-cap-nho-giot/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Pixel-11-Pro-XL-main.jpg?resize=1200,675"
   }
 ]
