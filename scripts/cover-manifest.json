@@ -418,5 +418,29 @@
   {
     "path": "assets/news/doj-dieu-tra-a16z-ghe-hoi-dong/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/01/a16z-Andreessen-Horowitz.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/openai-agent-cho-moi-nguoi/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Screenshot-2026-08-23-at-8.41.55-PM.png?w=1200"
+  },
+  {
+    "path": "assets/news/hugging-face-dam-phan-ban-13-ty-do/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/hugging-face-logo-smartphone.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/alabama-trieu-tap-openai-vu-hugging-face/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2273246979.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/amazon-tang-gia-thiet-bi-60-phan-tram/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/09/echo-family-1.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/general-intuition-6-ty-do-robot/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2019/03/robocash.jpg?resize=1200,849"
+  },
+  {
+    "path": "assets/news/instinct-tro-ly-ai-lo-ngai-quyen-rieng-tu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/11/hand-key-illustration-getty.jpg?resize=1200,786"
   }
 ]
