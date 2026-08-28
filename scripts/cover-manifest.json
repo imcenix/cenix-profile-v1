@@ -490,5 +490,41 @@
   {
     "path": "assets/news/bill-gates-thue-robot-viec-danh-cho-nguoi/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2022/06/52149453535_5cfc2ec394_k.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/nvidia-chot-mua-hugging-face-12-9-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?resize=1200,801"
+  },
+  {
+    "path": "assets/news/hon-100-cong-ty-ky-thu-phong-thu-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/claude-app-centered-in-ai-apps-GettyImages-2167861906.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/z-ai-lo-dien-sau-ox-alpha/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2221390508.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/google-siet-bo-nho-app-android/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Pixel-11-Pro-XL-main.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/microduck-robot-vit-399-do/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/microduck-morning.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/google-ai-mode-dat-ve-khach-san/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/01/ai-mode-google.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/twitter-now-hoi-sinh-chim-xanh/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Screenshot-2026-08-27-at-5.40.14-PM.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/waymo-zoox-tai-xe-thu-nghiem-chan-thuong/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-jaguar-ipace.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/fitbit-air-pokemon-sleep/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Pokemon_Fitbit_Air.png?resize=1200,800"
   }
 ]
