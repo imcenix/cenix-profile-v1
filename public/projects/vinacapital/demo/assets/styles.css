@@ -1,0 +1,262 @@
+@font-face{font-family:Zona;src:url('fonts/Zona-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Zona;src:url('fonts/Zona-SemiBold.otf') format('opentype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:Zona;src:url('fonts/Zona-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:GeorgiaPro;src:url('fonts/Georgia-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:GeorgiaPro;src:url('fonts/Georgia-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
+
+:root{--red:#e21e2b;--navy:#29344d;--deep:#152f39;--ink:#242c3d;--muted:#69707b;--line:#dcdedc;--paper:#f3f2ee;--white:#fff;--max:1320px;--px:clamp(24px,4vw,56px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;color:var(--ink);background:#fff;font-family:Zona,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+button,a{font:inherit}
+button{border:0}
+img{display:block;max-width:100%}
+.proposal-shell{width:min(var(--max),calc(100% - var(--px)*2));margin-inline:auto}
+.proposal-kicker,.eyebrow{margin:0;color:var(--red);font-size:10px;line-height:1.2;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.proposal-cover{background:var(--paper);min-height:100vh;padding:0}
+.proposal-cover>.proposal-shell{width:100%;max-width:none}
+.proposal-cover__grid{min-height:100vh;display:grid;grid-template-columns:53% 47%;background:#f8f7f4}
+.proposal-cover__copy{padding:64px clamp(48px,7vw,126px);display:flex;flex-direction:column;justify-content:space-between}
+.proposal-logo{width:188px;height:auto}
+.proposal-cover h1{margin:18px 0 24px;color:var(--navy);font:400 clamp(52px,5.3vw,76px)/.98 GeorgiaPro,Georgia,serif;letter-spacing:-.035em}
+.proposal-lead{max-width:570px;margin:0;color:#626975;font-size:15px;line-height:1.75}
+.proposal-link{display:flex;align-items:center;justify-content:space-between;width:255px;padding:16px 18px;color:#fff;background:var(--red);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.proposal-link span{font-size:18px;font-weight:400}
+.proposal-cover__visual{position:relative;overflow:hidden;background:linear-gradient(rgba(28,41,63,.12),rgba(28,41,63,.35)),url('images/hcm-river.jpg') center/cover}
+.proposal-cover__mark{position:absolute;right:-145px;top:-178px;width:350px;height:350px;border:82px solid var(--red);transform:rotate(45deg)}
+.proposal-cover__caption{position:absolute;right:22px;bottom:20px;color:#fff;font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.approach{padding:120px 0;background:#fff}
+.approach__intro{display:grid;grid-template-columns:1fr .8fr;gap:100px;align-items:end}
+.approach h2,.directions h2{margin:14px 0 0;color:var(--navy);font:400 clamp(42px,4.3vw,60px)/1.04 GeorgiaPro,Georgia,serif;letter-spacing:-.025em}
+.approach__intro>p,.directions__head>p{margin:0;color:var(--muted);font-size:14px;line-height:1.8}
+.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:66px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.principle-grid article{padding:28px 26px 32px;border-right:1px solid var(--line)}
+.principle-grid article:last-child{border:0}
+.principle-grid span{color:var(--red);font:400 28px/1 GeorgiaPro,serif}
+.principle-grid h3{margin:35px 0 9px;color:var(--navy);font:400 24px/1.1 GeorgiaPro,serif}
+.principle-grid p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+.directions{padding:118px 0;background:var(--navy);color:#fff}
+.directions__head{display:grid;grid-template-columns:1fr .8fr;gap:100px;align-items:end}
+.directions h2{color:#fff}.directions__head>p{color:#b6bcc7}
+.direction-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:58px}
+.direction-card{position:relative;padding:18px 18px 26px;text-align:left;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:.35s}
+.direction-card:hover,.direction-card.is-active{background:#fff;color:var(--navy);transform:translateY(-7px)}
+.direction-card__number{display:block;margin-bottom:16px;color:var(--red);font:400 25px/1 GeorgiaPro,serif}
+.direction-card__preview{height:235px;margin-bottom:24px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.direction-card__preview--one{background-image:linear-gradient(90deg,#f0eee8 0 43%,transparent 43%),url('images/hcm-river.jpg')}
+.direction-card__preview--two{background-image:linear-gradient(135deg,transparent 65%,rgba(226,30,43,.95) 65%),url('images/hcm-financial-district.jpg')}
+.direction-card__preview--three{background-image:linear-gradient(rgba(15,39,50,.2),rgba(15,39,50,.55)),url('images/landmark-night.jpg')}
+.direction-card h3{margin:0 0 8px;font:400 27px/1.08 GeorgiaPro,serif}
+.direction-card p{margin:0;opacity:.65;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.demo-heading{padding:78px 0 42px;background:#fff}
+.demo-heading h2{margin:10px 0 0;color:var(--navy);font:400 46px/1.1 GeorgiaPro,serif}
+.option-switcher{position:relative;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-block:1px solid #dedede}
+.option-switcher.is-fixed{position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 8px 28px rgba(31,42,61,.08)}
+.option-switcher-placeholder{height:0}
+.option-switcher__inner{width:min(var(--max),calc(100% - var(--px)*2));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.option-switcher__inner>span{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.option-switcher__inner>div{display:flex;gap:7px}
+.option-switcher button{padding:11px 16px;color:var(--navy);background:#fff;border:1px solid #d9dadb;font-size:10px;cursor:pointer;transition:.25s}
+.option-switcher button b{margin-right:6px;color:var(--red)}
+.option-switcher button.is-active{color:#fff;background:var(--red);border-color:var(--red)}
+.option-switcher button.is-active b{color:#fff}
+
+/* Common homepage elements */
+.website{animation:siteIn .6s ease both;background:#fff}
+@keyframes siteIn{from{opacity:.15;transform:translateY(12px)}to{opacity:1;transform:none}}
+.site-container{width:min(var(--max),calc(100% - var(--px)*2));margin-inline:auto}
+.quiet .site-container{width:calc(100% - clamp(56px,6vw,120px));max-width:none}
+.constructive .site-container{width:calc(100% - clamp(48px,6.25vw,120px));max-width:1680px}
+.site-header{height:82px;display:flex;align-items:center;justify-content:space-between;padding-inline:max(24px,calc((100% - var(--max))/2));background:#fff;border-bottom:1px solid #e2e3e4;position:relative;z-index:4}
+.site-header img{width:184px;height:auto}
+.site-nav{display:flex;align-items:center;gap:clamp(13px,1.45vw,23px);color:#313a4c;font-size:10.5px}
+.site-nav a{color:inherit;text-decoration:none;white-space:nowrap}
+.site-nav .mio{padding:12px 15px;color:#fff;background:var(--red);font-weight:700}
+.site-nav .lang{font-weight:700}
+.mobile-nav{display:none;font-size:10px;font-weight:700;letter-spacing:.14em}
+.site-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:26px;padding:15px 18px;color:#fff;background:var(--red);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.site-cta .arr{font-size:16px;font-weight:400}
+.site-cta.outline{color:inherit;background:transparent;border:1px solid currentColor}
+.section-label{margin:0;color:var(--red);font-size:9.5px;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.serif{font-family:GeorgiaPro,Georgia,serif}
+.news-date{color:var(--red);font-size:9.5px;font-weight:700;letter-spacing:.05em}
+.news-title-one-line{white-space:nowrap}
+.fraud{padding:50px 0;background:#f5f2ef;border-top:1px solid #e5ddda}
+.fraud__head{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.fraud h2{margin:8px 0 0;color:var(--navy);font:400 27px/1.15 GeorgiaPro,serif}
+.fraud button{padding:12px 15px;color:var(--red);background:transparent;border:1px solid var(--red);font-size:9px;font-weight:700;letter-spacing:.08em;cursor:pointer}
+.fraud__body{display:none;max-width:1000px;margin-top:26px;padding-top:22px;border-top:1px solid #ddd0cc;color:#666b73;font-size:12px;line-height:1.7}
+.fraud__body.is-open{display:block}
+.site-footer{padding:68px 0;background:var(--navy);color:#fff}
+.footer-grid{display:grid;grid-template-columns:1.25fr repeat(3,1fr);gap:44px}
+.site-footer img{width:174px;filter:brightness(0) invert(1)}
+.site-footer h4{margin:0 0 13px;font:400 17px/1.2 GeorgiaPro,serif}
+.site-footer p{margin:12px 0;color:#afb5c1;font-size:10.5px;line-height:1.75}
+
+/* Option 01 — Fullscreen */
+.quiet{--qbg:#f1f0eb;--qnavy:#2b354b}
+.quiet .site-header{padding-inline:clamp(28px,3vw,60px)}
+.q-hero{padding:0;background:var(--qbg)}
+.quiet .q-hero__frame{width:100%;min-height:clamp(680px,72vh,820px);display:grid;grid-template-columns:.91fr 1.09fr;background:#f8f7f4}
+.q-hero__copy{padding:72px clamp(28px,3vw,60px);display:flex;flex-direction:column;justify-content:center}
+.q-hero h1{max-width:650px;margin:18px 0 24px;color:var(--qnavy);font:400 clamp(48px,4.7vw,68px)/1.01 GeorgiaPro,serif;letter-spacing:-.03em}
+.q-hero__copy>p:not(.section-label){max-width:560px;margin:0;color:#646b75;font-size:14px;line-height:1.8}
+.q-hero__image{position:relative;background:linear-gradient(rgba(25,38,58,.05),rgba(25,38,58,.28)),url('images/hcm-river.jpg') center/cover}
+.q-hero__image span{position:absolute;left:18px;bottom:18px;padding:10px 12px;color:#fff;background:rgba(31,43,62,.72);font-size:8px;letter-spacing:.14em;text-transform:uppercase}
+.q-about{padding:118px 0;background:#fff;text-align:center}
+.q-about .section-label{margin-bottom:25px}
+.q-quote{max-width:1120px;margin:0 auto;color:var(--qnavy);font:400 clamp(33px,3.15vw,46px)/1.38 GeorgiaPro,serif}
+.q-about__action{text-align:center;margin-top:38px}
+.q-solutions{padding:118px 0;background:#f4f3ef}
+.q-solutions__head{display:grid;grid-template-columns:1fr .78fr;gap:90px;align-items:end}
+.q-solutions h2,.q-news h2,.q-esg h2,.q-presence h2{margin:12px 0 0;color:var(--qnavy);font:400 clamp(40px,4vw,52px)/1.06 GeorgiaPro,serif;letter-spacing:-.02em}
+.q-solutions__head>p{margin:0;color:#69707a;font-size:14px;line-height:1.8}
+.q-solution-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:58px;border-block:1px solid #d4d5d2}
+.q-solution{position:relative;min-height:225px;padding:26px 30px;border-right:1px solid #d4d5d2}
+.q-solution:last-child{border:0}
+.q-solution__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:55px;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.12em}
+.q-solution__top a{color:inherit;font-size:17px;text-decoration:none}
+.q-solution h3{margin:0 0 10px;color:var(--qnavy);font:400 25px/1.12 GeorgiaPro,serif}
+.q-solution p{margin:0;color:#6c727a;font-size:11.5px;line-height:1.65}
+.q-news{padding:118px 0;background:#fff}
+.quiet .q-news>.site-container{width:min(1500px,calc(100% - clamp(56px,8vw,150px)))}
+.q-news__layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;margin-top:48px}
+.q-news__lead img{width:100%;height:340px;object-fit:cover}
+.q-news__lead h3{margin:14px 0 22px;color:var(--qnavy);font:400 27px/1.25 GeorgiaPro,serif}
+.q-news__list{border-top:1px solid #d8d9d9}
+.q-news-row{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:17px 0;border-bottom:1px solid #d8d9d9;color:#363c48;font-size:11.5px;line-height:1.45}
+.q-insight{padding:0 0 118px;background:#fff}
+.q-insight__card{min-height:520px;display:grid;grid-template-columns:1.05fr .95fr;background:var(--qnavy);color:#fff}
+.q-insight__image{background:url('images/hcm-financial-district.jpg') center/cover}
+.q-insight__copy{padding:68px;display:flex;flex-direction:column;justify-content:center}
+.q-insight h2{margin:15px 0 18px;font:400 38px/1.15 GeorgiaPro,serif}
+.q-insight p{margin:0 0 25px;color:#bbc1cb;font-size:13px;line-height:1.75}
+.q-esg{padding:110px 0;background:#edf0eb}
+.q-esg__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.q-esg img{width:100%;height:480px;object-fit:cover}
+.q-esg p{margin:20px 0 26px;color:#68706d;font-size:13.5px;line-height:1.8}
+.q-presence{padding:110px 0;background:#fff}
+.q-stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:46px;border-block:1px solid #d9dad9}
+.q-stat{padding:30px 24px;border-right:1px solid #d9dad9}.q-stat:last-child{border:0}
+.q-stat strong{display:block;color:var(--red);font:400 37px/1 GeorgiaPro,serif}
+.q-stat p{margin:10px 0 0;color:#69707a;font-size:10.5px;line-height:1.55}
+
+/* Option 02 — Constructive Capital */
+.constructive{--cbg:#eef2f2;--cnavy:#23314c;--c-gutter:clamp(24px,3.125vw,60px);--c-copy-pad:clamp(42px,5vw,76px)}
+.constructive .site-header{padding-inline:max(calc(var(--c-gutter) + var(--c-copy-pad)),calc((100% - 1680px)/2 + var(--c-copy-pad)))}
+.c-hero{padding:32px 0;background:var(--cbg)}
+.c-hero__frame{position:relative;min-height:650px;display:grid;grid-template-columns:56% 44%;overflow:hidden;background:#f8fafa;box-shadow:0 18px 55px rgba(35,49,76,.07)}
+.c-hero__copy{position:relative;z-index:2;padding:70px var(--c-copy-pad);display:flex;flex-direction:column;justify-content:center}
+.c-hero h1{max-width:650px;margin:17px 0 22px;color:var(--cnavy);font:700 clamp(48px,4.8vw,67px)/1 Zona;letter-spacing:-.045em}
+.c-hero__copy>p:not(.section-label){max-width:590px;margin:0;color:#616b78;font-size:13.5px;line-height:1.8}
+.c-hero__visual{position:relative;background:url('images/hcm-financial-district.jpg') 50% center/cover}
+.shape-corner{position:absolute;right:-130px;bottom:-140px;width:300px;height:300px;border:70px solid var(--red);transform:rotate(45deg)}
+.shape-cut{position:absolute;left:-2px;bottom:-1px;width:104px;height:104px;background:var(--red);clip-path:polygon(0 0,100% 100%,0 100%)}
+.c-metrics{display:grid;grid-template-columns:repeat(4,1fr);background:var(--cnavy);color:#fff}
+.c-metrics div{padding:19px 24px;border-right:1px solid #4b566e;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase}
+.c-metrics strong{display:block;margin-bottom:4px;font-size:17px;letter-spacing:0;text-transform:none}
+.c-about{padding:116px 0;background:#fff}
+.c-about__grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:80px;align-items:center}
+.c-about__visual{position:relative;height:500px;background:url('images/bridge.jpg') center/cover}
+.c-about__visual::after{content:'';position:absolute;right:-30px;top:-30px;width:125px;height:125px;border:25px solid var(--red)}
+.c-statement{margin:22px 0 0;color:var(--cnavy);font:400 clamp(31px,2.8vw,43px)/1.34 GeorgiaPro,serif}
+.c-solutions{position:relative;padding:112px 0;background:var(--cbg);overflow:hidden}
+.c-solutions::before{content:'';position:absolute;right:-220px;top:-245px;width:430px;height:430px;border:86px solid rgba(226,30,43,.08);transform:rotate(45deg)}
+.c-solutions__head{display:grid;grid-template-columns:1fr .8fr;gap:90px;align-items:end;position:relative}
+.c-solutions h2,.c-news h2,.c-esg h2,.c-presence h2{margin:11px 0 0;color:var(--cnavy);font:700 clamp(39px,3.8vw,50px)/1.02 Zona;letter-spacing:-.04em}
+.c-solutions__head>p{margin:0;color:#66717d;font-size:13.5px;line-height:1.8}
+.c-solution-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+.c-solution{min-height:265px;padding:28px 30px;background:#fff;display:flex;flex-direction:column;box-shadow:0 13px 35px rgba(35,49,76,.06)}
+.c-solution:nth-child(2){transform:translateY(22px);color:#fff;background:var(--cnavy)}
+.c-solution__top{display:flex;justify-content:space-between;align-items:flex-start;color:var(--red);font-size:10px;font-weight:700;letter-spacing:.1em}
+.c-solution h3{margin:64px 0 10px;font:600 24px/1.08 Zona;letter-spacing:-.025em}
+.c-solution p{margin:0;color:#6b747e;font-size:11.5px;line-height:1.65}.c-solution:nth-child(2) p{color:#b8c0cc}
+.c-news{padding:120px 0;background:#fff}
+.c-news__grid{display:grid;grid-template-columns:1.05fr .95fr;margin-top:46px;border-top:1px solid #d6d9dc}
+.c-news__feature{padding:30px 42px 30px 0}
+.c-news__feature img{width:100%;height:315px;object-fit:cover}
+.c-news__feature h3{margin:14px 0 22px;color:var(--cnavy);font:600 25px/1.2 Zona;letter-spacing:-.02em}
+.c-news__list{border-left:1px solid #d6d9dc}
+.c-news-row{display:grid;grid-template-columns:88px 1fr;gap:18px;padding:16px 0 16px 32px;border-bottom:1px solid #d6d9dc;font-size:11.5px;line-height:1.45}
+.c-insight{padding:95px 0;background:var(--cnavy)}
+.c-insight__card{display:grid;grid-template-columns:.9fr 1.1fr;background:#fff}
+.c-insight__image{min-height:490px;background:url('images/airport.jpg') center/cover}
+.c-insight__copy{position:relative;padding:65px;overflow:hidden}
+.c-insight__copy::after{content:'';position:absolute;right:-85px;bottom:-90px;width:190px;height:190px;border:42px solid var(--red);transform:rotate(45deg)}
+.c-insight h2{position:relative;z-index:1;margin:14px 0 18px;color:var(--cnavy);font:700 37px/1.08 Zona;letter-spacing:-.035em}
+.c-insight p{position:relative;z-index:1;margin:0 0 25px;color:#69727e;font-size:12.5px;line-height:1.75}
+.c-esg{padding:110px 0;background:#e8eeea}
+.c-esg__grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+.c-esg img{width:100%;height:470px;object-fit:cover;clip-path:polygon(0 0,90% 0,100% 10%,100% 100%,10% 100%,0 90%)}
+.c-esg p{margin:20px 0 25px;color:#66716c;font-size:13.5px;line-height:1.8}
+.c-presence{padding:110px 0;background:#fff}
+.c-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:46px}
+.c-stat{min-height:180px;padding:28px;background:var(--cbg)}
+.c-stat:nth-child(2){color:#fff;background:var(--red)}
+.c-stat strong{display:block;font:700 35px/1 Zona}.c-stat:not(:nth-child(2)) strong{color:var(--red)}
+.c-stat p{margin:12px 0 0;color:#67717c;font-size:10.5px;line-height:1.55}.c-stat:nth-child(2) p{color:#fff}
+
+/* Option 03 — Vietnam in Motion */
+.motion{--mnavy:#15333e;--m-gap:18px}
+.m-hero{position:relative;height:min(790px,calc(100vh - 64px));min-height:650px;color:#fff;background:url('images/landmark-night.jpg') center/cover;overflow:hidden}
+.m-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,38,48,.88) 0%,rgba(10,38,48,.45) 55%,rgba(10,38,48,.08) 100%)}
+.m-hero__copy{position:relative;z-index:2;height:100%;max-width:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left}
+.m-hero h1{max-width:780px;margin:18px 0 24px;font:700 clamp(52px,5.5vw,78px)/.98 Zona;letter-spacing:-.05em}
+.m-hero__copy>p:not(.section-label){max-width:610px;margin:0;color:#d8e0e3;font-size:14px;line-height:1.8}
+.m-hero__index{position:absolute;right:var(--px);bottom:40px;z-index:2;color:rgba(255,255,255,.72);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.motion .m-image-story{padding:34px 0 0;background:#fff;overflow:hidden}
+.m-image-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;width:min(1680px,calc(100% - clamp(48px,6vw,120px)));margin:auto}
+.m-story-image{position:relative;height:clamp(220px,14vw,270px);margin:0;overflow:hidden}
+.m-story-image img{width:108%;max-width:none;height:100%;object-fit:cover;animation:storyPan 12s ease-in-out infinite alternate;transition:transform .8s ease}
+.m-story-image:nth-child(2) img{animation-delay:-3s}.m-story-image:nth-child(3) img{animation-delay:-6s}.m-story-image:nth-child(4) img{animation-delay:-9s}
+.m-story-image:hover img{transform:scale(1.035)}
+@keyframes storyPan{from{transform:translateX(0)}to{transform:translateX(-7.4%)}}
+@media(prefers-reduced-motion:reduce){.m-story-image img{animation:none;width:100%}}
+.m-story-image span{position:absolute;left:14px;bottom:13px;padding:8px 10px;color:#fff;background:rgba(12,42,52,.78);font-size:8px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.motion .m-about{padding:var(--m-gap) 0 110px;background:#fff}
+.m-about__frame{position:relative;min-height:590px;background:url('images/bridge.jpg') center/cover}
+.m-about__card{position:absolute;left:52px;bottom:48px;width:min(720px,calc(100% - 104px));padding:44px 48px;background:rgba(255,255,255,.97);box-shadow:0 22px 55px rgba(12,42,52,.18)}
+.m-about__card .section-label{margin-bottom:18px}
+.m-about__statement{margin:0;color:var(--mnavy);font:600 clamp(29px,2.6vw,41px)/1.28 Zona;letter-spacing:-.035em}
+.m-solutions{padding:112px 0;background:#edf2f1}
+.m-solutions__head{max-width:830px}
+.m-solutions h2,.m-news h2,.m-esg h2,.m-presence h2{margin:11px 0 20px;color:var(--mnavy);font:700 clamp(40px,4vw,52px)/1.02 Zona;letter-spacing:-.045em}
+.m-solutions__head>p{margin:0;color:#677478;font-size:13.5px;line-height:1.8}
+.m-solution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+.m-solution{position:relative;height:350px;overflow:hidden;color:#fff}
+.m-solution img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}.m-solution:hover img{transform:scale(1.05)}
+.m-solution::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(8,37,47,.9))}
+.m-solution__copy{position:absolute;z-index:2;left:28px;right:28px;bottom:28px}
+.m-solution__number{display:block;margin-bottom:13px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.13em}
+.m-solution h3{margin:0 0 8px;font:600 25px/1.08 Zona;letter-spacing:-.025em}
+.m-solution p{margin:0;color:#d8e2e4;font-size:11px;line-height:1.6}
+.m-news{padding:116px 0;background:#fff}
+.m-news__feature{display:grid;grid-template-columns:1.12fr .88fr;margin-top:44px;background:var(--mnavy);color:#fff}
+.m-news__feature img{width:100%;height:470px;object-fit:cover}
+.m-news__copy{padding:56px;display:flex;flex-direction:column;justify-content:center}
+.m-news__copy h3{margin:14px 0 22px;font:600 29px/1.14 Zona;letter-spacing:-.025em}
+.m-news__list{display:grid;grid-template-columns:1fr 1fr;column-gap:42px;margin-top:32px}
+.m-news-row{display:grid;grid-template-columns:84px 1fr;gap:15px;padding:16px 0;border-bottom:1px solid #d9dcdc;font-size:11.5px;line-height:1.45}
+.m-insight{position:relative;min-height:620px;color:#fff;background:url('images/infrastructure.jpg') center/cover;display:flex;align-items:center}
+.m-insight::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,39,49,.93),rgba(9,39,49,.18))}
+.m-insight__copy{position:relative;z-index:1;max-width:650px}
+.m-insight h2{margin:14px 0 20px;font:600 42px/1.08 Zona;letter-spacing:-.035em}
+.m-insight p{margin:0 0 26px;color:#d4dfe1;font-size:13px;line-height:1.8}
+.m-esg{padding:110px 0;background:#e8efea}
+.m-esg__grid{display:grid;grid-template-columns:1.12fr .88fr;background:#fff}
+.m-esg img{width:100%;height:510px;object-fit:cover}
+.m-esg__copy{padding:64px;display:flex;flex-direction:column;justify-content:center}
+.m-esg p{margin:0 0 25px;color:#66706c;font-size:13.5px;line-height:1.8}
+.m-presence{padding:110px 0;background:#fff}
+.m-stats{display:grid;grid-template-columns:1.2fr .8fr .9fr .8fr;gap:9px;margin-top:46px}
+.m-stat{min-height:190px;padding:28px;color:#fff;background:var(--mnavy)}
+.m-stat:nth-child(2){background:var(--red)}
+.m-stat strong{display:block;font:600 36px/1 Zona}.m-stat p{margin:12px 0 0;color:#c5d1d4;font-size:10.5px;line-height:1.55}.m-stat:nth-child(2) p{color:#fff}
+
+@media(max-width:1180px){.site-nav{display:none}.mobile-nav{display:block}.news-title-one-line{white-space:normal}.proposal-cover__grid{grid-template-columns:1fr 1fr}.principle-grid{grid-template-columns:1fr 1fr}.principle-grid article:nth-child(2){border-right:0}.principle-grid article:nth-child(-n+2){border-bottom:1px solid var(--line)}.q-hero__frame{grid-template-columns:1fr 1fr}.q-solution-grid,.c-solution-grid,.m-solution-grid{grid-template-columns:repeat(3,1fr)}.c-hero__frame{grid-template-columns:58% 42%}.m-image-track{grid-template-columns:1fr 1fr}.m-story-image{height:240px}}
+@media(min-width:2140px){.quiet .q-news>.site-container{max-width:1680px}}
+@media(max-width:820px){:root{--px:22px}.proposal-cover{padding:0}.proposal-cover__grid,.approach__intro,.directions__head,.q-solutions__head,.q-news__layout,.q-insight__card,.q-esg__grid,.c-hero__frame,.c-about__grid,.c-solutions__head,.c-news__grid,.c-insight__card,.c-esg__grid,.m-news__feature,.m-esg__grid{grid-template-columns:1fr}.proposal-cover__copy{min-height:650px;padding:50px 28px}.proposal-cover__visual{min-height:480px}.proposal-cover h1{font-size:49px}.approach,.directions{padding:82px 0}.principle-grid,.direction-grid,.q-solution-grid,.c-solution-grid,.m-solution-grid,.q-stats,.c-stats,.m-stats{grid-template-columns:1fr}.principle-grid article{border-right:0;border-bottom:1px solid var(--line)}.direction-card__preview{height:220px}.option-switcher__inner{height:auto;padding:9px 0}.option-switcher__inner>span{display:none}.option-switcher__inner>div{width:100%}.option-switcher button{flex:1;padding-inline:7px}.site-header{height:72px}.site-header img{width:154px}.q-hero{padding-top:0}.q-hero__frame{grid-template-columns:1fr;min-height:auto}.q-hero__copy{padding:68px 28px}.q-hero__image{height:480px}.q-about,.q-solutions,.q-news,.q-esg,.q-presence,.c-about,.c-solutions,.c-news,.c-esg,.c-presence,.m-about,.m-solutions,.m-news,.m-esg,.m-presence{padding:76px 0}.q-quote{padding:42px 18px;font-size:31px}.q-about__panorama{height:230px}.q-solution{border-right:0;border-bottom:1px solid #d4d5d2}.q-insight{padding-bottom:76px}.q-insight__image{height:360px}.q-insight__copy,.c-insight__copy,.m-esg__copy{padding:42px 28px}.q-esg img,.c-esg img{height:400px}.q-stat,.c-stat,.m-stat{min-height:150px}.c-hero{padding:0}.c-hero__copy{padding:68px 28px}.c-hero__visual{height:470px}.c-metrics{grid-template-columns:1fr 1fr}.c-about__visual{height:420px}.c-solution:nth-child(2){transform:none}.c-news__feature{padding-right:0}.c-news__list{border-left:0}.c-news-row{padding-left:0}.c-insight__image{min-height:350px}.m-hero{height:720px}.m-hero__copy{padding-inline:0}.m-image-track{grid-template-columns:1fr 1fr;width:calc(100% - 28px)}.m-story-image{height:170px}.m-about__frame{min-height:620px}.m-about__quote{left:18px;right:18px;bottom:18px;width:auto;padding:34px 25px}.m-news__feature img{height:350px}.m-news__copy{padding:40px 28px}.m-news__list{grid-template-columns:1fr}.m-insight{min-height:560px}.footer-grid{grid-template-columns:1fr 1fr}.fraud__head{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.proposal-cover h1{font-size:44px}.approach h2,.directions h2{font-size:39px}.demo-heading h2{font-size:38px}.proposal-logo{width:165px}.principle-grid{grid-template-columns:1fr}.q-hero h1,.c-hero h1,.m-hero h1{font-size:43px}.q-solutions h2,.q-news h2,.q-esg h2,.q-presence h2,.c-solutions h2,.c-news h2,.c-esg h2,.c-presence h2,.m-solutions h2,.m-news h2,.m-esg h2,.m-presence h2{font-size:37px}.q-quote,.c-statement{font-size:28px}.q-insight h2,.c-insight h2,.m-insight h2{font-size:34px}.m-image-track{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.option-switcher button{font-size:9px}.option-switcher button b{display:block;margin:0 0 3px}}
+@media(max-width:820px){.q-quote{padding:0 18px}}
+@media(max-width:820px){.quiet .q-hero__frame{grid-template-columns:1fr;min-height:auto}.constructive{--c-gutter:24px;--c-copy-pad:28px}.motion .site-header{padding-inline:22px}.motion .m-about{padding:var(--m-gap) 0 76px}.m-about__card{left:18px;right:18px;bottom:18px;width:auto;padding:34px 25px}.m-about__statement{font-size:29px}}
+@media(max-width:520px){.m-about__statement{font-size:27px}}

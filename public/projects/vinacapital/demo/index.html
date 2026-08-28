@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>VinaCapital — Website Design Directions</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <main id="proposal">
+    <section class="proposal-cover">
+      <div class="proposal-shell proposal-cover__grid">
+        <div class="proposal-cover__copy">
+          <img class="proposal-logo" src="assets/logo-vinacapital.png" alt="VinaCapital">
+          <div>
+            <p class="proposal-kicker">Website design proposal · 2026</p>
+            <h1>A clearer expression<br>of investment leadership</h1>
+            <p class="proposal-lead">Ba định hướng giao diện được phát triển từ cùng một nền tảng thương hiệu — khác biệt rõ về nhịp điệu, cấu trúc và vai trò của hình ảnh.</p>
+          </div>
+          <a class="proposal-link" href="#approach">Khám phá đề xuất <span>↓</span></a>
+        </div>
+        <div class="proposal-cover__visual" aria-hidden="true">
+          <div class="proposal-cover__mark"></div>
+          <span class="proposal-cover__caption">Ho Chi Minh City · Vietnam</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="proposal-shell">
+        <div class="approach__intro">
+          <div>
+            <p class="proposal-kicker">Design principles</p>
+            <h2>Trust first.<br>Vietnam forward.</h2>
+          </div>
+          <p>Một trải nghiệm tài chính cao cấp cần tạo niềm tin trước khi tạo ấn tượng. Hệ thống mới đặt thông tin, khả năng tiếp cận giải pháp và hình ảnh Việt Nam trong cùng một cấu trúc sáng, rõ và nhất quán.</p>
+        </div>
+        <div class="principle-grid">
+          <article><span>01</span><h3>Clarity</h3><p>Thang chữ và khoảng cách giúp người xem nhận biết chính–phụ ngay từ lần đọc đầu tiên.</p></article>
+          <article><span>02</span><h3>Access</h3><p>Các nhóm giải pháp đầu tư trở thành hệ điều hướng có nội dung, không phải những lựa chọn rời rạc.</p></article>
+          <article><span>03</span><h3>Perspective</h3><p>Hình ảnh đô thị, hạ tầng và con người phản ánh góc nhìn dài hạn về Việt Nam.</p></article>
+          <article><span>04</span><h3>Confidence</h3><p>Container, responsive grid và tài nguyên web chuẩn giữ trải nghiệm ổn định trên nhiều màn hình.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="directions" id="directions">
+      <div class="proposal-shell">
+        <div class="directions__head">
+          <div><p class="proposal-kicker">Three design directions</p><h2>Ba cách thể hiện<br>một vị thế dẫn đầu</h2></div>
+          <p>Mỗi hướng sử dụng một hệ bố cục riêng. Nội dung và trình tự trang chủ được giữ nhất quán để việc so sánh tập trung hoàn toàn vào trải nghiệm thiết kế.</p>
+        </div>
+        <div class="direction-grid">
+          <button class="direction-card is-active" data-option="1">
+            <span class="direction-card__number">01</span>
+            <div class="direction-card__preview direction-card__preview--one"></div>
+            <h3>Fullscreen</h3>
+            <p>Full-bleed · Editorial · Spacious</p>
+          </button>
+          <button class="direction-card" data-option="2">
+            <span class="direction-card__number">02</span>
+            <div class="direction-card__preview direction-card__preview--two"></div>
+            <h3>Constructive Capital</h3>
+            <p>Structured · Graphic · Precise</p>
+          </button>
+          <button class="direction-card" data-option="3">
+            <span class="direction-card__number">03</span>
+            <div class="direction-card__preview direction-card__preview--three"></div>
+            <h3>Vietnam in Motion</h3>
+            <p>Immersive · Visual · Dynamic</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-heading" id="demo">
+      <div class="proposal-shell">
+        <p class="proposal-kicker">Homepage demo</p>
+        <h2 id="demo-title">Fullscreen</h2>
+      </div>
+    </section>
+  </main>
+
+  <div class="option-switcher" role="navigation" aria-label="Chọn phương án giao diện">
+    <div class="option-switcher__inner">
+      <span>Design direction</span>
+      <div>
+        <button class="is-active" data-option="1"><b>01</b> Fullscreen</button>
+        <button data-option="2"><b>02</b> Constructive</button>
+        <button data-option="3"><b>03</b> Motion</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-root"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
