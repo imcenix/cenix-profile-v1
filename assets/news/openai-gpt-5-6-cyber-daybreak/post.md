@@ -27,4 +27,4 @@ Giới phê bình chỉ ra chuyện hiển nhiên: mối đe doạ từ agent AI
 
 Anh em thấy sao về chuyện một công ty vừa bán model có thể hack, vừa bán dịch vụ chống hack? Hợp lý hay xung đột lợi ích? Để lại ý kiến bên dưới nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/)*

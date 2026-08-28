@@ -35,4 +35,4 @@ Adler nhắc lại câu ngạn ngữ cũ: bản kế hoạch thì vô dụng, nh
 
 Mấy fen nghĩ sao — công khai kế hoạch kiểm soát nên là bắt buộc, hay để các lab tự quản là đủ? Comment cho tui biết.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/frontier-ai-labs-still-wont-say-how-theyd-contain-a-rogue-model/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/frontier-ai-labs-still-wont-say-how-theyd-contain-a-rogue-model/)*

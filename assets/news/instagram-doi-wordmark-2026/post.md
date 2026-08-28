@@ -27,4 +27,4 @@ Lần gần nhất Instagram thay đổi thiết kế là năm **2016**, khi b�
 
 Mấy fen nhìn wordmark mới thấy sao — sắc nét hơn thật, hay chỉ là đổi cho có? Comment ý kiến cho Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/instagram-introduces-a-redesigned-wordmark/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/instagram-introduces-a-redesigned-wordmark/)*

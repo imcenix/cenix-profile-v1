@@ -33,4 +33,4 @@ Nói cách khác, rào vào cửa vừa hạ xuống đáng kể.
 
 Anh em làm app ở thị trường EU thấy sao — bảng phí này đủ dễ thở chưa, hay vẫn là cùng một con voi mặc áo mới? Kể Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/apple-overhauls-its-eu-app-store-fees-loosens-rules-for-alternative-app-stores/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/apple-overhauls-its-eu-app-store-fees-loosens-rules-for-alternative-app-stores/)*

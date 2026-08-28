@@ -29,4 +29,4 @@ Cenix để ý một chi tiết nhỏ mà designer hay gặp: máy bắt tạo m
 
 Mấy fen đang vẽ bằng gì — iPad, Wacom, hay vẫn trung thành với bảng vẽ không màn? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/wacoms-movinkpad-11-is-a-fun-and-mid-priced-entry-point-for-digital-artists/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/wacoms-movinkpad-11-is-a-fun-and-mid-priced-entry-point-for-digital-artists/)*

@@ -37,4 +37,4 @@ Với Cenix, đây là bài học thiết kế kinh điển được lặp lại
 
 Mấy fen dùng app AI nào mà thấy giao diện gọn gàng nhất? Và anh em có bao giờ ngồi đoán xem nên bấm vào tab nào chưa? Kể Cenix nghe ở dưới nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/)*

@@ -29,4 +29,4 @@ Cenix thấy điểm hay nhất của tin này không nằm ở tính năng, mà
 
 Anh em đang để Claude Code ở chế độ nào — duyệt từng bước hay thả cho chạy? Sau con số 13,6% kia thì có định đổi không? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/)*

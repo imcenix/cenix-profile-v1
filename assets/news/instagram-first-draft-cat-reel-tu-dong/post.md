@@ -25,4 +25,4 @@ Một chi tiết đáng ghi nhận: First Draft được công bố đúng ngày
 
 Anh em dựng video bằng app luôn hay vẫn đưa qua CapCut/Premiere? Cenix hóng ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/instagrams-first-draft-feature-aims-to-make-editing-reels-less-tedious/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/instagrams-first-draft-feature-aims-to-make-editing-reels-less-tedious/)*

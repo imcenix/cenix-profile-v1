@@ -31,4 +31,4 @@ Và nếu thương vụ Nvidia thật sự chốt, sẽ rất đáng theo dõi x
 
 Mấy fen thấy 399 đô cho một con robot học được có đáng không? Nếu có một con Microduck trên bàn, anh em sẽ dạy nó trò gì đầu tiên? Kể Cenix nghe ở dưới nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/hugging-face-is-selling-a-cute-399-open-source-duck-robot-microduck/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/hugging-face-is-selling-a-cute-399-open-source-duck-robot-microduck/)*

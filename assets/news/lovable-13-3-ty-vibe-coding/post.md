@@ -27,4 +27,4 @@ Công ty cũng bắt đầu rót vốn cho startup châu Âu khác — như Atec
 
 Với dân thiết kế và làm sản phẩm như anh em mình, mấy fen đã đưa vibe-coding vào quy trình thật chưa, hay vẫn dừng ở mức nghịch cho vui? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/12/lovable-confirms-new-13-3b-valuation-raises-another-400m/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/12/lovable-confirms-new-13-3b-valuation-raises-another-400m/)*

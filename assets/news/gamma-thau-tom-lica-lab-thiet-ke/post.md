@@ -27,4 +27,4 @@ Bối cảnh: mảng slide AI đang ngập tiền. Prezent gọi **50 triệu US
 
 Anh em còn mở PowerPoint không, hay chuyển hẳn sang mấy công cụ AI này rồi? Comment cho Cenix biết nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/gamma-acquires-accel-backed-design-startup-lica/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/gamma-acquires-accel-backed-design-startup-lica/)*

@@ -33,4 +33,4 @@ Nối với tin Nvidia mua Hugging Face cùng tuần, bức tranh khá rõ: cu�
 
 Mấy fen đã thử Ox Alpha trên OpenRouter chưa? Nếu trọng số mở thật, anh em sẽ tự host hay vẫn xài API cho khoẻ? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/)*

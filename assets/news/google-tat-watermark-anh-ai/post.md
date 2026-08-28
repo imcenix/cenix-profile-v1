@@ -29,4 +29,4 @@ Với dân thiết kế thì đây là thay đổi thực dụng. Cái logo góc
 
 Anh em đứng phe nào — watermark hiển thị nên mặc định bật hay mặc định tắt? Comment cho tui biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/)*

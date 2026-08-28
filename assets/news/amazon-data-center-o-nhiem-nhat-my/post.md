@@ -27,4 +27,4 @@ Cenix nghĩ đây là cái giá mà ngành AI đang phải trả bằng tiền c
 
 Theo anh em, ngành AI nên tự đặt trần phát thải cho hạ tầng của mình, hay để luật pháp từng bang quyết? Bình luận cho Cenix biết góc nhìn của mấy fen.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/)*

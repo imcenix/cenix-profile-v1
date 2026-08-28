@@ -33,4 +33,4 @@ Bản thân Langley cũng nói các bang nên ra luật hình sự hoá việc d
 
 Theo mấy fen, một công nghệ giám sát nên đi kèm những rào chắn nào để không bị lạm dụng? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/flock-ceo-calls-for-compromise-as-surveillance-company-faces-growing-backlash/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/flock-ceo-calls-for-compromise-as-surveillance-company-faces-growing-backlash/)*

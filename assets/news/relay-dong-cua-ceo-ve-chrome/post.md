@@ -29,4 +29,4 @@ Cenix thấy đây là một dạng thương vụ đang lặp lại nhiều lầ
 
 Anh em có đang xài công cụ tự động hoá nào mà nếu nó đóng cửa mai này thì mệt không? Comment cho Cenix biết với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/ai-automation-startup-relay-shuts-down-staff-joins-googles-chrome-team/)*

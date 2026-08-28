@@ -31,4 +31,4 @@ Jane Street thì viết trong bài công bố: họ đã test chip, hài lòng v
 
 Mấy fen tin đây là đối thủ thật của Nvidia, hay lại là một vòng định giá nữa của mùa AI? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/)*

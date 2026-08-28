@@ -27,4 +27,4 @@ Chuyện một lab thả mô hình ẩn danh lên nền tảng công cộng đ�
 
 Mấy fen đoán xem Ox Alpha là hàng của ai? Comment cho tui nghe với, tui hóng.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/)*

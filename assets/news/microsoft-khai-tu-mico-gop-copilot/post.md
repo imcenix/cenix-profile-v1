@@ -27,4 +27,4 @@ Cenix thấy đây là bài học sản phẩm khá đắt: nhồi tính năng c
 
 Anh em có ai từng dùng Deep Research hay podcast AI của Copilot chưa, hay bỏ qua từ đầu? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/microsoft-kills-off-unsuccessful-ai-features-while-merging-its-separate-copilot-apps/)*

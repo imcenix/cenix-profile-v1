@@ -25,4 +25,4 @@ Với anh em làm thiết kế và sáng tạo, con số 390/500 mới là chi t
 
 Anh em đã đưa công cụ video AI nào vào quy trình làm việc thật chưa, hay vẫn đang thử cho biết? Cenix hóng chia sẻ ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/higgsfield-raises-400m-series-b-quadrupling-its-valuation-in-8-months-to-5-4b/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/higgsfield-raises-400m-series-b-quadrupling-its-valuation-in-8-months-to-5-4b/)*

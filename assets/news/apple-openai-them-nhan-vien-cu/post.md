@@ -29,4 +29,4 @@ OpenAI cũng nhắc lại vài sai sót của Apple đã được báo chí đư
 
 Anh em nghiêng về bên nào trong vụ này? Hay đây chỉ là chuyện thường tình khi nhân sự nhảy việc trong ngành công nghệ? Kể Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/04/apple-says-more-ex-employees-may-have-taken-confidential-data-to-openai/)*

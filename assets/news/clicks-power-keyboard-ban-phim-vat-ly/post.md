@@ -27,4 +27,4 @@ Còn nhược điểm thì cũng thẳng thắn. Gắn vào iPhone 17 Pro Max ha
 
 Bài học thiết kế ở đây quen thuộc: phụ kiện gắn thêm luôn phải đánh đổi với cân bằng tổng thể. Anh em có nhớ cảm giác gõ phím vật lý không, hay quen bàn phím ảo lâu rồi? Comment nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/clicks-power-keyboard-brings-blackberry-style-typing-to-any-phone-with-some-compromises/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/clicks-power-keyboard-brings-blackberry-style-typing-to-any-phone-with-some-compromises/)*

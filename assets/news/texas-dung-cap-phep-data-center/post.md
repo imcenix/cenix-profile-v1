@@ -29,4 +29,4 @@ Cenix thấy đây là tín hiệu đáng theo dõi. Cơn sốt hạ tầng AI �
 
 Theo anh em, các bang nên siết data center chặt hơn, hay đây là cái giá phải trả để giữ chân đầu tư công nghệ? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/04/texas-halts-new-data-centers-as-governor-calls-for-audits/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/04/texas-halts-new-data-centers-as-governor-calls-for-audits/)*

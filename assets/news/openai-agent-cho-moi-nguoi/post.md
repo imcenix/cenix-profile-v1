@@ -27,4 +27,4 @@ App gộp Codex + Work hiện có khoảng **20 triệu người dùng**, so v�
 
 Anh em nghĩ sao — cái cản trở thật sự là AI chưa đủ giỏi, hay là chúng ta chưa dám giao chìa khoá cho nó? Thả bình luận cho Cenix biết nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/)*

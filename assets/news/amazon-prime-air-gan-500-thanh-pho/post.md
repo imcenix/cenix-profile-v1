@@ -27,4 +27,4 @@ Cuộc đua không chỉ có Amazon: Walmart cùng Wing của Alphabet đang v�
 
 Anh em thấy giao hàng bằng drone là tương lai thật, hay chỉ hợp với vài món nhỏ lẻ ở vùng ngoại ô? Cho Cenix xin góc nhìn.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/19/amazons-prime-air-is-taking-off-in-nearly-500-u-s-cities/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/19/amazons-prime-air-is-taking-off-in-nearly-500-u-s-cities/)*

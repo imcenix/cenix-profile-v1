@@ -29,4 +29,4 @@ Cenix thấy đây là bài học hay cho anh em làm sản phẩm: đôi khi v�
 
 Mấy fen tin điện nhiệt hạch sẽ lên lưới điện trong bao lâu nữa — 10 năm, 20 năm, hay lâu hơn? Comment dự đoán cho vui nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/kyoto-fusioneering-starts-work-on-key-fusion-power-plant-device/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/kyoto-fusioneering-starts-work-on-key-fusion-power-plant-device/)*

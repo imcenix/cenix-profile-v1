@@ -29,4 +29,4 @@ Mặt tối cũng có. SpaceX đang vướng kiện tụng vì các turbine khí
 
 Tui thấy đây là dấu mốc khá rõ của thời điểm này: công cụ lập trình không còn là chuyện phần mềm nữa, nó là chuyện hạ tầng. Mấy fen nghĩ sao — Cursor sau khi về SpaceX sẽ tốt lên hay bắt đầu thành sản phẩm khép kín trong hệ sinh thái Musk? Để lại bình luận cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/)*

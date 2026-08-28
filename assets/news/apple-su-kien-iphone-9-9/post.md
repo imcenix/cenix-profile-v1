@@ -31,4 +31,4 @@ Thứ hai, giới quan sát đồn rằng Apple cuối cùng cũng vén màn **c
 
 Anh em có định thức khuya xem không? Và giữa iPhone gập với việc Apple đổi CEO, mấy fen thấy cái nào là tin lớn hơn? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/apple-is-holding-its-iphone-launch-event-on-september-9/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/apple-is-holding-its-iphone-launch-event-on-september-9/)*

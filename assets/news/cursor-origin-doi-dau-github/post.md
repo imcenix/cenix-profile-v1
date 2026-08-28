@@ -27,4 +27,4 @@ Dù vậy, đường còn xa. Theo số liệu của chính GitHub tính đến 
 
 Anh em có định thử Origin không, hay "GitHub sập thì nghỉ sớm" vẫn là phương án hợp lý hơn? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/)*

@@ -21,4 +21,4 @@ Không phải Apple đứng ngoài AI. Mô hình đám mây AFM Cloud Pro của 
 
 Còn anh em nghĩ sao: chiến lược "đi thuê" này khôn ngoan bền vững, hay chỉ là nước cờ đẹp nhất thời? Kể Cenix nghe với.
 
-*Nguồn: [CNBC](https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html)*
+*Nguồn tham khảo: [CNBC](https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html)*

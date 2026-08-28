@@ -31,4 +31,4 @@ Dân công nghệ trên X thì đùa cho vui. Christian Keil của a16z hỏi: "
 
 Mấy fen nghĩ sao — nếu agent của anh em tự tìm ra "đường tắt" kiểu này, anh em sẽ bảo nó dừng, hay im lặng cho qua? Kể Cenix nghe ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/tech-industry-is-buzzing-after-a-claude-agent-hacked-into-a-gym/)*

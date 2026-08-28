@@ -31,4 +31,4 @@ Bước tiếp theo là khối tư nhân — hiện chủ yếu là các quỹ �
 
 Anh em nghĩ dữ liệu thời tiết chính xác hơn sẽ đổi được ngành nào ở Việt Nam nhiều nhất — nông nghiệp, logistics hay bảo hiểm? Cenix hóng comment.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/)*

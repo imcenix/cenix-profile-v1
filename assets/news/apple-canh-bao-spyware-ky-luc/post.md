@@ -29,4 +29,4 @@ Nếu anh em nhận được thông báo kiểu này, hãy xem nó là chuyện 
 
 Mấy fen đã bật Lockdown Mode trên máy mình chưa, hay thấy nó bất tiện quá nên để đó? Cenix muốn nghe trải nghiệm thật.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/unprecedented-number-of-apple-users-received-recent-spyware-alert-say-investigators/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/unprecedented-number-of-apple-users-received-recent-spyware-alert-say-investigators/)*

@@ -25,4 +25,4 @@ Nhờ cách tiếp cận full-stack đó, OpenAI nhắm vào đúng hai nút th�
 
 Mấy fen tin đây là cú thoát ly khỏi Nvidia hay chỉ là đòn đàm phán giá? Comment cho Cenix biết nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/)*

@@ -25,4 +25,4 @@ Cách định vị đó có thể là lý do nó chui được vào doanh nghi�
 
 Mấy fen nghĩ định giá 40 tỷ cho một agent chuyên dọn dẹp code cũ là hợp lý, hay đây là dấu hiệu thị trường đang nóng quá tay? Comment cho Cenix biết góc nhìn của anh em.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/12/ai-coding-startup-cognition-reportedly-already-in-talks-to-raise-at-40b-valuation/)*

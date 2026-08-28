@@ -29,4 +29,4 @@ Cenix thấy ý tưởng này thú vị hơn cái tên. Thay vì một ban kiể
 
 Anh em nghĩ cái tên "Twitter" còn giá trị bao nhiêu trong năm 2026? Và mấy fen có tin vào mô hình để người dùng tự chỉnh ngưỡng nội dung không? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/hold-up-theres-a-new-twitter-in-the-town/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/hold-up-theres-a-new-twitter-in-the-town/)*

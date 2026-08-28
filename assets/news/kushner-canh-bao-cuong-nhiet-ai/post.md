@@ -29,4 +29,4 @@ Nhưng câu chốt của Kushner thì đáng ghim lại: "Không phải doanh ng
 
 Mấy fen nghĩ thị trường AI hiện tại đang ở đâu — vẫn còn sớm, hay đã bắt đầu quá nóng? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/thrives-joshua-kushner-chides-silicon-valley-vcs-over-ai-euphoria/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/thrives-joshua-kushner-chides-silicon-valley-vcs-over-ai-euphoria/)*

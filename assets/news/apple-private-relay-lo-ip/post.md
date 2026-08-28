@@ -31,4 +31,4 @@ Trong lúc chờ Apple vá, cách an toàn là đừng xem Private Relay như l�
 
 Anh em có đang bật Private Relay không? Và có bao giờ anh em kiểm tra lại xem những tính năng riêng tư mình trả tiền có chạy đúng như quảng cáo? Kể Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/psa-apples-private-relay-can-leak-your-real-ip-address/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/psa-apples-private-relay-can-leak-your-real-ip-address/)*

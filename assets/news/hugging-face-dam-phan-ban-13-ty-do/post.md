@@ -25,4 +25,4 @@ Bối cảnh chung thì đang nóng thật — Stripe vừa thâu tóm OpenRoute
 
 Theo mấy fen, Hugging Face nên bán hay giữ? Nếu bán, chủ mới nào là chấp nhận được nhất? Bình luận cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/)*

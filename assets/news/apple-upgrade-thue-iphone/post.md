@@ -18,4 +18,4 @@ Với người dùng, lợi hay hại còn tuỳ cách tính: đổi máy mới 
 
 Nếu có lựa chọn, anh em thích thuê iPhone đổi máy liên tục, hay mua đứt xài tới chán? Kể Cenix nghe.
 
-*Nguồn: [CNBC](https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html)*
+*Nguồn tham khảo: [CNBC](https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html)*

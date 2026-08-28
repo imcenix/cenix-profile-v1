@@ -25,4 +25,4 @@ Nhìn rộng ra, đây là dấu hiệu thị trường AI đang chuyển giai �
 
 Theo mấy fen, lớp trung gian kiểu OpenRouter có bền không, hay rồi cũng bị chính các hãng mô hình nuốt gọn? Comment cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/)*

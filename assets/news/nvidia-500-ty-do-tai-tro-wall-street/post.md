@@ -29,4 +29,4 @@ Tui thấy đây là câu hỏi đáng để anh em suy nghĩ: khi nhu cầu đ�
 
 Mấy fen nghĩ sao — chip AI xứng đáng thành một lớp tài sản riêng, hay đây là dấu hiệu thị trường đang căng quá mức? Comment cho Cenix biết góc nhìn của anh em nha.
 
-*Nguồn: [Fortune](https://fortune.com/2026/08/11/nvidia-500-billion-ai-financing/)*
+*Nguồn tham khảo: [Fortune](https://fortune.com/2026/08/11/nvidia-500-billion-ai-financing/)*

@@ -27,4 +27,4 @@ Cũng cần nói thẳng một chuyện không vui: khu Starbase ở Texas có t
 
 Mấy fen nghĩ Starship kịp bay thương mại từ Louisiana năm 2029 không? Cho Cenix xin dự đoán ở dưới.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/spacex-will-build-a-second-100b-starbase-spaceport-in-louisiana/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/spacex-will-build-a-second-100b-starbase-spaceport-in-louisiana/)*

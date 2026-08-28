@@ -29,4 +29,4 @@ Lời khuyên cuối của bài: nếu chỉ muốn nâng cấp Kindle cũ, mua 
 
 Cenix thấy đây là kiểu sản phẩm rất dễ mua vì đẹp rồi để đó. Anh em có ai đang xài máy đọc sách kiêm ghi chú không, dùng thật hay để trưng? Comment cho vui.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/08/the-kindle-scribe-colorsoft-is-a-lot-of-fun-but-its-not-a-must-have/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/08/the-kindle-scribe-colorsoft-is-a-lot-of-fun-but-its-not-a-must-have/)*

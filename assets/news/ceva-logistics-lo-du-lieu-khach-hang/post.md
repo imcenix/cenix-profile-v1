@@ -27,4 +27,4 @@ Ceva nói đã kích hoạt quy trình bảo mật ngay khi phát hiện, điề
 
 Anh em từng nhận thông báo lộ dữ liệu kiểu này chưa, và lúc đó xử lý sao? Chia sẻ ở phần bình luận để mọi người cùng biết đường phòng.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/a-data-breach-at-shipping-giant-ceva-logistics-is-rippling-across-banks-retailers-steam-gamers-and-beyond/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/a-data-breach-at-shipping-giant-ceva-logistics-is-rippling-across-banks-retailers-steam-gamers-and-beyond/)*

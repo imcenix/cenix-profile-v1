@@ -34,4 +34,4 @@ Cô đúc kết một câu Cenix thấy rất đáng ghim:
 
 Anh em sẵn sàng đưa AI quyền đọc và gửi email thay mình chưa, hay vẫn muốn giữ nút xác nhận cuối cùng? Nói Cenix nghe ở dưới nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/)*

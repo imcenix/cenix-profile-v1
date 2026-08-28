@@ -27,4 +27,4 @@ Có một câu hỏi thú vị nằm dưới bề mặt câu chuyện này. Th�
 
 Nếu là mấy fen, mấy fen chịu để một avatar AI chấm bài pitch của mình không, hay phải người thật mới tính? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/harvards-699-startup-bootcamp-offers-ai-avatars-of-its-instructors/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/harvards-699-startup-bootcamp-offers-ai-avatars-of-its-instructors/)*

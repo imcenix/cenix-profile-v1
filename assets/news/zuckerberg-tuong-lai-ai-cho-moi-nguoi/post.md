@@ -25,4 +25,4 @@ Phần còn lại của bài luận, theo Anthony, chia làm hai nửa: nửa tr
 
 Anh em đọc mấy bản tuyên ngôn kiểu này thấy sao — truyền cảm hứng hay hơi xa rời thực tế? Comment cho Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/16/why-people-arent-buying-mark-zuckerbergs-ai-future/)*

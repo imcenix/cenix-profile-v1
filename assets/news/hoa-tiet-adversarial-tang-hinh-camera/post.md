@@ -27,4 +27,4 @@ Dự án tên **noRecognition**, và tham vọng của nó rất dân thiết k�
 
 Mấy fen nghĩ sao — nếu có áo hoodie in hoạ tiết kiểu này, anh em mặc vì tính năng, vì tuyên ngôn, hay đơn giản vì nó nhìn ngầu? Comment cho Cenix biết.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/09/this-adversarial-pattern-can-prevent-surveillance-cameras-from-detecting-you/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/09/this-adversarial-pattern-can-prevent-surveillance-cameras-from-detecting-you/)*

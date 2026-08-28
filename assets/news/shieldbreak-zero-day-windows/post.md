@@ -29,4 +29,4 @@ Microsoft chưa phát hành bản vá cho ShieldBreak và chưa phản hồi Tec
 
 Anh em nghĩ ranh giới nằm ở đâu: nhà nghiên cứu có nên công bố công khai khi thấy hãng phớt lờ báo cáo, hay im lặng chờ vá dù chờ tới bao giờ? Cái này khó nói thiệt, comment cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/12/after-microsoft-threatened-legal-action-a-security-researcher-publishes-a-new-windows-zero-day-bug/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/12/after-microsoft-threatened-legal-action-a-security-researcher-publishes-a-new-windows-zero-day-bug/)*

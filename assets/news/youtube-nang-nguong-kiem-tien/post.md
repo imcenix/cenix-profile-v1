@@ -29,4 +29,4 @@ YouTube giải thích thay đổi này để "theo kịp tốc độ tăng trư�
 
 Anh em nào đang xây kênh — ngưỡng mới này có làm anh em đổi chiến lược không? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/youtube-now-requires-creators-to-have-twice-as-many-watch-hours-to-start-earning-money/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/youtube-now-requires-creators-to-have-twice-as-many-watch-hours-to-start-earning-money/)*

@@ -27,4 +27,4 @@ Cenix thấy điểm thú vị nhất là phản ứng của giới trong ngành
 
 Anh em nghiêng về phía nào — đây là minh bạch đáng hoan nghênh, hay là marketing khéo léo dưới lớp áo an toàn? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/)*

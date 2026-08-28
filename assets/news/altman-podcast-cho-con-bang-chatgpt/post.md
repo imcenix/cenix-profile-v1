@@ -29,4 +29,4 @@ Cenix thấy phản ứng của mạng xã hội chỉ ra đúng chỗ khó: cô
 
 Anh em thấy sao — có việc nào trong đời sống mà anh em nhất định không giao cho AI, dù nó làm nhanh hơn? Kể cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/01/sam-altman-is-still-making-the-case-for-parenting-via-chatgpt/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/01/sam-altman-is-still-making-the-case-for-parenting-via-chatgpt/)*

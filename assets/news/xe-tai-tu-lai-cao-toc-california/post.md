@@ -25,4 +25,4 @@ Dù vậy phản đối vẫn gay gắt. Tuần trước, Teamsters California k
 
 Đây là dạng tin mà tui nghĩ nên theo dõi kỹ: nó không chỉ là công nghệ, nó là chuyện việc làm của hàng trăm nghìn tài xế. Mấy fen nghĩ mốc thời gian hợp lý cho xe tải tự lái hoàn toàn là bao lâu nữa? Chia sẻ ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/self-driving-trucks-are-officially-testing-on-california-highways/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/self-driving-trucks-are-officially-testing-on-california-highways/)*

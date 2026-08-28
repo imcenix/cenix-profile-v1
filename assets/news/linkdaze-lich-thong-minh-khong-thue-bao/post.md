@@ -27,4 +27,4 @@ Trong một thị trường mà doanh thu định kỳ đã thành mặc định
 
 Theo mấy fen, một thiết bị phần cứng đáng ra nên bán đứt hay bán kèm thuê bao? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/linkdazes-smart-calendar-is-built-to-run-a-household-not-just-track-a-schedule/)*

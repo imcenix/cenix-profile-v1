@@ -33,4 +33,4 @@ Còn câu hỏi kinh điển "sao không xài chung một bộ tên cho rồi?" 
 
 Anh em nghĩ ngành bảo mật có bao giờ thống nhất được một bộ tên chung không, hay đó là chuyện bất khả thi? Cho Cenix xin ý kiến.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/08/googles-top-hacker-hunter-explains-why-hacking-groups-get-codenames/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/08/googles-top-hacker-hunter-explains-why-hacking-groups-get-codenames/)*

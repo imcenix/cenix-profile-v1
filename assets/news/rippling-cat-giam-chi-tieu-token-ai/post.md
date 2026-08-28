@@ -29,4 +29,4 @@ Rippling xử lý bằng cách đàm phán trần chi tiêu với Cursor, OpenAI
 
 Còn anh em thì sao, công ty mình đã đo hiệu quả AI theo đầu người chưa, hay vẫn đang ở giai đoạn "cứ xài thoải mái đi"? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/after-rippling-blew-millions-on-ai-in-months-it-built-an-employee-roi-tool/)*

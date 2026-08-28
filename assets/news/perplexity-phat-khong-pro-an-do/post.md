@@ -35,4 +35,4 @@ OpenAI và Google sau đó cũng chơi bài tương tự ở Ấn Độ. Perplex
 
 Mấy fen từng dùng gói AI tặng kèm nhà mạng — hết hạn rồi anh em gia hạn hay huỷ? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/perplexitys-free-ai-offer-left-it-with-millions-more-users-in-india/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/perplexitys-free-ai-offer-left-it-with-millions-more-users-in-india/)*

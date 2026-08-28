@@ -29,4 +29,4 @@ Tui thấy điểm hay ở đây là cụm từ "co-design". Không phải làm 
 
 Anh em nghĩ tự làm chip là lợi thế thật, hay chỉ là cuộc đua đốt tiền mà ai cũng phải nhảy vào cho bằng bạn bằng bè? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/)*

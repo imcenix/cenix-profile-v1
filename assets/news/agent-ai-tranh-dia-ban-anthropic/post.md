@@ -33,4 +33,4 @@ Câu hỏi Cenix thấy đáng suy nghĩ nhất: hiện tại phần lớn bài 
 
 Mấy fen nghĩ sao — nên bắt buộc agent phải khai báo danh tính khi làm việc chung không? Comment quan điểm của anh em nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/)*

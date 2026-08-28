@@ -31,4 +31,4 @@ Reddit không nói karma sẽ biến mất, chỉ ám chỉ tầm quan trọng c
 
 Anh em từng bị karma chặn cửa chưa? Và theo anh em, để AI gác cổng thay cộng đồng là bước tiến hay là mất đi cái chất tự quản của Reddit? Comment nha mấy fen.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/reddit-aims-to-make-karma-less-important-for-first-time-posters-with-shift-to-ai-moderation-tools/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/reddit-aims-to-make-karma-less-important-for-first-time-posters-with-shift-to-ai-moderation-tools/)*

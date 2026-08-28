@@ -31,4 +31,4 @@ Nói cách khác, cơn sốt AI ở tầng data center đang gửi hoá đơn xu
 
 Anh em làm app di động thấy sao — app của mình hiện đang ngốn bao nhiêu RAM? Mấy fen có định audit lại bộ nhớ trước khi Google gửi cảnh báo không? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/ais-memory-crunch-is-coming-for-android-apps/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/ais-memory-crunch-is-coming-for-android-apps/)*

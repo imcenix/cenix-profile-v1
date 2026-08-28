@@ -31,4 +31,4 @@ Chiến lược này không mới với Meta — họ từng dùng đúng cách 
 
 Anh em đang xài agent nào để code? Có sẵn sàng đổi sang thứ rẻ hơn nếu chất lượng chỉ kém một chút không? Kể Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/)*

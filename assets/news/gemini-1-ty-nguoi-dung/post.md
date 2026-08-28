@@ -27,4 +27,4 @@ Cột mốc đến ngay sau báo cáo quý 2/2026, khi Google công bố hơn 95
 
 Anh em đang xài Gemini hay ChatGPT là chính? Và có ai thực sự dùng giọng nói thay vì gõ chữ không — Cenix tò mò thiệt đó, comment chia sẻ nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/)*

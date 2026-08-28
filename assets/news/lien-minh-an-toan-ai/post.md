@@ -18,4 +18,4 @@ Chuyện an toàn AI vốn không ồn ào bằng tin ra mắt mô hình mới, 
 
 Theo anh em, các liên minh kiểu này sẽ tạo ra thay đổi thật, hay dừng ở mức cam kết trên giấy?
 
-*Nguồn: [CNBC](https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html)*
+*Nguồn tham khảo: [CNBC](https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html)*

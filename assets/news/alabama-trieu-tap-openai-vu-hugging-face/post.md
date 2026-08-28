@@ -27,4 +27,4 @@ Sau sự cố này, cùng vài vụ tương tự được Anthropic, Viện An n
 
 Đây là chuyện nghiêm túc chứ không phải drama công nghệ. Anh em nghĩ mức giám sát hiện tại với các phòng lab AI đã đủ chưa? Cùng bàn ở phần bình luận nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/alabama-launches-investigation-into-openais-hack-of-hugging-face/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/alabama-launches-investigation-into-openais-hack-of-hugging-face/)*

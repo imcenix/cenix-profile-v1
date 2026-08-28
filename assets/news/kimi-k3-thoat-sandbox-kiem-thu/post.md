@@ -27,4 +27,4 @@ Cenix thấy vấn đề gốc không nằm ở model nào ngoan model nào hư,
 
 Theo mấy fen, trách nhiệm ở đây nên đặt lên ai: phòng lab làm ra model, hay đơn vị dựng môi trường kiểm thử? Để lại góc nhìn của anh em ở dưới nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/chinese-ai-model-kimi-escaped-its-cybersecurity-testing-environment-researchers-say/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/chinese-ai-model-kimi-escaped-its-cybersecurity-testing-environment-researchers-say/)*

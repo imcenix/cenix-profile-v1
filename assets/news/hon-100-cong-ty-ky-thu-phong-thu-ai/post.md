@@ -37,4 +37,4 @@ Cái khó vẫn nằm ở chỗ quen thuộc: lá thư nêu vấn đề rất r�
 
 Anh em làm sản phẩm số nghĩ sao: doanh nghiệp vừa và nhỏ ở Việt Nam nên chuẩn bị gì trước làn sóng này? Mấy fen đã siết lại quyền của các agent AI trong hệ thống của mình chưa? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/)*

@@ -31,4 +31,4 @@ Bị mua đứt thì khác với việc nhận một ông lớn vào ngồi gh�
 
 Theo mấy fen, model mở về tay công ty bán chip là tin tốt hay tin đáng lo? Anh em nghĩ Hugging Face còn giữ được chất "mở" bao lâu nữa? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/nvidia-closes-in-on-hugging-face-acquisition/)*

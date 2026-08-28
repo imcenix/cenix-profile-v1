@@ -25,4 +25,4 @@ Cenix để ý là năm nay tin về AI ngày càng ít nói về mô hình và 
 
 Anh em nghĩ sao — hạ tầng điện có phải là nút thắt lớn nhất của AI trong vài năm tới không? Comment cho Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/nvidia-investing-1-5b-in-softbank-data-center-developer-behind-openai-project/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/nvidia-investing-1-5b-in-softbank-data-center-developer-behind-openai-project/)*

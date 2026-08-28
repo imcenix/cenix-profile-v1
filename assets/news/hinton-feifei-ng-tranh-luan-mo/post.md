@@ -33,4 +33,4 @@ Fei-Fei Li phản biện cả hai: "Rất nguy hiểm khi biến chuyện này t
 
 Anh em nghiêng về phía nào — mở hết cho ai cũng dùng được, hay giữ lại phần lõi? Cenix chờ tranh luận ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/12/as-ai-safety-concerns-mount-three-pioneers-make-the-case-for-staying-open/)*

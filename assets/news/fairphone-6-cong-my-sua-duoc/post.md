@@ -35,4 +35,4 @@ Trong bối cảnh thiếu linh kiện đẩy giá đồ điện tử lên, mộ
 
 Anh em có sẵn sàng đánh đổi camera đêm ngon để lấy một chiếc máy dùng bảy năm không? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/fairphone-is-launching-its-latest-repairable-phone-in-the-us-too/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/fairphone-is-launching-its-latest-repairable-phone-in-the-us-too/)*

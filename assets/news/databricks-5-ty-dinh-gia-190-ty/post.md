@@ -31,4 +31,4 @@ Cenix để ý một chi tiết: có thời một vòng 1 tỷ USD được coi 
 
 Anh em nghĩ mức định giá kiểu này còn giữ được bao lâu? Comment quan điểm cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/databricks-wanted-to-raise-1b-investors-wanted-15b-it-settled-on-5b-at-a-190b-valuation/)*

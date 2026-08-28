@@ -27,4 +27,4 @@ Nếu anh em từng mua Framework thì nên cảnh giác với email và cuộc 
 
 Anh em đang dùng bao nhiêu dịch vụ bên thứ ba có giữ dữ liệu khách của mình — có bao giờ ngồi kiểm lại danh sách đó chưa? Chia sẻ với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/computer-maker-framework-notifies-all-customers-of-a-data-breach/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/computer-maker-framework-notifies-all-customers-of-a-data-breach/)*

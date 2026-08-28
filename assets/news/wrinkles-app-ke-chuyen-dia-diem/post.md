@@ -33,4 +33,4 @@ Hansan chốt một câu định vị rất gọn: **"Sợi chỉ chung không p
 
 Anh em có muốn một app như vầy cho Sài Gòn hay Hà Nội không? Và nếu có, anh em sẽ gắn kỷ niệm của mình vào chỗ nào đầu tiên? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/04/meet-wrinkles-an-ai-app-that-uncovers-the-hidden-stories-of-the-places-around-you/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/04/meet-wrinkles-an-ai-app-that-uncovers-the-hidden-stories-of-the-places-around-you/)*

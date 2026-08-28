@@ -27,4 +27,4 @@ Nhìn rộng ra, đây là mô típ lặp lại khắp ngành: Apple làm chip M
 
 Theo mấy fen, tự thiết kế silicon là con hào cạnh tranh thật sự hay chỉ là gánh nặng chi phí mà startup nào cũng bị dụ lao vào? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/techcrunch-mobility-the-custom-chip-driving-waymos-robotaxi-ambitions/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/techcrunch-mobility-the-custom-chip-driving-waymos-robotaxi-ambitions/)*

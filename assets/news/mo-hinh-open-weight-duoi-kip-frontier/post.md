@@ -35,4 +35,4 @@ SaferAI cho biết Z.ai không công bố khung an toàn, cam kết kiểm thử
 
 Anh em nghiêng về phía nào: mở trọng số để cả làng cùng phòng thủ, hay giữ lại vì rủi ro quá lớn? Comment cho Cenix biết nha mấy fen.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/04/open-weight-ai-models-are-catching-up-to-the-frontier-the-safety-gap-remains/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/04/open-weight-ai-models-are-catching-up-to-the-frontier-the-safety-gap-remains/)*

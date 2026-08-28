@@ -31,4 +31,4 @@ Mac Mini mới đã cho đặt trước, giá từ **899 USD**, giao hàng sau n
 
 Anh em nghĩ sao: chạy model local trên Mac Studio có đáng tiền hơn thuê API không? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/apple-debuts-its-most-powerful-chip-ever-in-m5-ultra-and-m6/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/apple-debuts-its-most-powerful-chip-ever-in-m5-ultra-and-m6/)*

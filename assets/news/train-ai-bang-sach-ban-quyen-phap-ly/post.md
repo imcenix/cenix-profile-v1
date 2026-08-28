@@ -31,4 +31,4 @@ Gellis đưa một phép so sánh khá hay: nếu bạn viết tiểu thuyết b
 
 Mấy fen nghĩ ranh giới hợp lý nằm ở đâu — train được, nhưng phải trả tiền cho tác giả, hay cứ để fair use quyết? Comment cho tui nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/)*

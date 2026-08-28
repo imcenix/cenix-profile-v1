@@ -32,4 +32,4 @@ Và Anthropic không đơn độc. Google, OpenAI, Meta đều đang chạy cùn
 
 Anh em nghĩ sao: gom compute sớm là lợi thế sống còn, hay là cách nhanh nhất để mắc kẹt với thế hệ phần cứng đã lỗi thời? Comment cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/anthropic-continues-compute-gobbling-streak-in-45-billion-deal-with-nscale/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/anthropic-continues-compute-gobbling-streak-in-45-billion-deal-with-nscale/)*

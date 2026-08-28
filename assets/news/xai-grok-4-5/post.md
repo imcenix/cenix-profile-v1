@@ -18,4 +18,4 @@ Tốc độ ra mắt của cả ngành đang chóng mặt: theo các bảng theo
 
 Anh em đang xài mô hình nào làm chủ lực? Có định thử Grok 4.5 không, kể Cenix nghe.
 
-*Nguồn: [llm-stats](https://llm-stats.com/llm-updates)*
+*Nguồn tham khảo: [llm-stats](https://llm-stats.com/llm-updates)*

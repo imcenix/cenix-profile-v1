@@ -77,4 +77,4 @@ Nếu phải chọn một việc làm ngay hôm nay: tạo **một** project cho
 
 Còn mấy fen, việc đầu tiên muốn giao cho Claude là gì? Kể Tui nghe ở phần bình luận, biết đâu nó thành bài hướng dẫn tiếp theo.
 
-*Nguồn: [What are projects?](https://support.claude.com/en/articles/9517075-what-are-projects) · [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills) · [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) — Claude Help Center.*
+*Nguồn tham khảo: [What are projects?](https://support.claude.com/en/articles/9517075-what-are-projects) · [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills) · [How to create custom skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills) — Claude Help Center.*

@@ -33,4 +33,4 @@ Câu hỏi thực sự quan trọng vẫn treo đó: các quỹ khác sẽ thay 
 
 Theo mấy fen, một quỹ đầu tư nên bị giới hạn tới mức nào khi các công ty trong danh mục dần cạnh tranh nhau? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/will-the-dojs-investigation-into-a16z-spook-other-vcs/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/will-the-dojs-investigation-into-a16z-spook-other-vcs/)*

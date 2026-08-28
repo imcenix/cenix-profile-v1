@@ -43,4 +43,4 @@ Cenix thấy đề xuất thuế robot là thứ dễ hình dung về mặt kỹ
 
 Anh em nghĩ sao: có nghề nào mà mấy fen thấy dứt khoát không nên để AI làm? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/bill-gates-wants-to-see-a-robot-tax-and-human-reserved-jobs-to-mitigate-harms-from-ai/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/bill-gates-wants-to-see-a-robot-tax-and-human-reserved-jobs-to-mitigate-harms-from-ai/)*

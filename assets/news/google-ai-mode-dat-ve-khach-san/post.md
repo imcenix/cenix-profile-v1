@@ -31,4 +31,4 @@ Cenix thì nghĩ thế này. Với người dùng, tiện là tiện thật. Nh�
 
 Mấy fen có dám để AI đặt phòng khách sạn hộ mình không, hay vẫn phải tự vào xem ảnh phòng cho chắc? Anh em đặt vé máy bay bằng cách nào là chính? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/googles-ai-mode-can-now-track-flight-prices-help-book-hotels-and-more/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/googles-ai-mode-can-now-track-flight-prices-help-book-hotels-and-more/)*

@@ -27,4 +27,4 @@ Cenix nhìn mấy con số này thì thấy một điều: cuộc đua AI đã b
 
 Anh em nghĩ sao, mức 2.000 tỷ đô cho một công ty chưa tới năm tuổi là hợp lý hay đang hơi phấn khích? Comment cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/)*

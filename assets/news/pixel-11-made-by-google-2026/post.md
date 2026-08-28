@@ -31,4 +31,4 @@ Pixel Watch 5 bản 41mm giá **399 đô**, bản 45mm **429 đô**, kèm bản 
 
 Anh em thấy sao — Pixel Tag ra trễ 5 năm thì còn kịp không, hay Google chỉ đang lấp nốt ô trống trong hệ sinh thái? Kể Cenix nghe ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/)*

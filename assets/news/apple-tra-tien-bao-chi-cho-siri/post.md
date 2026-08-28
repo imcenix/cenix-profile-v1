@@ -25,4 +25,4 @@ Nếu mô hình này được nhân rộng, cách các hãng AI mua nội dung c
 
 Theo anh em, trả theo lượt dùng có công bằng hơn cho người làm nội dung không, hay chỉ là cách để bên mua tiết kiệm? Comment cho Cenix biết ý mấy fen nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/apple-in-talks-to-pay-publishers-to-provide-siri-with-current-news-report/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/apple-in-talks-to-pay-publishers-to-provide-siri-with-current-news-report/)*

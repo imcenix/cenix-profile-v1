@@ -31,4 +31,4 @@ Cenix thấy điểm thú vị nằm ở hướng đi: giữa lúc cả ngành �
 
 Anh em nghĩ AI tự chạy thí nghiệm khoa học sẽ tạo đột phá thật, hay khoa học vẫn cần trực giác con người ở khâu đặt câu hỏi? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)*

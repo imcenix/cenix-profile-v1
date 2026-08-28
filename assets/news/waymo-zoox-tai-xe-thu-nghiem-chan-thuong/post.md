@@ -31,4 +31,4 @@ Trong nội bộ, những cú phanh gấp này được gọi là **"brake jab"*
 
 Theo mấy fen, các hãng xe tự lái nên làm gì để bảo vệ nhóm này tốt hơn? Anh em nghĩ chỉ số an toàn của robotaxi có nên tính cả sức khoẻ người ngồi thử không? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/sprains-pain-and-whiplash-waymo-and-zoox-test-drivers-are-getting-hurt-as-robotaxis-scale/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/sprains-pain-and-whiplash-waymo-and-zoox-test-drivers-are-getting-hurt-as-robotaxis-scale/)*

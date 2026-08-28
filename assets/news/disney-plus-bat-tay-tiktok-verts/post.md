@@ -29,4 +29,4 @@ Cenix để ý một chi tiết: Disney đang thừa nhận thế hệ tài năn
 
 Mấy fen có xem feed video dọc trong app streaming không, hay vẫn mở TikTok cho nhanh? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/disney-looks-to-tiktok-creators-to-bring-fan-content-to-its-short-form-video-feed/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/disney-looks-to-tiktok-creators-to-bring-fan-content-to-its-short-form-video-feed/)*

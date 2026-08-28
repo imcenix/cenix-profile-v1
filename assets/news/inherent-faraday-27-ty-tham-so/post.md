@@ -31,4 +31,4 @@ Inherent gọi vốn seed **50 triệu USD**, hiện có một tá nhân sự l�
 
 Theo mấy fen, hướng đi "model nhỏ + agent thiết kế khéo" có phải là tương lai không, hay rồi cũng bị scale đè bẹp? Comment cho tui nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/)*

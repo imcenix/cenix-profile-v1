@@ -25,4 +25,4 @@ Sở cảnh sát Atlanta chuyển câu hỏi lên cơ quan liên bang. FAA nói 
 
 Bài học nhỏ cho anh em hay bật laptop trên máy bay: cái tên mạng nhìn đúng chưa chắc đã là mạng đúng. Mấy fen có thói quen kiểm tra gì trước khi kết nối Wi-Fi công cộng không? Chia sẻ ở phần bình luận cho mọi người cùng học.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/delta-investigating-after-someone-set-up-fake-wi-fi-network-mid-flight/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/delta-investigating-after-someone-set-up-fake-wi-fi-network-mid-flight/)*

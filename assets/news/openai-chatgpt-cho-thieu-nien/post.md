@@ -31,4 +31,4 @@ Với anh em làm sản phẩm, đây là ca đáng học: thiết kế an toàn
 
 Mấy fen nghĩ sao — hàng rào mềm kiểu Study Mode có đủ, hay phải là cơ chế cứng ở tầng tài khoản? Kể Cenix nghe ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/openai-launches-a-safer-chatgpt-for-teens-years-after-teens-started-using-it/)*

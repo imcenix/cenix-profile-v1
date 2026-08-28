@@ -27,4 +27,4 @@ Về mặt dùng thật, thay vì phải nhớ đúng tên phim, anh em có th�
 
 Anh em muốn TV của mình biết trò chuyện, hay chỉ muốn nó bật lên là có phim để coi? Cenix hóng ý kiến.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/)*

@@ -35,4 +35,4 @@ Câu hỏi mà giới đầu tư đang chờ trả lời, và Cenix cũng vậy:
 
 Mấy fen nghĩ sao — Amazon tự làm chip là chiến lược thật hay chỉ là quân bài mặc cả với Nvidia? Kể Cenix nghe ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/)*

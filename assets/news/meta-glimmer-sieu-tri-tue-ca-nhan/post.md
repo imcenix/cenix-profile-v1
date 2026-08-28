@@ -25,4 +25,4 @@ Nhưng tiếp cận không đồng nghĩa với sở hữu. Đây mới là ch�
 
 Với một người làm sản phẩm, chuyện agent chạy offline trên máy cá nhân mở ra kha khá ý tưởng. Anh em có định thử Glimmer trên máy mình không, hay vẫn tin tưởng cloud hơn? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/)*

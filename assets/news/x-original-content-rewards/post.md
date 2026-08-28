@@ -29,4 +29,4 @@ Với người sáng tạo, đây có thể là tin vui — nếu X thực sự 
 
 Mấy fen có đang nhận tiền từ X không, và nghĩ ngưỡng mới này dễ hay khó? Kể Cenix nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/08/x-replaces-misaligned-revenue-sharing-program-with-original-content-rewards/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/08/x-replaces-misaligned-revenue-sharing-program-with-original-content-rewards/)*

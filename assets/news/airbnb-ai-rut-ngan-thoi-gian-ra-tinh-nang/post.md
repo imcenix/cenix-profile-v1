@@ -31,4 +31,4 @@ Quý vừa rồi Airbnb báo doanh thu tăng **17%, đạt 3,6 tỷ đô**, EBIT
 
 Theo anh em, thêm toggle là tôn trọng người dùng hay là né tránh một quyết định thiết kế dứt khoát? Bàn với Cenix ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/airbnb-says-ai-is-helping-it-ship-features-faster-as-it-tests-a-new-search-function/)*

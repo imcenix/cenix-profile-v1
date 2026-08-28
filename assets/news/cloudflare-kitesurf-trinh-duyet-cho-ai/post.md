@@ -27,4 +27,4 @@ Cenix thấy đây là một tín hiệu thú vị về hướng đi của web. 
 
 Anh em làm sản phẩm nghĩ sao — website của mình có nên bắt đầu tính tới việc phục vụ cả agent lẫn người dùng chưa? Bàn với Cenix ở dưới nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/cloudflare-launches-kitesurf-a-browser-built-for-ai-agents/)*

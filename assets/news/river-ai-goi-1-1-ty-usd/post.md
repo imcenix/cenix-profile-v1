@@ -29,4 +29,4 @@ Nói thẳng: vòng vốn này to bất thường cho một công ty non như v�
 
 Anh em thấy sao, tương lai mỗi người một agent riêng do mình huấn luyện có khả thi không? Hay cuối cùng vẫn quay về vài mô hình lớn dùng chung? Comment cho Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/general-catalyst-leads-1-1b-round-into-2-month-old-river-ai/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/general-catalyst-leads-1-1b-round-into-2-month-old-river-ai/)*

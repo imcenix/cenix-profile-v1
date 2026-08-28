@@ -27,4 +27,4 @@ Nhìn tổng thể, đây là một ván cược rất rõ ràng: khi xe tự l�
 
 Anh em nghĩ chiến lược "làm chợ chứ không làm hàng" của Uber sẽ thắng, hay rồi mấy hãng công nghệ tự lái cũng tự dựng app riêng như Waymo đang làm? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/01/ubers-autonomous-vehicle-deal-tracker/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/01/ubers-autonomous-vehicle-deal-tracker/)*

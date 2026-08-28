@@ -25,4 +25,4 @@ Khung pháp lý đó biến Đức thành điểm nóng thử nghiệm. Theo d�
 
 Cenix tò mò: anh em có dám lên một chiếc taxi không tài xế ở châu Âu không? Cho ý kiến ở dưới nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/25/waymo-robotaxis-are-headed-to-munich/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/25/waymo-robotaxis-are-headed-to-munich/)*

@@ -35,4 +35,4 @@ Apple kiểm soát được camera làm gì. Apple không kiểm soát được 
 
 Mấy fen thì sao — thấy người đối diện đeo AirPods có camera, anh em có đổi cách nói chuyện không? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/18/why-apples-camera-equipped-airpods-may-not-be-the-pervert-pods-consumers-fear/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/18/why-apples-camera-equipped-airpods-may-not-be-the-pervert-pods-consumers-fear/)*

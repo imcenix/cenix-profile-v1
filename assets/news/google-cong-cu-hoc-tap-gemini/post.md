@@ -25,4 +25,4 @@ Gemini được thêm khả năng chạy báo cáo nghiên cứu nhiều bước
 
 Câu hỏi thật lòng: công cụ càng giỏi thì mình học được nhiều hơn, hay chỉ là qua bài nhanh hơn? Anh em nghĩ sao, bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/)*

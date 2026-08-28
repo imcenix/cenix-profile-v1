@@ -31,4 +31,4 @@ Cenix không phải chuyên gia tài chính và đây không phải lời khuyê
 
 Mấy fen thấy sao — dân chủ hoá đầu tư mạo hiểm, hay chỉ là đóng gói lại rủi ro cho nhà đầu tư nhỏ ôm? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/robinhood-to-list-a-fund-that-lets-anyone-back-y-combinator-startups/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/robinhood-to-list-a-fund-that-lets-anyone-back-y-combinator-startups/)*

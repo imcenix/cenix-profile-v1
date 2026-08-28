@@ -29,4 +29,4 @@ Tui thấy điểm này quan trọng. Vụ Hugging Face suy cho cùng bắt đ�
 
 Theo anh em, ngành AI nên chậm lại thật, hay vấn đề nằm ở chỗ làm cẩn thận hơn chứ không phải làm chậm hơn? Kể Cenix nghe trong phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/)*

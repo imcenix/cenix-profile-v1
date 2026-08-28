@@ -31,4 +31,4 @@ Tui thấy hướng này khá thú vị. Trong lúc cả ngành đổ tiền và
 
 Anh em có xài trợ lý AI chạy offline chưa, hay vẫn thấy chưa đủ mạnh? Cenix hóng ý kiến.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/)*

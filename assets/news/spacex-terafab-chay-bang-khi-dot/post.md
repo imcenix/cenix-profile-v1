@@ -29,4 +29,4 @@ Cơn sốt data center AI đang đẩy giá nhà máy điện khí tăng **66%**
 
 Theo anh em, "tự mang điện" sẽ thành chuẩn mới của ngành AI, hay là bài toán mà xã hội sẽ phải trả tiền sau? Cho Cenix xin góc nhìn.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/spacexs-terafab-will-rely-on-natural-gas-power-plants-not-tesla-solar-panels/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/spacexs-terafab-will-rely-on-natural-gas-power-plants-not-tesla-solar-panels/)*

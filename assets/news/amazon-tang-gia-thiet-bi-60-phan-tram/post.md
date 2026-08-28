@@ -31,4 +31,4 @@ Nói cách khác, đây là thời điểm khá tệ để mua đồ công ngh�
 
 Anh em có món nào đang tính mua mà giờ phải hoãn lại không? Kể Cenix nghe ở dưới nhé.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/amazon-hikes-hardware-prices-by-60-percent-blaming-memory-shortage/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/amazon-hikes-hardware-prices-by-60-percent-blaming-memory-shortage/)*

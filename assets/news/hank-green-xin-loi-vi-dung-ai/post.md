@@ -29,4 +29,4 @@ Tới đây thì đây không còn là chuyện AI nữa, mà là chuyện một
 
 Anh em có bao giờ tự thấy mình mở chatbot theo phản xạ, kiểu mở mạng xã hội không? Ranh giới giữa dùng AI làm công cụ và dựa dẫm vào nó nằm ở đâu, mấy fen? Comment cho Cenix biết nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/01/youtuber-hank-green-says-his-ai-usage-is-not-healthy/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/01/youtuber-hank-green-says-his-ai-usage-is-not-healthy/)*

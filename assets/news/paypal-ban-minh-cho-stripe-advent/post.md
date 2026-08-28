@@ -25,4 +25,4 @@ Nhìn lại thì hơi ngậm ngùi. PayPal thành lập năm 1998 bởi một nh
 
 Đây là bài học khá rõ về việc dẫn đầu một thời không đảm bảo dẫn đầu mãi mãi. Anh em còn dùng PayPal thường xuyên không, hay đã chuyển hết sang thứ khác? Kể tui nghe ở bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/talks-to-sell-paypal-to-stripe-and-advent-are-heating-up/)*

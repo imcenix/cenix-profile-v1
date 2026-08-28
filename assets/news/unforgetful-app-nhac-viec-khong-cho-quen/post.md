@@ -31,4 +31,4 @@ App có mic riêng để nhập bằng giọng nói, đủ bộ widget cho Lock 
 
 Anh em thấy sao — một app "không cho tắt thông báo" là cứu tinh hay là cực hình? Mấy fen đang dùng gì để không quên việc? Comment cho Cenix xin vài gợi ý.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/unforgetful-is-a-new-reminders-app-for-people-who-cant-stop-hitting-snooze/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/unforgetful-is-a-new-reminders-app-for-people-who-cant-stop-hitting-snooze/)*

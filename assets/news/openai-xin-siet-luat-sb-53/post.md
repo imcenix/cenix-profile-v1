@@ -29,4 +29,4 @@ Nghe hợp lý. Nhưng cũng nên đọc thêm một tầng: một bộ luật b
 
 Theo mấy fen, đây là chuyển biến thật về trách nhiệm hay là nước cờ định hình luật chơi sớm? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/openai-says-california-should-strengthen-its-ai-safety-bill/)*

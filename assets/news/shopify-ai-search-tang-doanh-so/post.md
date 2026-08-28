@@ -33,4 +33,4 @@ Cenix thấy bài học ở đây khá rõ: AI không đối xử giống nhau v
 
 Anh em có hay nhờ AI tư vấn trước khi mua đồ không? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/)*

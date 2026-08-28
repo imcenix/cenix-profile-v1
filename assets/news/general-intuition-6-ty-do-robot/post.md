@@ -27,4 +27,4 @@ Chi tiết thú vị cuối: Valor nổi tiếng vì rót vốn cho SpaceX. Nế
 
 Ý tưởng dạy robot bằng clip game nghe điên rồ hay hợp lý với anh em? Cenix thấy nó vừa đủ ngộ để có thể đúng. Mấy fen nghĩ sao?
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/)*

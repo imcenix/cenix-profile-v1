@@ -27,4 +27,4 @@ Nói cách khác: kinh doanh tăng gấp đôi, mà nhà đầu tư vẫn chưa 
 
 Anh em thấy sao: SpaceX bán sức tính toán là hướng đi khôn ngoan, hay là dấu hiệu cả ngành đang dồn quá nhiều thứ vào một canh bạc AI? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/04/spacex-doubles-revenues-on-anthropic-and-google-compute-deals-starlink-growth/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/04/spacex-doubles-revenues-on-anthropic-and-google-compute-deals-starlink-growth/)*

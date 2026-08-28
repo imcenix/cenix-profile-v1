@@ -31,4 +31,4 @@ Cenix thấy nước đi này thú vị ở chỗ nó biến một hộp đen th
 
 Mấy fen có định tải file JSON về soi tài khoản mình không? Ai làm rồi thì comment kết quả cho anh em tham khảo nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/13/x-open-sources-its-ranking-algorithm-letting-users-see-if-theyve-been-shadowbanned/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/13/x-open-sources-its-ranking-algorithm-letting-users-see-if-theyve-been-shadowbanned/)*

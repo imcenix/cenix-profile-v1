@@ -25,4 +25,4 @@ Cenix thấy nghịch lý ở đây khá đắng: một công ty khởi nghiệp
 
 Anh em nghĩ sao — mua đứt rồi làm gì cũng được, hay sách hiếm nên có một tiêu chuẩn riêng? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/17/amazon-once-an-online-bookseller-is-destroying-rare-books-to-train-ai-models/)*

@@ -29,4 +29,4 @@ Cenix nghĩ chi tiết đắt nhất trong tin này là cái thanh trượt và 
 
 Mấy fen dùng bản Free có thấy chất lượng khác đi không, hay vẫn quay về bản trả phí cho việc quan trọng? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/)*

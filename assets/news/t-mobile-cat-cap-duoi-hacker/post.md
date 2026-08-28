@@ -27,4 +27,4 @@ TechCrunch cho biết đã liên hệ T-Mobile để hỏi thêm và sẽ cập 
 
 Nếu là anh em, trong tình huống đó anh em dám cắt cáp một hệ thống đang chạy production không? Hay sẽ họp thêm ba vòng cho chắc? Kể Cenix nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/19/t-mobile-chopped-a-cable-to-expel-chinese-hackers-from-its-network/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/19/t-mobile-chopped-a-cable-to-expel-chinese-hackers-from-its-network/)*

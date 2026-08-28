@@ -25,4 +25,4 @@ Nếu ghép mảnh này vào bức tranh lớn, hướng đi khá rõ: ChatGPT k
 
 Anh em có tin AI làm slide thay được khâu dựng bố cục không, hay phần "nhìn cho ra hồn" vẫn phải người làm? Cho Cenix xin ý kiến ở dưới.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/)*

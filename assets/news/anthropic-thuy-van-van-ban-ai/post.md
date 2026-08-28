@@ -27,4 +27,4 @@ Việc đánh dấu được áp dụng ở tầng mô hình, nghĩa là nó có
 
 Với anh em làm nội dung, câu hỏi thực tế là: watermark kiểu này giúp minh bạch thật, hay chỉ tạo thêm một trò mèo vờn chuột? Mấy fen nghĩ sao, để lại bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/)*

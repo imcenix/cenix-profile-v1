@@ -32,4 +32,4 @@ Nhìn từ góc nhà phát triển indie thì con số 15% dễ thở hơn 27% n
 
 Anh em nào đang bán app hoặc bán sản phẩm số, mức nào mới là công bằng theo mấy fen? Kéo xuống bình luận cho tui nghe.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/14/apple-proposes-to-take-a-15-cut-of-purchases-made-outside-the-app-store/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/14/apple-proposes-to-take-a-15-cut-of-purchases-made-outside-the-app-store/)*

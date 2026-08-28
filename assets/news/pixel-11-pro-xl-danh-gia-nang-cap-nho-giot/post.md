@@ -33,4 +33,4 @@ Kết luận của tác giả khá thẳng: máy tốt, nhưng chưa đủ lý d
 
 Mấy fen còn nâng cấp điện thoại theo chu kỳ mỗi năm không, hay giờ đợi 2–3 đời mới đổi? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/22/pixel-11-pro-xl-review-snappier-cameras-cant-hide-an-iterative-upgrade/)*

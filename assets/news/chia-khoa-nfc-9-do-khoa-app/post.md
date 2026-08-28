@@ -29,4 +29,4 @@ Cenix thấy đây là một bài học thiết kế gọn gàng: đôi khi gi�
 
 Anh em có sẵn sàng bỏ 9 đô để mua sự bất tiện không? Hay tự thấy mình vẫn kiểm soát được? Comment nha mấy fen.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/01/this-9-key-physically-locks-your-most-addictive-apps/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/01/this-9-key-physically-locks-your-most-addictive-apps/)*

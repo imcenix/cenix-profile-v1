@@ -27,4 +27,4 @@ Về quản lý, Amodei bác cái mà ông gọi là "lựa chọn giả": hoặ
 
 Anh em nghiêng về phía nào — cảnh báo sớm là có trách nhiệm, hay đúng là làm ngành mất điểm? Kể Cenix nghe ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/)*

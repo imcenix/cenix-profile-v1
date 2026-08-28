@@ -27,4 +27,4 @@ TerraPower thiết kế lò **345 megawatt** làm mát bằng muối nóng chả
 
 Anh em tin hạt nhân sẽ là lời giải cho cơn khát điện của AI, hay chỉ là câu chuyện đẹp chờ giá vốn hạ xuống? Bàn với Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/19/terrapowers-nuclear-reactor-has-a-secret-weapon-for-powering-ai-data-centers/)*

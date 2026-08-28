@@ -27,4 +27,4 @@ Sự ra đi này nằm trong chuỗi biến động khi OpenAI chuẩn bị cho 
 
 Anh em nghĩ làn sóng này là chuyện bình thường của một công ty đang tái cấu trúc trước IPO, hay là tín hiệu gì đó sâu hơn? Cenix muốn nghe ý kiến của mấy fen.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/11/brad-lightcap-openais-longtime-coo-is-leaving-to-start-something-new/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/11/brad-lightcap-openais-longtime-coo-is-leaving-to-start-something-new/)*

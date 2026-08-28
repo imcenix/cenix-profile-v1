@@ -29,4 +29,4 @@ Về làn sóng phản đối data center hiện nay, bà chỉ ra ví dụ ở 
 
 Anh em nghĩ sao — nhận định của Lepore là lời cảnh tỉnh cần thiết, hay hơi nặng tay với ngành công nghệ? Cenix rất muốn nghe cả hai phía ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/09/historian-jill-lepore-says-the-tech-industry-is-led-by-bad-readers-who-are-undermining-democracy/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/09/historian-jill-lepore-says-the-tech-industry-is-led-by-bad-readers-who-are-undermining-democracy/)*

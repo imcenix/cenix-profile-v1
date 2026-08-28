@@ -23,4 +23,4 @@ Cuối tháng 7, quỹ bán phần lớn danh mục đại chúng cho Citadel c�
 
 Mấy fen nghiêng về cách đọc nào? Cenix hóng comment.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/09/embattled-hedge-fund-situational-awareness-invests-400m-in-chip-startup-source-foundry/)*

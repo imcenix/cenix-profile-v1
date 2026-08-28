@@ -33,4 +33,4 @@ Cenix thấy đây là bài học kinh điển về vòng đời của một pat
 
 Anh em làm UI/UX nghĩ thứ gì sẽ thay swipe? Cenix rất muốn nghe dự đoán của mấy fen ở dưới.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/06/bumble-teases-a-swipe-free-future-as-it-doubles-down-on-irl-meetups/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/06/bumble-teases-a-swipe-free-future-as-it-doubles-down-on-irl-meetups/)*

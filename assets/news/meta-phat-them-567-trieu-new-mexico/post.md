@@ -35,4 +35,4 @@ Vụ này nối tiếp một phán quyết bất lợi khác ở Los Angeles h�
 
 Anh em nghĩ can thiệp ở tầng thiết kế như vậy là hợp lý hay đi quá xa? Cenix muốn nghe cả hai phía ở phần bình luận.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/07/new-mexico-court-orders-meta-to-pay-additional-567m-in-child-safety-case/)*

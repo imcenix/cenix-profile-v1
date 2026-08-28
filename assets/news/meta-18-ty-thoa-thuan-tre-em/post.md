@@ -39,4 +39,4 @@ Meta cho biết sẽ ghi nhận **10 tỷ USD** chi phí pháp lý trong quý 3.
 
 Anh em nghĩ sao — bộ giới hạn này có thật sự bảo vệ được trẻ em, hay chỉ là chi phí kinh doanh với một công ty kiếm hàng trăm tỷ mỗi năm? Để lại bình luận cho Cenix nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/26/meta-settles-for-18-billion-in-lawsuit-brought-by-29-states-over-social-media-harms-to-children/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/26/meta-settles-for-18-billion-in-lawsuit-brought-by-29-states-over-social-media-harms-to-children/)*

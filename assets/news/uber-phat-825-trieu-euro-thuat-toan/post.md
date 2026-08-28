@@ -31,4 +31,4 @@ Dĩ nhiên vẫn có góc nhìn khác. John Gruber của Daring Fireball lo rằ
 
 Theo mấy fen, ranh giới nên nằm ở đâu — quyết định nào máy được tự làm, quyết định nào bắt buộc phải có người? Comment cho tui nghe với.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/)*

@@ -29,4 +29,4 @@ Tất nhiên vẫn còn câu hỏi mở: khi lý do đeo vòng là để nuôi P
 
 Mấy fen có đang đeo thiết bị theo dõi sức khoẻ nào không, và đeo được bao lâu rồi? Anh em nghĩ gắn game vào để tạo động lực là hay hay là hơi quá? Kể Cenix nghe ở dưới nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/27/googles-new-fitbit-air-brings-pokemon-sleep-to-your-wrist/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/27/googles-new-fitbit-air-brings-pokemon-sleep-to-your-wrist/)*

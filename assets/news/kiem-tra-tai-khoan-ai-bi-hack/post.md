@@ -27,4 +27,4 @@ Ba thao tác, mỗi cái chưa tới một phút. Nếu anh em đang dùng chung
 
 Mấy fen có từng phát hiện phiên đăng nhập lạ trong tài khoản nào chưa? Kể Cenix nghe ở phần bình luận nha.
 
-*Nguồn: [TechCrunch](https://techcrunch.com/2026/08/15/how-to-tell-if-your-ai-platforms-accounts-have-been-hacked/)*
+*Nguồn tham khảo: [TechCrunch](https://techcrunch.com/2026/08/15/how-to-tell-if-your-ai-platforms-accounts-have-been-hacked/)*
