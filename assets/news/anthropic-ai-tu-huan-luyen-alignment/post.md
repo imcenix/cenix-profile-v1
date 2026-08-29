@@ -23,7 +23,7 @@ Chỗ khiến Cenix phải đọc lại hai lần là đoạn so sánh trực ti
 
 > "Phương pháp tốt nhất của AAR vượt qua thứ mà các nhà nghiên cứu có kinh nghiệm đề xuất, trung bình trong vòng sáu giờ. Các hướng nghiên cứu do con người dẫn dắt không cho hiệu năng mạnh hơn."
 
-Và phần tiền: một AAR tốn khoảng **4 đô/giờ** tiền API inference, so với **150 đô/giờ** Anthropic trả cho nhà nghiên cứu người. Chênh gần 37 lần.
+Và phần tiền: một AAR tốn khoảng **4 đô/giờ** tiền API inference, so với **150 đô/giờ** Anthropic trả cho nhà nghiên cứu người. Chênh hơn 37 lần.
 
 Paper cũng tự chỉ ra giới hạn, và đây là chỗ mấy fen nên đọc kỹ: hệ thống chỉ hiệu quả trong đúng phạm vi mà benchmark phản ánh được mục tiêu alignment thật. Mà việc dựng và duy trì bộ benchmark đó, cùng kho tài liệu để AI đọc, vẫn là việc của người.
 
