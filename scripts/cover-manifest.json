@@ -526,5 +526,33 @@
   {
     "path": "assets/news/fitbit-air-pokemon-sleep/cover.png",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/Pokemon_Fitbit_Air.png?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-ai-tu-huan-luyen-alignment/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2287646148.jpg?resize=1200,901"
+  },
+  {
+    "path": "assets/news/hang-xe-trung-quoc-dua-robot-hinh-nguoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/xpeng-robot-Getty.jpg?resize=1200,848"
+  },
+  {
+    "path": "assets/news/anthropic-thang-kien-lau-nam-goc/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2278736523.jpeg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/apple-tv-tang-gia-lan-thu-tu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/02/SVOD_AppleTV_Severance-S2_Blog-Post-1-1024x576-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/brave-email-alias-che-hop-thu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/08/brave-browser.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/xreal-a01-xem-phim-tren-kinh-mat/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/P1110099.jpg?resize=1200,901"
+  },
+  {
+    "path": "assets/news/a16z-quy-machine-age-1-1-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/andreessen-horowitz-office.jpg?resize=1200,800"
   }
 ]
