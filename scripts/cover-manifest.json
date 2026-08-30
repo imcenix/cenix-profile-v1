@@ -554,5 +554,29 @@
   {
     "path": "assets/news/a16z-quy-machine-age-1-1-ty/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/andreessen-horowitz-office.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/sony-warner-kien-anthropic-ban-quyen/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-Anthropic-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/nvidia-loi-the-vuot-ngoai-gpu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/jense-nvidi-chip-GettyImages-2266485392.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/open-weight-muc-tieu-thau-tom-hot-nhat/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/GettyImages-1849294862.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/hollywood-do-bo-microdrama/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/12/shutterstock_movie_director.jpg?resize=1200,717"
+  },
+  {
+    "path": "assets/news/lambda-vay-1-ty-mua-chip-nvidia/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/Chip-chips-dollar-signs-money.png?resize=1200,960"
+  },
+  {
+    "path": "assets/news/my-quay-lung-camera-bien-so-flock/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/11/flock-camera-sf-surveillance-2157492329.jpg?resize=1200,794"
   }
 ]
