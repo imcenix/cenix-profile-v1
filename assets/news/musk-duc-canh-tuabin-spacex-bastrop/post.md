@@ -19,7 +19,7 @@ Musk viết trên X rằng SpaceX và Tesla mỗi bên đang dựng **100GW/năm
 
 Cánh ở vùng nóng nhất của tuabin chạy ở khoảng **3.000–3.600°F**, tức nóng hơn điểm nóng chảy của chính hợp kim làm ra nó chừng 800 độ. Nó sống được nhờ kênh làm mát bên trong, lớp phủ chắn nhiệt, và cách đúc rất đặc thù: mỗi cánh phải là **một tinh thể liền khối**, nuôi chậm trong lò chân không, không được có đường nối vi mô nào để khỏi nứt khi chịu tải. Cả thế giới chỉ có **4 công ty** làm chủ quy trình này ở quy mô công nghiệp — và cả bốn đều đã kín đơn.
 
-Bối cảnh thì rõ: IEA dự báo điện tiêu thụ của data center toàn cầu tăng gần gấp đôi vào năm 2030, còn GE Vernova nói họ gần như bán hết công suất tới 2030.
+Bối cảnh thì rõ: IEA dự báo điện tiêu thụ của data center toàn cầu tăng khoảng gấp đôi vào năm 2030, còn GE Vernova nói họ gần như bán hết công suất tới 2030.
 
 ## Mặt còn lại của bài toán
 
