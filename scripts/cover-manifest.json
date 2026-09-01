@@ -590,5 +590,33 @@
   {
     "path": "assets/news/liux-big-xe-dien-mini-vo-soi-lanh/cover.png",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/LIUX-BIG-Factory-001.png?resize=1200,800"
+  },
+  {
+    "path": "assets/news/tim-cook-roi-ghe-ceo-apple/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/04/Apple-John-Ternus-Tim-Cook_Full-Bleed-Image.jpg.xlarge_2x.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/phil-schiller-roi-app-store/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-1660777497.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/ftc-kien-amazon-phu-phi-quang-cao/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2217247219.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/lau-nam-goc-chatgpt-grok-quan-doi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2263890424.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/instagram-nhan-profile-ai/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Instagram-label-.png?w=1200"
+  },
+  {
+    "path": "assets/news/mapquest-khong-doi-ten-ho-ontario/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/mapquest-lake-ontario.jpg?resize=1200,891"
+  },
+  {
+    "path": "assets/news/vlc-7-ty-luot-tai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-590060556.jpg?resize=1200,800"
   }
 ]
