@@ -618,5 +618,29 @@
   {
     "path": "assets/news/vlc-7-ty-luot-tai/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-590060556.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/google-thoat-chia-tach-quang-cao/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/google-logo.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/uber-cat-giam-3300-nhan-su/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/05/GettyImages-2211281388.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/openai-recurrent-depth-lo-mat-chuoi-suy-luan/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/chinh-phu-my-benh-vuc-openai-ban-quyen/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2263890424.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/adobe-dua-cong-cu-vao-slack/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Adobe-For-Slack_1.jpg?resize=1200,526"
+  },
+  {
+    "path": "assets/news/na-uy-tinh-cam-kinh-thong-minh-gan-camera/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/zuck-glasses-2173579471-e1788354102893.jpg?resize=1200,761"
   }
 ]
