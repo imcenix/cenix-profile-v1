@@ -642,5 +642,29 @@
   {
     "path": "assets/news/na-uy-tinh-cam-kinh-thong-minh-gan-camera/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/zuck-glasses-2173579471-e1788354102893.jpg?resize=1200,761"
+  },
+  {
+    "path": "assets/news/openai-xac-nhan-su-co-wiki-duc/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/nhom-leo-nui-tin-gemini-shasta/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2017/11/gettyimages-677147499.jpg?resize=1200,600"
+  },
+  {
+    "path": "assets/news/seattle-times-newsday-kien-openai-microsoft/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/03/artifact-newspaper-icon.jpg?resize=1200,645"
+  },
+  {
+    "path": "assets/news/oura-ipo-cuoc-dua-nhan-thong-minh/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/Oura_Ring_5_Product-1_Collection.png?resize=1200,800"
+  },
+  {
+    "path": "assets/news/kalanick-atoms-nhay-vao-robotaxi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/travis-kalanick-fii.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/clucky-bao-thuc-ga-gay/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Clucky.png?w=1200"
   }
 ]
