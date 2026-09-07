@@ -228,7 +228,7 @@ const formatDate = (iso: string) => {
   }
   .news-none { padding: 2.5rem 0; text-align: center; color: #6a6357; font-family: var(--font-body); }
 
-  .news-pagination { display: flex; justify-content: center; gap: .5rem; padding: 2.5rem 0 .5rem; }
+  .news-pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; padding: 2.5rem 0 .5rem; }
   .news-pagination[hidden] { display: none; }
   .news-pagination :global(.pg) {
     min-width: 38px; height: 38px; padding: 0 .7rem;
@@ -236,7 +236,14 @@ const formatDate = (iso: string) => {
     font-family: var(--font-body); font-size: .85rem; color: #4a443b; cursor: pointer;
     display: inline-flex; align-items: center; justify-content: center;
   }
+  .news-pagination :global(.pg:hover:not(:disabled)) { border-color: rgba(20, 17, 13, .4); color: var(--color-blue); }
   .news-pagination :global(.pg.active) { background: var(--color-lime); border-color: var(--color-lime); color: #14110d; font-weight: 700; }
+  .news-pagination :global(.pg:disabled) { opacity: .42; cursor: not-allowed; }
+  .news-pagination :global(.pg-arrow) { font-size: 1.05rem; font-weight: 700; }
+  .news-pagination :global(.pg-ellipsis) {
+    min-width: 26px; height: 38px; display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--font-body); font-size: .9rem; color: #8b8376;
+  }
 
   @media (max-width: 860px) { .news-feature { grid-template-columns: 1fr; } .news-feature-media { aspect-ratio: 16 / 9; } }
   @media (max-width: 560px) { .news-row { grid-template-columns: 1fr; } .news-row-media { aspect-ratio: 16 / 9; } }
@@ -244,6 +251,8 @@ const formatDate = (iso: string) => {
 
 <script>
   const PAGE_SIZE = 8;
+  const MAX_PAGE_NUMBERS = 10;
+  const EDGE_PAGE_COUNT = 3;
   const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.news-chip'));
   const feature = document.querySelector<HTMLElement>('.news-feature');
   const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-news-row]'));
@@ -255,7 +264,65 @@ const formatDate = (iso: string) => {
   const pgBtn = (label: string, p: number, cls = '') => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = `pg ${cls}`.trim(); b.dataset.page = String(p); b.textContent = label;
+    if (cls.includes('active')) b.setAttribute('aria-current', 'page');
     return b;
+  };
+
+  const ellipsis = () => {
+    const s = document.createElement('span');
+    s.className = 'pg-ellipsis';
+    s.textContent = '...';
+    s.setAttribute('aria-hidden', 'true');
+    return s;
+  };
+
+  const pageRange = (totalPages: number, currentPage: number) => {
+    if (totalPages <= MAX_PAGE_NUMBERS) return Array.from({ length: totalPages }, (_, i) => i + 1);
+
+    const pages = new Set<number>();
+    const add = (p: number) => { if (p >= 1 && p <= totalPages) pages.add(p); };
+
+    for (let i = 1; i <= EDGE_PAGE_COUNT; i++) add(i);
+    for (let i = totalPages - EDGE_PAGE_COUNT + 1; i <= totalPages; i++) add(i);
+    for (let i = currentPage - 1; i <= currentPage + 1; i++) add(i);
+
+    for (let offset = 2; pages.size < MAX_PAGE_NUMBERS && offset < totalPages; offset++) {
+      const before = pages.size;
+      add(currentPage - offset);
+      if (pages.size >= MAX_PAGE_NUMBERS) break;
+      add(currentPage + offset);
+      if (pages.size === before) break;
+    }
+
+    return [...pages].sort((a, b) => a - b);
+  };
+
+  const renderPagination = (totalPages: number) => {
+    if (!pagination) return;
+    pagination.replaceChildren();
+
+    if (totalPages <= 1) {
+      pagination.hidden = true;
+      return;
+    }
+
+    pagination.hidden = false;
+    const prev = pgBtn('‹', Math.max(1, page - 1), 'pg-arrow');
+    prev.disabled = page === 1;
+    prev.setAttribute('aria-label', 'Trang trước');
+    pagination.append(prev);
+
+    let last = 0;
+    pageRange(totalPages, page).forEach((p) => {
+      if (last && p - last > 1) pagination.append(ellipsis());
+      pagination.append(pgBtn(String(p), p, p === page ? 'active' : ''));
+      last = p;
+    });
+
+    const next = pgBtn('›', Math.min(totalPages, page + 1), 'pg-arrow');
+    next.disabled = page === totalPages;
+    next.setAttribute('aria-label', 'Trang sau');
+    pagination.append(next);
   };
 
   const render = () => {
@@ -271,14 +338,7 @@ const formatDate = (iso: string) => {
     }
     if (none) none.hidden = matched.length > 0 || (feature && feature.style.display !== 'none');
 
-    if (pagination) {
-      pagination.replaceChildren();
-      if (totalPages <= 1) { pagination.hidden = true; }
-      else {
-        pagination.hidden = false;
-        for (let i = 1; i <= totalPages; i++) pagination.append(pgBtn(String(i), i, i === page ? 'active' : ''));
-      }
-    }
+    renderPagination(totalPages);
     chips.forEach((c) => c.classList.toggle('is-active', c.dataset.filter === filter));
   };
 
