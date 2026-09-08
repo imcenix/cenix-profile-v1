@@ -666,5 +666,25 @@
   {
     "path": "assets/news/clucky-bao-thuc-ga-gay/cover.png",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/Clucky.png?w=1200"
+  },
+  {
+    "path": "assets/news/tesla-cybercab-lan-banh-austin/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/tesla-cybercab-street-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/nha-xuat-ban-doi-phan-tien-anthropic/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/12/49688202642_09fd5ccc38_k.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/opaque-recurrence-tu-vung-ai-moi/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/Chain-of-thought-picture.png?resize=1200,800"
+  },
+  {
+    "path": "assets/news/phim-tai-lieu-bi-mat-elizabeth-holmes/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2018/11/GettyImages-491583120.jpg?resize=1200,838"
+  },
+  {
+    "path": "assets/news/do-cong-nghe-retro-tro-lai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/09/phone-records-neon-mobile-2198206872.jpg?resize=1200,839"
   }
 ]
