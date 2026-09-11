@@ -734,5 +734,33 @@
   {
     "path": "assets/news/ternus-hoi-sinh-chien-luoc-steve-jobs/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2264179980.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/nvidia-huang-tang-truong-70-phan-tram/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/jensen-huang-gtc-getty.jpg?resize=1200,781"
+  },
+  {
+    "path": "assets/news/bending-spoons-mua-miro-1-36-ty/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Miro_Header-2400x1260-copy-1536x806-1.png?resize=1200,630"
+  },
+  {
+    "path": "assets/news/automattic-buoc-mullenweg-nghi-phep/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/10/matt-mullenweg-bling-watch.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/idscan-lo-150-trieu-bang-lai-xe/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2019/07/GettyImages-681253878.jpg?resize=1200,788"
+  },
+  {
+    "path": "assets/news/ai-agent-lam-ngap-dich-vu-cong/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2264911748.jpg?resize=1200,705"
+  },
+  {
+    "path": "assets/news/harvey-dinh-gia-15-5-ty-usd/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/11/Screenshot-2025-11-14-at-11.50.31-AM.png?resize=1200,863"
+  },
+  {
+    "path": "assets/news/snapchat-plans-doi-dau-partiful/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/06/snapchat-getty.jpg?w=1200"
   }
 ]
