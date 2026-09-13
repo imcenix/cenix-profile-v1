@@ -786,5 +786,29 @@
   {
     "path": "assets/news/boring-company-goi-3-ty-usd-uae/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2021/07/GettyImages-1311710604.jpg?resize=1200,770"
+  },
+  {
+    "path": "assets/news/amodei-ke-hoach-ha-nhip-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-Anthropic-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/revolut-lo-du-lieu-email-gia-mao/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/11/revolut.png?resize=1200,629"
+  },
+  {
+    "path": "assets/news/roblox-tao-game-bang-ai-choi-ngoai-nen-tang/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Build_Flow_16x9-EN.jpeg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/mecka-ai-500-trieu-du-lieu-robot/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2082335389.jpg?resize=1200,857"
+  },
+  {
+    "path": "assets/news/moonshot-ai-muc-tieu-2-ty-usd/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/GettyImages-2286500505.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/mullenweg-tro-lai-ghe-ceo-automattic/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/10/matt-mullenweg-disrupt.jpg?resize=1200,800"
   }
 ]
