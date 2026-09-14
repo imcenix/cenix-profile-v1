@@ -1,97 +1,374 @@
-const ASSET='assets/images/';
-const news=[
-  ['20/08/2026','VinaCapital tăng cường hợp tác, chia sẻ chuyên môn để tạo giá trị bền vững cho đối tác và khách hàng'],
-  ['19/08/2026','VinaCapital hợp tác cùng Chứng khoán MB phân phối chứng chỉ quỹ mở'],
-  ['29/07/2026','Bổ sung Công ty TNHH Chứng khoán Ngân hàng TMCP Ngoại thương Việt Nam vào danh sách đại lý phân phối chứng chỉ quỹ mở VinaCapital'],
-  ['16/06/2026','VinaCapital niêm yết hai quỹ ETF chiến lược đầu tiên tại Việt Nam'],
-  ['12/06/2026','VinaCapital cập nhật tên và chiến lược đầu tư các quỹ mở'],
-  ['14/05/2026','VinaCapital hợp tác cùng Chứng khoán CV phân phối chứng chỉ quỹ mở'],
-  ['18/04/2026','VinaCapital được chọn để cùng dẫn dắt Quỹ Đầu tư Mạo hiểm Thành phố Hồ Chí Minh'],
-  ['19/03/2026','VinaCapital hợp tác cùng Chứng khoán Rồng Việt phân phối chứng chỉ quỹ mở'],
-  ['24/02/2026','VinaCapital ra mắt hai quỹ ETF chiến lược đầu tiên tại Việt Nam']
-];
+/* ==========================================================================
+   VinaCapital — Option 01 · Bold Editorial
+   Bản chỉnh theo Feedback website (09/09/2026)
+   Nội dung giữ nguyên tuyến trang chủ vinacapital.com/vi
+   ========================================================================== */
 
-const heroCopy={
-  label:'Tập đoàn quản lý đầu tư đa ngành hàng đầu Việt Nam',
-  title:'Kiến tạo giá trị từ sự phát triển mạnh mẽ của Việt Nam',
-  body:'Tự hào là Tập đoàn quản lý đầu tư đa ngành hàng đầu tại Việt Nam, chúng tôi sở hữu vị thế đặc biệt để kiến tạo giá trị, đồng thời mang đến những cơ hội và lợi ích từ sự phát triển mạnh mẽ của đất nước trên tất cả các loại tài sản.'
+const IMG = 'assets/images/';
+
+const NAV = ['Về chúng tôi', 'Giải pháp đầu tư', 'ESG', 'Kiến thức đầu tư', 'Tin tức & Phân tích', 'Tuyển dụng', 'Liên hệ'];
+
+const HERO = {
+  label: 'Tập đoàn quản lý đầu tư đa ngành hàng đầu Việt Nam',
+  lines: ['Kiến tạo giá trị', 'từ sự phát triển', 'mạnh mẽ của Việt Nam'],
+  body: 'Tự hào là Tập đoàn quản lý đầu tư đa ngành hàng đầu tại Việt Nam, chúng tôi sở hữu vị thế đặc biệt để kiến tạo giá trị, đồng thời mang đến những cơ hội và lợi ích từ sự phát triển mạnh mẽ của đất nước trên tất cả các loại tài sản.',
+  cta: 'Về chúng tôi',
+  img: 'skyline-dusk.jpg',
+  alt: 'Thành phố Hồ Chí Minh trong khoảnh khắc chuyển tối',
+  foot: 'Việt Nam · Tăng trưởng dài hạn'
 };
-const quote='VinaCapital có niềm tin mãnh liệt vào Việt Nam. Chúng tôi đầu tư vào đất nước, lực lượng lao động, năng lượng và tương lai của Việt Nam.';
-const solutionsIntro='Là tập đoàn quản lý tài sản đa lĩnh vực hàng đầu tại Việt Nam, VinaCapital cung cấp cho các nhà đầu tư trong và ngoài nước các cơ hội đầu tư để chia sẻ sự tăng trưởng của Việt Nam.';
-const insightTitle='Trung tâm Tài chính Quốc tế Việt Nam (VIFC): Không phải là Dubai tiếp theo';
-const esgCopy='VinaCapital khát vọng chia sẻ và lan tỏa sự thịnh vượng. Chúng tôi nghiên cứu, tìm tòi và đầu tư để mang đến sự khác biệt cho cộng đồng mà chúng tôi phục vụ, cũng như không ngừng theo đuổi mục tiêu vì một tương lai phát triển mạnh mẽ của Việt Nam.';
 
-function header(){return `<header class="site-header"><img src="assets/logo-vinacapital.png" alt="VinaCapital"><nav class="site-nav"><a href="#about">Về chúng tôi</a><a href="#solutions">Giải pháp đầu tư</a><a href="#esg">ESG</a><a href="#insight">Kiến thức đầu tư</a><a href="#news">Tin tức & Phân tích</a><a href="#careers">Tuyển dụng</a><a href="#contact">Liên hệ</a><span class="lang">VI / EN</span><a class="mio" href="#">MiO</a></nav><span class="mobile-nav">MENU</span></header>`}
-function fraud(){return `<section class="fraud"><div class="site-container"><div class="fraud__head"><div><p class="section-label">Bảo vệ nhà đầu tư</p><h2>Cảnh báo lừa đảo</h2></div><button class="fraud-toggle" aria-expanded="false">XEM THÔNG TIN QUAN TRỌNG +</button></div><div class="fraud__body"><p>Nhằm bảo vệ nhà đầu tư trước các hành vi giả mạo và gian lận lợi dụng thương hiệu và uy tín của VinaCapital, chúng tôi xin lưu ý những thông tin quan trọng sau:</p><ul><li>VinaCapital không thực hiện bất kỳ hoạt động tuyển dụng trực tuyến nào, bao gồm tuyển dụng việc làm từ xa, công việc tự do hoặc làm việc tại nhà.</li><li>VinaCapital hiện tại không thực hiện mời gọi nhà đầu tư tham gia các nhóm đầu tư chứng khoán thông qua Facebook, Zalo, Telegram, WhatsApp, Viber, Messenger hoặc bất kỳ nền tảng mạng xã hội hoặc nhắn tin nào khác.</li><li>Chứng chỉ quỹ mở chỉ được giao dịch thông qua ứng dụng MiO hoặc các ứng dụng của đại lý phân phối chính thức.</li></ul></div></div></section>`}
-function footer(){return `<footer class="site-footer" id="contact"><div class="site-container footer-grid"><div><img src="assets/logo-vinacapital.png" alt="VinaCapital"><p>Copyright © 2024 VinaCapital. All rights reserved.</p><p>Điều Kiện & Điều Khoản Sử Dụng · Chính Sách Bảo Mật</p></div><div><h4>Thành phố Hồ Chí Minh</h4><p>Lầu 17, Tòa nhà Sunwah<br>115 Nguyễn Huệ, Phường Sài Gòn<br>+84 28 3821 9930<br>Info@vinacapital.com</p></div><div><h4>Hà Nội</h4><p>Lầu 2, International Centre<br>17 Ngô Quyền, Phường Hoàn Kiếm<br>+84 24 3936 4630</p></div><div><h4>Singapore</h4><p>#42-01, Suntec Tower 4<br>6 Temasek Boulevard<br>Singapore 038986<br>+65 6332 9081</p></div></div></footer>`}
-function quietNewsRows(){return news.slice(1).map(item=>`<div class="q-news-row"><time class="news-date">${item[0]}</time><span>${item[1]}</span></div>`).join('')}
-function constructiveNewsRows(){return news.slice(1).map(item=>`<div class="c-news-row"><time class="news-date">${item[0]}</time><span>${item[1]}</span></div>`).join('')}
-function motionNewsRows(){return news.slice(1).map(item=>`<div class="m-news-row"><time class="news-date">${item[0]}</time><span>${item[1]}</span></div>`).join('')}
+const ABOUT = {
+  label: 'Đồng hành Phát triển Phồn vinh',
+  heading: 'Niềm tin dài hạn<br>vào Việt Nam',
+  quote: 'VinaCapital có niềm tin mãnh liệt vào Việt Nam. Chúng tôi đầu tư vào đất nước, lực lượng lao động, năng lượng và tương lai của Việt Nam.',
+  cta: 'Tìm hiểu VinaCapital',
+  img: 'skyline-day.jpg'
+};
 
-function quiet(){return `<main class="website quiet">
-${header()}
-<section class="q-hero"><div class="site-container q-hero__frame"><div class="q-hero__copy"><p class="section-label">${heroCopy.label}</p><h1>${heroCopy.title}</h1><p>${heroCopy.body}</p><div style="margin-top:28px"><a class="site-cta" href="#about">Xem thêm <span class="arr">→</span></a></div></div><div class="q-hero__image"><span>Vietnam · Long-term perspective</span></div></div></section>
-<section class="q-about" id="about"><div class="site-container"><p class="section-label">Đồng hành Phát triển Phồn vinh</p><blockquote class="q-quote">${quote}</blockquote><div class="q-about__action"><a class="site-cta outline" href="#">Tìm hiểu VinaCapital <span class="arr">→</span></a></div></div></section>
-<section class="q-solutions" id="solutions"><div class="site-container"><div class="q-solutions__head"><div><p class="section-label">Các giải pháp đầu tư của VinaCapital</p><h2>Chia sẻ sự tăng trưởng của Việt Nam</h2></div><p>${solutionsIntro}</p></div><div class="q-solution-grid"><article class="q-solution"><div class="q-solution__top"><span>01 / GLOBAL</span><a href="#" aria-label="Xem Quỹ đầu tư ngoài nước">↗</a></div><h3>Quỹ đầu tư ngoài nước</h3><p>Tiếp cận cơ hội tăng trưởng tại Việt Nam thông qua nền tảng quản lý đầu tư giàu kinh nghiệm.</p></article><article class="q-solution"><div class="q-solution__top"><span>02 / DOMESTIC</span><a href="#" aria-label="Xem Quỹ đầu tư trong nước">↗</a></div><h3>Quỹ đầu tư trong nước</h3><p>Danh mục quỹ đa dạng, phù hợp với nhiều mục tiêu và khẩu vị đầu tư khác nhau.</p></article><article class="q-solution"><div class="q-solution__top"><span>03 / ALTERNATIVES</span><a href="#" aria-label="Xem Đầu tư thay thế">↗</a></div><h3>Đầu tư thay thế</h3><p>Giải pháp chuyên biệt trong công nghệ, năng lượng, hạ tầng và bất động sản.</p></article></div><div style="margin-top:30px"><a class="site-cta" href="#">Khám phá các giải pháp <span class="arr">→</span></a></div></div></section>
-<section class="q-news" id="news"><div class="site-container"><p class="section-label">Tin mới nhất</p><h2 class="news-title-one-line">Thông tin cập nhật từ VinaCapital</h2><div class="q-news__layout"><article class="q-news__lead"><img src="${ASSET}investor.jpg" alt="Nhà đầu tư và lãnh đạo doanh nghiệp"><time class="news-date" style="display:block;margin-top:20px">${news[0][0]}</time><h3>${news[0][1]}</h3><a class="site-cta outline" href="#">Xem tất cả <span class="arr">→</span></a></article><div class="q-news__list">${quietNewsRows()}</div></div></div></section>
-<section class="q-insight" id="insight"><div class="site-container q-insight__card"><div class="q-insight__image"></div><div class="q-insight__copy"><p class="section-label">Phân tích mới nhất</p><h2>${insightTitle}</h2><p>Góc nhìn chuyên môn từ đội ngũ VinaCapital về những động lực định hình thị trường và cơ hội đầu tư tại Việt Nam.</p><div><a class="site-cta" href="#">Xem phân tích <span class="arr">→</span></a></div></div></div></section>
-<section class="q-esg" id="esg"><div class="site-container q-esg__grid"><img src="${ASSET}esg.jpg" alt="Đầu tư có trách nhiệm tại Việt Nam"><div><p class="section-label">ESG</p><h2>Đầu tư có trách nhiệm</h2><p>${esgCopy}</p><a class="site-cta" href="#">Xem thêm <span class="arr">→</span></a></div></div></section>
-<section class="q-presence"><div class="site-container"><p class="section-label">Sự hiện diện của chúng tôi</p><h2>Năng lực được xây dựng qua hơn hai thập kỷ</h2><div class="q-stats"><div class="q-stat"><strong>3,8 tỷ USD</strong><p>Tổng tài sản quản lý</p></div><div class="q-stat"><strong>200+</strong><p>Đội ngũ nhân sự</p></div><div class="q-stat"><strong>7</strong><p>Loại tài sản: cổ phiếu, trái phiếu, vốn tư nhân, công nghệ, năng lượng & hạ tầng, bất động sản và tín chỉ carbon</p></div><div class="q-stat"><strong>23</strong><p>Năm kinh nghiệm</p></div></div></div></section>
-${fraud()}${footer()}</main>`}
+/* Icon hình học cho từng nhóm giải pháp — thay cho ảnh landscape */
+const SOL_ICONS = {
+  globe: '<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="17" stroke="currentColor" stroke-width="2"/><ellipse cx="22" cy="22" rx="7.5" ry="17" stroke="currentColor" stroke-width="2"/><path d="M5.6 16.5h32.8M5.6 27.5h32.8" stroke="currentColor" stroke-width="2"/></svg>',
+  shield: '<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 4.5 38 10v12.2C38 31 31 37.5 22 40 13 37.5 6 31 6 22.2V10L22 4.5Z" stroke="currentColor" stroke-width="2"/><path d="m15 22 5 5 9-10" stroke="currentColor" stroke-width="2"/></svg>',
+  layers: '<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 5 40 15 22 25 4 15 22 5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 23.5 22 33.5 40 23.5M4 31 22 41l18-9.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
+};
 
-function constructive(){return `<main class="website constructive">
-${header()}
-<section class="c-hero"><div class="site-container"><div class="c-hero__frame"><div class="c-hero__copy"><p class="section-label">${heroCopy.label}</p><h1>${heroCopy.title}</h1><p>${heroCopy.body}</p><div style="margin-top:27px"><a class="site-cta" href="#about">Xem thêm <span class="arr">→</span></a></div></div><div class="c-hero__visual"><div class="shape-corner"></div><div class="shape-cut"></div></div></div><div class="c-metrics"><div><strong>3,8 tỷ USD</strong>Tổng tài sản quản lý</div><div><strong>23 năm</strong>Kinh nghiệm</div><div><strong>7</strong>Loại tài sản</div><div><strong>200+</strong>Nhân sự</div></div></div></section>
-<section class="c-about" id="about"><div class="site-container c-about__grid"><div class="c-about__visual" role="img" aria-label="Hạ tầng cầu hiện đại tại Việt Nam"></div><div class="c-about__copy"><p class="section-label">Đồng hành Phát triển Phồn vinh</p><p class="c-statement">${quote}</p><div style="margin-top:28px"><a class="site-cta outline" href="#">Tìm hiểu VinaCapital <span class="arr">→</span></a></div></div></div></section>
-<section class="c-solutions" id="solutions"><div class="site-container"><div class="c-solutions__head"><div><p class="section-label">Các giải pháp đầu tư của VinaCapital</p><h2>Chia sẻ sự tăng trưởng của Việt Nam</h2></div><p>${solutionsIntro}</p></div><div class="c-solution-grid"><article class="c-solution"><div class="c-solution__top"><span>01 / GLOBAL</span><span>↗</span></div><h3>Quỹ đầu tư ngoài nước</h3><p>Chiến lược chuyên sâu dành cho nhà đầu tư tìm kiếm cơ hội tại Việt Nam.</p></article><article class="c-solution"><div class="c-solution__top"><span>02 / DOMESTIC</span><span>↗</span></div><h3>Quỹ đầu tư trong nước</h3><p>Hệ sinh thái quỹ mở và ETF được thiết kế cho nhiều mục tiêu tài chính.</p></article><article class="c-solution"><div class="c-solution__top"><span>03 / ALTERNATIVES</span><span>↗</span></div><h3>Đầu tư thay thế</h3><p>Năng lượng, hạ tầng, bất động sản và công nghệ kiến tạo giá trị dài hạn.</p></article></div><div style="margin-top:48px"><a class="site-cta" href="#">Khám phá các giải pháp <span class="arr">→</span></a></div></div></section>
-<section class="c-news" id="news"><div class="site-container"><p class="section-label">Tin mới nhất</p><h2 class="news-title-one-line">Thông tin cập nhật từ VinaCapital</h2><div class="c-news__grid"><article class="c-news__feature"><img src="${ASSET}investor.jpg" alt="Nhà đầu tư và lãnh đạo doanh nghiệp"><time class="news-date" style="display:block;margin-top:20px">${news[0][0]}</time><h3>${news[0][1]}</h3><a class="site-cta outline" href="#">Xem tất cả <span class="arr">→</span></a></article><div class="c-news__list">${constructiveNewsRows()}</div></div></div></section>
-<section class="c-insight" id="insight"><div class="site-container c-insight__card"><div class="c-insight__image"></div><div class="c-insight__copy"><p class="section-label">Phân tích mới nhất</p><h2>${insightTitle}</h2><p>Góc nhìn chuyên môn từ đội ngũ VinaCapital về những động lực định hình thị trường và cơ hội đầu tư tại Việt Nam.</p><a class="site-cta" href="#">Xem phân tích <span class="arr">→</span></a></div></div></section>
-<section class="c-esg" id="esg"><div class="site-container c-esg__grid"><img src="${ASSET}esg.jpg" alt="Đầu tư có trách nhiệm tại Việt Nam"><div><p class="section-label">ESG</p><h2>Đầu tư có trách nhiệm</h2><p>${esgCopy}</p><a class="site-cta" href="#">Xem thêm <span class="arr">→</span></a></div></div></section>
-<section class="c-presence"><div class="site-container"><p class="section-label">Sự hiện diện của chúng tôi</p><h2>Năng lực được xây dựng qua hơn hai thập kỷ</h2><div class="c-stats"><div class="c-stat"><strong>3,8 tỷ USD</strong><p>Tổng tài sản quản lý</p></div><div class="c-stat"><strong>200+</strong><p>Đội ngũ nhân sự</p></div><div class="c-stat"><strong>7</strong><p>Loại tài sản trong hệ sinh thái đầu tư</p></div><div class="c-stat"><strong>23</strong><p>Năm kinh nghiệm</p></div></div></div></section>
-${fraud()}${footer()}</main>`}
+const SOLUTIONS = {
+  label: 'Các giải pháp đầu tư của VinaCapital',
+  title: 'Chia sẻ sự tăng trưởng của Việt Nam',
+  intro: 'Là tập đoàn quản lý tài sản đa lĩnh vực hàng đầu tại Việt Nam, VinaCapital cung cấp cho các nhà đầu tư trong và ngoài nước các cơ hội đầu tư để chia sẻ sự tăng trưởng của Việt Nam.',
+  cta: 'Khám phá các giải pháp',
+  items: [
+    { no: '01', tag: 'Global', ico: 'globe', title: 'Quỹ đầu tư ngoài nước', desc: 'Kết nối nguồn vốn quốc tế với những cơ hội nổi bật của nền kinh tế Việt Nam thông qua nền tảng quản lý đầu tư giàu kinh nghiệm.' },
+    { no: '02', tag: 'Domestic', ico: 'shield', title: 'Quỹ đầu tư trong nước', desc: 'Hệ sinh thái quỹ mở và ETF đa dạng, phù hợp với nhiều mục tiêu tài chính và khẩu vị rủi ro của nhà đầu tư Việt Nam.' },
+    { no: '03', tag: 'Alternatives', ico: 'layers', title: 'Đầu tư thay thế', desc: 'Giải pháp chuyên biệt trong công nghệ, năng lượng sạch, hạ tầng và bất động sản, kiến tạo giá trị dài hạn.' }
+  ]
+};
 
-function motion(){return `<main class="website motion">
-${header()}
-<section class="m-hero"><div class="site-container m-hero__copy"><p class="section-label" style="color:#fff">${heroCopy.label}</p><h1>${heroCopy.title}</h1><p>${heroCopy.body}</p><div style="margin-top:28px"><a class="site-cta" href="#about">Xem thêm <span class="arr">→</span></a></div></div><span class="m-hero__index">Vietnam · Growth in perspective</span></section>
-<section class="m-image-story" aria-label="Hình ảnh phát triển Việt Nam"><div class="m-image-track"><figure class="m-story-image"><img src="${ASSET}hcm-river.jpg" alt="Đô thị Thành phố Hồ Chí Minh"><span>Đô thị</span></figure><figure class="m-story-image"><img src="${ASSET}infrastructure.jpg" alt="Hạ tầng giao thông Việt Nam"><span>Hạ tầng</span></figure><figure class="m-story-image"><img src="${ASSET}hcm-heritage.jpg" alt="Di sản đô thị Thành phố Hồ Chí Minh"><span>Di sản</span></figure><figure class="m-story-image"><img src="${ASSET}urban-motion.jpg" alt="Chuyển động đô thị Việt Nam"><span>Chuyển động</span></figure></div></section>
-<section class="m-about" id="about"><div class="site-container m-about__frame"><div class="m-about__card"><p class="section-label">Đồng hành Phát triển Phồn vinh</p><p class="m-about__statement">${quote}</p><div style="margin-top:28px"><a class="site-cta outline" href="#">Tìm hiểu VinaCapital <span class="arr">→</span></a></div></div></div></section>
-<section class="m-solutions" id="solutions"><div class="site-container"><div class="m-solutions__head"><p class="section-label">Các giải pháp đầu tư của VinaCapital</p><h2>Chia sẻ sự tăng trưởng của Việt Nam</h2><p>${solutionsIntro}</p></div><div class="m-solution-grid"><article class="m-solution"><img src="${ASSET}hcm-financial-district.jpg" alt="Trung tâm tài chính Thành phố Hồ Chí Minh"><div class="m-solution__copy"><span class="m-solution__number">01 / GLOBAL</span><h3>Quỹ đầu tư ngoài nước</h3><p>Kết nối nguồn vốn quốc tế với những cơ hội nổi bật trong nền kinh tế Việt Nam.</p></div></article><article class="m-solution"><img src="${ASSET}hcm-heritage.jpg" alt="Đô thị Việt Nam"><div class="m-solution__copy"><span class="m-solution__number">02 / DOMESTIC</span><h3>Quỹ đầu tư trong nước</h3><p>Đồng hành cùng nhà đầu tư Việt Nam qua hệ sinh thái sản phẩm đa dạng.</p></div></article><article class="m-solution"><img src="${ASSET}infrastructure.jpg" alt="Hạ tầng Việt Nam"><div class="m-solution__copy"><span class="m-solution__number">03 / ALTERNATIVES</span><h3>Đầu tư thay thế</h3><p>Thúc đẩy tăng trưởng qua công nghệ, năng lượng, hạ tầng và tài sản thực.</p></div></article></div><div style="margin-top:30px"><a class="site-cta" href="#">Khám phá các giải pháp <span class="arr">→</span></a></div></div></section>
-<section class="m-news" id="news"><div class="site-container"><p class="section-label">Tin mới nhất</p><h2 class="news-title-one-line">Thông tin cập nhật từ VinaCapital</h2><div class="m-news__feature"><img src="${ASSET}investor.jpg" alt="Nhà đầu tư và lãnh đạo doanh nghiệp"><div class="m-news__copy"><time class="news-date">${news[0][0]}</time><h3>${news[0][1]}</h3><div><a class="site-cta outline" href="#">Đọc tin <span class="arr">→</span></a></div></div></div><div class="m-news__list">${motionNewsRows()}</div><div style="margin-top:30px"><a class="site-cta outline" href="#">Xem tất cả <span class="arr">→</span></a></div></div></section>
-<section class="m-insight" id="insight"><div class="site-container"><div class="m-insight__copy"><p class="section-label" style="color:#fff">Phân tích mới nhất</p><h2>${insightTitle}</h2><p>Góc nhìn chuyên môn từ đội ngũ VinaCapital về những động lực định hình thị trường và cơ hội đầu tư tại Việt Nam.</p><a class="site-cta" href="#">Xem phân tích <span class="arr">→</span></a></div></div></section>
-<section class="m-esg" id="esg"><div class="site-container m-esg__grid"><img src="${ASSET}esg.jpg" alt="Đầu tư có trách nhiệm tại Việt Nam"><div class="m-esg__copy"><p class="section-label">ESG</p><h2>Đầu tư có trách nhiệm</h2><p>${esgCopy}</p><div><a class="site-cta" href="#">Xem thêm <span class="arr">→</span></a></div></div></div></section>
-<section class="m-presence"><div class="site-container"><p class="section-label">Sự hiện diện của chúng tôi</p><h2>Năng lực được xây dựng qua hơn hai thập kỷ</h2><div class="m-stats"><div class="m-stat"><strong>3,8 tỷ USD</strong><p>Tổng tài sản quản lý</p></div><div class="m-stat"><strong>200+</strong><p>Đội ngũ nhân sự</p></div><div class="m-stat"><strong>7</strong><p>Loại tài sản trong hệ sinh thái đầu tư</p></div><div class="m-stat"><strong>23</strong><p>Năm kinh nghiệm</p></div></div></div></section>
-${fraud()}${footer()}</main>`}
+const NEWS = {
+  label: 'Tin tức & Phân tích',
+  title: 'Thông tin cập nhật từ VinaCapital',
+  cta: 'Xem tất cả',
+  lead: {
+    date: '20/08/2026',
+    title: 'VinaCapital tăng cường hợp tác, chia sẻ chuyên môn để tạo giá trị bền vững',
+    img: 'investor.jpg',
+    alt: 'Lãnh đạo VinaCapital trao đổi cùng đối tác'
+  },
+  rows: [
+    ['19/08/2026', 'VinaCapital hợp tác cùng Chứng khoán MB phân phối chứng chỉ quỹ mở'],
+    ['29/07/2026', 'Bổ sung Chứng khoán Vietcombank vào danh sách đại lý phân phối chứng chỉ quỹ mở VinaCapital'],
+    ['16/06/2026', 'VinaCapital niêm yết hai quỹ ETF chiến lược đầu tiên tại Việt Nam'],
+    ['12/06/2026', 'VinaCapital cập nhật tên và chiến lược đầu tư các quỹ mở'],
+    ['18/04/2026', 'VinaCapital được chọn để cùng dẫn dắt Quỹ Đầu tư Mạo hiểm Thành phố Hồ Chí Minh']
+  ]
+};
 
-const renderers=[null,quiet,constructive,motion];
-const names=['','Fullscreen','Constructive Capital','Vietnam in Motion'];
-const optionSwitcher=document.querySelector('.option-switcher');
-const switcherMarker=document.createElement('div');
-switcherMarker.className='option-switcher-placeholder';
-optionSwitcher.parentNode.insertBefore(switcherMarker,optionSwitcher);
-function updateSwitcher(){
-  const fixed=window.scrollY>=switcherMarker.offsetTop;
-  optionSwitcher.classList.toggle('is-fixed',fixed);
-  switcherMarker.style.height=fixed?`${optionSwitcher.offsetHeight}px`:'0px';
+/* Phân tích — một dải ngang duy nhất đặt dưới khối tin tức */
+const INSIGHT = {
+  tag: 'Phân tích mới nhất',
+  mark: 'VIFC',
+  date: '05/08/2026',
+  title: 'Trung tâm Tài chính Quốc tế Việt Nam (VIFC): Không phải là Dubai tiếp theo',
+  desc: 'Góc nhìn chuyên môn từ đội ngũ VinaCapital về các động lực định hình thị trường vốn.',
+  cta: 'Xem phân tích'
+};
+
+const ASSETS = {
+  label: 'Nền tảng đa tài sản',
+  title: 'Bảy loại tài sản trong<br>hệ sinh thái VinaCapital',
+  intro: 'Bảy nhóm tài sản vận hành trên cùng một khung quản trị rủi ro và quy trình đầu tư nhất quán, cho phép nhà đầu tư tiếp cận tăng trưởng của Việt Nam ở nhiều tầng khác nhau.',
+  items: [
+    { name: 'Cổ phiếu niêm yết', note: 'Listed Equity' },
+    { name: 'Trái phiếu', note: 'Fixed Income' },
+    { name: 'Vốn cổ phần tư nhân', note: 'Private Equity' },
+    { name: 'Đầu tư công nghệ', note: 'Venture Capital' },
+    { name: 'Năng lượng sạch & Hạ tầng', note: 'Energy & Infrastructure' },
+    { name: 'Bất động sản', note: 'Real Estate' },
+    { name: 'Tín chỉ carbon', note: 'Carbon Credits' }
+  ]
+};
+
+const ESG = {
+  label: 'ESG',
+  title: 'Đầu tư có trách nhiệm',
+  desc: 'VinaCapital khát vọng chia sẻ và lan tỏa sự thịnh vượng. Chúng tôi nghiên cứu, tìm tòi và đầu tư để mang đến sự khác biệt cho cộng đồng mà chúng tôi phục vụ, cũng như không ngừng theo đuổi mục tiêu vì một tương lai phát triển mạnh mẽ của Việt Nam.',
+  cta: 'Xem thêm',
+  img: 'wind-farm.jpg'
+};
+
+const PRESENCE = {
+  label: 'Sự hiện diện của chúng tôi',
+  title: 'Năng lực được xây dựng qua hơn hai thập kỷ',
+  intro: 'Từ năm 2003, VinaCapital phát triển thành nền tảng quản lý tài sản đa lĩnh vực với đội ngũ chuyên gia trong nước và quốc tế.',
+  stats: [
+    ['3,8 tỷ USD', 'Tổng tài sản quản lý'],
+    ['200+', 'Đội ngũ nhân sự'],
+    ['7', 'Loại tài sản'],
+    ['23', 'Năm kinh nghiệm']
+  ],
+  offices: [
+    ['Thành phố Hồ Chí Minh', 'Lầu 17, Tòa nhà Sunwah · 115 Nguyễn Huệ<br>+84 28 3821 9930'],
+    ['Hà Nội', 'Lầu 2, International Centre · 17 Ngô Quyền<br>+84 24 3936 4630'],
+    ['Singapore', '#42-01, Suntec Tower 4 · 6 Temasek Boulevard<br>+65 6332 9081']
+  ]
+};
+
+const FRAUD = {
+  label: 'Bảo vệ nhà đầu tư',
+  title: 'Cảnh báo lừa đảo',
+  intro: 'Nhằm bảo vệ nhà đầu tư trước các hành vi giả mạo và gian lận lợi dụng thương hiệu và uy tín của VinaCapital, chúng tôi xin lưu ý những thông tin quan trọng sau:',
+  points: [
+    'VinaCapital không thực hiện bất kỳ hoạt động tuyển dụng trực tuyến nào, bao gồm tuyển dụng việc làm từ xa, công việc tự do hoặc làm việc tại nhà.',
+    'VinaCapital hiện tại không thực hiện mời gọi nhà đầu tư tham gia các nhóm đầu tư chứng khoán thông qua Facebook, Zalo, Telegram, WhatsApp, Viber, Messenger hoặc bất kỳ nền tảng mạng xã hội hoặc nhắn tin nào khác.',
+    'Chứng chỉ quỹ mở chỉ được giao dịch thông qua ứng dụng MiO hoặc các ứng dụng của đại lý phân phối chính thức.',
+    'Nhà đầu tư cần xác thực thông tin chuyên viên tư vấn quỹ trước khi thực hiện bất kỳ giao dịch nào.',
+    'Mọi giao dịch chỉ được thực hiện qua tài khoản ngân hàng chính danh của quỹ do VinaCapital công bố.'
+  ]
+};
+
+/* -------------------------------------------------------------------------
+   Mảnh dùng chung
+   ------------------------------------------------------------------------- */
+/* Ảnh lớn giới thiệu cho cả một phần nội dung: icon góc đỏ (bản gốc icon-corner.svg) */
+const corner = () => '<span class="corner" aria-hidden="true"><i></i><i></i></span>';
+const mark = '<svg viewBox="0 0 54 53" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="54" height="53" fill="#cb2b1a"/><path d="M0 0H54L27 53Z" fill="#BCBDC0"/></svg>';
+const logo = () => `<a class="logo" href="#" aria-label="VinaCapital">${mark}<b>VinaCapital</b></a>`;
+
+function render() {
+  return `
+<header class="hdr">
+  <div class="wrap hdr__in">
+    ${logo()}
+    <nav class="hdr__nav">${NAV.map((n, i) => `<a href="#" class="${i === 0 ? 'is-on' : ''}">${n}</a>`).join('')}</nav>
+    <div class="hdr__end">
+      <span class="hdr__lang"><b>VI</b><s>/</s>EN</span>
+      <a class="hdr__mio" href="#">MiO</a>
+      <button class="hdr__burger" aria-label="Mở menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__ken">
+    <img class="hero__img" src="${IMG}${HERO.img}" alt="${HERO.alt}" fetchpriority="high">
+  </div>
+  <span class="hero__scrim" aria-hidden="true"></span>
+  <span class="hero__shapes" aria-hidden="true"><i class="hero__sh-grey"></i><i class="hero__sh-red"></i></span>
+  <div class="hero__in">
+    <div class="hero__copy">
+      <p class="eyebrow eyebrow--rule hero__label">${HERO.label}</p>
+      <h1>${HERO.lines.map(l => `<span>${l}</span>`).join('')}</h1>
+      <p class="hero__lead">${HERO.body}</p>
+      <div class="hero__act">
+        <a class="btn" href="#about">${HERO.cta} <i>→</i></a>
+        <button class="hero__play" aria-label="Xem video giới thiệu">▶</button>
+      </div>
+    </div>
+    <div class="hero__foot">
+      <span>${HERO.foot}</span>
+      <a class="hero__scroll" href="#about">Cuộn để khám phá <i>↓</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about__grid">
+    <div class="about__media">
+      <img src="${IMG}${ABOUT.img}" alt="Thành phố Hồ Chí Minh nhìn từ trên cao" loading="lazy">
+      ${corner()}
+      <div class="about__on">
+        <p class="eyebrow eyebrow--rule">${ABOUT.label}</p>
+        <h2>${ABOUT.heading}</h2>
+      </div>
+    </div>
+    <div class="about__card">
+      <blockquote>${ABOUT.quote}</blockquote>
+      <a class="btn btn--ghost" href="#">${ABOUT.cta} <i>→</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="sol" id="solutions">
+  <div class="sol__band">
+    <div class="wrap sol__head">
+      <div>
+        <p class="eyebrow eyebrow--rule">${SOLUTIONS.label}</p>
+        <h2>${SOLUTIONS.title}</h2>
+      </div>
+      <div class="sol__aside">
+        <p>${SOLUTIONS.intro}</p>
+        <a class="btn btn--light" href="#">${SOLUTIONS.cta} <i>→</i></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap sol__body">
+    <div class="sol__grid">
+      ${SOLUTIONS.items.map(s => `<article class="sol__card">
+        <span><b>${s.no}</b>${s.tag}</span>
+        <span class="sol__ico">${SOL_ICONS[s.ico]}</span>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        <a class="tlink" href="#">Tìm hiểu <i>→</i></a>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="news__head">
+      <div><p class="eyebrow eyebrow--rule">${NEWS.label}</p><h2>${NEWS.title}</h2></div>
+      <a class="tlink" href="#">${NEWS.cta} <i>→</i></a>
+    </div>
+    <div class="news__grid">
+      <a class="news__lead" href="#">
+        <div class="media"><img src="${IMG}${NEWS.lead.img}" alt="${NEWS.lead.alt}" loading="lazy"></div>
+        <time>${NEWS.lead.date}</time>
+        <h3>${NEWS.lead.title}</h3>
+        <span class="tlink">Đọc tin <i>→</i></span>
+      </a>
+      <div class="news__list">
+        ${NEWS.rows.map(r => `<a class="news__row" href="#"><time>${r[0]}</time><p>${r[1]}</p><span>→</span></a>`).join('')}
+      </div>
+    </div>
+    <a class="pulse" href="#insight">
+      <span class="pulse__mark"><b>${INSIGHT.mark}</b></span>
+      <span class="pulse__body">
+        <span class="pulse__tag">${INSIGHT.tag}<em>${INSIGHT.date}</em></span>
+        <span class="pulse__title">${INSIGHT.title}</span>
+        <span class="pulse__desc">${INSIGHT.desc}</span>
+      </span>
+      <span class="pulse__cta">${INSIGHT.cta}<i>→</i></span>
+    </a>
+  </div>
+</section>
+
+<section class="esg" id="esg">
+  <div class="wrap esg__grid">
+    <div class="esg__media">
+      <img src="${IMG}${ESG.img}" alt="Đầu tư có trách nhiệm — năng lượng tái tạo tại Việt Nam" loading="lazy">
+      ${corner()}
+    </div>
+    <div>
+      <p class="eyebrow eyebrow--rule">${ESG.label}</p>
+      <h2>${ESG.title}</h2>
+      <p>${ESG.desc}</p>
+      <a class="btn" href="#">${ESG.cta} <i>→</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="assets" data-assets="tree">
+  <div class="wrap">
+    <div class="assets__head">
+      <div><p class="eyebrow eyebrow--rule">${ASSETS.label}</p><h2>${ASSETS.title}</h2></div>
+      <div class="assets__aside">
+        <p>${ASSETS.intro}</p>
+        <div class="swap" role="group" aria-label="Chọn cách trình bày">
+          <button data-view="tree" class="is-on">Sơ đồ nhánh</button>
+          <button data-view="grid">Lưới 7 ô</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tree" data-view-panel="tree">
+      <div class="tree__hub">
+        <b>07</b>
+        <span>Loại tài sản</span>
+        <em>Một khung quản trị rủi ro · Một quy trình đầu tư</em>
+      </div>
+      <div class="tree__list">
+        ${ASSETS.items.map((a, i) => `<div class="tree__row">
+          <b>${String(i + 1).padStart(2, '0')}</b>
+          <span>${a.name}</span>
+          <i>${a.note}</i>
+        </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="cells" data-view-panel="grid" hidden>
+      ${ASSETS.items.map((a, i) => `<article class="cells__box">
+        <h3>${a.name}</h3>
+        <p>${a.note}</p>
+        <b>${String(i + 1).padStart(2, '0')}</b>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="pres">
+  <div class="wrap">
+    <div class="pres__head">
+      <div><p class="eyebrow eyebrow--rule">${PRESENCE.label}</p><h2>${PRESENCE.title}</h2></div>
+      <p>${PRESENCE.intro}</p>
+    </div>
+    <div class="pres__stats">
+      ${PRESENCE.stats.map(s => `<article><strong>${s[0]}</strong><span>${s[1]}</span></article>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="fraud">
+  <div class="wrap">
+    <div class="fraud__head">
+      <div><p class="eyebrow eyebrow--rule">${FRAUD.label}</p><h2>${FRAUD.title}</h2></div>
+      <button class="fraud__t" aria-expanded="false">Xem thông tin quan trọng +</button>
+    </div>
+    <div class="fraud__b">
+      <p>${FRAUD.intro}</p>
+      <ul>${FRAUD.points.map(p => `<li>${p}</li>`).join('')}</ul>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr" id="contact">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        ${logo()}
+        <p style="margin-top:18px;max-width:34ch">Tập đoàn quản lý đầu tư đa ngành hàng đầu tại Việt Nam — đồng hành phát triển phồn vinh từ năm 2003.</p>
+      </div>
+      ${PRESENCE.offices.map(o => `<div><h4>${o[0]}</h4><p>${o[1]}</p></div>`).join('')}
+    </div>
+    <div class="ftr__legal">
+      <p>Copyright © 2024 VinaCapital. All rights reserved.</p>
+      <nav><a href="#">Điều Kiện &amp; Điều Khoản Sử Dụng</a><a href="#">Chính Sách Bảo Mật</a><a href="#">Tuyển dụng</a></nav>
+    </div>
+  </div>
+</footer>`;
 }
-function render(option,scroll=false){
-  document.querySelector('#site-root').innerHTML=renderers[option]();
-  document.querySelector('#demo-title').textContent=names[option];
-  document.querySelectorAll('[data-option]').forEach(button=>button.classList.toggle('is-active',Number(button.dataset.option)===option));
-  localStorage.setItem('vc-design-direction',String(option));
-  if(scroll)document.querySelector('#demo').scrollIntoView({behavior:'smooth'});
+
+/* -------------------------------------------------------------------------
+   Tương tác
+   ------------------------------------------------------------------------- */
+function init(root) {
+  root.querySelectorAll('.fraud__t').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.closest('.fraud').querySelector('.fraud__b');
+      const open = body.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? 'Ẩn thông tin −' : 'Xem thông tin quan trọng +';
+    });
+  });
+
+  /* tagline mờ rồi nổi dần lên khi vào trang */
+  const hero = root.querySelector('.hero');
+  if (hero) requestAnimationFrame(() => hero.classList.add('is-in'));
+
+  /* Bảy loại tài sản — chuyển giữa hai cách trình bày */
+  root.querySelectorAll('[data-assets]').forEach(sec => {
+    sec.querySelectorAll('[data-view]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const v = btn.dataset.view;
+        sec.dataset.assets = v;
+        sec.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('is-on', b === btn));
+        sec.querySelectorAll('[data-view-panel]').forEach(pnl => { pnl.hidden = pnl.dataset.viewPanel !== v; });
+      });
+    });
+  });
 }
-window.addEventListener('scroll',updateSwitcher,{passive:true});
-window.addEventListener('resize',updateSwitcher);
-document.addEventListener('click',event=>{
-  const optionButton=event.target.closest('[data-option]');
-  if(optionButton){render(Number(optionButton.dataset.option),true);return}
-  const fraudButton=event.target.closest('.fraud-toggle');
-  if(fraudButton){
-    const body=fraudButton.closest('.fraud').querySelector('.fraud__body');
-    const open=body.classList.toggle('is-open');
-    fraudButton.setAttribute('aria-expanded',String(open));
-    fraudButton.textContent=open?'THU GỌN −':'XEM THÔNG TIN QUAN TRỌNG +';
-  }
-});
-render(Number(localStorage.getItem('vc-design-direction')||1));
-updateSwitcher();
+
+const root = document.getElementById('site');
+root.innerHTML = render();
+init(root);
