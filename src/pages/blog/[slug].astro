@@ -41,7 +41,14 @@ const readMinutes = (body?: string) =>
 const minutes = readMinutes(post.body);
 ---
 
-<BaseLayout title={`${post.data.title} — Cenix`} description={post.data.excerpt ?? undefined} activeNav="blog">
+<BaseLayout
+  title={`${post.data.title} — Cenix`}
+  description={post.data.excerpt ?? undefined}
+  activeNav="blog"
+  socialImage={heroImage || undefined}
+  canonicalUrl={`/blog/${post.data.slug}/`}
+  ogType="article"
+>
   <main class="project-page blog-detail">
     <!-- Header -->
     <header class="project-header">
