@@ -102,10 +102,14 @@ ul,ol{margin:0}
    HERO — banner full, slideshow + motion nhẹ
    ========================================================================== */
 .hero{position:relative;min-height:min(100vh,900px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:#12181C}
-.hero__ken{position:absolute;inset:0;overflow:hidden;animation:kenBurns 34s ease-in-out infinite alternate}
-@keyframes kenBurns{from{transform:scale(1)}to{transform:scale(1.075)}}
-.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,18,23,.88) 0%,rgba(12,18,23,.62) 42%,rgba(12,18,23,.16) 76%,rgba(12,18,23,.34) 100%),linear-gradient(rgba(12,18,23,.46),rgba(12,18,23,0) 34%)}
+.hero__ken{position:absolute;inset:0;overflow:hidden}
+/* dùng chung cho <img> lẫn <video> nền */
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#12181C}
+/* Nền video sáng và nhiều màu hơn ảnh tĩnh nên lớp mờ phải dày hơn ở cột chữ bên trái,
+   và thêm vignette đáy để dòng chân banner không bị đèn thành phố nuốt. */
+.hero__scrim{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(10,16,21,.93) 0%,rgba(10,16,21,.83) 30%,rgba(10,16,21,.56) 52%,rgba(10,16,21,.2) 74%,rgba(10,16,21,.42) 100%),
+  linear-gradient(rgba(10,16,21,.52),rgba(10,16,21,0) 30%,rgba(10,16,21,0) 70%,rgba(10,16,21,.48))}
 /* lớp ánh sáng chạy nhẹ — motion phụ hoạ cho tagline */
 .hero__in{position:relative;z-index:6;width:min(var(--container),calc(100% - var(--gutter)*2));margin-inline:auto;padding:176px 0 0;display:flex;flex-direction:column;justify-content:flex-end;flex:1 1 auto}
 .hero__copy{padding-bottom:clamp(44px,6vh,72px)}
@@ -132,7 +136,7 @@ ul,ol{margin:0}
   100%{opacity:1;filter:blur(0);transform:none}
 }
 @media(prefers-reduced-motion:reduce){
-  .hero__ken,.hero__scroll i{animation:none!important;transform:none!important}
+  .hero__scroll i{animation:none!important;transform:none!important}
   .hero__label,.hero h1 span,.hero__lead,.hero__act{opacity:1;transform:none;animation:none!important}
 }
 

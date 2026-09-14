@@ -13,8 +13,10 @@ const HERO = {
   lines: ['Kiến tạo giá trị', 'từ sự phát triển', 'mạnh mẽ của Việt Nam'],
   body: 'Tự hào là Tập đoàn quản lý đầu tư đa ngành hàng đầu tại Việt Nam, chúng tôi sở hữu vị thế đặc biệt để kiến tạo giá trị, đồng thời mang đến những cơ hội và lợi ích từ sự phát triển mạnh mẽ của đất nước trên tất cả các loại tài sản.',
   cta: 'Về chúng tôi',
-  img: 'skyline-dusk.jpg',
-  alt: 'Thành phố Hồ Chí Minh trong khoảnh khắc chuyển tối',
+  video: 'hero-loop.mp4',
+  videoWebm: 'hero-loop.webm',
+  poster: 'hero-poster.jpg',
+  alt: 'Thành phố Hồ Chí Minh nhìn từ trên cao về đêm',
   foot: 'Việt Nam · Tăng trưởng dài hạn'
 };
 
@@ -151,7 +153,11 @@ function render() {
 
 <section class="hero">
   <div class="hero__ken">
-    <img class="hero__img" src="${IMG}${HERO.img}" alt="${HERO.alt}" fetchpriority="high">
+    <video class="hero__img" poster="${IMG}${HERO.poster}"
+           autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="${IMG}${HERO.videoWebm}" type="video/webm">
+      <source src="${IMG}${HERO.video}" type="video/mp4">
+    </video>
   </div>
   <span class="hero__scrim" aria-hidden="true"></span>
   <span class="hero__shapes" aria-hidden="true"><i class="hero__sh-grey"></i><i class="hero__sh-red"></i></span>
@@ -351,6 +357,23 @@ function init(root) {
       btn.textContent = open ? 'Ẩn thông tin −' : 'Xem thông tin quan trọng +';
     });
   });
+
+  /* Video nền: Safari đôi khi bỏ qua autoplay khi node được chèn bằng innerHTML,
+     nên gọi play() tay. Ai bật "giảm chuyển động" thì dừng hẳn, để lại poster. */
+  const bg = root.querySelector('.hero__img');
+  if (bg && bg.tagName === 'VIDEO') {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      bg.removeAttribute('autoplay');
+      bg.pause();
+    } else {
+      bg.muted = true;
+      const go = () => bg.play().catch(() => {});
+      go();
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) go();
+      });
+    }
+  }
 
   /* tagline mờ rồi nổi dần lên khi vào trang */
   const hero = root.querySelector('.hero');
