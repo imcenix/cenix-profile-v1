@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_DOMAIN: imcenix.com
-      SFTP_HOST: ${{ secrets.SFTP_HOST || '45.32.110.164' }}
+      # imcenix.com was migrated to the new Hestia host. Keep this explicit so
+      # a stale repository SFTP_HOST secret cannot route deploys to the old VPS.
+      SFTP_HOST: '51.79.191.15'
       SFTP_PORT: ${{ secrets.SFTP_PORT || '22' }}
       SFTP_USER: ${{ secrets.SFTP_USER || 'cenix' }}
       SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
