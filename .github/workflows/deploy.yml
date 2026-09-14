@@ -127,7 +127,7 @@ jobs:
             set net:reconnect-interval-base 5;
             set net:reconnect-interval-max 30;
             open -u \"$SFTP_USER\",\"$SFTP_PASSWORD\" -p \"$SFTP_PORT\" \"sftp://$SFTP_HOST\";
-            mirror --reverse --verbose --continue --delete --parallel=1 \
+            mirror --reverse --verbose --continue --ignore-time --delete --parallel=2 \
               --exclude-glob .DS_Store \
               --exclude-glob '*.log' \
               dist/ '$SITE_DIR';
