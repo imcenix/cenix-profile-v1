@@ -7,16 +7,28 @@ interface Props {
   title: string;
   description?: string;
   activeNav?: 'home' | 'about' | 'portfolio' | 'blog' | 'news' | 'contact';
+  socialImage?: string;
+  canonicalUrl?: string;
+  ogType?: 'website' | 'article';
 }
 
 const {
   title,
   description = 'Cenix - Personal Profile. Portfolio, case studies, and writings on brand, design, and visual storytelling.',
   activeNav = 'home',
+  socialImage = '/images/cenix-og.jpg',
+  canonicalUrl,
+  ogType = 'website',
 } = Astro.props;
 
 const siteUrl = 'https://imcenix.com';
-const ogImage = `${siteUrl}/images/cenix-og.jpg`;
+const pageUrl = canonicalUrl ? new URL(canonicalUrl, siteUrl).toString() : new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = new URL(socialImage, siteUrl).toString();
+const imageExtension = new URL(ogImage).pathname.split('.').pop()?.toLowerCase();
+const ogImageType = imageExtension === 'png' ? 'image/png'
+  : imageExtension === 'webp' ? 'image/webp'
+  : imageExtension === 'svg' ? 'image/svg+xml'
+  : 'image/jpeg';
 ---
 
 <!DOCTYPE html>
@@ -30,17 +42,16 @@ const ogImage = `${siteUrl}/images/cenix-og.jpg`;
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={siteUrl} />
+    <link rel="canonical" href={pageUrl} />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:secure_url" content={ogImage} />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content={ogImageType} />
+    <meta property="og:image:alt" content={title} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -65,10 +76,6 @@ const ogImage = `${siteUrl}/images/cenix-og.jpg`;
     <Nav activeNav={activeNav} />
     <slot />
     <Footer />
-
-    <!-- Custom cursor (hidden on touch devices via CSS) -->
-    <div class="cursor cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor cursor-follower" id="cursor-follower" aria-hidden="true"></div>
 
     <script>
       // ====================================================================
@@ -178,63 +185,6 @@ const ogImage = `${siteUrl}/images/cenix-og.jpg`;
         if (legacy) legacy.replaceWith(circle);
         else btn.appendChild(circle);
       });
-
-      // ====================================================================
-      // 3. Custom cursor (lerp follower + dot, grows on interactive elements)
-      // ====================================================================
-      const dot = document.getElementById('cursor-dot');
-      const follower = document.getElementById('cursor-follower');
-      const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-      if (dot && follower && hasFinePointer) {
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let followX = mouseX;
-        let followY = mouseY;
-
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-        });
-
-        const tick = () => {
-          followX += (mouseX - followX) * 0.18;
-          followY += (mouseY - followY) * 0.18;
-          const radius = follower.offsetWidth / 2 + 6;
-          const safeX = Math.min(Math.max(followX, radius), window.innerWidth - radius);
-          const safeY = Math.min(Math.max(followY, radius), window.innerHeight - radius);
-          follower.style.transform = `translate3d(${safeX}px, ${safeY}px, 0) translate(-50%, -50%)`;
-          requestAnimationFrame(tick);
-        };
-        tick();
-
-        // Grow on interactive elements
-        const interactiveSelector =
-          'a, button, .card, .portfolio-card, .stat, .modal-close, input, textarea, label, [role="button"]';
-        document.body.addEventListener('mouseover', (e) => {
-          if ((e.target as Element).closest(interactiveSelector)) {
-            follower.classList.add('cursor-follower--grow');
-          }
-        });
-        document.body.addEventListener('mouseout', (e) => {
-          if ((e.target as Element).closest(interactiveSelector)) {
-            follower.classList.remove('cursor-follower--grow');
-          }
-        });
-
-        // Hide while leaving viewport
-        document.addEventListener('mouseleave', () => {
-          dot.style.opacity = '0';
-          follower.style.opacity = '0';
-        });
-        document.addEventListener('mouseenter', () => {
-          dot.style.opacity = '1';
-          follower.style.opacity = '1';
-        });
-
-        document.documentElement.classList.add('has-custom-cursor');
-      }
 
       // ====================================================================
       // 4. Scroll reveal (fade + rise) on first entry into viewport

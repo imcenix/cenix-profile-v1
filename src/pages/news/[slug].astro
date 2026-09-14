@@ -52,7 +52,14 @@ const minutes = readMinutes(post.body);
 const label = LABEL[post.data.category] ?? 'Tin tức';
 ---
 
-<BaseLayout title={`${post.data.title} — Cenix News`} description={post.data.excerpt ?? undefined} activeNav="news">
+<BaseLayout
+  title={`${post.data.title} — Cenix News`}
+  description={post.data.excerpt ?? undefined}
+  activeNav="news"
+  socialImage={cover || undefined}
+  canonicalUrl={`/news/${post.data.slug}/`}
+  ogType="article"
+>
   <main class="project-page blog-detail">
     <header class="project-header">
       <div class="container">

@@ -82,62 +82,6 @@
   transform: translateY(-100%);
 }
 
-/* ----- Custom cursor (desktop only) ----- */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 50%;
-  display: none;
-  transition: opacity 0.2s ease, background 0.25s ease, width 0.25s ease, height 0.25s ease;
-}
-
-.has-custom-cursor .cursor {
-  display: block;
-}
-
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-lime);
-}
-
-.cursor-follower {
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--color-lime);
-  background: rgba(200, 255, 0, 0.04);
-  box-shadow: 0 0 22px rgba(200, 255, 0, 0.22);
-}
-
-.cursor-follower--grow {
-  width: 64px;
-  height: 64px;
-  background: rgba(200, 255, 0, 0.12);
-  border-color: rgba(200, 255, 0, 0.6);
-  box-shadow: 0 0 34px rgba(200, 255, 0, 0.28);
-}
-
-/* Hide native cursor on hover-capable devices when custom cursor is active */
-@media (hover: hover) and (pointer: fine) {
-  .has-custom-cursor,
-  .has-custom-cursor * {
-    cursor: none !important;
-  }
-  /* Keep text caret on form controls */
-  .has-custom-cursor input,
-  .has-custom-cursor textarea {
-    cursor: text !important;
-  }
-}
-
-/* Touch devices: never show custom cursor */
-@media (hover: none) or (pointer: coarse) {
-  .cursor { display: none !important; }
-}
-
 /* ----- Scroll reveal ----- */
 [data-reveal] {
   opacity: 0;
