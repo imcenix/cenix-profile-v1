@@ -830,5 +830,33 @@
   {
     "path": "assets/news/altman-openai-chua-ipo-2026/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2025/04/GettyImages-2198353376.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/ios-27-siri-hoi-sinh/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Siri-feat-iOS-27.jpg?resize=1200,648"
+  },
+  {
+    "path": "assets/news/microsoft-bo-quy-tac-ung-xu-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/02/GettyImages-1244789707.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/clickfix-lua-nguoi-dung-tu-hack/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/hbo-max-screenshot-clickfix.jpg?resize=1200,843"
+  },
+  {
+    "path": "assets/news/automattic-thay-toan-bo-hoi-dong/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/10/matt-mullenweg.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/volkswagen-mission-efficiency-sieu-tiet-kiem/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/volkswagen-mission-efficiency-side.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/prime-video-tin-ngan-dau-tiktok/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/10/GettyImages-1242123707.jpg?resize=1200,767"
+  },
+  {
+    "path": "assets/news/superhuman-thau-tom-fathom/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/04/fathom_product-graphic_my-calls.jpeg?resize=1200,675"
   }
 ]
