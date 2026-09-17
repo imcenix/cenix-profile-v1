@@ -886,5 +886,33 @@
   {
     "path": "assets/news/superpose-ai-day-tao-dang/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/PressKit_Superpose_Hero.jpeg?resize=1200,677"
+  },
+  {
+    "path": "assets/news/salesforce-koa-mo-hinh-suy-luan-nvidia/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2019/10/Marc-Benioff-DSC03537.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/ai-lab-quen-dong-cua-truoc/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-1486318910.jpg?resize=1200,776"
+  },
+  {
+    "path": "assets/news/x-cashtag-giao-dich-chung-khoan/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/11/X-and-Threads-GettyImages-1763609384.jpeg?resize=1200,832"
+  },
+  {
+    "path": "assets/news/fluxnium-uranium-tu-nuoc-bien/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-124923144.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/may-mobility-len-san-spac-1-4-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/05/May_Uber-copy.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/threads-bo-cong-cu-podcast/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Threads-podcast-feat.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/shinyhunters-lo-du-lieu-xe-florida/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2159359986.jpg?resize=1200,800"
   }
 ]
