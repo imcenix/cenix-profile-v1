@@ -858,5 +858,33 @@
   {
     "path": "assets/news/superhuman-thau-tom-fathom/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/04/fathom_product-graphic_my-calls.jpeg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/meta-kinh-thong-minh-khong-camera/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/zuck-glasses-2173579471-e1788354102893.jpg?resize=1200,761"
+  },
+  {
+    "path": "assets/news/anthropic-gop-chat-cowork-mot-cua-so/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Claude-1920x1080-1.jpeg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/google-home-mcp-agent-dieu-khien/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/Google-Home-Speaker-Multi.png?resize=1200,755"
+  },
+  {
+    "path": "assets/news/huang-khong-can-luat-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/07/GettyImages-2219673294.jpg?resize=1200,750"
+  },
+  {
+    "path": "assets/news/sk-hynix-intel-ram-tai-my/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/SK-Hynix.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/pixel-zero-click-modem-bi-khai-thac/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/08/IMG_3163.jpg?resize=1200,684"
+  },
+  {
+    "path": "assets/news/superpose-ai-day-tao-dang/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/PressKit_Superpose_Hero.jpeg?resize=1200,677"
   }
 ]
