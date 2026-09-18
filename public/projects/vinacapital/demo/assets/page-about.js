@@ -241,7 +241,7 @@ VC.mountPage({
       <h2>Get started with VinaCapital</h2>
       <p>Find the investment solution that fits your financial goals, or speak directly with our team.</p>
     </div>
-    <a class="btn" href="contact.html">Contact us <i>→</i></a>
+    <a class="btn" href="#contact">Contact us <i>→</i></a>
   </div>
 </section>
 `

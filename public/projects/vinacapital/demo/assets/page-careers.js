@@ -284,7 +284,7 @@ VC.mountPage({
       <h2>Ready to join VinaCapital?</h2>
       <p>Send your application to our HR team, or follow this page for the latest openings.</p>
     </div>
-    <a class="btn" href="contact.html">Submit your application <i>→</i></a>
+    <a class="btn" href="#contact">Submit your application <i>→</i></a>
   </div>
 </section>
 `

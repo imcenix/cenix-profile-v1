@@ -14,7 +14,7 @@ const NAV = [
   { key: 'education', label: 'Investment Education', href: 'education.html' },
   { key: 'news',      label: 'News & Insights',     href: 'news.html' },
   { key: 'careers',   label: 'Careers',             href: 'careers.html' },
-  { key: 'contact',   label: 'Contact',             href: 'contact.html' }
+  { key: 'contact',   label: 'Contact',             href: '#contact' }
 ];
 
 const OFFICES = [

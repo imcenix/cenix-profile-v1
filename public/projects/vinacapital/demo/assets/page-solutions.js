@@ -197,7 +197,7 @@ VC.mountPage({
       <h2>Not sure where to start?</h2>
       <p>VinaCapital’s advisory team will help you choose the solution that matches your goals and risk appetite.</p>
     </div>
-    <a class="btn" href="contact.html">Speak with an advisor <i>→</i></a>
+    <a class="btn" href="#contact">Speak with an advisor <i>→</i></a>
   </div>
 </section>
 `
