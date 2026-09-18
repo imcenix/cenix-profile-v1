@@ -914,5 +914,33 @@
   {
     "path": "assets/news/shinyhunters-lo-du-lieu-xe-florida/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2159359986.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/openai-model-de-lai-loi-nhan-che-giau/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-1014496212.jpg?resize=1200,600"
+  },
+  {
+    "path": "assets/news/microsoft-goi-cao-du-lieu-la-trom-cap/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/11/GettyImages-1778706504.jpg?resize=1200,783"
+  },
+  {
+    "path": "assets/news/huawei-ascend-960dt-som-hon-du-kien/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/02/20230228_162746.jpg?resize=1200,900"
+  },
+  {
+    "path": "assets/news/snap-specs-2200-usd-thuyet-phuc-lai/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/SPECS26_Home-Menu.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/pinterest-restyle-thiet-ke-phong-bang-ai/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Restyle_dopamine.png?resize=1200,808"
+  },
+  {
+    "path": "assets/news/crusoe-goi-3-9-ty-nha-may-ai-di-dong/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/crusoe-ceo-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/deepmind-institute-mo-tranh-luan-agi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1481927442.jpg?resize=1200,800"
   }
 ]
