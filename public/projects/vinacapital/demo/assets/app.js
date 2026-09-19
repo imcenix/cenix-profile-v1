@@ -49,7 +49,7 @@ const SOLUTIONS = {
    section để giữ ý nghĩa riêng. Không link, không hover: đây là cụm thông tin. */
 const ASSETS = {
   label: 'One multi-asset platform',
-  title: 'Seven asset classes',
+  title: 'Seven asset\u00A0classes',
   intro: 'Every asset class runs on the same investment process and risk framework, letting investors access Vietnam’s growth at the level that suits them.',
   items: [
     'Listed Equity',
@@ -147,15 +147,15 @@ ${header('home')}
 
 <section class="about" id="about">
   <div class="wrap about__grid">
-    <div class="about__media">
+    <div class="about__media" data-px data-rv="left">
       <img src="${IMG}${ABOUT.img}" alt="${ABOUT.alt}" loading="lazy">
       ${corner()}
       <div class="about__on">
-        <p class="eyebrow eyebrow--rule">${ABOUT.label}</p>
-        <h2>${ABOUT.heading}</h2>
+        <p class="eyebrow eyebrow--rule" data-rv>${ABOUT.label}</p>
+        <h2 data-rv style="--d:.12s">${ABOUT.heading}</h2>
       </div>
     </div>
-    <div class="about__card">
+    <div class="about__card" data-rv="right" style="--d:.18s">
       <blockquote>${ABOUT.quote}</blockquote>
       <a class="btn btn--ghost" href="about.html">${ABOUT.cta} <i>→</i></a>
     </div>
@@ -163,21 +163,21 @@ ${header('home')}
 </section>
 
 <section class="sol" id="solutions">
-  <div class="sol__band">
+  <div class="sol__band" data-rv="wipe">
     <div class="wrap sol__head">
       <div>
-        <p class="eyebrow eyebrow--rule">${SOLUTIONS.label}</p>
-        <h2>${SOLUTIONS.title}</h2>
+        <p class="eyebrow eyebrow--rule" data-rv style="--d:.52s">${SOLUTIONS.label}</p>
+        <h2 data-rv style="--d:.62s">${SOLUTIONS.title}</h2>
       </div>
       <div class="sol__aside">
-        <p>${SOLUTIONS.intro}</p>
+        <p data-rv style="--d:.70s">${SOLUTIONS.intro}</p>
         <a class="btn btn--light" href="solutions.html">${SOLUTIONS.cta} <i>→</i></a>
       </div>
     </div>
   </div>
   <div class="wrap sol__body">
-    <div class="sol__grid">
-      ${SOLUTIONS.items.map(s => `<article class="sol__card">
+    <div class="sol__grid" data-rv-group>
+      ${SOLUTIONS.items.map(s => `<article class="sol__card" data-rv="scale">
         <span><b>${s.no}</b>${s.tag}</span>
         <h3>${s.title}</h3>
         <p>${s.desc}</p>
@@ -191,13 +191,13 @@ ${header('home')}
   <div class="wrap">
     <div class="assets__head">
       <div>
-        <p class="eyebrow eyebrow--rule">${ASSETS.label}</p>
-        <h2>${ASSETS.title}</h2>
+        <p class="eyebrow eyebrow--rule" data-rv>${ASSETS.label}</p>
+        <h2 data-rv style="--d:.08s">${ASSETS.title}</h2>
       </div>
-      <p>${ASSETS.intro}</p>
+      <p data-rv style="--d:.14s">${ASSETS.intro}</p>
     </div>
-    <div class="assets__grid">
-      ${ASSETS.items.map((a, i) => `<article>
+    <div class="assets__grid" data-rv-group>
+      ${ASSETS.items.map((a, i) => `<article data-rv="rise">
         <b>${String(i + 1).padStart(2, '0')}</b>
         <h3>${a}</h3>
       </article>`).join('')}
@@ -208,21 +208,21 @@ ${header('home')}
 <section class="news" id="news">
   <div class="wrap">
     <div class="news__head">
-      <div><p class="eyebrow eyebrow--rule">${NEWS.label}</p><h2>${NEWS.title}</h2></div>
-      <a class="tlink" href="news.html">${NEWS.cta} <i>→</i></a>
+      <div><p class="eyebrow eyebrow--rule" data-rv>${NEWS.label}</p><h2 data-rv style="--d:.08s">${NEWS.title}</h2></div>
+      <a class="tlink" href="news.html" data-rv style="--d:.14s">${NEWS.cta} <i>→</i></a>
     </div>
     <div class="news__grid">
-      <a class="news__lead" href="news.html">
-        <div class="media"><img src="${IMG}${NEWS.lead.img}" alt="${NEWS.lead.alt}" loading="lazy"></div>
+      <a class="news__lead" href="news.html" data-rv="left">
+        <div class="media" data-px><img src="${IMG}${NEWS.lead.img}" alt="${NEWS.lead.alt}" loading="lazy"></div>
         <time>${NEWS.lead.date}</time>
         <h3>${NEWS.lead.title}</h3>
         <span class="tlink">${NEWS.read} <i>→</i></span>
       </a>
-      <div class="news__list">
-        ${NEWS.rows.map(r => `<a class="news__row" href="news.html"><time>${r[0]}</time><p>${r[1]}</p><span>→</span></a>`).join('')}
+      <div class="news__list" data-rv-group>
+        ${NEWS.rows.map(r => `<a class="news__row" href="news.html" data-rv><time>${r[0]}</time><p>${r[1]}</p><span>→</span></a>`).join('')}
       </div>
     </div>
-    <a class="pulse" href="news.html">
+    <a class="pulse" href="news.html" data-rv="scale">
       <span class="pulse__mark"><b>${INSIGHT.mark}</b></span>
       <span class="pulse__body">
         <span class="pulse__tag">${INSIGHT.tag}<em>${INSIGHT.date}</em></span>
@@ -236,15 +236,15 @@ ${header('home')}
 
 <section class="esg" id="esg">
   <div class="wrap esg__grid">
-    <div class="esg__media">
+    <div class="esg__media" data-px data-rv="left">
       <img src="${IMG}${ESG.img}" alt="${ESG.alt}" loading="lazy">
       ${corner()}
     </div>
-    <div>
-      <p class="eyebrow eyebrow--rule">${ESG.label}</p>
-      <h2>${ESG.title}</h2>
-      <p>${ESG.desc}</p>
-      <a class="btn" href="esg.html">${ESG.cta} <i>→</i></a>
+    <div data-rv-group>
+      <p class="eyebrow eyebrow--rule" data-rv="right">${ESG.label}</p>
+      <h2 data-rv="right">${ESG.title}</h2>
+      <p data-rv="right">${ESG.desc}</p>
+      <a class="btn" href="esg.html" data-rv="right">${ESG.cta} <i>→</i></a>
     </div>
   </div>
 </section>
@@ -252,11 +252,11 @@ ${header('home')}
 <section class="pres">
   <div class="wrap">
     <div class="pres__head">
-      <div><p class="eyebrow eyebrow--rule">${PRESENCE.label}</p><h2>${PRESENCE.title}</h2></div>
-      <p>${PRESENCE.intro}</p>
+      <div><p class="eyebrow eyebrow--rule" data-rv>${PRESENCE.label}</p><h2 data-rv style="--d:.08s">${PRESENCE.title}</h2></div>
+      <p data-rv style="--d:.14s">${PRESENCE.intro}</p>
     </div>
-    <div class="pres__stats">
-      ${PRESENCE.stats.map(s => `<article><strong>${s[0]}</strong><span>${s[1]}</span></article>`).join('')}
+    <div class="pres__stats" data-rv-group>
+      ${PRESENCE.stats.map(s => `<article data-rv="rise"><strong data-count>${s[0]}</strong><span>${s[1]}</span></article>`).join('')}
     </div>
   </div>
 </section>
