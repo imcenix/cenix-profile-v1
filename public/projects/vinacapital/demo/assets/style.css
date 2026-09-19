@@ -508,6 +508,23 @@ h1,h2,h3,h4,
 p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
 .nobr{white-space:nowrap}
 
+
+/* ---------- Dải ảnh ngang làm điểm nghỉ giữa hai section ---------- */
+.strip{position:relative;display:grid;align-items:center;overflow:hidden;
+  min-height:clamp(230px,26vw,360px);background:var(--ink-deep)}
+.strip__bg{position:absolute;inset:0}
+.strip__bg img{width:100%;height:100%;object-fit:cover}
+/* ảnh đèn xe nội dung nằm ở nửa dưới — kéo khung xuống cho đỡ lọt nhiều trời */
+.strip--city .strip__bg img{object-position:50% 70%}
+.strip__scrim{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(9,14,22,.76) 0%,rgba(9,14,22,.5) 46%,rgba(9,14,22,.24) 74%,rgba(9,14,22,.16) 100%)}
+.strip__in{position:relative;z-index:2;padding:clamp(30px,3.2vw,48px) 0;color:#fff}
+.strip__in .eyebrow{color:#fff}
+.strip__in .eyebrow::before{background:#fff}
+.strip__line{max-width:24ch;margin-top:15px;font-size:clamp(23px,2.5vw,36px);font-weight:700;
+  line-height:1.16;letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;
+  text-shadow:0 2px 16px rgba(6,10,16,.42)}
+
 /* ---------- Dải ảnh lớn chạy hết chiều ngang ---------- */
 .band{position:relative;display:grid;align-items:center;min-height:clamp(300px,33vw,430px);overflow:hidden;background:var(--ink-deep)}
 .band__bg{position:absolute;inset:0}
@@ -629,8 +646,12 @@ p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
    nên không bao giờ hở mép. */
 .has-motion [data-px]{overflow:hidden}
 .has-motion [data-px] img{
-  transform:translate3d(0,calc((var(--p,.5) - .5) * -12%),0) scale(1.12);
+  --pxScale:1.14;            /* ảnh phóng lên để có phần dư hai đầu */
+  --pxTravel:12%;            /* quãng trôi, phải nhỏ hơn phần dư kẻo hở mép */
+  transform:translate3d(0,calc((var(--p,.5) - .5) * -1 * var(--pxTravel)),0) scale(var(--pxScale));
   will-change:transform}
+/* dải nghỉ thấp nên cần trôi mạnh tay hơn mới thấy rõ */
+.has-motion .strip img{--pxScale:1.34;--pxTravel:28%}
 
 /* --- banner --- */
 .has-motion .hero__img{
@@ -756,6 +777,8 @@ p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
   .mosaic{grid-template-columns:1fr}
   .mosaic figure:first-child{grid-column:span 1}
   .band h2{max-width:none}
+  .strip{min-height:210px}
+  .strip__line{max-width:none}
   .phero h1{font-size:29px}
   .phero__lead{font-size:16px}
   .chips div{flex-basis:100%}

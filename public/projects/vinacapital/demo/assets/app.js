@@ -62,6 +62,25 @@ const ASSETS = {
   ]
 };
 
+
+/* Hai dải ảnh ngang làm "điểm nghỉ" giữa các section.
+   Ảnh cao hơn khung và trôi dọc bên trong khi cuộn — khung đứng yên, ảnh chạy.
+   Chữ giữ ở mức một câu: đây là chỗ để mắt nghỉ, không phải chỗ đọc. */
+const STRIPS = {
+  city: {
+    img: 'hcm-light-trails.jpg',
+    alt: 'Ho Chi Minh City at night',
+    eyebrow: 'Vietnam',
+    line: 'One country.<br>Every asset\u00A0class.'
+  },
+  decades: {
+    img: 'vietnam-infrastructure-sunset.jpg',
+    alt: 'Infrastructure development across Vietnam',
+    eyebrow: 'Since 2003',
+    line: 'Two decades of<br>building in\u00A0Vietnam.'
+  }
+};
+
 const NEWS = {
   label: 'News & Insights',
   title: 'Latest from VinaCapital',
@@ -115,6 +134,21 @@ const PRESENCE = {
 /* -------------------------------------------------------------------------
    IMG, corner, shapes, header, fraudBand, footer, initShared đến từ shared.js
    ------------------------------------------------------------------------- */
+
+
+/* Một dải nghỉ. `data-px` để motion.js ghi biến --p, CSS lo phần trôi ảnh. */
+const strip = (k) => {
+  const d = STRIPS[k];
+  return `
+<section class="strip strip--${k}" data-px aria-hidden="false">
+  <div class="strip__bg"><img src="${IMG}${d.img}" alt="${d.alt}" loading="lazy"></div>
+  <span class="strip__scrim" aria-hidden="true"></span>
+  <div class="wrap strip__in">
+    <p class="eyebrow eyebrow--rule" data-rv>${d.eyebrow}</p>
+    <p class="strip__line" data-rv style="--d:.1s">${d.line}</p>
+  </div>
+</section>`;
+};
 
 function render() {
   return `
@@ -204,6 +238,7 @@ ${header('home')}
     </div>
   </div>
 </section>
+${strip('city')}
 
 <section class="news" id="news">
   <div class="wrap">
@@ -248,6 +283,7 @@ ${header('home')}
     </div>
   </div>
 </section>
+${strip('decades')}
 
 <section class="pres">
   <div class="wrap">
