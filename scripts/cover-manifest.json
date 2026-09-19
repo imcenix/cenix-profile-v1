@@ -942,5 +942,33 @@
   {
     "path": "assets/news/deepmind-institute-mo-tranh-luan-agi/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1481927442.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/typesafe-jev-model-khong-biet-noi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/typesafe-ai.jpg?resize=1174,1200"
+  },
+  {
+    "path": "assets/news/hacktron-dung-claude-dot-nhap-openai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/04/GettyImages-1979406539.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/meta-muse-do-bo-may-mac/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/download-1.webp?resize=1200,1159"
+  },
+  {
+    "path": "assets/news/google-cc-tro-ly-ai-viec-nha/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/CC_hero.width-2200.format-webp.webp?resize=1200,675"
+  },
+  {
+    "path": "assets/news/apple-lam-lai-man-hinh-xin-theo-doi-eu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/07/app-store-ios-2022.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/anthropic-mo-phong-lab-sinh-hoc/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/08/DNA-%E2%80%94-Xero-2.jpg?resize=1200,750"
+  },
+  {
+    "path": "assets/news/joby-bay-tu-hanh-xuyen-nuoc-my/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Joby-autonomy-Tour.jpg?resize=1200,633"
   }
 ]
