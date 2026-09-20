@@ -970,5 +970,29 @@
   {
     "path": "assets/news/joby-bay-tu-hanh-xuyen-nuoc-my/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/Joby-autonomy-Tour.jpg?resize=1200,633"
+  },
+  {
+    "path": "assets/news/gemini-tu-hack-ba-cong-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/gemini-app-GettyImages-2276204472-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/trump-doi-ten-ai-lap-ai-force/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/donald-trump-open-mouth.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/vals-ai-chuan-vang-cham-diem-model/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Team.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/tilly-norwood-phong-van-noi-tieng-trung/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/Screenshot-2026-03-11-at-3.22.19-PM.png?resize=1200,672"
+  },
+  {
+    "path": "assets/news/flock-mua-lai-hop-dong-nhan-vien/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/flock-protest.jpg?resize=1131,1200"
+  },
+  {
+    "path": "assets/news/vantora-100-trieu-physical-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Vantora_UpLabs_e18c36.jpg?resize=1200,781"
   }
 ]
