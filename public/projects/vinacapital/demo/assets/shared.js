@@ -14,7 +14,7 @@ const NAV = [
   { key: 'education', label: 'Investment Education', href: 'education.html' },
   { key: 'news',      label: 'News & Insights',     href: 'news.html' },
   { key: 'careers',   label: 'Careers',             href: 'careers.html' },
-  { key: 'contact',   label: 'Contact',             href: '#contact' }
+  { key: 'contact',   label: 'Contact',             href: 'contact.html' }
 ];
 
 const OFFICES = [
@@ -227,7 +227,10 @@ function initShared(root) {
 /* Dựng một trang con: khung chung + phần thân riêng */
 function mountPage({ page, hero, body }) {
   const root = document.getElementById('site');
-  root.innerHTML = header(page) + pageHero(hero) + body + fraudBand() + footer() + fraudPopup();
+  root.className = `page-inner page-${page}`;
+  /* Fraud takeover is homepage-only. Inner pages retain the complete warning
+     band without interrupting the reading flow. */
+  root.innerHTML = header(page) + pageHero(hero) + body + fraudBand() + footer();
   initShared(root);
   return root;
 }

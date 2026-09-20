@@ -203,7 +203,7 @@ VC.mountPage({
       <h2>Subscribe to VinaCapital insights</h2>
       <p>Monthly macro reports, market insights and product updates delivered straight to your inbox.</p>
     </div>
-    <a class="btn" href="#contact">Subscribe now <i>→</i></a>
+    <a class="btn" href="contact.html">Subscribe now <i>→</i></a>
   </div>
 </section>
 `

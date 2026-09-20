@@ -1,7 +1,5 @@
-/* ==========================================================================
-   VỀ CHÚNG TÔI — giữ nguyên tuyến nội dung vinacapital.com/vi/about-us
-   Danh sách dài (27 lãnh đạo) rút còn nhóm tiêu biểu cho bản demo.
-   ========================================================================== */
+/* ABOUT US — content structure and the complete four leadership groups follow
+   the current VinaCapital corporate site. */
 
 const INTRO = {
   eyebrow: 'Founded in 2003',
@@ -75,12 +73,12 @@ const FOUNDATION = {
 
 const RESP = {
   label: 'Responsible investment',
-  title: 'Six commitments under the PRI',
+  title: 'Six commitments under<br>the&nbsp;PRI',
   intro: 'As a signatory of the United Nations-supported Principles for Responsible Investment (UN PRI), VinaCapital reports on its responsible investment activities every year.',
   items: [
-    ['Integrating ESG into analysis', 'We incorporate environmental, social and governance criteria into our investment analysis and portfolio decision-making processes.'],
+    ['Integrating&nbsp;ESG into analysis', 'We incorporate environmental, social and governance criteria into our investment analysis and portfolio decision-making processes.'],
     ['Active ownership', 'We use our voting rights and our influence as an investor to improve the governance of the companies in our portfolio.'],
-    ['Seeking ESG disclosure', 'We encourage transparency in discussions around ESG and support the adoption of relevant international standards.'],
+    ['Seeking&nbsp;ESG disclosure', 'We encourage transparency in discussions around ESG and support the adoption of relevant international standards.'],
     ['Promoting the Principles', 'We promote acceptance and implementation of the UN PRI across the investment management industry in Vietnam.'],
     ['Working together', 'We collaborate with external organizations to share tools and pool resources through investor reporting.'],
     ['Reporting annually', 'As a PRI signatory, we report publicly on our responsible investment activities each year.']
@@ -90,24 +88,53 @@ const RESP = {
 const TEAM = {
   label: 'Leadership',
   title: 'The people who lead us',
-  intro: 'Our Board of Directors and senior leadership bring together local and international expertise. Shown below is a representative group; the official site presents all four teams in full.',
+  intro: 'Our Board of Directors and leadership teams bring together local insight, international experience and specialist expertise across every part of the Group.',
   groups: [
     {
       name: 'Board of Directors',
       people: [
-        ['Jonathan Choi', 'Chairman', 'jonathan-choi.webp'],
-        ['Terence F. Mahony, CFA', 'Vice Chairman', 'terence-mahony.webp'],
-        ['Don Lam', 'Chief Executive Officer and Founding Partner', 'don-lam.webp'],
-        ['Katherine Yip', 'Non-executive Director', 'katherine-yip.webp']
+        ['Jonathan Choi', 'Chairman', 'about/Jonathan-Choi_Resize.jpg'],
+        ['Terence F. Mahony, CFA', 'Vice Chairman', 'about/Terry_Resize.jpg'],
+        ['Don Lam', 'Chief Executive Officer and Founding Partner', 'about/Don_Resize-2.jpg'],
+        ['Katherine Yip', 'Non-executive Director', 'about/Katherine-Yip_Resize.jpg'],
+        ['Michael Choi', 'Non-executive Director', 'about/BOARD.jpg'],
+        ['Brook Taylor', 'Chief Executive Officer, VinaCapital Fund Management', 'about/Brook_Resize.jpg']
       ]
     },
     {
       name: 'Senior Leadership Team',
       people: [
-        ['Brook Taylor', 'Chief Executive Officer (Asset Management)', 'brook-taylor.webp'],
-        ['Alex Hambly', 'Chief Investment Officer', 'alex-hambly.webp'],
-        ['Ngô Vĩnh Tuấn', 'Managing Director, Head of Investment of VinaCapital Group', 'ngo-vinh-tuan.webp'],
-        ['Nguyễn Hoài Thu, CFA', 'Deputy CEO of VinaCapital Fund Management', 'nguyen-hoai-thu.webp']
+        ['Don Lam', 'Chief Executive Officer', 'about/Don_Resize-2.jpg'],
+        ['Brook Taylor', 'Chief Executive Officer, VinaCapital Fund Management', 'about/Brook_Resize.jpg'],
+        ['Alex Hambly', 'Chief Investment Officer', 'about/Alex-Hambly-400x406-1.jpg'],
+        ['Ngô Vĩnh Tuấn', 'Managing Director, Head of Investment of VinaCapital Group', 'about/Tuan-Ngo.jpg']
+      ]
+    },
+    {
+      name: 'Investment Team Leads',
+      people: [
+        ['Nguyễn Hoài Thu, CFA', 'Deputy CEO, VinaCapital Fund Management', 'about/Thu-Nguyen-400x406_20231123-scaled.jpg'],
+        ['Khanh Vu', 'Co-Head of VOF', 'about/IMG_4174-KVU-Resized.jpg'],
+        ['Dieu Phuong Nguyen', 'Co-Head of VOF', 'about/DieuPhuong_resize.jpg'],
+        ['Hai Le', 'Head of Logistics', 'about/Hai-Le.jpg'],
+        ['Hieu Do, CFA', 'Head of Real Estate', 'about/HieuDo_resize.jpg'],
+        ['Hai Tran', 'Head of Energy and Infrastructure', 'about/Hai-Tran-Web.jpg'],
+        ['Trung Hoang', 'Head of VinaCapital Ventures', 'about/TrungHoang.jpg'],
+        ['Richard Han', 'Deputy Head of Venture Capital', 'about/Richard-Web.jpg'],
+        ['Tung Nguyen, CFA', 'Head of VinaCarbon', 'about/Tung-Nguyen-Web.jpg']
+      ]
+    },
+    {
+      name: 'Business Unit Leads',
+      people: [
+        ['Michael Kokalari, CFA', 'Chief Economist', 'about/Micheal-Kokalari.jpg'],
+        ['Anh Vuong', 'Head of Wealth Management', 'about/VA-profile-photo.jpg'],
+        ['Diem Ho', 'Chief Financial Officer', 'about/Diem-Ho_resize.jpg'],
+        ['An Le', 'Chief Human Resources Officer', 'about/An-Le_resize-2.jpg'],
+        ['Ninh Dinh', 'Head of Risk & Compliance', 'about/Ninh-Web.jpg'],
+        ['Derek W., CFA', 'Head of Operations', 'about/Derek-Web.jpg'],
+        ['Quang Dang', 'Head of Hanoi Office', 'about/Quang-Web.jpg'],
+        ['Jason Ng, CFA', 'Head of Singapore Office', 'about/Jason-Web.jpg']
       ]
     }
   ]
@@ -222,10 +249,10 @@ VC.mountPage({
       <p>${TEAM.intro}</p>
     </div>
     ${TEAM.groups.map((g, gi) => `
-      <p class="eyebrow" style="${gi ? 'margin-top:46px;' : ''}margin-bottom:18px">${g.name}</p>
+      <p class="eyebrow" style="${gi ? 'margin-top:34px;' : ''}margin-bottom:16px">${g.name}</p>
       <div class="team">
         ${g.people.map(p => `<article>
-          <span class="team__ph"><img src="${IMG}team/${p[2]}" alt="Portrait of ${p[0]}" loading="lazy"></span>
+          <span class="team__ph"><img src="${IMG}${p[2]}" alt="Portrait of ${p[0]}" loading="lazy"></span>
           <div class="team__b">
             <h3>${p[0]}</h3>
             <p>${p[1]}</p>
@@ -241,7 +268,7 @@ VC.mountPage({
       <h2>Get started with VinaCapital</h2>
       <p>Find the investment solution that fits your financial goals, or speak directly with our team.</p>
     </div>
-    <a class="btn" href="#contact">Contact us <i>→</i></a>
+    <a class="btn" href="contact.html">Contact us <i>→</i></a>
   </div>
 </section>
 `
