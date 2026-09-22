@@ -68,14 +68,14 @@ const ASSETS = {
    Chữ giữ ở mức một câu: đây là chỗ để mắt nghỉ, không phải chỗ đọc. */
 const STRIPS = {
   city: {
-    img: 'hcmc-panorama.webp',
-    alt: 'Ho Chi Minh City at night',
+    img: 'hcmc-band-city.webp',
+    alt: 'Ho Chi Minh City skyline at sunset',
     eyebrow: 'Vietnam',
     line: 'One country.<br>Every asset\u00A0class.'
   },
   decades: {
-    img: 'vietnam-infrastructure-sunset.jpg',
-    alt: 'Infrastructure development across Vietnam',
+    img: 'hcmc-band-twilight.webp',
+    alt: 'Ho Chi Minh City waterfront at twilight',
     eyebrow: 'Since 2003',
     line: 'Two decades of<br>building in\u00A0Vietnam.'
   }
@@ -140,7 +140,7 @@ const PRESENCE = {
 const strip = (k) => {
   const d = STRIPS[k];
   return `
-<section class="strip strip--${k}" data-px aria-hidden="false">
+<section class="strip strip--${k}" data-fixed aria-hidden="false">
   <div class="strip__bg"><img src="${IMG}${d.img}" alt="${d.alt}" loading="lazy"></div>
   <span class="strip__scrim" aria-hidden="true"></span>
   <div class="wrap strip__in">

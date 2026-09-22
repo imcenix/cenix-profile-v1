@@ -53,6 +53,10 @@
 
   /* ------------------------------------------------- 2. Ảnh trôi trong khung */
   const px = [...document.querySelectorAll('[data-px]')];
+  /* Nền neo theo màn hình: khung trượt qua, ảnh đứng yên như dán vào cửa sổ
+     trình duyệt. Không dùng background-attachment:fixed vì iOS Safari không
+     chạy và máy yếu bị giật — ở đây chỉ là một phép translate, GPU lo hết. */
+  const fixedBg = [...document.querySelectorAll('[data-fixed]')];
   const hdr = document.querySelector('.hdr');
   let cao = window.innerHeight;
   let cho_ve = false;
@@ -74,6 +78,14 @@
       if (r.bottom < -200 || r.top > cao + 200) continue;
       const p = (cao - r.top) / (cao + r.height);
       el.style.setProperty('--p', Math.min(1, Math.max(0, p)).toFixed(4));
+    }
+
+    /* nền neo: dịch ngược đúng bằng khoảng cách từ đỉnh màn hình tới khung,
+       nên lớp nền luôn nằm đúng vị trí cửa sổ dù khung đã trôi tới đâu */
+    for (const el of fixedBg) {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -300 || r.top > cao + 300) continue;
+      el.style.setProperty('--fx', Math.round(-r.top));
     }
 
     /* header đổi nền khi rời khỏi banner — KHÔNG đổi kích thước logo */
