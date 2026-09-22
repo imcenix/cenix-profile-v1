@@ -78,7 +78,7 @@ VC.mountPage({
     <a href="#" class="ed-goal ed-goal--large"><img src="${IMG}investor.jpg" alt="Financial planning for your family" loading="lazy"><span><small>Long-term plan</small><b>Building financial foundations for your family</b><i>→</i></span></a>
     <a href="#" class="ed-goal"><img src="${IMG}about/unsplash_DoWZMPZ-M9s.png" alt="Preparing financially for your children" loading="lazy"><span><small>Life goals</small><b>Preparing your children for the road ahead</b><i>→</i></span></a>
     <a href="#" class="ed-goal"><img src="${IMG}hcm-heritage.jpg" alt="Retirement planning" loading="lazy"><span><small>Financial freedom</small><b>Taking charge of your retirement years</b><i>→</i></span></a>
-    <a href="#" class="ed-goal"><img src="${IMG}city-aerial-night.jpg" alt="Preserving financial prosperity" loading="lazy"><span><small>Wealth management</small><b>Preserving your financial prosperity</b><i>→</i></span></a>
+    <a href="#" class="ed-goal"><img src="${IMG}hcmc-twilight.webp" alt="Preserving financial prosperity" loading="lazy"><span><small>Wealth management</small><b>Preserving your financial prosperity</b><i>→</i></span></a>
   </div>
 </section>
 

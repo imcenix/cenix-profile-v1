@@ -538,7 +538,7 @@ p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
 .band h2{max-width:20ch;margin-top:14px;font-size:clamp(25px,2.7vw,40px);font-weight:700;line-height:1.15;letter-spacing:-.035em;text-transform:uppercase}
 .band p{max-width:56ch;margin-top:16px;color:rgba(255,255,255,.84);font-size:16.5px;line-height:1.75}
 .band .btn{margin-top:26px}
-.band--mid .band__scrim{background:linear-gradient(rgba(9,14,22,.42),rgba(9,14,22,.66))}
+.band--mid .band__scrim{background:linear-gradient(rgba(9,14,22,.5),rgba(9,14,22,.72))}
 .band--mid .band__in{text-align:center}
 .band--mid h2,.band--mid p{max-width:24ch;margin-left:auto;margin-right:auto}
 .band--mid p{max-width:58ch}

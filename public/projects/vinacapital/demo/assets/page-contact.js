@@ -41,7 +41,7 @@ const CONTACT_OFFICES = [
 VC.mountPage({
   page: 'contact',
   hero: {
-    img: 'skyline-dusk.webp',
+    img: 'hcmc-twilight.webp',
     crumb: 'Contact',
     eyebrow: 'Connect with VinaCapital',
     title: 'Start a conversation<br>with our team',

@@ -22,8 +22,8 @@ const VISION = {
   label: 'Our vision',
   title: 'Global knowledge,<br>local insight',
   body: 'We stay true to our core values, combining global knowledge with a deep understanding of the domestic market to deliver outstanding, sustainable long-term returns for both local and international investors.',
-  img: 'hcm-financial-district.jpg',
-  alt: 'Ho Chi Minh City financial district'
+  img: 'hcmc-fireworks.webp',
+  alt: 'Fireworks over the Ho Chi Minh City skyline'
 };
 
 const GOV = {
@@ -143,7 +143,7 @@ const TEAM = {
 VC.mountPage({
   page: 'about',
   hero: {
-    img: 'skyline-day.jpg',
+    img: 'hcmc-skyline.webp',
     crumb: 'About us',
     eyebrow: INTRO.eyebrow,
     title: 'Two decades of partnership<br>with Vietnam',
@@ -175,18 +175,14 @@ VC.mountPage({
   </div>
 </section>
 
-<section class="sect sect--sand" id="tam-nhin">
-  <div class="wrap split split--flip">
-    <div class="split__media">
-      <img src="${IMG}${VISION.img}" alt="${VISION.alt}" loading="lazy">
-      ${corner()}
-    </div>
-    <div>
-      <p class="eyebrow eyebrow--rule">${VISION.label}</p>
-      <h3>${VISION.title}</h3>
-      <div class="prose"><p>${VISION.body}</p></div>
-      <a class="btn" href="solutions.html">View investment solutions <i>→</i></a>
-    </div>
+<section class="band band--mid" id="tam-nhin">
+  <div class="band__bg"><img src="${IMG}${VISION.img}" alt="${VISION.alt}" loading="lazy"></div>
+  <span class="band__scrim" aria-hidden="true"></span>
+  <div class="wrap band__in">
+    <p class="eyebrow eyebrow--rule">${VISION.label}</p>
+    <h2>${VISION.title}</h2>
+    <p>${VISION.body}</p>
+    <a class="btn" href="solutions.html">View investment solutions <i>→</i></a>
   </div>
 </section>
 

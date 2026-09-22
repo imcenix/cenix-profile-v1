@@ -76,7 +76,7 @@ const MACRO = {
 VC.mountPage({
   page: 'news',
   hero: {
-    img: 'city-aerial-night.jpg',
+    img: 'hcmc-twilight.webp',
     crumb: 'News & Insights',
     eyebrow: 'Information hub',
     title: 'News &amp;<br>Investment Insights',
@@ -187,7 +187,7 @@ VC.mountPage({
 </section>
 
 <section class="band" id="con-so">
-  <div class="band__bg"><img src="${IMG}hcm-light-trails.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="band__bg"><img src="${IMG}hcmc-panorama.webp" alt="" aria-hidden="true" loading="lazy"></div>
   <span class="band__scrim" aria-hidden="true"></span>
   <div class="wrap band__in">
     <p class="eyebrow eyebrow--rule">Vietnam by Numbers</p>

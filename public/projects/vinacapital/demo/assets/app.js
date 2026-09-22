@@ -16,7 +16,7 @@ const HERO = {
   body: 'As Vietnam’s leading multi-disciplinary investment manager, we are uniquely positioned to create value and share the opportunities and benefits of the country’s growth across every asset class.',
   cta: 'About us',
   /* Ảnh tĩnh thay cho video: nhẹ hơn ~85% và nét hơn sau khi khử mù + tăng nét */
-  still: 'skyline-dusk',
+  still: 'hcmc-hero',
   alt: 'Ho Chi Minh City waterfront seen from above',
   foot: 'Vietnam · Long-term growth',
   scroll: 'Scroll to explore'
@@ -27,7 +27,7 @@ const ABOUT = {
   heading: 'A long-term belief<br>in Vietnam',
   quote: 'VinaCapital passionately believes in Vietnam. We invest in the country, its workforce, its energy, and its future.',
   cta: 'Who we are',
-  img: 'skyline-day.jpg',
+  img: 'hcmc-skyline.webp',
   alt: 'Ho Chi Minh City skyline'
 };
 
@@ -68,7 +68,7 @@ const ASSETS = {
    Chữ giữ ở mức một câu: đây là chỗ để mắt nghỉ, không phải chỗ đọc. */
 const STRIPS = {
   city: {
-    img: 'hcm-light-trails.jpg',
+    img: 'hcmc-panorama.webp',
     alt: 'Ho Chi Minh City at night',
     eyebrow: 'Vietnam',
     line: 'One country.<br>Every asset\u00A0class.'

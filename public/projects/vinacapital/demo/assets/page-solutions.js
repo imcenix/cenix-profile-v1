@@ -93,7 +93,7 @@ const fundRows = list => `
 VC.mountPage({
   page: 'solutions',
   hero: {
-    img: 'hcm-light-trails.jpg',
+    img: 'hcmc-panorama.webp',
     crumb: 'Investment solutions',
     eyebrow: 'VinaCapital investment solutions',
     title: 'Share in the growth<br>of Vietnam',
