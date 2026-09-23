@@ -1042,5 +1042,33 @@
   {
     "path": "assets/news/x-chi-dich-danh-chinh-phu-bop-bai/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2023/08/twitter-x-musk-graffiti.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/openai-gpt-6-sol-luna-giam-nua-gia/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-opus-5-5-re-hon-manh-ngang-fable/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-2252871842.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/meta-muse-thua-nhan-hoc-openclaw/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/meta-muse-app-GettyImages-2293792137.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/snapdragon-8-elite-gen-6-chay-ai-30b/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/assets_2026_09_1789671614_Snapdragon-8-Elite-Extreme-Gen-6-and-Snapdragon-8-Elite-Gen-6-Image-2-Embargo-Sep-22-10am-HT-1pm-PT.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/apple-vong-deo-tap-luyen-doi-dau-whoop/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Screenshot-2026-08-26-at-12.45.18-PM.png?resize=1200,927"
+  },
+  {
+    "path": "assets/news/a16z-mo-truong-cho-founder-18-tuoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/01/GettyImages-1225201409.jpg?resize=1200,900"
+  },
+  {
+    "path": "assets/news/waymo-mo-robotaxi-cho-teen-nashville/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/07/Waymo_teens_3.png?resize=1200,675"
   }
 ]
