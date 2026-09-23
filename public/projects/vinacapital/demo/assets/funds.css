@@ -1,0 +1,151 @@
+/* ==========================================================================
+   TRANG THU LEAD — Quỹ mở VinaCapital
+   Dùng chung token màu/chữ trong style.css, còn lại là bố cục riêng.
+   Tiền tố .lp- (landing page) để không đụng vào các trang khác.
+   ========================================================================== */
+
+/* ---------- Header rút gọn: chỉ logo về trang chủ ---------- */
+.lp-hdr{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.lp-hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
+.lp-hdr .logo b{color:var(--ink)}
+.lp-hdr__tag{color:#8b929c;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- Hàng đầu: banner chương trình + form + app ---------- */
+.lp-top{padding:clamp(26px,3vw,44px) 0 0;background:#fff}
+.lp-top__grid{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:clamp(18px,2vw,26px);align-items:stretch}
+
+.lp-promo{position:relative;display:grid;align-items:end;min-height:clamp(380px,42vw,540px);overflow:hidden;background:var(--ink-deep)}
+.lp-promo__bg{position:absolute;inset:0}
+.lp-promo__bg img{width:100%;height:100%;object-fit:cover}
+.lp-promo__scrim{position:absolute;inset:0;background:
+  linear-gradient(rgba(9,14,22,.25),rgba(9,14,22,.55) 46%,rgba(9,14,22,.88))}
+.lp-promo__in{position:relative;z-index:2;padding:clamp(26px,3vw,44px);color:#fff}
+.lp-promo__in .eyebrow{color:#fff}
+.lp-promo__in .eyebrow::before{background:#fff}
+.lp-promo h1{max-width:18ch;margin-top:14px;font-size:clamp(28px,3.2vw,46px);font-weight:700;line-height:1.1;letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance}
+.lp-promo__desc{max-width:52ch;margin-top:15px;color:rgba(255,255,255,.86);font-size:16px;line-height:1.72}
+.lp-promo__pts{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0;padding:0;list-style:none}
+.lp-promo__pts li{padding:7px 13px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.lp-promo .btn{margin-top:24px}
+
+.lp-side{display:flex;flex-direction:column;gap:clamp(18px,2vw,26px)}
+
+/* ---------- Form thu lead ---------- */
+.lp-form{padding:clamp(24px,2.4vw,32px);background:var(--ink);color:#fff}
+.lp-form h2{font-size:clamp(19px,1.8vw,24px);font-weight:700;line-height:1.2;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
+.lp-form__lead{margin-top:10px;color:rgba(255,255,255,.75);font-size:14px;line-height:1.6}
+.lp-form label{display:block;margin-top:15px}
+.lp-form label span{display:block;margin-bottom:6px;color:rgba(255,255,255,.8);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lp-form input,.lp-form select{width:100%;padding:12px 13px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.22);color:#fff;font:inherit;font-size:15px;transition:.2s}
+.lp-form select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgba(255,255,255,.7) 50%),linear-gradient(135deg,rgba(255,255,255,.7) 50%,transparent 50%);
+  background-position:calc(100% - 19px) 50%,calc(100% - 13px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:38px}
+.lp-form option{background:var(--ink);color:#fff}
+.lp-form input:focus,.lp-form select:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.12)}
+.lp-form input.is-bad,.lp-form select.is-bad{border-color:#ff8f7f}
+.lp-form__submit{width:100%;justify-content:space-between;margin-top:20px;cursor:pointer}
+.lp-form__consent{margin-top:16px;color:rgba(255,255,255,.62);font-size:12px;line-height:1.6}
+.lp-form__note{margin-top:8px;color:rgba(255,255,255,.45);font-size:11.5px;line-height:1.6}
+.lp-form__ok{margin-top:14px;padding:11px 13px;background:rgba(255,255,255,.1);border-left:3px solid #7ddba0;
+  color:#fff;font-size:13.5px;line-height:1.6}
+.lp-form__ok.is-bad{border-left-color:#ff8f7f}
+
+/* ---------- Ô tải app ---------- */
+.lp-app{padding:clamp(22px,2.2vw,28px);background:var(--sand)}
+.lp-app h3{margin:12px 0 9px;font-size:19px;font-weight:700;letter-spacing:-.025em;text-transform:uppercase;color:var(--ink)}
+.lp-app p{color:#6b7280;font-size:14.5px;line-height:1.65}
+.lp-app__btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+.lp-store{padding:10px 15px;background:var(--ink);color:#fff;font-size:11.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.22s}
+.lp-store:hover{background:var(--red)}
+
+/* ---------- Khối chung ---------- */
+.lp-sect{padding:clamp(48px,5vw,76px) 0;background:#fff}
+.lp-sect--sand{background:var(--sand)}
+.lp-head{margin-bottom:clamp(24px,2.6vw,36px)}
+.lp-head h2{font-size:clamp(25px,2.7vw,38px);font-weight:700;line-height:1.14;letter-spacing:-.035em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.lp-head p{max-width:62ch;margin-top:12px;color:#6b7280;font-size:16px;line-height:1.72}
+.lp-head--light h2{color:#fff}
+.lp-head--light p{color:rgba(255,255,255,.78)}
+
+/* ---------- Lưới quỹ: bấm vào xổ chi tiết ---------- */
+.lp-funds{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.lp-fund{background:#fff}
+.lp-fund__t{display:block;width:100%;padding:clamp(22px,2.1vw,28px);text-align:left;cursor:pointer;transition:.22s}
+.lp-fund__t:hover{background:var(--paper)}
+.lp-fund__ma{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.09em}
+.lp-fund__ma em{font-style:normal;padding:3px 8px;background:var(--sand);color:#6b7280;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.lp-fund__ten{display:block;margin-top:11px;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+.lp-fund__tom{display:block;margin-top:10px;color:#6b7280;font-size:14.5px;line-height:1.65;text-wrap:pretty}
+.lp-fund__bq{display:flex;align-items:baseline;gap:11px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.lp-fund__bq b{font-size:26px;font-weight:700;letter-spacing:-.04em;color:var(--ink)}
+.lp-fund__bq small{color:#89909a;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.lp-fund__more{display:inline-flex;align-items:center;gap:9px;margin-top:15px;color:var(--red);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lp-fund__more i{font-style:normal;font-size:16px;line-height:1}
+.lp-fund.is-open .lp-fund__more i{transform:rotate(45deg)}
+.lp-fund__b{display:none;padding:0 clamp(22px,2.1vw,28px) clamp(24px,2.3vw,30px)}
+.lp-fund.is-open .lp-fund__b{display:block}
+.lp-fund__desc{color:#5d6470;font-size:14.5px;line-height:1.7}
+.lp-tab{width:100%;margin-top:16px;border-collapse:collapse;font-size:14px}
+.lp-tab th,.lp-tab td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
+.lp-tab thead th{border-bottom:2px solid var(--ink);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.lp-tab tbody th{text-align:left;font-weight:500;color:#6b7280}
+.lp-tab thead th:first-child,.lp-tab tbody th{text-align:left}
+.lp-tab td{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
+.lp-tab td:last-child{color:#8b929c;font-weight:500}
+.lp-fund__b .tlink{margin-top:18px}
+.lp-disc{max-width:90ch;margin-top:22px;color:#8b929c;font-size:12.5px;line-height:1.7}
+
+/* ---------- Lý do ---------- */
+.lp-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.lp-why article{padding:clamp(24px,2.3vw,32px);background:#fff}
+.lp-why b{display:block;color:var(--red);font-size:13px;font-weight:700;letter-spacing:.14em}
+.lp-why h3{margin:14px 0 9px;font-size:17px;font-weight:700;line-height:1.32;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.lp-why p{color:#6b7280;font-size:14.5px;line-height:1.68}
+/* 5 lý do trên lưới 3 cột để hở một ô — lấp bằng thẻ kêu gọi hành động */
+.lp-why__cta{display:flex;flex-direction:column;justify-content:center;gap:14px;
+  padding:clamp(24px,2.3vw,32px);background:var(--ink);color:#fff}
+.lp-why__cta h3{margin:0;font-size:18px;font-weight:700;line-height:1.3;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
+.lp-why__cta p{color:rgba(255,255,255,.76)}
+.lp-why__cta .btn{margin-top:4px}
+
+/* ---------- Nhà đầu tư nói gì ---------- */
+.lp-says{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,32px)}
+.lp-says figure{margin:0;padding:clamp(24px,2.4vw,32px);background:var(--paper);border-left:3px solid var(--red)}
+.lp-says blockquote{margin:0;color:#3c4453;font-family:VCSerif,Georgia,serif;font-size:clamp(16px,1.35vw,18.5px);line-height:1.7}
+.lp-says figcaption{margin-top:18px}
+.lp-says figcaption b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+.lp-says figcaption span{display:block;margin-top:4px;color:#89909a;font-size:12.5px;line-height:1.55}
+
+/* ---------- Về VinaCapital ---------- */
+.lp-about{padding:clamp(48px,5vw,72px) 0;background:linear-gradient(180deg,#3D4762 0%,var(--ink) 100%);color:#fff}
+.lp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,48px)}
+.lp-stats strong{display:block;font-size:clamp(26px,3vw,42px);font-weight:700;letter-spacing:-.045em;line-height:1}
+.lp-stats article:first-child strong{color:#ff8a76}
+.lp-stats span{display:block;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.22);
+  color:rgba(255,255,255,.7);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- Chân trang rút gọn ---------- */
+.lp-ftr{padding:34px 0;background:var(--ink-deep);color:#fff}
+.lp-ftr__in{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.lp-ftr p{margin-top:13px;color:rgba(255,255,255,.62);font-size:13px;line-height:1.7}
+.lp-ftr__legal{color:rgba(255,255,255,.45);font-size:12.5px}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1080px){
+  .lp-top__grid{grid-template-columns:1fr}
+  .lp-promo{min-height:340px}
+  .lp-funds{grid-template-columns:1fr}
+  .lp-why{grid-template-columns:1fr 1fr}
+  .lp-says{grid-template-columns:1fr}
+  .lp-stats{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:680px){
+  .lp-why{grid-template-columns:1fr}
+  .lp-stats{grid-template-columns:1fr 1fr;gap:22px}
+  .lp-hdr__tag{display:none}
+  .lp-fund__bq b{font-size:23px}
+  .lp-tab{font-size:13px}
+  .lp-tab th,.lp-tab td{padding:8px 6px}
+}
