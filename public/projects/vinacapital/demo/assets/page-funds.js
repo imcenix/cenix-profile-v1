@@ -234,13 +234,17 @@ function render() {
   return `
 <a class="skip" href="#dang-ky">Tới phần đăng ký</a>
 
-<header class="lp-hdr">
-  <div class="wrap lp-hdr__in">
+<header class="hdr">
+  <div class="wrap hdr__in">
     <a class="logo" href="index.html" aria-label="VinaCapital — về trang chủ">${mark}<b>VinaCapital</b></a>
-    <nav class="lp-nav" aria-label="Nội dung trang">
+    <nav class="hdr__nav" aria-label="Nội dung trang">
       ${NAV.map((n, i) => `<a href="${n[0]}" title="${n[2]}" data-spy="${n[0].slice(1)}"${i === 0 ? ' class="is-on"' : ''}>${n[1]}</a>`).join('')}
     </nav>
-    <a class="lp-hdr__cta" href="#dang-ky">Đăng ký <i>→</i></a>
+    <div class="hdr__end">
+      <span class="hdr__lang"><b>VI</b><s>/</s>EN</span>
+      <a class="hdr__mio" href="#dang-ky">Đăng ký</a>
+      <button class="hdr__burger" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
@@ -424,8 +428,8 @@ form.addEventListener('submit', (e) => {
 
 /* --- tab tự sáng theo phần đang xem --- */
 (function spy() {
-  const nav = root.querySelector('.lp-nav');
-  const tabs = [...root.querySelectorAll('.lp-nav a')];
+  const nav = root.querySelector('.hdr__nav');
+  const tabs = [...root.querySelectorAll('.hdr__nav a')];
   if (!nav) return;
   const dich = new Map(tabs.map((a) => [a.dataset.spy, a]));
   const moc = [...dich.keys()].map((id) => document.getElementById(id)).filter(Boolean);
@@ -452,8 +456,10 @@ form.addEventListener('submit', (e) => {
 
   moc.forEach((m) => io.observe(m));
 
-  /* gợi ý còn tab bị khuất bên phải */
+  /* gợi ý còn tab bị khuất bên phải — chỉ ở khổ rộng, vì dưới 1080px menu
+     xếp dọc trong bảng xổ xuống, không kéo ngang */
   function nhacKeo() {
+    if (window.innerWidth <= 1080) { nav.classList.remove('has-more', 'at-end'); return; }
     const du = nav.scrollWidth - nav.clientWidth;
     nav.classList.toggle('has-more', du > 4);
     nav.classList.toggle('at-end', du > 4 && nav.scrollLeft >= du - 4);
@@ -461,4 +467,38 @@ form.addEventListener('submit', (e) => {
   nav.addEventListener('scroll', nhacKeo, { passive: true });
   window.addEventListener('resize', nhacKeo, { passive: true });
   nhacKeo();
+})();
+
+/* --- thanh điều hướng đổi nền khi rời khỏi banner, giống trang index --- */
+(function dinh() {
+  const hdr = root.querySelector('.hdr');
+  const hero = root.querySelector('.lp-hero');
+  if (!hdr || !hero) return;
+  let cho = false;
+  function ve() {
+    cho = false;
+    hdr.classList.toggle('is-stuck', window.scrollY > hero.offsetHeight - 90);
+  }
+  window.addEventListener('scroll', () => {
+    if (cho) return;
+    cho = true;
+    requestAnimationFrame(ve);
+  }, { passive: true });
+  ve();
+})();
+
+/* --- nút ba gạch ở khổ hẹp --- */
+(function baGach() {
+  const nut = root.querySelector('.hdr__burger');
+  const nav = root.querySelector('.hdr__nav');
+  if (!nut || !nav) return;
+  const dong = () => { nav.classList.remove('is-open'); nut.setAttribute('aria-expanded', 'false'); nut.textContent = '☰'; };
+  nut.addEventListener('click', () => {
+    const mo = nav.classList.toggle('is-open');
+    nut.setAttribute('aria-expanded', String(mo));
+    nut.textContent = mo ? '✕' : '☰';
+  });
+  /* bấm vào một mục thì đóng bảng lại, nếu không nó che mất chỗ vừa nhảy tới */
+  nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', dong));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') dong(); });
 })();

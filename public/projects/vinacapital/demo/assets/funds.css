@@ -10,42 +10,26 @@
 .skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 18px;background:var(--red);color:#fff;font-weight:700}
 .skip:focus{left:0}
 
-.lp-hdr{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
-.lp-hdr__in{display:flex;align-items:center;gap:clamp(16px,2.4vw,40px);min-height:74px}
-.lp-hdr .logo b{color:var(--ink)}
-
-.lp-nav{display:flex;align-items:center;gap:clamp(10px,1.6vw,26px);margin-right:auto;
-  min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.lp-nav::-webkit-scrollbar{display:none}
-/* Thanh tab hẹp hơn nội dung thì làm mờ dần ở mép còn chữ, để người xem
-   biết là kéo ngang được — không có dấu hiệu này thì tab cuối coi như mất. */
-.lp-nav.has-more{mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent);
+/* Thanh điều hướng dùng nguyên khối .hdr của trang index (định nghĩa trong
+   style.css): nằm đè lên banner, chữ trắng in hoa, gạch đỏ dưới mục đang
+   xem, đổi nền khi cuộn qua banner. Ở đây chỉ thêm vài điểm riêng. */
+.hdr__nav{min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hdr__nav::-webkit-scrollbar{display:none}
+/* mờ dần ở mép phải để biết là còn tab bị khuất, kéo ngang được */
+.hdr__nav.has-more{mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent);
   -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent)}
-.lp-nav.has-more.at-end{mask-image:linear-gradient(90deg,transparent,#000 34px);
+.hdr__nav.has-more.at-end{mask-image:linear-gradient(90deg,transparent,#000 34px);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 34px)}
-/* Chữ menu đặt y như .hdr__nav của trang index: chữ hoa, 11.5px, nét 600,
-   giãn chữ .12em. Chỉ khác màu vì thanh này nền trắng chứ không nằm trên ảnh. */
-.lp-nav a{position:relative;padding:26px 0;color:#59606c;font-size:11.5px;font-weight:600;
-  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color .2s}
-.lp-nav a::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;
-  background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out-expo,cubic-bezier(.16,1,.3,1))}
-.lp-nav a:hover{color:var(--ink)}
-.lp-nav a.is-on{color:var(--ink)}
-.lp-nav a.is-on::after{transform:scaleX(1)}
 
-.lp-hdr__cta{display:inline-flex;align-items:center;gap:8px;flex:none;padding:11px 18px;
-  background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.09em;
-  text-transform:uppercase;text-decoration:none;transition:background .22s}
-.lp-hdr__cta:hover{background:var(--red-deep)}
-.lp-hdr__cta i{font-style:normal}
-
-/* mọi mục có thanh dính che đầu → chừa đúng chiều cao thanh */
-#dang-ky,#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:74px}
+/* Thanh đè lên banner nên chỉ chừa lề khi nó đã dính trên cùng */
+#dang-ky{scroll-margin-top:0}
+#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:84px}
 
 /* ---------- Banner chính: ảnh tràn màn hình như trang chủ ----------
    Form nằm ĐÈ lên banner (kính mờ) chứ không tách thành ô riêng bên cạnh. */
 .lp-hero{position:relative;display:flex;align-items:center;
-  min-height:clamp(560px,82vh,820px);padding:clamp(32px,3.4vw,48px) 0;background:var(--ink-deep)}
+  min-height:clamp(540px,80vh,800px);padding:calc(84px + clamp(20px,2.2vw,34px)) 0 clamp(26px,2.8vw,40px);
+  background:var(--ink-deep)}
 /* overflow để ở lớp ảnh, KHÔNG để ở section: form cao hơn màn hình thì
    section phải giãn ra, để ở section sẽ cắt mất ô tải app bên dưới */
 .lp-hero__bg{position:absolute;inset:0;overflow:hidden}
@@ -205,25 +189,44 @@
 .lp-stats span{display:block;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.22);
   color:rgba(255,255,255,.84);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 
+.lp-fund__so{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+
+/* ---------- Icon ---------- */
+.lp-ic{display:block;width:54px;height:auto}
+.lp-ico{flex:none;width:19px;height:19px;margin-top:1px;color:var(--red)}
+
+/* ---------- Nút cửa hàng ứng dụng ----------
+   Badge nền trắng vì ô này nền tối. Không bọc thêm khung nào bên ngoài.
+   Bản chạy thật phải thay bằng file badge chính chủ của Apple và Google. */
+.lp-store{display:block;width:clamp(140px,11vw,158px);line-height:0;text-transform:none;letter-spacing:normal;
+  transition:transform .2s,opacity .2s}
+.lp-store svg{width:100%;height:auto;display:block}
+.lp-store:hover{transform:translateY(-2px);opacity:.88}
+
+/* ---------- Ảnh đại diện tạm bằng chữ cái đầu ---------- */
+.lp-says figure{position:relative;overflow:hidden}
+.lp-says__q{position:absolute;top:-16px;right:10px;color:var(--red);opacity:.12;
+  font-family:VCSerif,Georgia,serif;font-size:130px;line-height:1;pointer-events:none}
+.lp-says figcaption{display:flex;align-items:center;gap:14px}
+.lp-says figcaption .lp-says__av{display:grid;place-items:center;flex:none;width:46px;height:46px;
+  margin-top:0;background:var(--ink);color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em}
+
 /* ---------- Responsive ---------- */
 @media(max-width:1080px){
   .lp-hero{min-height:0;padding:clamp(40px,6vw,64px) 0}
   .lp-hero__grid{grid-template-columns:1fr;gap:30px}
   .lp-hero__copy{max-width:640px}
   .lp-hero__scrim{background:linear-gradient(rgba(8,14,22,.56),rgba(8,14,22,.72))}
-  .lp-hdr__cta{display:none}
   .lp-funds{grid-template-columns:1fr}
   .lp-why{grid-template-columns:1fr 1fr}
   .lp-says{grid-template-columns:1fr}
   .lp-stats{grid-template-columns:1fr 1fr;gap:28px}
 }
 @media(max-width:680px){
-  .lp-hdr__in{flex-wrap:wrap;gap:0;padding-bottom:0}
-  .lp-hdr .logo{min-height:62px;display:flex;align-items:center}
-  .lp-nav{order:3;width:100%;margin:0 -20px;padding:0 20px;
-    border-top:1px solid var(--line);gap:18px}
-  .lp-nav a{padding:13px 0;font-size:12.5px}
-  #dang-ky,#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:112px}
+  .hdr__nav{gap:16px}
+  /* nhãn ở đây là "Đăng ký" chứ không phải "MiO" nên phải gọn lại kẻo rớt dòng */
+  .hdr__mio{padding:10px 13px;font-size:10.5px;letter-spacing:.07em}
+  #cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:72px}
   .lp-app{display:block}
   .lp-app__btns{margin-top:14px}
   .lp-why{grid-template-columns:1fr}
