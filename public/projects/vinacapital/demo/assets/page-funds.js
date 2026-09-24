@@ -447,10 +447,15 @@ form.addEventListener('submit', (e) => {
     if (!tot || tot.id === dangXem) return;
     dangXem = tot.id;
     tabs.forEach((a) => a.classList.toggle('is-on', a.dataset.spy === dangXem));
-    /* màn hẹp: kéo tab đang sáng vào tầm nhìn của thanh */
+    /* Màn hẹp: kéo tab đang sáng vào tầm nhìn của THANH.
+       KHÔNG dùng scrollIntoView: nó cuộn mọi khung cha, kể cả cả trang.
+       Thanh này nằm đè lên banner nên cuộn xuống là tab ra khỏi màn hình,
+       scrollIntoView sẽ kéo cả trang ngược lên — trang coi như không cuộn
+       xuống được. Chỉ được đụng tới scrollLeft của riêng thanh. */
     const sang = dich.get(dangXem);
     if (sang && nav.scrollWidth > nav.clientWidth) {
-      sang.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+      const giua = sang.offsetLeft - (nav.clientWidth - sang.offsetWidth) / 2;
+      nav.scrollTo({ left: Math.max(0, giua), behavior: 'smooth' });
     }
   }, { threshold: [0, .12, .25, .5, .75, 1] });
 
