@@ -1070,5 +1070,29 @@
   {
     "path": "assets/news/waymo-mo-robotaxi-cho-teen-nashville/cover.png",
     "url": "https://techcrunch.com/wp-content/uploads/2025/07/Waymo_teens_3.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/anthropic-claude-tim-ra-enzyme-giong-crispr/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/02/Claude_3-7_illustration.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/meta-connect-kinh-vr-imax/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Meta_VR_Glasses_ProductShot_DarkBackground_16x9.png?resize=1200,677"
+  },
+  {
+    "path": "assets/news/youtube-tu-xay-thuat-toan-bang-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Discovery-Custom-Feeds-Title-Card-1.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/chatgpt-voice-agent-tren-mobile/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/vogue-robot-catwalk-bi-che/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2296638825.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/gallup-dung-ai-hang-ngay-van-lo/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2016/02/worried.jpg?resize=1200,900"
   }
 ]
