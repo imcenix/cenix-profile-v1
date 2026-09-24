@@ -16,6 +16,20 @@
 
 const IMG = 'assets/images/';
 
+/* Năm tab của nhóm trang riêng này, đúng như trang gốc đang ẩn. Tất cả đều là
+   neo trong cùng một trang — trang gốc cũng làm vậy, đây là landing page một
+   trang chứ không phải năm trang tách rời.
+   Cột 2 là nhãn rút gọn hiển thị trên thanh; cột 3 là nhãn nguyên văn của
+   trang gốc, dùng làm title khi rê chuột. Muốn chạy nguyên văn thì đổi n[1]
+   thành n[2] ở chỗ render. */
+const NAV = [
+  ['#dang-ky', 'Đăng ký nhận tư vấn', 'Đăng Ký Nhận Tư Vấn'],
+  ['#cac-quy', 'Các quỹ mở VinaCapital', 'Các Quỹ Mở Từ VinaCapital'],
+  ['#vi-sao', 'Tại sao nên đầu tư', 'Tại Sao Nên Đầu Tư Quỹ Mở VinaCapital'],
+  ['#noi-gi', 'Nhà đầu tư nói gì', 'Nhà Đầu Tư Nói Về Quỹ Mở VinaCapital'],
+  ['#ve-vinacapital', 'Về VinaCapital', 'Về VinaCapital']
+];
+
 /* Chương trình đang chạy. Nội dung và ảnh chính thức do khách cấp;
    ở đây dùng chương trình có thật của VinaCapital thay vì bịa khuyến mãi. */
 const PROMO = {
@@ -24,7 +38,7 @@ const PROMO = {
   desc: 'Trích một khoản cố định mỗi tháng để mua chứng chỉ quỹ. Cách làm này giúp bình quân giá vốn, giảm áp lực canh thời điểm và duy trì kỷ luật tích lũy dài hạn.',
   points: ['Từ 100.000đ mỗi kỳ', 'Tự động trích, không cần thao tác', 'Rút vốn bất kỳ lúc nào'],
   cta: 'Tìm hiểu VinaSIP',
-  img: 'hcmc-skyline.webp'
+  img: 'hcmc-hero'
 };
 
 const FORM = {
@@ -143,31 +157,40 @@ const mark = '<svg viewBox="0 0 54 53" xmlns="http://www.w3.org/2000/svg" aria-h
 
 function render() {
   return `
+<a class="skip" href="#dang-ky">Tới phần đăng ký</a>
+
 <header class="lp-hdr">
   <div class="wrap lp-hdr__in">
     <a class="logo" href="index.html" aria-label="VinaCapital — về trang chủ">${mark}<b>VinaCapital</b></a>
-    <span class="lp-hdr__tag">Quỹ mở VinaCapital</span>
+    <nav class="lp-nav" aria-label="Nội dung trang">
+      ${NAV.map((n, i) => `<a href="${n[0]}" title="${n[2]}" data-spy="${n[0].slice(1)}"${i === 0 ? ' class="is-on"' : ''}>${n[1]}</a>`).join('')}
+    </nav>
+    <a class="lp-hdr__cta" href="#dang-ky">Đăng ký <i>→</i></a>
   </div>
 </header>
 
 <main>
-<section class="lp-top">
-  <div class="wrap lp-top__grid">
+<section class="lp-hero" id="dang-ky">
+  <div class="lp-hero__bg">
+    <picture>
+      <source srcset="${IMG}${PROMO.img}.webp" type="image/webp">
+      <img src="${IMG}${PROMO.img}.jpg" alt="" aria-hidden="true" fetchpriority="high">
+    </picture>
+  </div>
+  <span class="lp-hero__scrim" aria-hidden="true"></span>
 
-    <article class="lp-promo">
-      <div class="lp-promo__bg"><img src="${IMG}${PROMO.img}" alt="" aria-hidden="true"></div>
-      <span class="lp-promo__scrim" aria-hidden="true"></span>
-      <div class="lp-promo__in">
-        <p class="eyebrow eyebrow--rule">${PROMO.tag}</p>
-        <h1>${PROMO.title}</h1>
-        <p class="lp-promo__desc">${PROMO.desc}</p>
-        <ul class="lp-promo__pts">${PROMO.points.map(p => `<li>${p}</li>`).join('')}</ul>
-        <a class="btn" href="#dang-ky">${PROMO.cta} <i>→</i></a>
-      </div>
-    </article>
+  <div class="wrap lp-hero__grid">
+
+    <div class="lp-hero__copy">
+      <p class="eyebrow eyebrow--rule">${PROMO.tag}</p>
+      <h1>${PROMO.title}</h1>
+      <p class="lp-hero__desc">${PROMO.desc}</p>
+      <ul class="lp-hero__pts">${PROMO.points.map(p => `<li>${p}</li>`).join('')}</ul>
+      <a class="btn" href="#cac-quy">${PROMO.cta} <i>→</i></a>
+    </div>
 
     <div class="lp-side">
-      <form class="lp-form" id="dang-ky" novalidate>
+      <form class="lp-form lp-glass" novalidate>
         <h2>${FORM.title}</h2>
         <p class="lp-form__lead">${FORM.lead}</p>
         <label><span>Họ và tên *</span><input type="text" name="hoten" required autocomplete="name"></label>
@@ -185,11 +208,13 @@ function render() {
         <p class="lp-form__ok" hidden role="status"></p>
       </form>
 
-      <aside class="lp-app">
-        <p class="eyebrow eyebrow--rule">${APP.tag}</p>
-        <h3>${APP.title}</h3>
-        <p>${APP.desc}</p>
-        <div class="lp-app__btns">${APP.stores.map(s => `<a href="#" class="lp-store">${s}</a>`).join('')}</div>
+      <aside class="lp-app lp-glass">
+        <div>
+          <p class="eyebrow eyebrow--rule">${APP.tag}</p>
+          <h3>${APP.title}</h3>
+          <p>${APP.desc}</p>
+        </div>
+        <div class="lp-app__btns">${APP.stores.map(st => `<a href="#" class="lp-store">${st}</a>`).join('')}</div>
       </aside>
     </div>
 
@@ -226,7 +251,7 @@ function render() {
   </div>
 </section>
 
-<section class="lp-sect lp-sect--sand">
+<section class="lp-sect lp-sect--sand" id="vi-sao">
   <div class="wrap">
     <div class="lp-head"><h2>${LYDO.title}</h2></div>
     <div class="lp-why">
@@ -240,7 +265,7 @@ function render() {
   </div>
 </section>
 
-<section class="lp-sect">
+<section class="lp-sect" id="noi-gi">
   <div class="wrap">
     <div class="lp-head"><h2>${NOIGI.title}</h2></div>
     <div class="lp-says">
@@ -249,7 +274,7 @@ function render() {
   </div>
 </section>
 
-<section class="lp-about">
+<section class="lp-about" id="ve-vinacapital">
   <div class="wrap">
     <div class="lp-head lp-head--light"><h2>${VE.title}</h2><p>${VE.lead}</p></div>
     <div class="lp-stats">
@@ -301,3 +326,44 @@ form.addEventListener('submit', (e) => {
   ok.textContent = 'Đã ghi nhận. Đây là bản demo nên thông tin không được gửi đi — bản chính thức sẽ nối vào hệ thống CRM của VinaCapital.';
   form.querySelectorAll('input,select').forEach((f) => { f.value = ''; });
 });
+
+/* --- tab tự sáng theo phần đang xem --- */
+(function spy() {
+  const nav = root.querySelector('.lp-nav');
+  const tabs = [...root.querySelectorAll('.lp-nav a')];
+  if (!nav) return;
+  const dich = new Map(tabs.map((a) => [a.dataset.spy, a]));
+  const moc = [...dich.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+  if (!moc.length) return;
+
+  let dangXem = moc[0].id;
+  const io = new IntersectionObserver((es) => {
+    /* phần nào chiếm nhiều diện tích khung nhìn nhất thì tab đó sáng */
+    es.forEach((e) => { e.target.dataset.ty = e.intersectionRatio.toFixed(3); });
+    let tot = null, max = -1;
+    for (const m of moc) {
+      const r = parseFloat(m.dataset.ty || 0);
+      if (r > max) { max = r; tot = m; }
+    }
+    if (!tot || tot.id === dangXem) return;
+    dangXem = tot.id;
+    tabs.forEach((a) => a.classList.toggle('is-on', a.dataset.spy === dangXem));
+    /* màn hẹp: kéo tab đang sáng vào tầm nhìn của thanh */
+    const sang = dich.get(dangXem);
+    if (sang && nav.scrollWidth > nav.clientWidth) {
+      sang.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    }
+  }, { threshold: [0, .12, .25, .5, .75, 1] });
+
+  moc.forEach((m) => io.observe(m));
+
+  /* gợi ý còn tab bị khuất bên phải */
+  function nhacKeo() {
+    const du = nav.scrollWidth - nav.clientWidth;
+    nav.classList.toggle('has-more', du > 4);
+    nav.classList.toggle('at-end', du > 4 && nav.scrollLeft >= du - 4);
+  }
+  nav.addEventListener('scroll', nhacKeo, { passive: true });
+  window.addEventListener('resize', nhacKeo, { passive: true });
+  nhacKeo();
+})();
