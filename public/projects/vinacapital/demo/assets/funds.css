@@ -23,8 +23,10 @@
   -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent)}
 .lp-nav.has-more.at-end{mask-image:linear-gradient(90deg,transparent,#000 34px);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 34px)}
-.lp-nav a{position:relative;padding:26px 0;color:#59606c;font-size:13px;font-weight:600;
-  letter-spacing:.01em;text-decoration:none;white-space:nowrap;transition:color .2s}
+/* Chữ menu đặt y như .hdr__nav của trang index: chữ hoa, 11.5px, nét 600,
+   giãn chữ .12em. Chỉ khác màu vì thanh này nền trắng chứ không nằm trên ảnh. */
+.lp-nav a{position:relative;padding:26px 0;color:#59606c;font-size:11.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:color .2s}
 .lp-nav a::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;
   background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out-expo,cubic-bezier(.16,1,.3,1))}
 .lp-nav a:hover{color:var(--ink)}
@@ -202,35 +204,6 @@
 .lp-stats article:first-child strong{color:#ff8a76}
 .lp-stats span{display:block;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.22);
   color:rgba(255,255,255,.84);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-
-/* ---------- Chân trang rút gọn ---------- */
-.lp-ftr{padding:34px 0;background:var(--ink-deep);color:#fff}
-.lp-ftr__in{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
-.lp-ftr p{margin-top:13px;color:rgba(255,255,255,.62);font-size:13px;line-height:1.7}
-.lp-ftr__legal{color:rgba(255,255,255,.45);font-size:12.5px}
-
-.lp-fund__so{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
-
-/* ---------- Icon ---------- */
-.lp-ic{display:block;width:54px;height:auto}
-.lp-ico{flex:none;width:19px;height:19px;margin-top:1px;color:var(--red)}
-
-/* ---------- Nút cửa hàng ứng dụng ----------
-   Badge dưới đây vẽ lại cho bản demo. Bản chạy thật phải thay bằng file badge
-   chính chủ của Apple và Google — hai hãng có quy định riêng về kích thước
-   tối thiểu và khoảng trống quanh badge. */
-.lp-store{display:block;width:clamp(142px,11.2vw,162px);line-height:0;text-transform:none;letter-spacing:normal;
-  transition:transform .2s,opacity .2s}
-.lp-store svg{width:100%;height:auto;display:block}
-.lp-store:hover{transform:translateY(-2px);opacity:.88}
-
-/* ---------- Ảnh đại diện tạm bằng chữ cái đầu ---------- */
-.lp-says figure{position:relative;overflow:hidden}
-.lp-says__q{position:absolute;top:-16px;right:10px;color:var(--red);opacity:.12;
-  font-family:VCSerif,Georgia,serif;font-size:130px;line-height:1;pointer-events:none}
-.lp-says figcaption{display:flex;align-items:center;gap:14px}
-.lp-says figcaption .lp-says__av{display:grid;place-items:center;flex:none;width:46px;height:46px;
-  margin-top:0;background:var(--ink);color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em}
 
 /* ---------- Responsive ---------- */
 @media(max-width:1080px){

@@ -219,6 +219,15 @@ const chuDau = (ten) => {
   return (t[0][0] + (t[t.length - 1][0] || '')).toUpperCase();
 };
 
+/* Chân trang lấy nguyên của trang index (shared.js) để hai bên giống nhau.
+   Trang này không nạp shared.js nên phải chép dữ liệu sang; CSS .ftr đã có
+   sẵn trong style.css. */
+const OFFICES = [
+  ['Ho Chi Minh City', '17th Floor, Sun Wah Tower · 115 Nguyen Hue, Sai Gon Ward<br>+84 28 3821 9930'],
+  ['Hanoi', '2nd Floor, International Centre · 17 Ngo Quyen, Hoan Kiem Ward<br>+84 24 3936 4630'],
+  ['Singapore', '#42-01, Suntec Tower 4 · 6 Temasek Boulevard<br>+65 6332 9081']
+];
+
 const mark = '<svg viewBox="0 0 54 53" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="54" height="53" fill="#cb2b1a"/><path d="M0 0H54L27 53Z" fill="#BCBDC0"/></svg>';
 
 function render() {
@@ -364,13 +373,19 @@ function render() {
 </section>
 </main>
 
-<footer class="lp-ftr">
-  <div class="wrap lp-ftr__in">
-    <div>
-      <a class="logo" href="index.html" aria-label="VinaCapital">${mark}<b>VinaCapital</b></a>
-      <p>Lầu 17, Tòa nhà Sun Wah · 115 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh<br>+84 28 3821 9930 · info@vinacapital.com</p>
+<footer class="ftr" id="contact">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <a class="logo" href="index.html" aria-label="VinaCapital">${mark}<b>VinaCapital</b></a>
+        <p class="ftr__blurb">Vietnam’s leading multi-disciplinary investment management group — creating prosperity together since 2003.</p>
+      </div>
+      ${OFFICES.map(o => `<div><h4>${o[0]}</h4><p>${o[1]}</p></div>`).join('')}
     </div>
-    <p class="lp-ftr__legal">Copyright © 2024 VinaCapital. All rights reserved.</p>
+    <div class="ftr__legal">
+      <p>Copyright © 2024 VinaCapital. All rights reserved.</p>
+      <nav><a href="#">Terms and Conditions</a><a href="#">Privacy Policy</a><a href="careers.html">Careers</a></nav>
+    </div>
   </div>
 </footer>`;
 }
