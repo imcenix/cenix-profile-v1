@@ -66,7 +66,7 @@ function header(current) {
     ).join('')}</nav>
     <div class="hdr__end">
       <span class="hdr__lang"><b>VI</b><s>/</s>EN</span>
-      <a class="hdr__mio" href="#">MiO</a>
+      <a class="hdr__mio" href="mio.html">MiO</a>
       <button class="hdr__burger" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </div>
