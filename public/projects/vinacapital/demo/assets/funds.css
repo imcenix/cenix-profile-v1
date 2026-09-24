@@ -132,7 +132,7 @@
 .lp-sect{padding:clamp(48px,5vw,76px) 0;background:#fff}
 .lp-sect--sand{background:var(--sand)}
 .lp-head{margin-bottom:clamp(24px,2.6vw,36px)}
-.lp-head h2{font-size:clamp(25px,2.7vw,38px);font-weight:700;line-height:1.18;letter-spacing:-.035em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.lp-head h2{font-size:clamp(25px,2.7vw,38px);font-weight:700;line-height:1.22;letter-spacing:-.035em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
 .lp-head p{max-width:62ch;margin-top:12px;color:#6b7280;font-size:16px;line-height:1.72}
 .lp-head--light h2{color:#fff}
 .lp-head--light p{color:rgba(255,255,255,.78)}
@@ -147,8 +147,11 @@
 .lp-fund__t:hover{background:var(--paper)}
 .lp-fund__ma{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.09em}
 .lp-fund__ma em{font-style:normal;padding:3px 8px;background:var(--sand);color:#6b7280;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.lp-fund__pic{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
+.lp-fund__pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out-expo,ease)}
+.lp-fund:hover .lp-fund__pic img{transform:scale(1.04)}
 .lp-fund__ten{display:block;margin-top:11px;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-.lp-fund__tom{display:block;margin-top:10px;color:#6b7280;font-size:14.5px;line-height:1.65;text-wrap:pretty}
+.lp-fund__pt{display:flex;gap:10px;margin-top:12px;color:#5d6470;font-size:14.5px;line-height:1.62;text-wrap:pretty}
 .lp-fund__bq{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
 .lp-fund__bq b{font-size:26px;font-weight:700;letter-spacing:-.04em;color:var(--ink)}
 .lp-fund__bq small{color:#6b7280;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
@@ -169,17 +172,12 @@
 .lp-disc{max-width:90ch;margin-top:22px;color:#6b7280;font-size:12.5px;line-height:1.7}
 
 /* ---------- Lý do ---------- */
-.lp-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.lp-why article{padding:clamp(24px,2.3vw,32px);background:#fff}
-.lp-why b{display:block;margin-top:16px;color:var(--red);font-size:13px;font-weight:700;letter-spacing:.14em}
-.lp-why h3{margin:10px 0 9px;font-size:17px;font-weight:700;line-height:1.32;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
-.lp-why p{color:#6b7280;font-size:14.5px;line-height:1.68}
-/* 5 lý do trên lưới 3 cột để hở một ô — lấp bằng thẻ kêu gọi hành động */
-.lp-why article.lp-why__cta{display:flex;flex-direction:column;justify-content:center;gap:14px;
-  padding:clamp(24px,2.3vw,32px);background:var(--ink);color:#fff}
-.lp-why article.lp-why__cta h3{color:#fff;margin:0;font-size:18px;font-weight:700;line-height:1.3;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance}
-.lp-why article.lp-why__cta p{color:rgba(255,255,255,.78)}
-.lp-why article.lp-why__cta .btn{margin-top:4px;align-self:flex-start}
+/* Trang gốc xếp 5 ô ngang một hàng, mỗi ô là icon tròn + một gạch + một dòng
+   chữ. Giữ đúng vậy — thêm đoạn mô tả là tự bịa thêm chữ. */
+.lp-why{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2.2vw,32px)}
+.lp-why article{display:flex;flex-direction:column;gap:clamp(16px,1.9vw,24px)}
+.lp-why p{padding-top:clamp(15px,1.5vw,19px);border-top:1px solid var(--line);
+  color:#5d6470;font-size:15px;line-height:1.6;text-wrap:pretty}
 
 /* ---------- Nhà đầu tư nói gì ---------- */
 .lp-says{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,32px)}
@@ -190,17 +188,20 @@
 .lp-says figcaption > span > span{display:block;margin-top:4px;color:#5f6572;font-size:12.5px;line-height:1.55}
 
 /* ---------- Về VinaCapital ---------- */
-.lp-about{position:relative;overflow:hidden;padding:clamp(48px,5vw,72px) 0;background:var(--ink);color:#fff}
+/* Chữ nằm ĐÈ lên ảnh thành phố, không phải dải ảnh rồi mới tới khối chữ. */
+.lp-about{position:relative;display:flex;align-items:center;overflow:hidden;
+  min-height:clamp(430px,46vw,580px);padding:clamp(54px,5.6vw,84px) 0;background:var(--ink-deep);color:#fff}
 .lp-about__bg{position:absolute;inset:0}
-.lp-about__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.lp-about__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 54%}
 .lp-about__scrim{position:absolute;inset:0;background:
-  linear-gradient(104deg,rgba(22,29,45,.93) 0%,rgba(22,29,45,.86) 46%,rgba(22,29,45,.74) 100%)}
-.lp-about .wrap{position:relative;z-index:2}
+  linear-gradient(100deg,rgba(13,19,31,.86) 0%,rgba(13,19,31,.7) 48%,rgba(13,19,31,.54) 100%),
+  linear-gradient(rgba(13,19,31,.32),rgba(13,19,31,0) 42%,rgba(13,19,31,.46))}
+.lp-about .wrap{position:relative;z-index:2;width:100%}
 .lp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,48px)}
 .lp-stats strong{display:block;font-size:clamp(26px,3vw,42px);font-weight:700;letter-spacing:-.045em;line-height:1}
 .lp-stats article:first-child strong{color:#ff8a76}
 .lp-stats span{display:block;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.22);
-  color:rgba(255,255,255,.7);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  color:rgba(255,255,255,.84);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 
 /* ---------- Chân trang rút gọn ---------- */
 .lp-ftr{padding:34px 0;background:var(--ink-deep);color:#fff}
@@ -208,19 +209,20 @@
 .lp-ftr p{margin-top:13px;color:rgba(255,255,255,.62);font-size:13px;line-height:1.7}
 .lp-ftr__legal{color:rgba(255,255,255,.45);font-size:12.5px}
 
-/* ---------- Biểu đồ cột nhỏ trong thẻ quỹ ----------
-   Một chuỗi → không chú giải. Âm/dương đọc bằng vị trí so với vạch 0. */
-.lp-fund__so{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
-  margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
-.lp-spark{margin:0;flex:none}
-.lp-spark svg{overflow:visible}
-.lp-spark .up{fill:var(--ink)}
-.lp-spark .dn{fill:#8a90a0}
-.lp-spark .zero{stroke:#c9ccd4;stroke-width:1}
+.lp-fund__so{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
 
-/* ---------- Icon mục "vì sao" ---------- */
-.lp-why__ic{display:block;color:var(--red)}
-.lp-ic{width:28px;height:28px;display:block}
+/* ---------- Icon ---------- */
+.lp-ic{display:block;width:clamp(58px,5.2vw,78px);height:auto}
+.lp-ico{flex:none;width:19px;height:19px;margin-top:1px;color:var(--red)}
+
+/* ---------- Nút cửa hàng ứng dụng ----------
+   Badge dưới đây vẽ lại cho bản demo. Bản chạy thật phải thay bằng file badge
+   chính chủ của Apple và Google — hai hãng có quy định riêng về kích thước
+   tối thiểu và khoảng trống quanh badge. */
+.lp-store{display:block;width:138px;line-height:0;border-radius:6px;overflow:hidden;
+  outline:1px solid rgba(255,255,255,.3);outline-offset:-1px;transition:transform .2s,outline-color .2s}
+.lp-store svg{width:100%;height:auto;display:block}
+.lp-store:hover{transform:translateY(-2px);outline-color:#fff}
 
 /* ---------- Ảnh đại diện tạm bằng chữ cái đầu ---------- */
 .lp-says figure{position:relative;overflow:hidden}
@@ -230,12 +232,6 @@
 .lp-says figcaption .lp-says__av{display:grid;place-items:center;flex:none;width:46px;height:46px;
   margin-top:0;background:var(--ink);color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em}
 
-/* ---------- Dải ảnh nghỉ ---------- */
-.lp-strip{position:relative;height:clamp(200px,26vw,320px);overflow:hidden;background:var(--ink-deep)}
-.lp-strip__bg{position:absolute;inset:0}
-.lp-strip__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.lp-strip__scrim{position:absolute;inset:0;background:linear-gradient(rgba(9,14,22,.2),rgba(9,14,22,.42))}
-
 /* ---------- Responsive ---------- */
 @media(max-width:1080px){
   .lp-hero{min-height:0;padding:clamp(40px,6vw,64px) 0}
@@ -244,12 +240,11 @@
   .lp-hero__scrim{background:linear-gradient(rgba(8,14,22,.56),rgba(8,14,22,.72))}
   .lp-hdr__cta{display:none}
   .lp-funds{grid-template-columns:1fr}
-  .lp-why{grid-template-columns:1fr 1fr}
+  .lp-why{grid-template-columns:repeat(3,1fr);row-gap:30px}
   .lp-says{grid-template-columns:1fr}
   .lp-stats{grid-template-columns:1fr 1fr;gap:28px}
 }
 @media(max-width:680px){
-  .lp-strip{height:170px}
   .lp-hdr__in{flex-wrap:wrap;gap:0;padding-bottom:0}
   .lp-hdr .logo{min-height:62px;display:flex;align-items:center}
   .lp-nav{order:3;width:100%;margin:0 -20px;padding:0 20px;
@@ -258,10 +253,10 @@
   #dang-ky,#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:112px}
   .lp-app{display:block}
   .lp-app__btns{margin-top:14px}
-  .lp-why{grid-template-columns:1fr}
+  .lp-why{grid-template-columns:1fr 1fr;row-gap:26px}
+  .lp-about{min-height:0}
   .lp-stats{grid-template-columns:1fr 1fr;gap:22px}
   .lp-fund__bq b{font-size:23px}
-  .lp-spark svg{width:86px;height:38px}
   .lp-tab{font-size:13px}
   .lp-tab th,.lp-tab td{padding:8px 6px}
 }
