@@ -35,7 +35,7 @@ const NAV = [
 const PROMO = {
   tag: 'Chương trình đang triển khai',
   title: 'VinaSIP — Đầu\u00A0tư định\u00A0kỳ',
-  desc: 'Trích một khoản cố định mỗi tháng để mua chứng chỉ quỹ. Cách làm này giúp bình quân giá vốn, giảm áp lực canh thời điểm và duy trì kỷ luật tích lũy dài hạn.',
+  desc: 'Trích một khoản cố định mỗi tháng để mua chứng chỉ quỹ — bình quân giá vốn và duy trì kỷ luật tích lũy dài hạn.',
   points: ['Từ 100.000đ mỗi kỳ', 'Tự động trích, không cần thao tác', 'Rút vốn bất kỳ lúc nào'],
   cta: 'Tìm hiểu VinaSIP',
   img: 'hcmc-hero'
@@ -43,30 +43,32 @@ const PROMO = {
 
 const FORM = {
   title: 'Đăng ký nhận tư vấn đầu tư',
-  lead: 'Chuyên viên của VinaCapital sẽ liên hệ trong vòng 24 giờ làm việc.',
+  lead: 'Chuyên viên sẽ liên hệ trong 24 giờ làm việc.',
   tiens: ['Dưới 50 triệu', '50 – 200 triệu', '200 – 500 triệu', '500 triệu – 1 tỷ', 'Trên 1 tỷ'],
   tinhs: ['TP. Hồ Chí Minh', 'Hà Nội', 'Đà Nẵng', 'Hải Phòng', 'Cần Thơ', 'Bình Dương', 'Đồng Nai', 'Khánh Hòa', 'Tỉnh / thành khác'],
-  consent: 'Bằng việc nhấn “Gửi thông tin”, tôi đồng ý để VinaCapital sử dụng thông tin trên đây liên hệ giới thiệu sản phẩm, dịch vụ và chương trình của VinaCapital.',
+  consent: 'Bằng việc nhấn “Gửi thông tin”, tôi đồng ý để VinaCapital dùng thông tin trên đây liên hệ giới thiệu sản phẩm, dịch vụ và chương trình. Thông tin không dùng cho mục đích khác hay chia sẻ với bên thứ ba.',
   note: 'Thông tin của Quý khách không được dùng cho mục đích khác hay chia sẻ với bên thứ ba ngoài mục đích nêu trên.',
   submit: 'Gửi thông tin'
 };
 
-/* Link cửa hàng thật của ứng dụng VinaCapital MiO. */
+/* Link cửa hàng thật của ứng dụng VinaCapital MiO.
+   Badge nền trắng vì ô này nằm trên nền tối. Không bọc thêm khung nào bên
+   ngoài — bản thân badge đã là cái nút. */
 const APP = {
   tag: 'Ứng dụng MiO',
   title: 'Tải app đầu tư ngay',
   desc: 'Mở tài khoản, đặt lệnh và theo dõi danh mục ngay trên điện thoại.',
   stores: [
     ['https://apps.apple.com/vn/app/vinacapital-mio/id1547223108?l=vi', 'Tải trên App Store',
-     `<svg viewBox="0 0 138 40" aria-hidden="true"><rect width="138" height="40" rx="6" fill="#000"/>
-      <path fill="#fff" d="M24.6 20.3c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.7.7 2.8.7 1.2 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.4s-2.2-.9-2.2-3.4zm-2.3-6.3c.6-.7 1-1.7.9-2.7-.9 0-2 .6-2.6 1.3-.6.6-1.1 1.6-.9 2.6 1 .1 2-.5 2.6-1.2z"/>
-      <text x="35" y="17" fill="#fff" font-family="Helvetica,Arial,sans-serif" font-size="8.5">Tải trên</text>
-      <text x="35" y="30" fill="#fff" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700">App Store</text></svg>`],
+     `<svg viewBox="0 0 160 48" aria-hidden="true"><rect width="160" height="48" rx="7" fill="#fff"/>
+      <path fill="#000" d="M30.9 24.4c0-2.7 2.2-4 2.3-4.1-1.2-1.8-3.2-2-3.9-2.1-1.7-.2-3.3 1-4.1 1-.9 0-2.2-1-3.6-1-1.8 0-3.5 1.1-4.4 2.7-1.9 3.3-.5 8.1 1.3 10.8.9 1.3 2 2.8 3.4 2.7 1.3-.1 1.8-.9 3.4-.9 1.6 0 2 .9 3.4.8 1.4 0 2.3-1.3 3.2-2.6 1-1.5 1.4-3 1.4-3s-2.7-1-2.7-4.1zm-2.7-7.6c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.4.7-3.2 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5z"/>
+      <text x="43" y="20.5" fill="#111" font-family="Helvetica,Arial,sans-serif" font-size="9.5">Tải trên</text>
+      <text x="43" y="35.5" fill="#000" font-family="Helvetica,Arial,sans-serif" font-size="15.5" font-weight="700">App Store</text></svg>`],
     ['https://play.google.com/store/apps/details?id=com.vinacapital.mio', 'Tải trên Google Play',
-     `<svg viewBox="0 0 138 40" aria-hidden="true"><rect width="138" height="40" rx="6" fill="#000"/>
-      <path fill="#fff" d="M14 11.6c0-.7.8-1.2 1.4-.8l12.4 7.4c.6.3.6 1.2 0 1.6l-12.4 7.4c-.6.4-1.4-.1-1.4-.8z"/>
-      <text x="35" y="17" fill="#fff" font-family="Helvetica,Arial,sans-serif" font-size="8.5">Tải trên</text>
-      <text x="35" y="30" fill="#fff" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700">Google Play</text></svg>`]
+     `<svg viewBox="0 0 160 48" aria-hidden="true"><rect width="160" height="48" rx="7" fill="#fff"/>
+      <path fill="#000" d="M18 14.6c0-.9 1-1.5 1.7-1L34 22.2c.7.4.7 1.4 0 1.8L19.7 32.4c-.7.4-1.7-.1-1.7-1z"/>
+      <text x="43" y="20.5" fill="#111" font-family="Helvetica,Arial,sans-serif" font-size="9.5">Tải trên</text>
+      <text x="43" y="35.5" fill="#000" font-family="Helvetica,Arial,sans-serif" font-size="15.5" font-weight="700">Google Play</text></svg>`]
   ]
 };
 
@@ -77,8 +79,7 @@ const APP = {
    lẻ tháng nên đưa vào sẽ làm sai con số. Nhãn ghi rõ giai đoạn. */
 const FUNDS = [
   {
-    ma: 'VINACAPITAL-VDEF',
-    anh: 'hcmc-skyline.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Cổ phiếu',
+    ma: 'VINACAPITAL-VDEF', loai: 'Cổ phiếu',
     ten: 'Quỹ Đầu tư Cổ phiếu Cơ hội Tiên phong VinaCapital',
     tom: 'Đầu tư vào cổ phiếu của những doanh nghiệp ít được thị trường chú ý và đang được định giá hấp dẫn, ưu tiên cổ phiếu vốn hóa vừa và nhỏ.',
     bq: '12,4%', bqKy: '2025',
@@ -87,8 +88,7 @@ const FUNDS = [
     nam: [['2026 (đến 22/09)', '−1,6', '1,8'], ['2025', '12,4', '40,9'], ['2024 (từ 24/06)', '4,9', '1,0']]
   },
   {
-    ma: 'VINACAPITAL-VEOF',
-    anh: 'hcmc-panorama.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Cổ phiếu',
+    ma: 'VINACAPITAL-VEOF', loai: 'Cổ phiếu',
     ten: 'Quỹ Đầu tư Cổ phiếu Doanh nghiệp Hàng đầu VinaCapital',
     tom: 'Đầu tư chủ yếu vào cổ phiếu của các công ty đầu ngành, quy mô lớn hoặc có lợi thế cạnh tranh khác biệt.',
     bq: '15,8%', bqKy: '2021–2025',
@@ -97,8 +97,7 @@ const FUNDS = [
     nam: [['2026 (đến 22/09)', '−8,1', '1,8'], ['2025', '13,6', '40,9'], ['2024', '24,4', '12,1'], ['2023', '19,5', '12,2'], ['2022', '−21,2', '−32,8'], ['2021', '56,5', '35,7']]
   },
   {
-    ma: 'VINACAPITAL-VESAF',
-    anh: 'hcmc-twilight.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Cổ phiếu vừa & nhỏ',
+    ma: 'VINACAPITAL-VESAF', loai: 'Cổ phiếu vừa & nhỏ',
     ten: 'Quỹ Đầu tư Cổ phiếu Tăng trưởng Chiến lược VinaCapital',
     tom: 'Đầu tư vào cổ phiếu của những doanh nghiệp có nền tảng vững chắc và những công ty chưa được thị trường đánh giá hợp lý.',
     bq: '16,5%', bqKy: '2021–2025',
@@ -107,8 +106,7 @@ const FUNDS = [
     nam: [['2026 (đến 22/09)', '−5,3', '1,8'], ['2025', '6,3', '40,9'], ['2024', '22,1', '12,1'], ['2023', '30,9', '12,2'], ['2022', '−24,4', '−32,8'], ['2021', '67,0', '35,7']]
   },
   {
-    ma: 'VINACAPITAL-VMEEF',
-    anh: 'hcmc-band-city.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Cổ phiếu chủ đề',
+    ma: 'VINACAPITAL-VMEEF', loai: 'Cổ phiếu chủ đề',
     ten: 'Quỹ Đầu tư Cổ phiếu Kinh tế Hiện đại VinaCapital',
     tom: 'Đầu tư vào doanh nghiệp có triển vọng tăng trưởng doanh thu và lợi nhuận dài hạn, gắn với các động lực phát triển kinh tế hiện đại của Việt Nam.',
     bq: '20,0%', bqKy: '2024–2025',
@@ -117,8 +115,7 @@ const FUNDS = [
     nam: [['2026 (đến 22/09)', '−5,5', '1,8'], ['2025', '7,4', '40,9'], ['2024', '34,0', '12,1'], ['2023 (từ 04/05)', '13,1', '7,3']]
   },
   {
-    ma: 'VINACAPITAL-VIBF',
-    anh: 'hcmc-band-twilight.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Cân bằng',
+    ma: 'VINACAPITAL-VIBF', loai: 'Cân bằng',
     ten: 'Quỹ Đầu tư Cân bằng Gắn kết VinaCapital',
     tom: 'Kết hợp cổ phiếu và trái phiếu: hưởng lợi từ tiềm năng tăng giá của cổ phiếu, giảm biến động nhờ danh mục trái phiếu.',
     bq: '11,9%', bqKy: '2021–2025',
@@ -127,8 +124,7 @@ const FUNDS = [
     nam: [['2026 (đến 22/09)', '−2,9', '3,0'], ['2025', '10,8', '22,8'], ['2024', '17,9', '8,4'], ['2023', '11,2', '9,2'], ['2022', '−10,5', '−13,4'], ['2021', '35,2', '20,6']]
   },
   {
-    ma: 'VINACAPITAL-VFF',
-    anh: 'hcmc-fireworks.webp', /* TẠM: ảnh thành phố có bản quyền. Cần ảnh minh hoạ quỹ của khách. */ loai: 'Trái phiếu',
+    ma: 'VINACAPITAL-VFF', loai: 'Trái phiếu',
     ten: 'Quỹ Đầu tư Trái phiếu Nâng cao VinaCapital',
     tom: 'Chủ yếu đầu tư trái phiếu doanh nghiệp, chứng chỉ tiền gửi và tiền gửi, với mức rủi ro thấp.',
     bq: '7,5%', bqKy: '2021–2025',
@@ -149,24 +145,27 @@ const FUNDS = [
 const IC = (d) => `<svg class="lp-ic" viewBox="0 0 80 80" aria-hidden="true">
   <circle cx="40" cy="40" r="40" fill="var(--red)"/>${d}</svg>`;
 
+/* Năm icon PHẢI khớp đúng năm câu bên dưới nó, nếu không người xem phải đoán.
+   Nét trắng dày 4 trên nền tròn đỏ để còn đọc được ở cỡ 54px. */
 const ICONS = [
-  /* 1. tăng trưởng tài sản — cột đi lên, cắm cờ */
-  IC('<g fill="#fff"><rect x="23" y="43" width="9" height="14"/><rect x="35" y="35" width="9" height="22"/>' +
-     '<rect x="48" y="24" width="4" height="33"/><path d="M52 26h13l-5 5.5 5 5.5H52z"/></g>'),
-  /* 2. hiện thực hoá kế hoạch — lá cờ */
-  IC('<g fill="#fff"><rect x="26" y="21" width="4.5" height="38"/><path d="M30.5 23h26l-6 8 6 8h-26z"/></g>'),
-  /* 3. tập trung — tâm ngắm */
-  IC('<g fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round">' +
-     '<circle cx="40" cy="40" r="15"/><circle cx="40" cy="40" r="5.5"/>' +
-     '<path d="M40 17v8M40 55v8M17 40h8M55 40h8"/></g>'),
-  /* 4. gia đình — hai người lớn, một trẻ nhỏ phía trước */
-  IC('<g fill="#fff"><circle cx="27" cy="29" r="6.4"/><circle cx="53" cy="29" r="6.4"/>' +
-     '<path d="M16 48c0-6.1 4.9-11 11-11s11 4.9 11 11z"/><path d="M42 48c0-6.1 4.9-11 11-11s11 4.9 11 11z"/>' +
-     '<circle cx="40" cy="43" r="5.8"/><path d="M30.5 62c0-5.2 4.3-9.5 9.5-9.5s9.5 4.3 9.5 9.5z"/></g>'),
-  /* 5. tham gia online — con trỏ bấm */
-  IC('<g fill="#fff"><path d="M33 27l24 15.5-10.5 1.8 6.4 12.2-5.6 2.9-6.4-12.2-7.9 6.6z"/></g>' +
-     '<g fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round">' +
-     '<path d="M26 25l-5.5-5.5M25 36h-7.5M35 23v-7.5"/></g>')
+  /* 1. Tăng trưởng tài sản nhanh hơn — mũi tên đi lên */
+  IC('<g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">' +
+     '<path d="M15.8 53.2 32.3 36.7 43.3 47.7 64.2 26.8"/><path d="M51 26.8h13.2V40"/></g>'),
+  /* 2. Yên tâm về chuyên môn — khiên và dấu tích */
+  IC('<g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">' +
+     '<path d="M40 62s17.6-8.8 17.6-22V24.6L40 18l-17.6 6.6V40c0 13.2 17.6 22 17.6 22z"/>' +
+     '<path d="m31.5 39.5 6.4 6.4L51 32.8"/></g>'),
+  /* 3. Không chiếm thời gian — đồng hồ */
+  IC('<g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">' +
+     '<circle cx="40" cy="40" r="17.6"/><path d="M40 28.8V40l7.6 4.6"/></g>'),
+  /* 4. Tham gia dễ dàng, rút vốn linh hoạt — bấm chọn trên màn hình */
+  IC('<g fill="#fff"><path d="M32 25.5 57 41.8l-11.2 1.9 6.8 13-6 3.1-6.8-13-7.8 7z"/></g>' +
+     '<g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round">' +
+     '<path d="M24.5 23.5 19 18M23.5 35H16M34.5 21.5V14"/></g>'),
+  /* 5. Bắt đầu từ số vốn nhỏ — chồng xu */
+  IC('<g fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">' +
+     '<ellipse cx="40" cy="26" rx="17" ry="6.6"/><path d="M23 26v14c0 3.6 7.6 6.6 17 6.6s17-3 17-6.6V26"/>' +
+     '<path d="M23 40v14c0 3.6 7.6 6.6 17 6.6s17-3 17-6.6V40"/></g>')
 ];
 
 /* Icon nhỏ trong thẻ quỹ — giống trang gốc: một dòng "quỹ này đầu tư vào gì"
@@ -180,15 +179,13 @@ const ICO_MUC = `<svg class="lp-ico" viewBox="0 0 24 24" fill="none" stroke="cur
   <path d="M12 1.6v3.2M12 19.2v3.2M1.6 12h3.2M19.2 12h3.2"/></svg>`;
 
 const LYDO = {
-  title: 'Tại sao Quý khách nên đầu tư quỹ mở VinaCapital',
-  /* Lấy đúng 5 dòng của trang gốc, không viết lại. Trang gốc chỉ có một dòng
-     cho mỗi icon — giữ nguyên như vậy, thêm mô tả là tự bịa thêm chữ. */
+  title: 'Vì sao nên đầu tư quỹ mở VinaCapital',
   items: [
-    'Giúp tăng trưởng tài sản nhanh hơn',
-    'Hiện thực hóa các kế hoạch tận hưởng cuộc sống sung túc, an nhàn',
-    'Tập trung kinh doanh và sự nghiệp mà vẫn đầu tư hiệu quả',
-    'Dành thời gian cho gia đình hay cho những đam mê',
-    'Tham gia dễ dàng online và có thể rút vốn bất kỳ lúc nào'
+    ['Tăng trưởng tài sản nhanh hơn', 'Vốn được đưa vào danh mục do đội ngũ chuyên nghiệp quản lý, thay vì để yên một chỗ.'],
+    ['Yên tâm về chuyên môn', 'Đội ngũ phân tích theo sát thị trường mỗi ngày, quyết định dựa trên dữ liệu.'],
+    ['Không chiếm thời gian của bạn', 'Tập trung cho kinh doanh, sự nghiệp và gia đình — phần đầu tư đã có người lo.'],
+    ['Tham gia dễ dàng, rút vốn linh hoạt', 'Mở tài khoản online, giao dịch qua ứng dụng MiO, rút vốn bất kỳ lúc nào.'],
+    ['Bắt đầu từ số vốn nhỏ', 'Không cần vốn lớn mới đầu tư được; có thể góp đều mỗi tháng qua VinaSIP.']
   ]
 };
 
@@ -247,6 +244,7 @@ function render() {
     </picture>
   </div>
   <span class="lp-hero__scrim" aria-hidden="true"></span>
+  <span class="hero__shapes" aria-hidden="true"><i class="hero__sh-grey"></i><i class="hero__sh-red"></i></span>
 
   <div class="wrap lp-hero__grid">
 
@@ -262,18 +260,17 @@ function render() {
       <form class="lp-form lp-glass" novalidate>
         <h2>${FORM.title}</h2>
         <p class="lp-form__lead">${FORM.lead}</p>
-        <label><span>Họ và tên *</span><input type="text" name="hoten" required autocomplete="name"></label>
-        <label><span>Email *</span><input type="email" name="email" required autocomplete="email"></label>
-        <label><span>Số điện thoại *</span><input type="tel" name="dienthoai" required autocomplete="tel"></label>
-        <label><span>Số tiền dự định đầu tư *</span>
-          <select name="sotien" required><option value="">Hãy chọn số tiền</option>
+        <input type="text" name="hoten" required autocomplete="name" placeholder="Họ và tên *" aria-label="Họ và tên">
+        <input type="email" name="email" required autocomplete="email" placeholder="Email *" aria-label="Email">
+        <input type="tel" name="dienthoai" required autocomplete="tel" placeholder="Số điện thoại *" aria-label="Số điện thoại">
+        <label class="lp-f2"><span>Số tiền dự định đầu tư *</span>
+          <select name="sotien" required aria-label="Số tiền dự định đầu tư"><option value="">Hãy chọn số tiền</option>
           ${FORM.tiens.map(t => `<option>${t}</option>`).join('')}</select></label>
-        <label><span>Tỉnh / Thành phố *</span>
-          <select name="tinh" required><option value="">Chọn tỉnh / thành phố</option>
+        <label class="lp-f2"><span>Tỉnh / Thành phố *</span>
+          <select name="tinh" required aria-label="Tỉnh / Thành phố"><option value="">Chọn/Tìm kiếm</option>
           ${FORM.tinhs.map(t => `<option>${t}</option>`).join('')}</select></label>
         <button class="btn lp-form__submit" type="submit">${FORM.submit} <i>→</i></button>
         <p class="lp-form__consent">${FORM.consent}</p>
-        <p class="lp-form__note">${FORM.note}</p>
         <p class="lp-form__ok" hidden role="status"></p>
       </form>
 
@@ -281,7 +278,6 @@ function render() {
         <div>
           <p class="eyebrow eyebrow--rule">${APP.tag}</p>
           <h3>${APP.title}</h3>
-          <p>${APP.desc}</p>
         </div>
         <div class="lp-app__btns">${APP.stores.map(st => `<a class="lp-store" href="${st[0]}"
           target="_blank" rel="noopener" aria-label="${st[1]}">${st[2]}</a>`).join('')}</div>
@@ -300,7 +296,6 @@ function render() {
     <div class="lp-funds">
       ${FUNDS.map((f, i) => `
       <article class="lp-fund" data-fund>
-        <div class="lp-fund__pic"><img src="${IMG}${f.anh}" alt="" aria-hidden="true" loading="lazy"></div>
         <button class="lp-fund__t" type="button" aria-expanded="false" aria-controls="fund-${i}">
           <span class="lp-fund__ma">${f.ma}<em>${f.loai}</em></span>
           <span class="lp-fund__ten">${f.ten}</span>
@@ -328,7 +323,15 @@ function render() {
   <div class="wrap">
     <div class="lp-head"><h2>${LYDO.title}</h2></div>
     <div class="lp-why">
-      ${LYDO.items.map((l, i) => `<article>${ICONS[i] || ''}<p>${l}</p></article>`).join('')}
+      ${LYDO.items.map((l, i) => `<article>
+        ${ICONS[i] || ''}
+        <h3>${l[0]}</h3><p>${l[1]}</p>
+      </article>`).join('')}
+      <article class="lp-why__cta">
+        <h3>Chưa rõ nên bắt đầu từ\u00A0đâu?</h3>
+        <p>Để chuyên viên gọi lại và tư vấn quỹ phù hợp với mục tiêu của bạn.</p>
+        <a class="btn" href="#dang-ky">Đăng ký nhận tư vấn <i>→</i></a>
+      </article>
     </div>
   </div>
 </section>

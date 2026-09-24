@@ -43,7 +43,7 @@
 /* ---------- Banner chính: ảnh tràn màn hình như trang chủ ----------
    Form nằm ĐÈ lên banner (kính mờ) chứ không tách thành ô riêng bên cạnh. */
 .lp-hero{position:relative;display:flex;align-items:center;
-  min-height:clamp(620px,88vh,900px);padding:clamp(40px,4.4vw,64px) 0;background:var(--ink-deep)}
+  min-height:clamp(560px,82vh,820px);padding:clamp(32px,3.4vw,48px) 0;background:var(--ink-deep)}
 /* overflow để ở lớp ảnh, KHÔNG để ở section: form cao hơn màn hình thì
    section phải giãn ra, để ở section sẽ cắt mất ô tải app bên dưới */
 .lp-hero__bg{position:absolute;inset:0;overflow:hidden}
@@ -52,6 +52,7 @@
   linear-gradient(94deg,rgba(8,14,22,.82) 0%,rgba(8,14,22,.6) 38%,rgba(8,14,22,.36) 58%,rgba(8,14,22,.6) 100%),
   linear-gradient(rgba(8,14,22,.34),rgba(8,14,22,0) 34%,rgba(8,14,22,.5))}
 
+.lp-hero .hero__shapes{z-index:1}
 .lp-hero__grid{position:relative;z-index:2;display:grid;
   grid-template-columns:minmax(0,1fr) minmax(360px,432px);
   gap:clamp(28px,4vw,72px);align-items:center}
@@ -59,15 +60,15 @@
 .lp-hero__copy{color:#fff}
 .lp-hero__copy .eyebrow{color:#fff}
 .lp-hero__copy .eyebrow::before{background:#fff}
-.lp-hero h1{max-width:16ch;margin-top:16px;font-size:clamp(34px,4.4vw,64px);font-weight:700;
+.lp-hero h1{max-width:16ch;margin-top:14px;font-size:clamp(32px,3.9vw,56px);font-weight:700;
   line-height:1.16;letter-spacing:-.04em;text-transform:uppercase;text-wrap:balance;
   text-shadow:0 2px 26px rgba(4,9,16,.45)}
-.lp-hero__desc{max-width:46ch;margin-top:18px;color:rgba(255,255,255,.9);font-size:clamp(15.5px,1.1vw,17px);line-height:1.74}
-.lp-hero__pts{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0;padding:0;list-style:none}
+.lp-hero__desc{max-width:44ch;margin-top:15px;color:rgba(255,255,255,.9);font-size:clamp(15.5px,1.1vw,17px);line-height:1.74}
+.lp-hero__pts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
 .lp-hero__pts li{padding:8px 14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.lp-hero .btn{margin-top:28px}
+.lp-hero .btn{margin-top:22px}
 
 .lp-side{display:flex;flex-direction:column;gap:14px}
 
@@ -95,12 +96,13 @@
 }
 
 /* ---------- Form thu lead ---------- */
-.lp-form{padding:clamp(22px,2vw,30px);color:#fff}
-.lp-form h2{font-size:clamp(19px,1.8vw,24px);font-weight:700;line-height:1.26;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
-.lp-form__lead{margin-top:9px;color:rgba(255,255,255,.9);font-size:14px;line-height:1.6}
-.lp-form label{display:block;margin-top:13px}
-.lp-form label span{display:block;margin-bottom:5px;color:rgba(255,255,255,.94);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.lp-form input,.lp-form select{width:100%;padding:11px 13px;background:rgba(255,255,255,.12);
+.lp-form{padding:clamp(18px,1.6vw,24px);color:#fff}
+.lp-form h2{font-size:clamp(18px,1.55vw,21px);font-weight:700;line-height:1.26;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
+.lp-form__lead{margin-top:7px;color:rgba(255,255,255,.9);font-size:13.5px;line-height:1.55}
+.lp-form input,.lp-form .lp-f2{margin-top:9px}
+.lp-f2{display:block}
+.lp-f2>span{display:block;margin-bottom:4px;color:rgba(255,255,255,.94);font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.lp-form input,.lp-form select{width:100%;padding:9px 12px;background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.34);color:#fff;font:inherit;font-size:15px;transition:.2s}
 .lp-form select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgba(255,255,255,.7) 50%),linear-gradient(135deg,rgba(255,255,255,.7) 50%,transparent 50%);
   background-position:calc(100% - 19px) 50%,calc(100% - 13px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:38px}
@@ -108,25 +110,21 @@
 .lp-form input::placeholder{color:rgba(255,255,255,.55)}
 .lp-form input:focus,.lp-form select:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.12)}
 .lp-form input.is-bad,.lp-form select.is-bad{border-color:#ff8f7f}
-.lp-form__submit{width:100%;justify-content:space-between;margin-top:20px;cursor:pointer}
-.lp-form__consent{margin-top:15px;color:rgba(255,255,255,.84);font-size:12px;line-height:1.6}
-.lp-form__note{margin-top:8px;color:rgba(255,255,255,.74);font-size:11.5px;line-height:1.6}
+.lp-form__submit{width:100%;justify-content:space-between;margin-top:16px;cursor:pointer}
+.lp-form__consent{margin-top:11px;color:rgba(255,255,255,.84);font-size:11px;line-height:1.5}
+.lp-form__note{margin-top:6px;color:rgba(255,255,255,.74);font-size:11px;line-height:1.55}
 .lp-form__ok{margin-top:14px;padding:11px 13px;background:rgba(255,255,255,.1);border-left:3px solid #7ddba0;
   color:#fff;font-size:13.5px;line-height:1.6}
 .lp-form__ok.is-bad{border-left-color:#ff8f7f}
 
 /* ---------- Ô tải app ---------- */
-.lp-app{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  padding:clamp(16px,1.5vw,22px) clamp(20px,1.9vw,26px);color:#fff}
+.lp-app{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:clamp(14px,1.3vw,18px) clamp(18px,1.7vw,24px);color:#fff}
 .lp-app .eyebrow{color:#fff}
 .lp-app .eyebrow::before{background:#fff}
-.lp-app h3{margin:9px 0 5px;font-size:17px;font-weight:700;letter-spacing:-.025em;text-transform:uppercase;color:#fff}
-.lp-app p{max-width:34ch;color:rgba(255,255,255,.88);font-size:13.5px;line-height:1.6}
+.lp-app h3{margin:8px 0 4px;font-size:16px;font-weight:700;letter-spacing:-.025em;text-transform:uppercase;color:#fff}
+.lp-app p{max-width:30ch;color:rgba(255,255,255,.88);font-size:13px;line-height:1.55}
 .lp-app__btns{display:flex;flex-wrap:wrap;gap:8px}
-.lp-store{padding:10px 14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.34);
-  color:#fff;font-size:11.5px;font-weight:700;
-  letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.22s}
-.lp-store:hover{background:#fff;border-color:#fff;color:var(--ink)}
 
 /* ---------- Khối chung ---------- */
 .lp-sect{padding:clamp(48px,5vw,76px) 0;background:#fff}
@@ -147,9 +145,6 @@
 .lp-fund__t:hover{background:var(--paper)}
 .lp-fund__ma{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.09em}
 .lp-fund__ma em{font-style:normal;padding:3px 8px;background:var(--sand);color:#6b7280;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
-.lp-fund__pic{aspect-ratio:16/9;overflow:hidden;background:var(--sand)}
-.lp-fund__pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out-expo,ease)}
-.lp-fund:hover .lp-fund__pic img{transform:scale(1.04)}
 .lp-fund__ten{display:block;margin-top:11px;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
 .lp-fund__pt{display:flex;gap:10px;margin-top:12px;color:#5d6470;font-size:14.5px;line-height:1.62;text-wrap:pretty}
 .lp-fund__bq{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
@@ -172,12 +167,17 @@
 .lp-disc{max-width:90ch;margin-top:22px;color:#6b7280;font-size:12.5px;line-height:1.7}
 
 /* ---------- Lý do ---------- */
-/* Trang gốc xếp 5 ô ngang một hàng, mỗi ô là icon tròn + một gạch + một dòng
-   chữ. Giữ đúng vậy — thêm đoạn mô tả là tự bịa thêm chữ. */
-.lp-why{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,2.2vw,32px)}
-.lp-why article{display:flex;flex-direction:column;gap:clamp(16px,1.9vw,24px)}
-.lp-why p{padding-top:clamp(15px,1.5vw,19px);border-top:1px solid var(--line);
-  color:#5d6470;font-size:15px;line-height:1.6;text-wrap:pretty}
+.lp-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.lp-why article{padding:clamp(24px,2.3vw,32px);background:#fff}
+.lp-why h3{margin:16px 0 9px;font-size:17px;font-weight:700;line-height:1.32;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.lp-why p{color:#6b7280;font-size:14.5px;line-height:1.68}
+/* .lp-why article (0,1,1) mạnh hơn .lp-why__cta (0,1,0) nên phải viết kèm
+   article, nếu không thẻ này mất nền tối và chữ trắng thành vô hình. */
+.lp-why article.lp-why__cta{display:flex;flex-direction:column;justify-content:center;gap:14px;
+  padding:clamp(24px,2.3vw,32px);background:var(--ink)}
+.lp-why article.lp-why__cta h3{color:#fff;margin:0;font-size:18px}
+.lp-why article.lp-why__cta p{color:rgba(255,255,255,.78)}
+.lp-why article.lp-why__cta .btn{margin-top:4px;align-self:flex-start}
 
 /* ---------- Nhà đầu tư nói gì ---------- */
 .lp-says{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,32px)}
@@ -196,7 +196,7 @@
 .lp-about__scrim{position:absolute;inset:0;background:
   linear-gradient(100deg,rgba(13,19,31,.86) 0%,rgba(13,19,31,.7) 48%,rgba(13,19,31,.54) 100%),
   linear-gradient(rgba(13,19,31,.32),rgba(13,19,31,0) 42%,rgba(13,19,31,.46))}
-.lp-about .wrap{position:relative;z-index:2;width:100%}
+.lp-about .wrap{position:relative;z-index:2}
 .lp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,48px)}
 .lp-stats strong{display:block;font-size:clamp(26px,3vw,42px);font-weight:700;letter-spacing:-.045em;line-height:1}
 .lp-stats article:first-child strong{color:#ff8a76}
@@ -212,17 +212,17 @@
 .lp-fund__so{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
 
 /* ---------- Icon ---------- */
-.lp-ic{display:block;width:clamp(58px,5.2vw,78px);height:auto}
+.lp-ic{display:block;width:54px;height:auto}
 .lp-ico{flex:none;width:19px;height:19px;margin-top:1px;color:var(--red)}
 
 /* ---------- Nút cửa hàng ứng dụng ----------
    Badge dưới đây vẽ lại cho bản demo. Bản chạy thật phải thay bằng file badge
    chính chủ của Apple và Google — hai hãng có quy định riêng về kích thước
    tối thiểu và khoảng trống quanh badge. */
-.lp-store{display:block;width:138px;line-height:0;border-radius:6px;overflow:hidden;
-  outline:1px solid rgba(255,255,255,.3);outline-offset:-1px;transition:transform .2s,outline-color .2s}
+.lp-store{display:block;width:clamp(142px,11.2vw,162px);line-height:0;text-transform:none;letter-spacing:normal;
+  transition:transform .2s,opacity .2s}
 .lp-store svg{width:100%;height:auto;display:block}
-.lp-store:hover{transform:translateY(-2px);outline-color:#fff}
+.lp-store:hover{transform:translateY(-2px);opacity:.88}
 
 /* ---------- Ảnh đại diện tạm bằng chữ cái đầu ---------- */
 .lp-says figure{position:relative;overflow:hidden}
@@ -240,7 +240,7 @@
   .lp-hero__scrim{background:linear-gradient(rgba(8,14,22,.56),rgba(8,14,22,.72))}
   .lp-hdr__cta{display:none}
   .lp-funds{grid-template-columns:1fr}
-  .lp-why{grid-template-columns:repeat(3,1fr);row-gap:30px}
+  .lp-why{grid-template-columns:1fr 1fr}
   .lp-says{grid-template-columns:1fr}
   .lp-stats{grid-template-columns:1fr 1fr;gap:28px}
 }
@@ -253,7 +253,7 @@
   #dang-ky,#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:112px}
   .lp-app{display:block}
   .lp-app__btns{margin-top:14px}
-  .lp-why{grid-template-columns:1fr 1fr;row-gap:26px}
+  .lp-why{grid-template-columns:1fr}
   .lp-about{min-height:0}
   .lp-stats{grid-template-columns:1fr 1fr;gap:22px}
   .lp-fund__bq b{font-size:23px}
