@@ -120,6 +120,61 @@ const FUNDS = [
   }
 ];
 
+/* Icon tự vẽ cho mục "vì sao đầu tư". Trang gốc có 5 icon SVG riêng nhưng
+   đó là tài sản của khách, mình không lấy về — bộ dưới đây vẽ mới, cùng độ
+   dày nét 1.6 để đứng chung một hàng nhìn đồng bộ. */
+const IC = (d) => `<svg class="lp-ic" viewBox="0 0 28 28" fill="none" stroke="currentColor"
+  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+
+const ICONS = [
+  /* tài sản đi lên */
+  IC('<path d="M3.5 24.5h21"/><path d="M4 19.5 10.5 13l4 4L23.5 7.5"/><path d="M18.5 7.5h5v5"/>'),
+  /* chuyên môn — khiên và dấu tích */
+  IC('<path d="M14 3 5 6.5v7c0 5.2 3.7 9.6 9 11.5 5.3-1.9 9-6.3 9-11.5v-7L14 3Z"/><path d="m10 13.8 2.9 2.9L18.4 11"/>'),
+  /* thời gian */
+  IC('<circle cx="14" cy="14" r="10.5"/><path d="M14 7.5V14l4.5 2.8"/>'),
+  /* điện thoại — tham gia, rút vốn */
+  IC('<rect x="8.5" y="2.5" width="11" height="23" rx="2.5"/><path d="M12.2 22.4h3.6"/><path d="M14 8v9"/><path d="m11.2 14.2 2.8 2.8 2.8-2.8"/>'),
+  /* vốn nhỏ — chồng xu */
+  IC('<ellipse cx="14" cy="7" rx="8.5" ry="3.4"/><path d="M5.5 7v6.5c0 1.9 3.8 3.4 8.5 3.4s8.5-1.5 8.5-3.4V7"/><path d="M5.5 13.5V20c0 1.9 3.8 3.4 8.5 3.4s8.5-1.5 8.5-3.4v-6.5"/>')
+];
+
+/* ------------------------------------------------------------------
+   Cột nhỏ trong thẻ quỹ: lợi nhuận từng kỳ, cũ → mới.
+
+   Một chuỗi duy nhất nên không cần chú giải. Dấu âm/dương đọc bằng VỊ TRÍ
+   (trên / dưới đường 0), KHÔNG đọc bằng màu: bảng điện Việt Nam đỏ là tăng
+   còn phương Tây đỏ là giảm, tô màu theo dấu là mỗi người hiểu một kiểu.
+   Cột dương dùng màu chữ chính, cột âm dùng xám để lùi lại một nhịp.
+   Số chính xác nằm ở bảng bên trong khi mở thẻ ra.
+   ------------------------------------------------------------------ */
+const soHoa = (t) => parseFloat(String(t).replace('\u2212', '-').replace(',', '.'));
+
+function cot(nam) {
+  const d = [...nam].reverse().map((x) => ({ ky: x[0], v: soHoa(x[1]) })).filter((x) => isFinite(x.v));
+  if (d.length < 2) return '';
+  const W = 116, H = 46, g = 3;
+  const duong = Math.max(0, ...d.map((x) => x.v));
+  const am = Math.max(0, ...d.map((x) => -x.v));
+  const bien = (duong + am) || 1;
+  const y0 = (duong / bien) * H;
+  const w = (W - g * (d.length - 1)) / d.length;
+  const bars = d.map((x, i) => {
+    const h = Math.max(1.5, Math.abs(x.v) / bien * H);
+    const x0 = i * (w + g);
+    const y = x.v >= 0 ? y0 - h : y0;
+    return `<rect x="${x0.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}"
+      rx="1.5" class="${x.v >= 0 ? 'up' : 'dn'}"><title>${x.ky}: ${x.v > 0 ? '+' : ''}${String(x.v).replace('.', ',')}%</title></rect>`;
+  }).join('');
+  return `<figure class="lp-spark">
+    <svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img"
+      aria-label="Lợi nhuận từng kỳ, từ ${d[0].ky} đến ${d[d.length - 1].ky}">
+      <line x1="0" x2="${W}" y1="${y0.toFixed(1)}" y2="${y0.toFixed(1)}" class="zero"/>
+      ${bars}
+    </svg>
+  </figure>`;
+}
+
 const LYDO = {
   title: 'Vì sao nên đầu tư quỹ mở VinaCapital',
   items: [
@@ -151,6 +206,14 @@ const VE = {
   title: 'Về VinaCapital',
   lead: 'Tập đoàn quản lý đầu tư đa ngành hàng đầu Việt Nam, hoạt động từ năm 2003.',
   stats: [['3,8 tỷ USD', 'Tổng tài sản quản lý'], ['200+', 'Đội ngũ nhân sự'], ['7', 'Loại tài sản'], ['23', 'Năm kinh nghiệm']]
+};
+
+/* Chân dung thật của bốn người này nằm trên trang gốc của khách; mình không
+   tải về được nên tạm dùng chữ cái đầu. KHÔNG bao giờ ghép ảnh người khác
+   hay ảnh dựng cho một lời nói có tên thật. */
+const chuDau = (ten) => {
+  const t = ten.replace(/^(Bà|Ông|Chị|Anh)\s+/, '').trim().split(/\s+/);
+  return (t[0][0] + (t[t.length - 1][0] || '')).toUpperCase();
 };
 
 const mark = '<svg viewBox="0 0 54 53" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="54" height="53" fill="#cb2b1a"/><path d="M0 0H54L27 53Z" fill="#BCBDC0"/></svg>';
@@ -225,7 +288,7 @@ function render() {
   <div class="wrap">
     <div class="lp-head">
       <h2>Các quỹ mở từ VinaCapital</h2>
-      <p>Bấm vào từng quỹ để xem lợi nhuận theo năm so với chỉ số tham chiếu.</p>
+      <p>Cột nhỏ trong mỗi thẻ là lợi nhuận từng năm, cũ nhất bên trái — cột nằm dưới vạch là năm lỗ. Bấm vào một quỹ để xem số liệu từng năm so với chỉ số tham chiếu.</p>
     </div>
     <div class="lp-funds">
       ${FUNDS.map((f, i) => `
@@ -234,7 +297,10 @@ function render() {
           <span class="lp-fund__ma">${f.ma}<em>${f.loai}</em></span>
           <span class="lp-fund__ten">${f.ten}</span>
           <span class="lp-fund__tom">${f.tom}</span>
-          <span class="lp-fund__bq"><b>${f.bq}</b><small>Bình quân/năm · ${f.bqKy}</small></span>
+          <span class="lp-fund__so">
+            <span class="lp-fund__bq"><b>${f.bq}</b><small>Bình quân/năm · ${f.bqKy}</small></span>
+            ${cot(f.nam)}
+          </span>
           <span class="lp-fund__more" aria-hidden="true">Xem chi tiết <i>+</i></span>
         </button>
         <div class="lp-fund__b" id="fund-${i}">
@@ -255,7 +321,11 @@ function render() {
   <div class="wrap">
     <div class="lp-head"><h2>${LYDO.title}</h2></div>
     <div class="lp-why">
-      ${LYDO.items.map((l, i) => `<article><b>${String(i + 1).padStart(2, '0')}</b><h3>${l[0]}</h3><p>${l[1]}</p></article>`).join('')}
+      ${LYDO.items.map((l, i) => `<article>
+        <span class="lp-why__ic">${ICONS[i] || ''}</span>
+        <b>${String(i + 1).padStart(2, '0')}</b>
+        <h3>${l[0]}</h3><p>${l[1]}</p>
+      </article>`).join('')}
       <article class="lp-why__cta">
         <h3>Chưa rõ nên bắt đầu từ\u00A0đâu?</h3>
         <p>Để chuyên viên gọi lại và tư vấn quỹ phù hợp với mục tiêu của bạn.</p>
@@ -269,12 +339,26 @@ function render() {
   <div class="wrap">
     <div class="lp-head"><h2>${NOIGI.title}</h2></div>
     <div class="lp-says">
-      ${NOIGI.items.map(t => `<figure><blockquote>${t[0]}</blockquote><figcaption><b>${t[1]}</b><span>${t[2]}</span></figcaption></figure>`).join('')}
+      ${NOIGI.items.map(t => `<figure>
+        <span class="lp-says__q" aria-hidden="true">&ldquo;</span>
+        <blockquote>${t[0]}</blockquote>
+        <figcaption>
+          <span class="lp-says__av" aria-hidden="true">${chuDau(t[1])}</span>
+          <span><b>${t[1]}</b><span>${t[2]}</span></span>
+        </figcaption>
+      </figure>`).join('')}
     </div>
   </div>
 </section>
 
+<section class="lp-strip" aria-hidden="true">
+  <div class="lp-strip__bg"><img src="${IMG}hcmc-band-twilight.webp" alt="" loading="lazy"></div>
+  <span class="lp-strip__scrim"></span>
+</section>
+
 <section class="lp-about" id="ve-vinacapital">
+  <div class="lp-about__bg"><img src="${IMG}hcmc-panorama.webp" alt="" loading="lazy"></div>
+  <span class="lp-about__scrim" aria-hidden="true"></span>
   <div class="wrap">
     <div class="lp-head lp-head--light"><h2>${VE.title}</h2><p>${VE.lead}</p></div>
     <div class="lp-stats">
