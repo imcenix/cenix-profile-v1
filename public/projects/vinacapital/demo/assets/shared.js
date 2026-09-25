@@ -74,6 +74,9 @@ function header(current) {
 }
 
 /* Banner đầu trang con: ảnh full-bleed + breadcrumb + tiêu đề */
+/* Feedback 24/09: bỏ dòng eyebrow đỏ trên tiêu đề banner — nó lặp lại đúng
+   nội dung breadcrumb và tiêu đề bên dưới. Tham số eyebrow vẫn nhận để các
+   trang cũ không lỗi, chỉ không hiển thị nữa. */
 function pageHero({ img, eyebrow, title, lead, crumb }) {
   return `
 <section class="phero">
@@ -82,7 +85,6 @@ function pageHero({ img, eyebrow, title, lead, crumb }) {
   ${shapes(true)}
   <div class="wrap phero__in">
     <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i>›</i><span>${crumb}</span></nav>
-    <p class="eyebrow eyebrow--rule phero__eyebrow">${eyebrow}</p>
     <h1>${title}</h1>
     ${lead ? `<p class="phero__lead">${lead}</p>` : ''}
   </div>
@@ -228,9 +230,9 @@ function initShared(root) {
 function mountPage({ page, hero, body }) {
   const root = document.getElementById('site');
   root.className = `page-inner page-${page}`;
-  /* Fraud takeover is homepage-only. Inner pages retain the complete warning
-     band without interrupting the reading flow. */
-  root.innerHTML = header(page) + pageHero(hero) + body + fraudBand() + footer();
+  /* Feedback 24/09: cảnh báo lừa đảo CHỈ nằm ở trang chủ. Trang con bỏ hẳn
+     dải cảnh báo trên chân trang. */
+  root.innerHTML = header(page) + pageHero(hero) + body + footer();
   initShared(root);
   return root;
 }

@@ -109,6 +109,9 @@ VC.mountPage({
   </div>
 </section>
 
+<!-- Feedback 24/09: gộp "An ecosystem with a shared goal" và khối vuông nhỏ
+     "circular economy" bên dưới thành một section. Ảnh không có chữ nên
+     dùng bản đã trả lại độ sáng gốc (ảnh gốc trên web khách bị phủ tối sẵn). -->
 <section class="eg-partners">
   <div class="wrap eg-partners__grid">
     <div class="eg-partners__copy">
@@ -116,20 +119,17 @@ VC.mountPage({
       <h2>An ecosystem with a shared goal</h2>
       <p>VinaCapital collaborates with leading global and local organisations to bring ESG best practices to Vietnam. We have been a signatory to the PRI since October 2018 and are a founding member and Platinum member of VIOD.</p>
       <div class="eg-logos"><img src="${IMG}about/Principles-for-Responsible-Investment-_-PRI.png" alt="Principles for Responsible Investment"><img src="${ESG_IMG}viod.png" alt="Vietnam Institute of Directors"></div>
+      <div class="eg-circular">
+        <img src="${ESG_IMG}circular-economy.png" alt="Institute for Circular Economy Development">
+        <div><p class="eyebrow">Environmental initiative</p><h3>Advancing the circular economy in Vietnam</h3><p>VinaCapital is a founder and principal sponsor of the Institute for Circular Economy Development under Vietnam National University Ho Chi Minh City.</p></div>
+      </div>
     </div>
-    <div class="eg-partners__media"><img src="${ESG_IMG}collaboration.jpg" alt="Collaborating for sustainable development" loading="lazy"></div>
-  </div>
-</section>
-
-<section class="eg-circular">
-  <div class="wrap eg-circular__in">
-    <img src="${ESG_IMG}circular-economy.png" alt="Institute for Circular Economy Development">
-    <div><p class="eyebrow">Environmental initiative</p><h3>Advancing the circular economy in Vietnam</h3><p>VinaCapital is a founder and principal sponsor of the Institute for Circular Economy Development under Vietnam National University Ho Chi Minh City.</p></div>
+    <div class="eg-partners__media"><img src="${ESG_IMG}collaboration-lit.jpg" alt="Collaborating for sustainable development" loading="lazy"></div>
   </div>
 </section>
 
 <section class="eg-social" id="cong-dong">
-  <div class="eg-social__media"><img src="${IMG}about/bg04.jpg" alt="Social responsibility and community" loading="lazy"></div>
+  <div class="eg-social__media"><img src="${ESG_IMG}community-lit.jpg" alt="Social responsibility and community" loading="lazy"></div>
   <div class="eg-social__copy">
     <p class="eyebrow">People and communities</p>
     <h2>Growing with the places where we live and work</h2>

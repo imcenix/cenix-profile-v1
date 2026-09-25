@@ -61,22 +61,26 @@ const ALT = {
     {
       t: 'Venture capital',
       d: 'VinaCapital Ventures is a USD100 million platform focused on investing in and building world-class technology companies in Vietnam.',
-      tags: ['VinaCapital Ventures', 'USD100 million']
+      href: 'https://ventures.vinacapital.com/',
+      tags: [['VinaCapital Ventures', 'https://ventures.vinacapital.com/'], ['USD100 million']]
     },
     {
       t: 'Real estate',
       d: 'VinaLiving has pioneered resort-style residential developments since 2010. Lodgis is a leading hospitality platform in Southeast Asia, and Hoiana is the largest tourism township in Central Vietnam.',
-      tags: ['VinaLiving', 'Lodgis', 'Hoiana']
+      href: 'https://vinaliving.com.vn/en/',
+      tags: [['VinaLiving', 'https://vinaliving.com.vn/en/'], ['Lodgis', 'https://lodgis.sg/'], ['Hoiana', 'https://www.hoiana.com/']]
     },
     {
       t: 'Infrastructure and energy',
       d: 'We support Vietnam’s energy sector in its transition towards sustainable solutions, through rooftop solar, gas-fired power projects and a renewable energy fund.',
-      tags: ['SkyX Solar', 'Long An Power', 'Renewable Energy Fund']
+      href: 'https://skyxsolar.com/',
+      tags: [['SkyX Solar', 'https://skyxsolar.com/'], ['Long An Power'], ['Renewable Energy\u00a0Fund']]
     },
     {
       t: 'Private equity',
       d: 'The VinaCapital Co-Investment Fund focuses on mid-market, growth private equity investments, with exits over a four- to six-year horizon.',
-      tags: ['Kido Group', 'NOVA Consumer', 'An Cường']
+      href: 'https://www.kdc.vn/en',
+      tags: [['Kido Group', 'https://www.kdc.vn/en'], ['NOVA Consumer', 'https://www.novaconsumer.com.vn/'], ['An Cường', 'https://ancuong.com/']]
     }
   ]
 };
@@ -146,10 +150,13 @@ VC.mountPage({
       <p class="eyebrow eyebrow--rule">${SERVICES.label}</p>
       <h2>${SERVICES.title}</h2>
     </div>
-    <div class="cards">
-      ${SERVICES.items.map(s => `<a class="card" href="#">
-        <div class="card__media"><img src="${IMG}${s[2]}" alt="" aria-hidden="true" loading="lazy"></div>
+    <!-- Feedback 24/09: ảnh cũ (cầu, toà nhà…) không đúng chủ đề nên tạm bỏ
+         ảnh, dùng thẻ chữ. Khi có ảnh đúng ý (ký hợp đồng / tư vấn / bắt tay)
+         thì thêm lại khối .card__media và bỏ lớp cards--text. -->
+    <div class="cards cards--text">
+      ${SERVICES.items.map((s, i) => `<a class="card" href="#">
         <div class="card__b">
+          <b class="card__no">${String(i + 1).padStart(2, '0')}</b>
           <h3>${s[0]}</h3>
           <p>${s[1]}</p>
           <span class="tlink">Learn more <i>→</i></span>
@@ -165,12 +172,15 @@ VC.mountPage({
       <div><p class="eyebrow eyebrow--rule">${ALT.label}</p><h2>${ALT.title}</h2></div>
       <p>${ALT.intro}</p>
     </div>
-    <div class="numgrid numgrid--2">
+    <!-- Feedback 24/09: thẻ nổi lên khi rê chuột; bấm thẻ mở website công ty
+         thành viên chính, bấm từng nhãn mở website của công ty đó. Nhãn nào
+         chưa có website riêng (Long An Power, quỹ năng lượng) thì để chữ thường. -->
+    <div class="numgrid numgrid--2 numgrid--link">
       ${ALT.items.map((it, i) => `<article>
         <b>${String(i + 1).padStart(2, '0')}</b>
-        <h3>${it.t}</h3>
+        <h3><a class="numgrid__go" href="${it.href}" target="_blank" rel="noopener">${it.t}</a></h3>
         <p>${it.d}</p>
-        <div class="pills">${it.tags.map(t => `<span>${t}</span>`).join('')}</div>
+        <div class="pills">${it.tags.map(([n, u]) => u ? `<a href="${u}" target="_blank" rel="noopener">${n} <i>↗</i></a>` : `<span>${n}</span>`).join('')}</div>
       </article>`).join('')}
     </div>
   </div>

@@ -61,7 +61,7 @@ const FOUNDATION = {
     'The Foundation focuses on improving the lives of children and women, reducing poverty and helping build the middle class. One hundred percent of all donations goes to program beneficiaries — VinaCapital covers every operating cost.'
   ],
   cta: 'Learn about VinaCapital Foundation',
-  img: 'hcm-heritage.jpg',
+  img: 'about/vina-foundation.jpg',
   alt: 'VinaCapital Foundation community programs',
   chips: [
     ['32', 'Provinces reached'],
@@ -162,13 +162,13 @@ VC.mountPage({
 </nav>
 
 <section class="sect" id="gioi-thieu">
-  <div class="wrap split">
+  <div class="wrap split split--top">
     <div>
       <blockquote class="quote">${INTRO.quote}<cite>${INTRO.cite}</cite></blockquote>
     </div>
     <div class="prose">
       ${INTRO.body.map(p => `<p>${p}</p>`).join('')}
-      <div class="chips">
+      <div class="chips chips--solid">
         ${STATS.map(s => `<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}
       </div>
     </div>
@@ -214,7 +214,7 @@ VC.mountPage({
       <p class="eyebrow eyebrow--rule">${FOUNDATION.label}</p>
       <h3>${FOUNDATION.title}</h3>
       <div class="prose">${FOUNDATION.body.map(p => `<p>${p}</p>`).join('')}</div>
-      <div class="chips">
+      <div class="chips chips--solid">
         ${FOUNDATION.chips.map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}
       </div>
       <a class="btn btn--ghost" href="#">${FOUNDATION.cta} <i>→</i></a>
@@ -244,17 +244,24 @@ VC.mountPage({
       <div><p class="eyebrow eyebrow--rule">${TEAM.label}</p><h2>${TEAM.title}</h2></div>
       <p>${TEAM.intro}</p>
     </div>
-    ${TEAM.groups.map((g, gi) => `
-      <p class="eyebrow" style="${gi ? 'margin-top:34px;' : ''}margin-bottom:16px">${g.name}</p>
-      <div class="team">
-        ${g.people.map(p => `<article>
-          <span class="team__ph"><img src="${IMG}${p[2]}" alt="Portrait of ${p[0]}" loading="lazy"></span>
-          <div class="team__b">
-            <h3>${p[0]}</h3>
-            <p>${p[1]}</p>
-          </div>
-        </article>`).join('')}
+    <!-- Feedback 24/09: chân dung to quá, phần này quá dài (~3.600px).
+         Nay là thẻ ngang ảnh nhỏ, bốn nhóm chia tab — mỗi lần chỉ một nhóm. -->
+    <div data-tabs>
+      <div class="tabs" role="tablist">
+        ${TEAM.groups.map((g, gi) => `<button role="tab" data-tab="g${gi}" class="${gi === 0 ? 'is-on' : ''}" aria-selected="${gi === 0}">${g.name}</button>`).join('')}
+      </div>
+      ${TEAM.groups.map((g, gi) => `<div data-tab-panel="g${gi}"${gi === 0 ? '' : ' hidden'}>
+        <div class="team team--row">
+          ${g.people.map(p => `<article>
+            <span class="team__ph"><img src="${IMG}${p[2]}" alt="Portrait of ${p[0]}" loading="lazy"></span>
+            <div class="team__b">
+              <h3>${p[0]}</h3>
+              <p>${p[1]}</p>
+            </div>
+          </article>`).join('')}
+        </div>
       </div>`).join('')}
+    </div>
   </div>
 </section>
 

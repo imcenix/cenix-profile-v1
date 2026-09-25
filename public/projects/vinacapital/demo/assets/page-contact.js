@@ -27,12 +27,12 @@ const CONTACT_OFFICES = [
     phone: '+84 28 3821 9930', map: 'https://maps.google.com/?q=Sun+Wah+Tower+115+Nguyen+Hue+Ho+Chi+Minh+City'
   },
   {
-    city: 'Hanoi', tag: 'Vietnam office', image: 'hcm-heritage.jpg',
+    city: 'Hanoi', tag: 'Vietnam office', image: 'contact/hanoi.jpg',
     address: '2nd Floor, International Centre<br>17 Ngo Quyen, Hoan Kiem Ward',
     phone: '+84 24 3936 4630', map: 'https://maps.google.com/?q=International+Centre+17+Ngo+Quyen+Hanoi'
   },
   {
-    city: 'Singapore', tag: 'Regional office', image: 'skyline-dusk.jpg',
+    city: 'Singapore', tag: 'Regional office', image: 'contact/singapore.jpg',
     address: '#42-01, Suntec Tower 4<br>6 Temasek Boulevard, Singapore 038986',
     phone: '+65 6332 9081', map: 'https://maps.google.com/?q=Suntec+Tower+4+Singapore'
   }

@@ -18,3 +18,83 @@
 
 @media(max-width:1050px){.ed-lead__grid,.ed-roadmap__grid,.ed-video__head,.ed-faq__grid{grid-template-columns:1fr}.ed-topics__grid{grid-template-columns:1fr}.ed-topic--wide{grid-row:auto}.ed-topic:not(.ed-topic--wide){min-height:330px}.ed-roadmap__head,.ed-faq__head{position:static}.ed-life__grid{grid-template-columns:1fr 1fr;grid-template-rows:420px 260px 260px}.ed-goal--large{grid-column:span 2;grid-row:auto}.ed-goal:last-child{grid-column:auto}.ed-video__grid{grid-template-columns:1fr 1fr}.ed-video__grid>a:last-child{grid-column:span 2;max-width:50%}}
 @media(max-width:700px){.phero{min-height:540px}.subnav__in{justify-content:flex-start}.ed-topic:not(.ed-topic--wide){grid-template-columns:1fr;min-height:0}.ed-topic__media{min-height:240px}.ed-topic__graphic{min-height:190px}.ed-roadmap__list a{grid-template-columns:38px 1fr 18px;gap:12px}.ed-life__head{display:block}.ed-life__head h2{margin-top:15px}.ed-life__grid{grid-template-columns:1fr;grid-template-rows:repeat(4,290px)}.ed-goal--large,.ed-goal:last-child{grid-column:auto}.ed-video__grid{grid-template-columns:1fr}.ed-video__grid>a:last-child{grid-column:auto;max-width:none}.ed-faq__grid{gap:36px}.acc__item button{grid-template-columns:32px 1fr 20px;gap:10px}.acc__panel{padding-left:42px;padding-right:20px}.ed-cta__in{align-items:flex-start;flex-direction:column}}
+
+/* ==========================================================================
+   Feedback 24/09
+   ========================================================================== */
+
+/* --- Khối Learning 3 tab: dùng lại đúng lưới News của trang chủ --- */
+.ed-learn{padding:var(--sect) 0;background:#fff}
+.ed-learn__bar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  margin-bottom:clamp(20px,2.2vw,28px)}
+.ed-learn__bar .tabs{margin-bottom:0}
+.ed-learn__grid{margin-top:0}
+.ed-learn__media{height:clamp(220px,21vw,290px)}
+.ed-learn__desc{margin:-4px 0 14px;color:#6b7280;font-size:15px;line-height:1.7}
+/* bài nhỏ: chỉ tiêu đề, không ảnh, không ngày */
+.ed-learn__row{grid-template-columns:1fr 20px;padding:15px 0}
+.ed-learn__more{display:inline-flex;align-items:center;gap:9px;margin-top:18px;color:var(--red);
+  font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.ed-learn__more i{font-style:normal;transition:transform .25s}
+.ed-learn__more:hover i{transform:translateX(4px)}
+
+/* --- Video dạng dọc 9:16: tiêu đề bên trái, ba video dọc bên phải --- */
+.ed-video{padding:var(--sect) 0}
+.ed-video__grid--v{grid-template-columns:repeat(3,minmax(0,250px));justify-content:start;gap:clamp(14px,1.6vw,22px);margin-top:clamp(26px,2.8vw,36px)}
+.ed-video__grid--v .ed-video__thumb{aspect-ratio:9/16;height:auto}
+.ed-video__grid--v .ed-video__thumb{background:#1c2430}
+.ed-video__grid--v .ed-video__thumb img{position:absolute;inset:0;object-fit:contain}
+.ed-video__grid--v .ed-video__thumb img.ed-video__fill{object-fit:cover;filter:blur(18px) brightness(.82);transform:scale(1.25)}
+.ed-video__grid--v>a:hover .ed-video__thumb img:not(.ed-video__fill){transform:scale(1.04)}
+.ed-video__grid--v>a:hover .ed-video__thumb img.ed-video__fill{transform:scale(1.25)}
+
+/* --- Khoảng trắng: các khối còn lại về cùng nhịp --sect của cả site --- */
+.ed-faq{padding:var(--sect) 0}
+
+/* canh hàng trên cho đầu mục video (như .shead) */
+.ed-video__head{grid-template-rows:auto auto;row-gap:0;align-items:start}
+.ed-video__head>div:first-child{display:contents}
+.ed-video__head>div:first-child>.eyebrow{grid-column:1;grid-row:1}
+.ed-video__head>div:first-child>h2{grid-column:1;grid-row:2}
+.ed-video__head>p{grid-column:2;grid-row:2;margin-top:calc(13px + 0.215 * clamp(31px,3.6vw,52px) - 8.1px)}
+@media(max-width:1050px){
+  .ed-video__grid--v{grid-template-columns:repeat(3,1fr)}
+  .ed-video__grid--v>a:last-child{grid-column:auto;max-width:none}
+  .ed-video__head>p{grid-column:1;grid-row:3;margin-top:16px}
+}
+@media(max-width:700px){
+  .ed-learn__bar{align-items:flex-start;flex-direction:column}
+  .ed-video__grid--v{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- Thư viện bài viết (education-library.html) ---------- */
+.lib{padding:clamp(44px,4.6vw,72px) 0 var(--sect)}
+.lib__bar{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;
+  padding-bottom:clamp(14px,1.4vw,20px);border-bottom:1px solid var(--ink)}
+.lib__bar .tabs{margin-bottom:0}
+.lib__count{color:#8b929c;font-size:12.5px;font-weight:600;letter-spacing:.04em}
+.lib__list{min-height:clamp(420px,40vw,560px)}
+.lib__row{display:grid;grid-template-columns:56px minmax(0,1fr) 28px;gap:clamp(14px,2vw,30px);align-items:start;
+  padding:clamp(20px,2vw,28px) 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none}
+.lib__no{padding-top:2px;color:#c3c7cd;font-size:13px;font-weight:700;letter-spacing:.06em}
+.lib__lv{color:var(--red);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lib__row h3{max-width:46ch;margin-top:8px;font-size:clamp(17px,1.5vw,21px);font-weight:700;line-height:1.36;
+  letter-spacing:-.02em;color:var(--ink);transition:color .2s}
+.lib__desc{max-width:72ch;margin-top:8px;color:#5d6470;font-size:15px;line-height:1.65}
+.lib__go{padding-top:20px;color:#b3b8c0;font-size:18px;transition:.2s}
+.lib__row:hover h3,.lib__row:hover .lib__go{color:var(--red)}
+.lib__row:hover .lib__go{transform:translateX(4px)}
+.pager{display:flex;justify-content:center;gap:6px;margin-top:clamp(30px,3vw,44px)}
+.pager button{min-width:42px;height:42px;padding:0 12px;background:#fff;border:1px solid var(--line);
+  color:var(--ink);font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.pager button:hover:not(:disabled){border-color:var(--ink)}
+.pager button.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
+.pager button:disabled{opacity:.35;cursor:default}
+.lib__back{margin-top:clamp(30px,3vw,44px)}
+@media(max-width:680px){
+  .lib__row{grid-template-columns:34px minmax(0,1fr)}
+  .lib__go{display:none}
+  .lib__count{width:100%}
+}
+
+.crumb span>i{margin:0 10px}

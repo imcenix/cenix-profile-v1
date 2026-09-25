@@ -1,16 +1,6 @@
 /* Kiến thức đầu tư — thư viện tài chính giàu hình ảnh, theo trật tự trang gốc. */
 const EDU_IMG = `${IMG}education/`;
 
-const BASICS = [
-  'Basic definitions when investing in open-ended funds',
-  'How open-ended funds are managed',
-  'Using the VinaCapital MiO application',
-  'Experience in investing in open-ended funds · Part 1',
-  'Experience in investing in open-ended funds · Part 2',
-  'Experience in investing in open-ended funds · Part 3',
-  'Building a personal financial plan'
-];
-
 const FAQS = [
   ['What is an open-ended fund?', 'An open-ended fund is a pool of money belonging to many investors with a shared objective, managed professionally by a fund management company. Investors may subscribe for or redeem fund certificates in line with the rules of the fund.'],
   ['Why invest in an open-ended fund?', 'An open-ended fund gives investors access to a diversified portfolio, a team of investment professionals and a disciplined risk management process, starting from a modest amount.'],
@@ -35,59 +25,55 @@ VC.mountPage({
   },
   body: `
 <nav class="subnav ed-nav" aria-label="Page contents">
-  <div class="wrap subnav__in"><a href="#kien-thuc">Investment education</a><a href="#tai-chinh">Personal finance</a><a href="#video">Financial Prosperity</a><a href="#faqs">FAQs</a></div>
+  <div class="wrap subnav__in"><a href="#kien-thuc">Learning</a><a href="#video">Financial Prosperity</a><a href="#faqs">FAQs</a></div>
 </nav>
 
-<section class="ed-lead" id="kien-thuc">
-  <div class="wrap ed-lead__grid">
-    <div><p class="eyebrow eyebrow--rule">Start with the basics</p><h2>Investing need not be complicated when you have the right roadmap.</h2></div>
-    <p>Explore the most common ways to invest, how each one works and the role it can play in a long-term financial plan.</p>
-  </div>
-</section>
-
-<section class="ed-topics">
-  <div class="wrap ed-topics__grid">
-    <a class="ed-topic ed-topic--wide" href="#lo-trinh">
-      <div class="ed-topic__media"><img src="${EDU_IMG}open-fund.png" alt="Learn about open-ended funds" loading="lazy">${corner()}</div>
-      <div class="ed-topic__copy"><span>01 · Foundations</span><h3>Learn about open-ended funds</h3><p>An open-ended fund is a pool of money belonging to many investors with a shared objective, managed by the investment professionals of a fund management company.</p><b>Explore the topic <i>→</i></b></div>
-    </a>
-    <a class="ed-topic" href="#lo-trinh">
-      <div class="ed-topic__media"><img src="${EDU_IMG}etf.jpg" alt="Learn about exchange-traded funds (ETFs)" loading="lazy"></div>
-      <div class="ed-topic__copy"><span>02 · Passive investing</span><h3>Learn about ETFs</h3><p>An exchange-traded fund tracks the movement of a reference index in a transparent and convenient way.</p><b>Explore the topic <i>→</i></b></div>
-    </a>
-    <a class="ed-topic ed-topic--red" href="#lo-trinh">
-      <div class="ed-topic__graphic"><span>12</span><small>months of<br>discipline</small></div>
-      <div class="ed-topic__copy"><span>03 · Regular investing</span><h3>Start with\u00A0VinaSIP</h3><p>Invest a fixed amount each month to stay disciplined, average out your cost of investment and move step by step towards your goal.</p><b>Learn about VinaSIP <i>→</i></b></div>
-    </a>
-  </div>
-</section>
-
-<section class="ed-roadmap" id="lo-trinh">
-  <div class="wrap ed-roadmap__grid">
-    <div class="ed-roadmap__head"><p class="eyebrow eyebrow--rule">Open-ended funds from A to Z</p><h2>Information you need to know<br>when investing in open-ended funds</h2><p>A guided reading path, from the core concepts through to practical experience and how to plan.</p></div>
-    <ol class="ed-roadmap__list">${BASICS.map((item, i) => `<li><a href="#"><span>${String(i+1).padStart(2,'0')}</span><b>${item}</b><i>↗</i></a></li>`).join('')}</ol>
-  </div>
-</section>
-
-<section class="ed-life" id="tai-chinh">
-  <div class="wrap ed-life__head">
-    <p class="eyebrow eyebrow--rule">Personal financial management</p>
-    <h2>Every goal in life needs a plan</h2>
-  </div>
-  <div class="wrap ed-life__grid">
-    <a href="#" class="ed-goal ed-goal--large"><img src="${IMG}investor.jpg" alt="Financial planning for your family" loading="lazy"><span><small>Long-term plan</small><b>Building financial foundations for your family</b><i>→</i></span></a>
-    <a href="#" class="ed-goal"><img src="${IMG}about/unsplash_DoWZMPZ-M9s.png" alt="Preparing financially for your children" loading="lazy"><span><small>Life goals</small><b>Preparing your children for the road ahead</b><i>→</i></span></a>
-    <a href="#" class="ed-goal"><img src="${IMG}hcm-heritage.jpg" alt="Retirement planning" loading="lazy"><span><small>Financial freedom</small><b>Taking charge of your retirement years</b><i>→</i></span></a>
-    <a href="#" class="ed-goal"><img src="${IMG}hcmc-twilight.webp" alt="Preserving financial prosperity" loading="lazy"><span><small>Wealth management</small><b>Preserving your financial prosperity</b><i>→</i></span></a>
+<!-- Feedback 24/09: gộp 4 khối cũ (mở đầu, 3 chủ đề, "Every goal in life",
+     "Open-ended funds A to Z") thành MỘT khối Learning có 3 tab. Mỗi tab dựng
+     giống mục News ở trang chủ: 1 bài lớn có ảnh bên trái, các bài nhỏ chỉ
+     có tiêu đề bên phải. "See all articles" mở trang thư viện đánh số trang. -->
+<section class="ed-learn" id="kien-thuc">
+  <div class="wrap">
+    <div class="shead">
+      <div><p class="eyebrow eyebrow--rule">${LEARN.label}</p><h2>${LEARN.title}</h2></div>
+      <p>${LEARN.intro}</p>
+    </div>
+    <div data-tabs>
+      <div class="ed-learn__bar">
+        <div class="tabs" role="tablist">
+          ${LEARN.tabs.map((t, i) => `<button role="tab" data-tab="${t.key}" class="${i === 0 ? 'is-on' : ''}" aria-selected="${i === 0}">${t.name}</button>`).join('')}
+        </div>
+        <a class="tlink ed-learn__all" href="education-library.html">${LEARN.more} <i>→</i></a>
+      </div>
+      ${LEARN.tabs.map((t, i) => `<div data-tab-panel="${t.key}"${i === 0 ? '' : ' hidden'}>
+        <div class="news__grid ed-learn__grid">
+          <a class="news__lead" href="${t.lead.href}" target="_blank" rel="noopener">
+            <div class="media ed-learn__media"><img src="${IMG}${t.lead.img}" alt="" loading="lazy"></div>
+            <time>${t.name}</time>
+            <h3>${t.lead.title}</h3>
+            <p class="ed-learn__desc">${t.lead.desc}</p>
+            <span class="tlink">Read the article <i>→</i></span>
+          </a>
+          <div class="news__list">
+            ${t.items.map((a) => `<a class="news__row ed-learn__row" href="${a[1]}" target="_blank" rel="noopener"><p>${a[0]}</p><span>→</span></a>`).join('')}
+            <a class="ed-learn__more" href="education-library.html?level=${t.key}">View more ${t.name.toLowerCase()} articles <i>→</i></a>
+          </div>
+        </div>
+      </div>`).join('')}
+    </div>
   </div>
 </section>
 
 <section class="ed-video" id="video">
   <div class="wrap ed-video__head"><div><p class="eyebrow eyebrow--rule">Investment video series</p><h2>Financial Prosperity</h2></div><p>Financial stories told visually and simply — each episode a small step towards understanding money better.</p></div>
-  <div class="wrap ed-video__grid">
-    <a href="https://www.youtube.com/watch?v=7usMn_n0atI" target="_blank" rel="noopener"><span class="ed-video__thumb"><img src="${EDU_IMG}video-01.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 01</small><b>Starting your investment journey the right way</b></a>
-    <a href="https://www.youtube.com/watch?v=6f_mRe9nnwo" target="_blank" rel="noopener"><span class="ed-video__thumb"><img src="${EDU_IMG}video-02.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 02</small><b>Understanding your goals and risk appetite</b></a>
-    <a href="https://www.youtube.com/watch?v=q2_Rb7r7shg" target="_blank" rel="noopener"><span class="ed-video__thumb"><img src="${EDU_IMG}video-03.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 03</small><b>Building lasting financial habits</b></a>
+  <!-- Feedback 24/09: video làm dạng dọc (9:16). Ảnh bìa hiện có là ảnh ngang
+       của YouTube (chữ in sẵn trong ảnh) nên không cắt — đặt nguyên ảnh giữa
+       khung dọc, nền là chính ảnh đó làm mờ. Khi khách có ảnh bìa dọc thì bỏ
+       lớp .ed-video__fill và cho ảnh phủ kín khung. -->
+  <div class="wrap ed-video__grid ed-video__grid--v">
+    <a href="https://www.youtube.com/watch?v=7usMn_n0atI" target="_blank" rel="noopener"><span class="ed-video__thumb"><img class="ed-video__fill" src="${EDU_IMG}video-01.jpg" alt="" aria-hidden="true" loading="lazy"><img src="${EDU_IMG}video-01.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 01</small><b>Starting your investment journey the right way</b></a>
+    <a href="https://www.youtube.com/watch?v=6f_mRe9nnwo" target="_blank" rel="noopener"><span class="ed-video__thumb"><img class="ed-video__fill" src="${EDU_IMG}video-02.jpg" alt="" aria-hidden="true" loading="lazy"><img src="${EDU_IMG}video-02.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 02</small><b>Understanding your goals and risk appetite</b></a>
+    <a href="https://www.youtube.com/watch?v=q2_Rb7r7shg" target="_blank" rel="noopener"><span class="ed-video__thumb"><img class="ed-video__fill" src="${EDU_IMG}video-03.jpg" alt="" aria-hidden="true" loading="lazy"><img src="${EDU_IMG}video-03.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 03</small><b>Building lasting financial habits</b></a>
   </div>
 </section>
 

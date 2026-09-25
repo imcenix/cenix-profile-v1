@@ -31,3 +31,44 @@
 
 @media(max-width:1050px){.eg-intro__grid,.eg-head,.eg-partners__grid{grid-template-columns:1fr}.eg-intro__body{padding-top:22px}.eg-report-row{grid-template-columns:1fr 1fr}.eg-report__note{grid-column:span 2}.eg-policy,.eg-social{grid-template-columns:1fr}.eg-policy__media,.eg-social__media{min-height:430px}.eg-steps{grid-template-columns:repeat(2,1fr)}.eg-steps article:nth-child(2){border-right:0}.eg-steps article:nth-child(-n+2){border-bottom:1px solid var(--line)}.eg-impact-grid{grid-template-columns:1fr 1fr}.eg-impact:last-child{grid-column:span 2}.eg-carbon__grid{grid-template-columns:1fr}.eg-carbon__copy{margin:-34px 34px 0}.eg-partners__media{height:430px}}
 @media(max-width:700px){.phero{min-height:540px}.subnav__in{justify-content:flex-start}.eg-report-row{grid-template-columns:1fr}.eg-report{min-height:170px;border-right:0;border-bottom:1px solid var(--line)}.eg-report__note{grid-column:auto}.eg-policy__media,.eg-social__media{min-height:320px}.eg-steps{grid-template-columns:1fr}.eg-steps article,.eg-steps article:nth-child(2){min-height:220px;border-right:0;border-bottom:1px solid var(--line)}.eg-impact-grid{grid-template-columns:1fr}.eg-impact:last-child{grid-column:auto}.eg-impact__media{height:250px}.eg-carbon__media{min-height:320px}.eg-carbon__copy{margin:-24px 16px 0;padding:30px 24px}.eg-carbon__facts{grid-template-columns:1fr}.eg-partners__media{height:320px}.eg-circular__in{grid-template-columns:1fr}.eg-circular__in>img{width:180px}.eg-logos{align-items:flex-start;flex-direction:column}.eg-logos img{max-width:100%}}
+/* Feedback 24/09 — canh hàng trên (cùng cách với .shead ở style.css) */
+.eg-head{grid-template-rows:auto auto;row-gap:0;align-items:start}
+.eg-head>div:first-child{display:contents}
+.eg-head>div:first-child>.eyebrow{grid-column:1;grid-row:1}
+.eg-head>div:first-child>h2{grid-column:1;grid-row:2}
+.eg-head>p{grid-column:2;grid-row:2;margin-top:calc(14px - 0.02 * clamp(31px,3.7vw,54px))}
+.eg-intro__grid{grid-template-rows:auto auto;row-gap:0}
+.eg-intro__copy{display:contents}
+.eg-intro__copy>.eyebrow{grid-column:1;grid-row:1}
+.eg-intro__copy>h2{grid-column:1;grid-row:2}
+.eg-intro__body{grid-column:2;grid-row:2;padding-top:0;border-top:0;
+  margin-top:calc(15.5px + 0.177 * clamp(33px,4vw,58px) - 8.75px)}
+@media(max-width:1050px){
+  .eg-head>p,.eg-intro__body{grid-column:1;grid-row:3;margin-top:18px}
+}
+
+/* ---------- Feedback 24/09: gọn khoảng trắng, gộp Partners + Circular ---------- */
+.eg-intro,.eg-process,.eg-climate,.eg-carbon,.eg-partners{padding:var(--sect) 0}
+.eg-policy,.eg-social{min-height:0}
+.eg-policy__media,.eg-social__media{min-height:clamp(380px,34vw,480px)}
+.eg-policy__copy,.eg-social__copy{padding:clamp(40px,4.4vw,68px)}
+.eg-steps article{min-height:230px}
+.eg-process blockquote{margin-top:clamp(30px,3vw,42px)}
+.eg-carbon__media{min-height:clamp(340px,30vw,430px)}
+.eg-partners__grid{align-items:stretch}
+.eg-partners__copy{align-self:center}
+.eg-partners__media{height:auto;min-height:clamp(380px,34vw,480px)}
+.eg-partners .eg-circular{display:grid;grid-template-columns:96px 1fr;gap:22px;align-items:start;
+  margin-top:24px;padding:22px 0 0;background:none;border:0;border-top:1px solid var(--line)}
+.eg-partners .eg-circular>img{width:96px;height:auto;margin-top:4px}
+.eg-partners .eg-circular h3{margin:8px 0 6px;font-size:clamp(17px,1.4vw,19px);line-height:1.35;letter-spacing:-.02em}
+.eg-partners .eg-circular div>p:last-child{font-size:14px;line-height:1.65}
+@media(max-width:1050px){
+  .eg-partners__media{min-height:360px}
+}
+@media(max-width:700px){
+  .eg-policy__media,.eg-social__media,.eg-carbon__media,.eg-partners__media{min-height:300px}
+  .eg-steps article{min-height:0}
+  .eg-partners .eg-circular{grid-template-columns:72px 1fr;gap:16px}
+  .eg-partners .eg-circular>img{width:72px}
+}

@@ -37,9 +37,9 @@ const SOLUTIONS = {
   intro: 'As Vietnam’s leading multi-disciplinary asset manager, we offer local and international investors a range of opportunities to share in the country’s growth.',
   cta: 'Explore our solutions',
   items: [
-    { no: '01', tag: 'Global', title: 'Offshore Funds', desc: 'Connecting international capital with Vietnam’s most compelling opportunities through an experienced, locally grounded investment platform.' },
-    { no: '02', tag: 'Domestic', title: 'Onshore Funds', desc: 'A full ecosystem of open-ended funds and ETFs built around the objectives and risk appetites of Vietnamese investors.' },
-    { no: '03', tag: 'Alternatives', title: 'Alternative Investments', desc: 'Specialist strategies across technology, clean energy, infrastructure and real estate that create value over the long term.' }
+    { no: '01', tag: 'Global', href: 'solutions.html#ngoai-nuoc', title: 'Offshore Funds', desc: 'Connecting international capital with Vietnam’s most compelling opportunities through an experienced, locally grounded investment platform.' },
+    { no: '02', tag: 'Domestic', href: 'solutions.html#trong-nuoc', title: 'Onshore Funds', desc: 'A full ecosystem of open-ended funds and ETFs built around the objectives and risk appetites of Vietnamese investors.' },
+    { no: '03', tag: 'Alternatives', href: 'solutions.html#thay-the', title: 'Alternative Investments', desc: 'Specialist strategies across technology, clean energy, infrastructure and real estate that create value over the long term.' }
   ],
   more: 'Find out more'
 };
@@ -56,9 +56,9 @@ const ASSETS = {
     'Fixed Income',
     'Private Equity',
     'Venture Capital',
-    'Infrastructure &amp; Clean Energy',
+    'Infrastructure &amp; Energy',
     'Real Estate',
-    'Carbon Credit'
+    'Climate Impact'
   ]
 };
 
@@ -211,25 +211,32 @@ ${header('home')}
   </div>
   <div class="wrap sol__body">
     <div class="sol__grid" data-rv-group>
-      ${SOLUTIONS.items.map(s => `<article class="sol__card" data-rv="scale">
+      ${SOLUTIONS.items.map(s => `<a class="sol__card" href="${s.href}" data-rv="scale">
         <span><b>${s.no}</b>${s.tag}</span>
         <h3>${s.title}</h3>
         <p>${s.desc}</p>
-        <a class="tlink" href="solutions.html">${SOLUTIONS.more} <i>→</i></a>
-      </article>`).join('')}
+        <span class="tlink">${SOLUTIONS.more} <i>→</i></span>
+      </a>`).join('')}
     </div>
   </div>
 </section>
 
 <section class="assets" id="assets">
-  <div class="wrap">
-    <div class="assets__head">
+  <!-- Feedback 24/09: dải ảnh "One country. Every asset class." bên dưới lặp
+       lại đúng ý của tiêu đề này. Nay ảnh lên trên làm nền, cụm tiêu đề nằm
+       trên ảnh, bỏ hẳn dải ảnh riêng. Vẫn giữ hiệu ứng nền neo khi cuộn. -->
+  <div class="strip assets__hero" data-fixed>
+    <div class="strip__bg"><img src="${IMG}${STRIPS.city.img}" alt="${STRIPS.city.alt}" loading="lazy"></div>
+    <span class="strip__scrim" aria-hidden="true"></span>
+    <div class="wrap assets__head">
       <div>
         <p class="eyebrow eyebrow--rule" data-rv>${ASSETS.label}</p>
         <h2 data-rv style="--d:.08s">${ASSETS.title}</h2>
       </div>
       <p data-rv style="--d:.14s">${ASSETS.intro}</p>
     </div>
+  </div>
+  <div class="wrap assets__body">
     <div class="assets__grid" data-rv-group>
       ${ASSETS.items.map((a, i) => `<article data-rv="rise">
         <b>${String(i + 1).padStart(2, '0')}</b>
@@ -238,7 +245,6 @@ ${header('home')}
     </div>
   </div>
 </section>
-${strip('city')}
 
 <section class="news" id="news">
   <div class="wrap">
