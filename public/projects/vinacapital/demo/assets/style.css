@@ -881,3 +881,59 @@ p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
 .pills a:hover i{color:#fff}
 @media(prefers-reduced-motion:reduce){.cards--text .card:hover,.numgrid--link article:hover{transform:none}}
 .split>*{min-width:0}
+
+/* ---------- 25/09: Seven asset classes — 7 ô nằm trong ảnh, dạng kính trong ---------- */
+.assets{padding-bottom:0}
+.assets__hero{display:block;min-height:0}
+.assets__hero .strip__scrim{background:
+  linear-gradient(180deg,rgba(9,14,22,.2) 0%,rgba(9,14,22,0) 40%,rgba(9,14,22,.35) 100%),
+  linear-gradient(90deg,rgba(9,14,22,.74) 0%,rgba(9,14,22,.58) 55%,rgba(9,14,22,.62) 100%)}
+.assets__in{position:relative;z-index:2;padding:clamp(56px,5.8vw,92px) 0 clamp(60px,6vw,96px)}
+.assets__hero .assets__head{padding:0}
+.assets__hero .assets__body{margin-top:clamp(40px,4vw,64px)}
+.assets__hero .assets__grid{gap:clamp(10px,1vw,16px)}
+.assets__hero .assets__grid article{position:relative;overflow:hidden;min-height:clamp(150px,12vw,184px);
+  background:linear-gradient(155deg,rgba(255,255,255,.17) 0%,rgba(255,255,255,.06) 48%,rgba(255,255,255,.03) 100%);
+  border:1px solid rgba(255,255,255,.22);border-radius:14px;
+  -webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(255,255,255,.06),0 18px 40px rgba(4,8,14,.28);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s,background .45s}
+/* viền sáng: dải gradient chạy quanh mép, sáng ở góc trên-trái và dưới-phải */
+.assets__hero .assets__grid article::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.85) 0%,rgba(255,255,255,.12) 32%,rgba(255,255,255,.04) 62%,rgba(255,255,255,.55) 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+/* vệt phản chiếu mờ phía trên như mặt kính */
+.assets__hero .assets__grid article::after{content:'';position:absolute;left:-30%;top:-60%;width:160%;height:90%;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.14),rgba(255,255,255,0) 60%);transform:rotate(-8deg)}
+.assets__hero .assets__grid b{position:relative;color:#ff9c8c}
+.assets__hero .assets__grid h3{position:relative;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.assets__hero .assets__grid article:hover{transform:translateY(-6px);
+  background:linear-gradient(155deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.09) 48%,rgba(255,255,255,.05) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.1),0 24px 50px rgba(4,8,14,.36),0 0 0 1px rgba(255,255,255,.12)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .assets__hero .assets__grid article{background:rgba(20,28,40,.55)}
+}
+@media(max-width:1080px){.assets__hero .assets__grid article{min-height:130px}}
+@media(max-width:680px){.assets__hero .assets__grid article{min-height:112px;border-radius:12px}}
+@media(prefers-reduced-motion:reduce){.assets__hero .assets__grid article:hover{transform:none}}
+.assets__hero .assets__grid article{min-height:clamp(132px,10.6vw,166px);padding-left:clamp(13px,1.15vw,18px);padding-right:clamp(10px,.9vw,14px)}
+.assets__hero .assets__grid h3{font-size:clamp(13.5px,1.04vw,15px);letter-spacing:-.015em}
+@media(max-width:1180px){.assets__hero .assets__grid h3{font-size:16px}.assets__hero .assets__grid article{min-height:118px;padding-left:18px}}
+@media(max-width:900px){.assets__hero .assets__grid h3{font-size:15px}}
+@media(max-width:680px){.assets__hero .assets__grid h3{font-size:14.5px}.assets__hero .assets__grid article{min-height:100px;padding-left:14px}}
+/* 25/09 (lần 2): kính trong hơn, bỏ vệt chéo, ô gọn theo nội dung — theo mẫu liquid glass anh gửi */
+.assets__hero .assets__grid article{min-height:0;gap:10px;border-radius:18px;
+  padding:clamp(16px,1.4vw,20px) clamp(10px,.9vw,14px) clamp(18px,1.5vw,22px) clamp(14px,1.2vw,18px);
+  background:linear-gradient(180deg,rgba(255,255,255,.11) 0%,rgba(255,255,255,.04) 100%);
+  border:1px solid rgba(255,255,255,.16);
+  -webkit-backdrop-filter:blur(12px) saturate(160%);backdrop-filter:blur(12px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),inset 0 0 24px rgba(255,255,255,.035),0 10px 28px rgba(4,8,14,.18)}
+.assets__hero .assets__grid article::after{content:none}
+.assets__hero .assets__grid article::before{
+  background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.16) 38%,rgba(255,255,255,.07) 70%,rgba(255,255,255,.26) 100%)}
+.assets__hero .assets__grid article:hover{transform:translateY(-4px);
+  background:linear-gradient(180deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,.06) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 28px rgba(255,255,255,.06),0 16px 36px rgba(4,8,14,.26)}
+@media(max-width:1180px){.assets__hero .assets__grid article{min-height:0;padding-left:18px}}
+@media(max-width:680px){.assets__hero .assets__grid article{min-height:0;padding:16px 12px 18px 14px;border-radius:16px}}

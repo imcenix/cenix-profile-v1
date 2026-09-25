@@ -225,23 +225,26 @@ ${header('home')}
   <!-- Feedback 24/09: dải ảnh "One country. Every asset class." bên dưới lặp
        lại đúng ý của tiêu đề này. Nay ảnh lên trên làm nền, cụm tiêu đề nằm
        trên ảnh, bỏ hẳn dải ảnh riêng. Vẫn giữ hiệu ứng nền neo khi cuộn. -->
+  <!-- 25/09: đưa 7 ô vào luôn trong khối ảnh, ô dạng kính trong (liquid glass). -->
   <div class="strip assets__hero" data-fixed>
     <div class="strip__bg"><img src="${IMG}${STRIPS.city.img}" alt="${STRIPS.city.alt}" loading="lazy"></div>
     <span class="strip__scrim" aria-hidden="true"></span>
-    <div class="wrap assets__head">
-      <div>
-        <p class="eyebrow eyebrow--rule" data-rv>${ASSETS.label}</p>
-        <h2 data-rv style="--d:.08s">${ASSETS.title}</h2>
+    <div class="assets__in">
+      <div class="wrap assets__head">
+        <div>
+          <p class="eyebrow eyebrow--rule" data-rv>${ASSETS.label}</p>
+          <h2 data-rv style="--d:.08s">${ASSETS.title}</h2>
+        </div>
+        <p data-rv style="--d:.14s">${ASSETS.intro}</p>
       </div>
-      <p data-rv style="--d:.14s">${ASSETS.intro}</p>
-    </div>
-  </div>
-  <div class="wrap assets__body">
-    <div class="assets__grid" data-rv-group>
-      ${ASSETS.items.map((a, i) => `<article data-rv="rise">
-        <b>${String(i + 1).padStart(2, '0')}</b>
-        <h3>${a}</h3>
-      </article>`).join('')}
+      <div class="wrap assets__body">
+        <div class="assets__grid" data-rv-group>
+          ${ASSETS.items.map((a, i) => `<article data-rv="rise">
+            <b>${String(i + 1).padStart(2, '0')}</b>
+            <h3>${a}</h3>
+          </article>`).join('')}
+        </div>
+      </div>
     </div>
   </div>
 </section>
