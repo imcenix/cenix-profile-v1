@@ -1094,5 +1094,33 @@
   {
     "path": "assets/news/gallup-dung-ai-hang-ngay-van-lo/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2016/02/worried.jpg?resize=1200,900"
+  },
+  {
+    "path": "assets/news/australia-dieu-tra-openai-hack-y-te/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/albanese-2296078640.jpg?resize=1200,774"
+  },
+  {
+    "path": "assets/news/oracle-force-majeure-stargate-new-mexico/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/06/GettyImages-528022874.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/google-gemini-goi-dien-ho-nguoi-dung/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Pixel-HiLight.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/lovable-doanh-thu-600-trieu-vibe-coding/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Fabin-Hedin-Lovable.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/google-photos-tu-quan-ao-ai/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/04/clueless-closet.webp?w=1200"
+  },
+  {
+    "path": "assets/news/meta-muse-charm-mon-do-choi-cong-nghe/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/mark-zuckerberg-muse-charm-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/prismml-mo-hinh-ai-tren-kinh-thong-minh/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/PrismML-Snapdragon-smartglasses.png?w=612"
   }
 ]
