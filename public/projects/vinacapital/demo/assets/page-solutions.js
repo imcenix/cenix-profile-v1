@@ -85,12 +85,15 @@ const ALT = {
   ]
 };
 
+/* Quỹ đã có trang chi tiết (demo: VESAF). Quỹ khác thêm vào đây khi có trang. */
+const PAGE = { 'VINACAPITAL-VESAF': 'fund-vesaf.html' };
+
 const fundRows = list => `
 <div class="funds">
   ${list.map(f => `<article class="fund">
-    <div class="fund__id"><b>${f[0]}</b><span>${f[1]}</span></div>
+    <div class="fund__id"><b>${PAGE[f[0]] ? `<a href="${PAGE[f[0]]}">${f[0]}</a>` : f[0]}</b><span>${f[1]}</span></div>
     <p>${f[2]}</p>
-    <div class="fund__do">${DO3.map(d => `<a href="#">${d} →</a>`).join('')}</div>
+    <div class="fund__do">${DO3.map((d, i) => `<a href="${PAGE[f[0]] ? PAGE[f[0]] + ['#performance', '#how-to-invest', ''][i] : '#'}">${d} →</a>`).join('')}</div>
   </article>`).join('')}
 </div>`;
 

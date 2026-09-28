@@ -937,3 +937,4 @@ p,li,.prose p,.shead p,.card p,.numgrid p,.fund p{text-wrap:pretty}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 28px rgba(255,255,255,.06),0 16px 36px rgba(4,8,14,.26)}
 @media(max-width:1180px){.assets__hero .assets__grid article{min-height:0;padding-left:18px}}
 @media(max-width:680px){.assets__hero .assets__grid article{min-height:0;padding:16px 12px 18px 14px;border-radius:16px}}
+.fund__id b a{color:inherit;text-decoration:none;transition:color .2s}.fund__id b a:hover{color:var(--red)}

@@ -1,0 +1,213 @@
+/* ==========================================================================
+   TRANG CHI TIẾT QUỸ (fund-<mã>.html) — tiền tố .fd-
+   Token màu, chữ, .wrap, .btn, .tlink, .eyebrow dùng chung từ style.css.
+   ========================================================================== */
+
+/* ---------- Hero: tên quỹ là tiêu đề chính ---------- */
+.page-solutions .phero h1{max-width:24ch;font-size:clamp(30px,3.5vw,52px);line-height:1.08}
+.fd-code{display:inline-block;margin-top:.12em;color:rgba(255,255,255,.86)}
+.crumb span>i{margin:0 10px}
+
+/* ---------- Thanh mục ---------- */
+.fd-nav__in{display:flex;align-items:center;gap:20px}
+.fd-nav__in .subnav__in{flex:1;min-width:0}
+.subnav .fd-nav__cta{flex:none;padding:10px 18px;background:var(--red);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-decoration:none;transition:.2s}
+.subnav .fd-nav__cta:hover{color:#fff;background:var(--red-deep)}
+.subnav .fd-nav__cta::after{display:none}
+
+/* ---------- Tiêu đề section dùng chung ---------- */
+.fd-list__head{margin-bottom:clamp(24px,2.6vw,36px)}
+.fd-list__head h2,.fd-perf__head h2{margin-top:12px;color:var(--ink);font-size:clamp(26px,2.8vw,40px);font-weight:700;line-height:1.14;letter-spacing:-.035em;text-transform:uppercase}
+.fd-sub{margin:0 0 16px;color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.fd-note{margin-top:14px;color:#8b929c;font-size:13.5px;line-height:1.65}
+.is-neg{color:var(--red)!important}
+
+/* ---------- 1. Giới thiệu (trái) + bảng so sánh (phải) ---------- */
+.fd-intro__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,88px);align-items:start}
+.fd-intro__lead{margin-top:18px;color:var(--ink);font-size:clamp(18px,1.6vw,22px);font-weight:500;line-height:1.6;letter-spacing:-.01em}
+.fd-intro__cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:clamp(24px,2.4vw,32px)}
+.fd-ret__row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.fd-ret__row>span:first-child{color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+.fd-ret__row>span:first-child em{font-style:normal;color:var(--red)}
+.fd-ret__row small{display:block;color:#8b929c;letter-spacing:.1em}
+.fd-ret__head{padding-top:0;border-bottom-color:var(--ink)}
+.fd-ret__head>span{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.fd-ret__head i{width:10px;height:10px;border-radius:2px}
+.fd-ret__row b{color:var(--ink);font-size:clamp(20px,1.8vw,25px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fd-ret__size em{font-style:normal;font-size:.62em;font-weight:600;letter-spacing:-.01em}
+.fd-intro .fd-note{margin-top:12px;font-size:12.5px}
+
+/* ---------- 2. Biểu đồ NAV ---------- */
+.fd-perf__head{display:grid;grid-template-columns:1fr .8fr;gap:clamp(24px,4vw,72px);align-items:end;margin-bottom:clamp(22px,2.4vw,32px)}
+.fd-perf__head p{color:#6b7280;font-size:15px;line-height:1.7}
+.fd-chart{padding:clamp(16px,2vw,28px);background:#fff;border:1px solid var(--line)}
+.fd-chart__top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-bottom:14px}
+.fd-range{display:flex;flex-wrap:wrap;border:1px solid var(--line)}
+.fd-range button{padding:8px 13px;border-right:1px solid var(--line);color:#6b7280;font-size:12px;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:.2s}
+.fd-range button:last-child{border-right:0}
+.fd-range button:hover{color:var(--ink)}
+.fd-range button.is-on{background:var(--ink);color:#fff}
+.fd-read{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;color:#6b7280;font-size:13.5px;font-variant-numeric:tabular-nums}
+.fd-read span{display:inline-flex;align-items:center;gap:7px}
+.fd-read i{width:10px;height:10px;border-radius:2px}
+.fd-read b{margin-left:4px;color:var(--ink)}
+.fd-read__d{color:var(--ink);font-weight:700}
+.fd-plot{position:relative;width:100%}
+.fd-plot svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.fd-grid{stroke:#ecebe7;stroke-width:1}
+.fd-grid--v{stroke:#f2f1ee}
+.fd-ax{stroke:#b9bcc2;stroke-width:1}
+.fd-tick{fill:#8b929c;font-size:11.5px;font-family:inherit;font-variant-numeric:tabular-nums}
+.fd-hit{fill:transparent;cursor:crosshair}
+.fd-grp:hover .fd-hit{fill:rgba(51,59,82,.05)}
+.fd-cross{stroke:#9aa1ab;stroke-width:1;stroke-dasharray:3 3}
+.fd-brush{margin-top:10px}
+.fd-brush__svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
+.fd-brush__area{fill:#dfe1e7;stroke:#aeb3bf;stroke-width:1}
+.fd-brush__shade{fill:rgba(245,244,241,.72)}
+.fd-brush__win{fill:transparent;stroke:var(--ink);stroke-width:1;cursor:grab}
+.fd-brush__h{fill:#fff;stroke:var(--ink);stroke-width:1.2;cursor:ew-resize}
+.fd-tip{position:absolute;z-index:60;transform:translate(-50%,-100%);min-width:180px;padding:11px 14px;background:#fff;
+  border:1px solid var(--line);box-shadow:0 12px 30px rgba(22,46,56,.16);pointer-events:none;font-size:13px}
+.fd-tip b{display:block;margin-bottom:6px;color:var(--ink);font-size:12px;letter-spacing:.06em}
+.fd-tip span{display:flex;align-items:center;gap:8px;margin-top:4px;color:#5d6470}
+.fd-tip span i{width:9px;height:9px;border-radius:2px}
+.fd-tip strong{margin-left:auto;padding-left:14px;color:var(--ink);font-variant-numeric:tabular-nums}
+
+.fd-annual{margin-top:clamp(22px,2.4vw,32px);overflow-x:auto;background:#fff;border:1px solid var(--line)}
+.fd-annual table{width:100%;min-width:900px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.fd-annual th,.fd-annual td{padding:15px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:15px;white-space:nowrap;vertical-align:top}
+.fd-annual thead th{color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.12em}
+.fd-annual thead small{color:#8b929c;font-size:10px;letter-spacing:.06em;font-weight:600}
+.fd-annual th[scope=row]{position:sticky;left:0;background:#fff;color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.12em}
+.fd-annual tbody tr:last-child>*{border-bottom:0}
+.fd-annual td{color:var(--ink)}
+
+.fd-perf .fd-sub{margin-top:clamp(30px,3vw,44px);color:var(--red)}
+.fd-navbox{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line)}
+.fd-navbox div{border-right:1px solid var(--line);text-align:center}
+.fd-navbox div:last-child{border-right:0}
+.fd-navbox span{display:block;padding:18px 14px;border-bottom:1px solid var(--line);color:var(--ink);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.fd-navbox b{display:block;padding:22px 14px;color:var(--ink);font-size:clamp(24px,2.3vw,32px);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+
+/* ---------- Danh sách tài liệu ---------- */
+.fd-list__grid{display:grid;grid-template-columns:.42fr 1fr;gap:clamp(24px,4vw,72px);align-items:start}
+.fd-docs{list-style:none;padding:0;margin:0;border-top:1px solid var(--ink)}
+.fd-docs a{display:grid;grid-template-columns:40px minmax(0,1fr) auto 24px;align-items:center;gap:16px;padding:15px 4px;
+  border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .2s}
+.fd-docs a:hover{background:rgba(51,59,82,.03)}
+.fd-docs__ic{display:grid;place-items:center;height:28px;border:1px solid var(--line);color:var(--red);font-size:9.5px;font-weight:700;letter-spacing:.08em;background:#fff}
+.fd-docs__t{color:var(--ink);font-size:15px;font-weight:600;line-height:1.45}
+.fd-docs__t em{display:inline-block;margin-left:8px;padding:2px 7px;background:var(--red);color:#fff;font-size:9.5px;font-style:normal;font-weight:700;letter-spacing:.12em;text-transform:uppercase;vertical-align:2px}
+.fd-docs time{color:#8b929c;font-size:13px;font-variant-numeric:tabular-nums}
+.fd-docs__dl{color:#b3b8c0;font-size:16px;text-align:center;transition:.2s}
+.fd-docs a:hover .fd-docs__dl,.fd-docs a:hover .fd-docs__t{color:var(--red)}
+.fd-more{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:12px 20px;border:1px solid var(--red);color:var(--red);
+  font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.2s;background:transparent}
+.fd-more i{font-style:normal;font-size:15px;font-weight:400}
+.fd-more:hover{background:var(--red);color:#fff}
+.fd-docgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3.4vw,56px)}
+
+/* ---------- Ban đầu tư (giữ thiết kế thẻ ngang, ảnh tròn nhỏ) ---------- */
+.fd-team__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,20px)}
+.fd-team article{display:flex;align-items:center;gap:18px;padding:20px;border:1px solid var(--line);background:#fff}
+.fd-team img{flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 20%}
+.fd-team h3{color:var(--ink);font-size:16.5px;font-weight:700}
+.fd-team p{margin-top:5px;color:#6b7280;font-size:13.5px;line-height:1.55}
+
+/* ---------- Dải trích dẫn, nền neo theo màn hình ---------- */
+.fd-quote{position:relative;display:grid;align-items:center;min-height:clamp(340px,34vw,480px);overflow:hidden;background:var(--ink-deep)}
+.fd-quote__bg{position:absolute;inset:0}
+.fd-quote__bg img{width:100%;height:100%;object-fit:cover}
+.fd-motion .fd-quote__bg{top:0;bottom:auto;height:calc(100vh + 200px);
+  transform:translate3d(0,calc((var(--fx,0) - 100) * 1px),0);will-change:transform}
+.fd-quote__scrim{position:absolute;inset:0;background:linear-gradient(rgba(12,14,30,.62),rgba(12,14,30,.5) 50%,rgba(12,14,30,.66))}
+.fd-quote__in{position:relative;z-index:2;padding:clamp(56px,6vw,96px) 0}
+.fd-quote p{max-width:40ch;margin:0 auto;color:#fff;font-size:clamp(20px,2.1vw,30px);font-weight:600;line-height:1.45;letter-spacing:-.02em;text-align:center;text-wrap:balance;text-shadow:0 2px 18px rgba(6,10,16,.45)}
+@media(max-width:1080px){.fd-motion .fd-quote__bg{position:absolute;inset:0;height:auto;transform:none}}
+
+/* ---------- Lợi ích ---------- */
+.fd-why__grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.2vw,18px)}
+.fd-why__grid li{padding:clamp(20px,1.9vw,26px);border:1px solid var(--line);background:#fff}
+.fd-why__grid img{display:block;width:32px;height:32px}
+.fd-why__grid p{margin-top:16px;color:#4c5361;font-size:14.5px;line-height:1.65}
+
+/* ---------- Thông tin quỹ ---------- */
+.fd-info__list{margin:0;border-top:1px solid var(--ink);background:#fff}
+.fd-info__list div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:clamp(16px,3vw,48px);padding:18px clamp(14px,1.6vw,24px);border-bottom:1px solid var(--line)}
+.fd-info__list dt{color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.6}
+.fd-info__list dd{margin:0;color:#3f4757;font-size:15.5px;line-height:1.65}
+.fd-info__list ul{list-style:none;padding:0;margin:0}
+.fd-info__list li+li{margin-top:4px}
+
+/* ---------- Hướng dẫn đầu tư ---------- */
+.fd-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.4vw,20px)}
+.fd-steps li{display:flex;flex-direction:column;padding:clamp(22px,2vw,28px);border:1px solid var(--line)}
+.fd-steps span{color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.14em}
+.fd-steps h3{margin-top:16px;color:var(--ink);font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.015em}
+.fd-steps p{margin-top:8px;color:#5d6470;font-size:14.5px;line-height:1.65}
+.fd-steps .tlink{margin-top:auto;padding-top:18px}
+
+/* ---------- Công cụ hoạch định ngân sách ---------- */
+.fd-calc__intro{margin-top:-10px;color:#5d6470;font-size:16px;line-height:1.7}
+.fd-calc__form{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 12px;margin-top:22px;padding:clamp(22px,2.4vw,32px);background:#fff;border:1px solid var(--line);
+  color:var(--ink);font-size:clamp(18px,1.7vw,23px);font-weight:600;letter-spacing:-.015em}
+.fd-calc__in{display:inline-flex;align-items:baseline;gap:8px}
+.fd-calc__in input{width:3.2em;padding:2px 4px;border:0;border-bottom:2px solid var(--red);background:none;color:var(--red);font:inherit;text-align:center;outline:none;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.fd-calc__in input::-webkit-outer-spin-button,.fd-calc__in input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.fd-calc__in input:focus{background:rgba(203,43,26,.06)}
+.fd-calc__in em{font-style:normal}
+.fd-calc__form .btn{flex-basis:100%;margin-top:12px;font-size:12px}
+.fd-calc__out{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px);margin-top:clamp(14px,1.6vw,22px)}
+.fd-calc__panel{padding:clamp(22px,2.4vw,34px);background:#fff;border:1px solid var(--line)}
+.fd-calc__msg{margin:-4px 0 18px;color:#8b929c;font-size:clamp(18px,1.6vw,22px);font-weight:600;line-height:1.45;letter-spacing:-.015em}
+.fd-calc__msg b{color:var(--ink)}
+.fd-calc__tw{overflow-x:auto}
+.fd-calc__table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.fd-calc__table th{padding:0 8px 14px;border-bottom:1px solid var(--line);color:#8b929c;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:right;line-height:1.5}
+.fd-calc__table td{padding:14px 8px;border-bottom:1px solid var(--line);color:var(--ink);font-size:15px;text-align:right}
+.fd-calc__table th:first-child,.fd-calc__table td:first-child{text-align:left}
+
+/* ---------- Đại lý phân phối ---------- */
+.fd-dist{background:#F2F1ED}
+.fd-dist__t{color:var(--red);font-size:clamp(18px,2vw,28px);font-weight:700;letter-spacing:-.01em;text-align:center;text-transform:uppercase}
+.fd-dist__img{margin-top:clamp(24px,2.6vw,40px);overflow-x:auto}
+.fd-dist__img img{display:block;width:100%;max-width:1180px;min-width:760px;height:auto;margin:0 auto}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1180px){
+  .fd-why__grid{grid-template-columns:repeat(3,1fr)}
+  .fd-steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:980px){
+  .fd-perf__head,.fd-list__grid,.fd-docgrid,.fd-calc__out,.fd-intro__grid{grid-template-columns:1fr}
+  .subnav .fd-nav__cta{display:none}
+}
+@media(max-width:680px){
+  .fd-ret__row{grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr) minmax(0,.8fr);gap:10px}
+  .fd-ret__row>span:first-child{font-size:10.5px}
+  .fd-ret__head>span{font-size:10.5px;letter-spacing:.1em}
+  .fd-ret__row b{font-size:19px}
+  .fd-navbox{grid-template-columns:1fr}
+  .fd-navbox div{border-right:0;border-bottom:1px solid var(--line)}
+  .fd-navbox div:last-child{border-bottom:0}
+  .fd-team__grid{grid-template-columns:1fr}
+  .fd-why__grid,.fd-steps{grid-template-columns:1fr}
+  .fd-info__list div{grid-template-columns:1fr;gap:6px}
+  .fd-docs a{grid-template-columns:36px minmax(0,1fr);gap:8px 12px}
+  .fd-docs time{grid-column:2}
+  .fd-docs__dl{display:none}
+  .fd-calc__form{font-size:17px}
+}
+.fd-tip--side{transform:none}
+.fd-ret__row b{white-space:nowrap}
+@media(max-width:680px){
+  .fd-intro__lead{font-size:17px}
+  .fd-quote p{font-size:19px}
+}
+.fd-calc__out>*,.fd-docgrid>*,.fd-list__grid>*,.fd-perf__head>*{min-width:0}
+.page-solutions section[id]{scroll-margin-top:64px}
+
+@media(max-width:1180px){.fd-team__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.fd-team__grid{grid-template-columns:1fr}}
+.fd-intro__grid>*{min-width:0}
