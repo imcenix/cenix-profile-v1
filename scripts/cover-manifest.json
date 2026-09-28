@@ -1122,5 +1122,41 @@
   {
     "path": "assets/news/prismml-mo-hinh-ai-tren-kinh-thong-minh/cover.png",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/PrismML-Snapdragon-smartglasses.png?w=612"
+  },
+  {
+    "path": "assets/news/anthropic-11-6-ty-akamai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/11/GettyImages-1333934328.jpg?resize=1200,703"
+  },
+  {
+    "path": "assets/news/amodei-an-toi-cung-trump/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261854833.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/amodei-len-song-hai-snl/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/saturday-night-live.jpg?resize=1200,603"
+  },
+  {
+    "path": "assets/news/google-gemini-mua-sam-flipkart-an-do/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/01/GettyImages-1235830811-1.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/ai-lam-tang-942-trieu-chi-phi-benh-vien/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/11/GettyImages-1214954967.jpg"
+  },
+  {
+    "path": "assets/news/openai-lo-53-anh-nguoi-dung/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/anthropic-dong-sang-lap-giu-quyen-bieu-quyet-ipo/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg"
+  },
+  {
+    "path": "assets/news/tiktok-100-trieu-dan-xep-alabama/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/tiktok-icon-badged-GettyImages-2246518404.jpg"
+  },
+  {
+    "path": "assets/news/synthesia-avatar-ai-noi-chuyen-thay-minh/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Digital-dom.png?resize=1200,667"
   }
 ]
