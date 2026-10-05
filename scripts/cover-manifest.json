@@ -1178,5 +1178,117 @@
   {
     "path": "assets/news/automattic-hoi-dong-moi-tac-gia-silo/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/Matt-Mullenweg.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/google-dong-bang-bug-bounty-ma-nguon-mo-ai-spam/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/07/ai-slop-bug-bounty-reports-1646637201.jpg?resize=1200,863"
+  },
+  {
+    "path": "assets/news/openai-nguoi-lam-an-toan-tu-chuc-van-hoa-hong/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/amazon-bo-nda-chinh-phu-trung-tam-du-lieu/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2283113936-maller.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/apple-siet-full-disk-access-macos-vi-ai-agent/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/07/CMC_1580.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/meta-muse-gadgets-mo-nguon-phan-cung-cho-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/mark-zuckerberg-muse-charm-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/tham-phan-lien-bang-flock-giam-sat-dai-tra/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/flock-camera-pole.jpg"
+  },
+  {
+    "path": "assets/news/bitchat-bi-go-khoi-app-store-an-do/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/bitchat-unavailable-india-techcrunch.jpg"
+  },
+  {
+    "path": "assets/news/sean-parker-dung-lai-stability-ai-quanh-am-nhac/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Sean-Parker.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/duo-man-app-walkman-cho-iphone-duo/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/duo-man2.jpg?resize=1200,768"
+  },
+  {
+    "path": "assets/news/elevenlabs-v4-90-ngon-ngu-clone-giong-10-giay/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/01/ElevenLabs-feat.jpg?resize=1200,669"
+  },
+  {
+    "path": "assets/news/instinct-goi-1-ty-do-dinh-gia-10-ty-mot-thang/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/ai-agents-GettyImages-2229880232.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/starship-lan-dau-dat-toc-do-quy-dao-26-starlink-v3/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/starship-41-launch.jpg?resize=1200,760"
+  },
+  {
+    "path": "assets/news/amd-mua-world-labs-8-2-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/10/GettyImages-1833911955.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/openai-dots-tro-ly-agent-hinh-cham-tron/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Screenshot-2026-09-29-at-1.16.22-PM.jpg?w=988"
+  },
+  {
+    "path": "assets/news/meta-enterprise-platform-cj-desai-mongodb/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/Meta-image.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/nvidia-open-agent-safety-platform/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-sonnet-5-5-nhanh-hon-30-phan-tram/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-Anthropic-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/openai-pages-space-slides-de-che-microsoft/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/OpenAI.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/google-khai-tu-gems-gemini-chuyen-sang-skills/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/gemini-app-GettyImages-2276204472-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/openai-gpt-6-1-sol-re-hon-gan-bang-astra/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/openai-chia-tay-3-nha-nghien-cuu-an-toan/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/airbnb-chesky-agent-ai-can-he-dieu-hanh-rieng/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/Brian-Chesky-Environmental-Headshot-3.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/chatgpt-thu-do-ao-mua-sam-bang-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Virtual-Try-On.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/google-dua-tpu-dau-tien-len-quy-dao/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/DSC_0298.jpg"
+  },
+  {
+    "path": "assets/news/shopify-canvas-dung-web-ban-hang-bang-chat/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/canvas-shopify.webp?resize=1200,517"
+  },
+  {
+    "path": "assets/news/gemini-4-argon-model-manh-nhat-cua-google/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/gemini-app-GettyImages-2276204472-1.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/elevenlabs-dinh-gia-22-ty-usd/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/01/ElevenLabs-feat.jpg?resize=1200,669"
+  },
+  {
+    "path": "assets/news/reddit-khai-tu-rss-dong-api-cong-khai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/06/reddit-glitch-1.jpg?resize=1200,675"
   }
 ]
