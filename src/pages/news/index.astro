@@ -18,16 +18,12 @@ const CATS = [
 const items = (await getCollection('news')).filter((p) => !p.id.startsWith('_template'));
 items.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
-const readMinutes = (body?: string) =>
-  Math.max(1, Math.round((body ?? '').trim().split(/\s+/).filter(Boolean).length / 200));
-
 const cards = items.map((post) => {
   const folder = post.id.split('/')[0];
   return {
     ...post.data,
     coverUrl: post.data.cover ? `/news/${folder}/${post.data.cover}` : '',
     detailUrl: `/news/${post.data.slug}/`,
-    minutes: readMinutes(post.body),
   };
 });
 
@@ -84,7 +80,7 @@ const formatDate = (iso: string) => {
                 <div class="news-feature-body">
                   <div class="news-feature-tags">
                     <span class="news-badge">Nổi bật</span>
-                    <span class="news-meta">{LABEL[featured.category]} · {formatDate(featured.date)} · {featured.minutes} phút đọc</span>
+                    <span class="news-meta">{LABEL[featured.category]} · {formatDate(featured.date)}</span>
                   </div>
                   <h2 class="news-feature-title">{featured.title}</h2>
                   {featured.excerpt && <p class="news-feature-dek">{featured.excerpt}</p>}
@@ -102,7 +98,7 @@ const formatDate = (iso: string) => {
                       : <div class="news-ph" aria-hidden="true"><span>{LABEL[card.category]}</span></div>}
                   </div>
                   <div class="news-row-body">
-                    <span class="news-meta">{LABEL[card.category]} · {formatDate(card.date)} · {card.minutes} phút</span>
+                    <span class="news-meta">{LABEL[card.category]} · {formatDate(card.date)}</span>
                     <h3 class="news-row-title">{card.title}</h3>
                     {card.excerpt && <p class="news-row-dek">{card.excerpt}</p>}
                   </div>
