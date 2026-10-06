@@ -1306,5 +1306,37 @@
   {
     "path": "assets/news/agent-ai-song-trong-tin-nhan-imessage/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2017/12/gettyimages-673436934.jpg?resize=1200,813"
+  },
+  {
+    "path": "assets/news/openai-watermark-chatgpt-eu-textgrain/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/reflection-beam-open-weight-doi-dau-model-trung-quoc/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Reflection-AI-Beam.png"
+  },
+  {
+    "path": "assets/news/ghost-core-may-tinh-3499-do-chay-ai-ca-nhan/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Ghost-team.png"
+  },
+  {
+    "path": "assets/news/dan-mach-ro-ri-8-trieu-ho-so-cong-dan-cpr/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/denmark-2267724822.jpg?w=1000"
+  },
+  {
+    "path": "assets/news/openai-quang-cao-hinh-anh-canh-anh-chatgpt-tao/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/new-chatgpt-ads-format-and-measurement-inline-01.webp?w=1200"
+  },
+  {
+    "path": "assets/news/tiktok-tro-ly-mua-sam-ai-thanh-toan-mot-cham/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2259084458.jpg?resize=1200,801"
+  },
+  {
+    "path": "assets/news/hackerrank-chakra-ai-phong-van-lap-trinh-vien/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/09/ai-avatar-simpleshow-2154151760.jpg"
+  },
+  {
+    "path": "assets/news/etched-nhan-loi-moi-dinh-gia-40-ty-usd-chip-ai/cover.jpeg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/Sequoia_Etched-Abhishek-Malani-Robert-Wachen-Sonya-Huang-Gavin-Uberti-copy.jpeg"
   }
 ]
