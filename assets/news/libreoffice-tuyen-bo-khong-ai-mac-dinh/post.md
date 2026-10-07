@@ -1,10 +1,10 @@
 ---
-title: "LibreOffice nói "không AI" — và coi đó là một tính năng"
+title: 'LibreOffice nói "không AI" — và coi đó là một tính năng'
 slug: libreoffice-tuyen-bo-khong-ai-mac-dinh
 category: cong-nghe
 date: 2026-10-07
 author: Cenix
-excerpt: "The Document Foundation chốt: bản cài mặc định của LibreOffice sẽ không có AI. Trong thời đại ai cũng nhét chatbot vào, chữ "không" lại thành điểm bán."
+excerpt: 'The Document Foundation chốt: bản cài mặc định của LibreOffice sẽ không có AI. Trong thời đại ai cũng nhét chatbot vào, chữ "không" lại thành điểm bán.'
 cover: cover.jpg
 source_name: "TechCrunch"
 source_url: "https://techcrunch.com/2026/10/06/libreoffice-says-no-ai-is-now-a-software-feature/"
