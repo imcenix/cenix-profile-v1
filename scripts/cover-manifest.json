@@ -1358,5 +1358,37 @@
   {
     "path": "assets/news/anthropic-tang-startup-mot-nam-claude-team/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/06/Claude-photo.jpg"
+  },
+  {
+    "path": "assets/news/openai-doanh-thu-thap-hon-20-ty-usd-so-voi-bao-cao/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg"
+  },
+  {
+    "path": "assets/news/google-gemini-agent-thong-nhat-cho-doanh-nghiep/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/image_3.max-2100x2100_0CYZWqn.jpg"
+  },
+  {
+    "path": "assets/news/microsoft-surface-laptop-ultra-rtx-spark-windows-11/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Microsoft-Surface-Laptop-Ultra.png"
+  },
+  {
+    "path": "assets/news/arena-goi-200-trieu-usd-dinh-gia-3-1-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/ARENA_3Founders.jpg"
+  },
+  {
+    "path": "assets/news/manus-goi-hon-500-trieu-usd-sau-khi-roi-meta/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2278374931.jpg"
+  },
+  {
+    "path": "assets/news/anthropic-doi-chinh-sach-su-dung-cam-lam-dung-model/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294192768.jpg"
+  },
+  {
+    "path": "assets/news/google-synthid-mo-website-kiem-tra-noi-dung-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/SynthID_Detector_Homepage_Web.jpeg"
+  },
+  {
+    "path": "assets/news/nha-nghien-cuu-an-toan-bi-openai-sa-thai-viet-thu-phan-bac/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg"
   }
 ]
