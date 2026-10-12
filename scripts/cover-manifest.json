@@ -1390,5 +1390,37 @@
   {
     "path": "assets/news/nha-nghien-cuu-an-toan-bi-openai-sa-thai-viet-thu-phan-bac/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg"
+  },
+  {
+    "path": "assets/news/anthropic-cat-internet-khoi-evals/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/Claude-AI-app.jpg"
+  },
+  {
+    "path": "assets/news/anthropic-model-gui-tin-bao-an-mang-sai-philadelphia/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/GettyImages-1490947739.jpg"
+  },
+  {
+    "path": "assets/news/nadella-ai-can-phanh-khan-cap/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/11/satya-nadella-2_web.png"
+  },
+  {
+    "path": "assets/news/cloudflare-mua-deno-nguoi-tao-node-js/cover.jpeg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/06/GettyImages-1186369127.jpeg"
+  },
+  {
+    "path": "assets/news/apple-huxe-thue-doi-ngu-podcast-ca-nhan-hoa/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/01/apple-podcasts-1.jpg"
+  },
+  {
+    "path": "assets/news/apple-homeview-man-hinh-nha-thong-minh-ra-mat-13-10/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/11/homepod.jpg"
+  },
+  {
+    "path": "assets/news/tesla-doi-ten-fsd-thanh-assisted-driving-o-chau-au/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/tesla-fsd-GettyImages-2277686230.jpg"
+  },
+  {
+    "path": "assets/news/orkut-buyukkokten-keu-goi-hoi-sinh-mang-xa-hoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/orkut.jpg"
   }
 ]
