@@ -1,8 +1,3 @@
-/* Thư viện kiến thức đầu tư — trang "See all articles" mở từ khối Learning.
-   Lọc theo cấp độ (?level=basic|advanced|general) và đánh số trang
-   (?page=2) giống trang báo điện tử. Dữ liệu lấy từ LEARN_ALL (edu-data.js);
-   khi nối CMS chỉ cần thay mảng này, phần hiển thị giữ nguyên. */
-
 const LIB_PER_PAGE = 5;
 const LIB_LEVELS = [{ key: 'all', name: 'All articles' }, ...LEARN.tabs.map((t) => ({ key: t.key, name: t.name }))];
 

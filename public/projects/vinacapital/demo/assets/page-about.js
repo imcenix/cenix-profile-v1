@@ -1,6 +1,3 @@
-/* ABOUT US — content structure and the complete four leadership groups follow
-   the current VinaCapital corporate site. */
-
 const INTRO = {
   eyebrow: 'Founded in 2003',
   quote: 'Our mission is to discover the best investment opportunities in Vietnam by leveraging our extensive relationships, local investment knowledge, analytical capabilities and financial expertise.',
@@ -192,7 +189,7 @@ VC.mountPage({
       <div><p class="eyebrow eyebrow--rule">${GOV.label}</p><h2>${GOV.title}</h2></div>
       <div>
         <p>${GOV.intro}</p>
-        <a class="tlink" href="#" style="margin-top:20px">${GOV.cta} <i>→</i></a>
+        <a class="tlink" href="https://vinacapital.com/wp-content/uploads/2023/08/VinaCapital-Code-of-Conduct-Aug2023.pdf" target="_blank" rel="noopener" style="margin-top:20px">${GOV.cta} <i>→</i></a>
       </div>
     </div>
     <div class="acc">
@@ -217,7 +214,7 @@ VC.mountPage({
       <div class="chips chips--solid">
         ${FOUNDATION.chips.map(c => `<div><b>${c[0]}</b><span>${c[1]}</span></div>`).join('')}
       </div>
-      <a class="btn btn--ghost" href="#">${FOUNDATION.cta} <i>→</i></a>
+      <a class="btn btn--ghost" href="https://vinacapitalfoundation.org/" target="_blank" rel="noopener">${FOUNDATION.cta} <i>→</i></a>
     </div>
   </div>
 </section>
@@ -244,8 +241,6 @@ VC.mountPage({
       <div><p class="eyebrow eyebrow--rule">${TEAM.label}</p><h2>${TEAM.title}</h2></div>
       <p>${TEAM.intro}</p>
     </div>
-    <!-- Feedback 24/09: chân dung to quá, phần này quá dài (~3.600px).
-         Nay là thẻ ngang ảnh nhỏ, bốn nhóm chia tab — mỗi lần chỉ một nhóm. -->
     <div data-tabs>
       <div class="tabs" role="tablist">
         ${TEAM.groups.map((g, gi) => `<button role="tab" data-tab="g${gi}" class="${gi === 0 ? 'is-on' : ''}" aria-selected="${gi === 0}">${g.name}</button>`).join('')}

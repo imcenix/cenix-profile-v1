@@ -1,12 +1,5 @@
-/* ==========================================================================
-   VinaCapital — Khung dùng chung cho mọi trang
-   Header, điều hướng, dải cảnh báo lừa đảo, footer, và vài mảnh lặp lại.
-   Trang chủ và các trang con đều nạp file này trước file nội dung của mình.
-   ========================================================================== */
-
 const IMG = 'assets/images/';
 
-/* Điều hướng chính. `key` khớp với VC.page của từng trang để tô mục đang xem. */
 const NAV = [
   { key: 'about',     label: 'About Us',            href: 'about.html' },
   { key: 'solutions', label: 'Investment Solutions', href: 'solutions.html' },
@@ -36,23 +29,16 @@ const FRAUD = {
   ]
 };
 
-/* Bản rút gọn cho pop-up take-over đầu phiên.
-   Quy định yêu cầu phải có cảnh báo chặn ngang khi vào site; vì trang đã có
-   khối đầy đủ ở cuối nên pop-up chỉ nêu 3 ý cốt lõi rồi dẫn xuống đọc thêm. */
 const FRAUD_POPUP = [
   'VinaCapital does <b>not</b> recruit online in any form — remote, freelance or work-from-home.',
   'VinaCapital does <b>not</b> invite anyone to join stock investment groups on Facebook, Zalo, Telegram, WhatsApp, Viber or any messaging platform.',
   'Fund certificates are traded <b>only</b> through the MiO app or officially appointed distributors, and settled through the fund’s official bank accounts.'
 ];
 
-/* Icon góc đỏ (dựng lại icon-corner.svg) — chỉ gắn lên ảnh lớn giới thiệu một phần nội dung */
 const corner = () => '<span class="corner" aria-hidden="true"><i></i><i></i></span>';
 
-const mark = '<svg viewBox="0 0 54 53" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="54" height="53" fill="#cb2b1a"/><path d="M0 0H54L27 53Z" fill="#BCBDC0"/></svg>';
-const logo = () => `<a class="logo" href="index.html" aria-label="VinaCapital — home">${mark}<b>VinaCapital</b></a>`;
+const logo = () => '<a class="logo" href="index.html" aria-label="VinaCapital — home"><img src="assets/logo/vinacapital-white-logo.svg?v=1.3" alt="VinaCapital" width="630" height="100"></a>';
 
-/* Hai mảng nhận diện: dải xám nghiêng + nêm đỏ mép phải.
-   `compact` dùng cho banner trang con (thấp hơn nên mảng phải gọn lại). */
 const shapes = (compact) =>
   `<span class="hero__shapes${compact ? ' hero__shapes--sm' : ''}" aria-hidden="true"><i class="hero__sh-grey"></i><i class="hero__sh-red"></i></span>`;
 
@@ -73,10 +59,6 @@ function header(current) {
 </header>`;
 }
 
-/* Banner đầu trang con: ảnh full-bleed + breadcrumb + tiêu đề */
-/* Feedback 24/09: bỏ dòng eyebrow đỏ trên tiêu đề banner — nó lặp lại đúng
-   nội dung breadcrumb và tiêu đề bên dưới. Tham số eyebrow vẫn nhận để các
-   trang cũ không lỗi, chỉ không hiển thị nữa. */
 function pageHero({ img, eyebrow, title, lead, crumb }) {
   return `
 <section class="phero">
@@ -139,15 +121,13 @@ function footer() {
     </div>
     <div class="ftr__legal">
       <p>Copyright © 2024 VinaCapital. All rights reserved.</p>
-      <nav><a href="#">Terms and Conditions</a><a href="#">Privacy Policy</a><a href="careers.html">Careers</a></nav>
+      <nav><a href="https://vinacapital.com/terms-and-conditions/" target="_blank" rel="noopener">Terms and Conditions</a><a href="https://vinacapital.com/privacy-and-policy/" target="_blank" rel="noopener">Privacy Policy</a><a href="careers.html">Careers</a></nav>
     </div>
   </div>
 </footer>`;
 }
 
-/* Tương tác dùng chung cho mọi trang */
 function initShared(root) {
-  /* Cảnh báo lừa đảo — đóng/mở */
   root.querySelectorAll('.fraud__t').forEach(btn => {
     btn.addEventListener('click', () => {
       const body = btn.closest('.fraud').querySelector('.fraud__b');
@@ -157,7 +137,6 @@ function initShared(root) {
     });
   });
 
-  /* Menu mobile */
   const burger = root.querySelector('.hdr__burger');
   const nav = root.querySelector('.hdr__nav');
   if (burger && nav) {
@@ -168,11 +147,8 @@ function initShared(root) {
     });
   }
 
-  /* Pop-up cảnh báo lừa đảo — hiện một lần mỗi phiên */
   const pop = root.querySelector('#fraud-pop');
   if (pop) {
-    /* localStorage có thể bị chặn (cửa sổ ẩn danh, chặn cookie) nên luôn bọc try/catch
-       và vẫn chạy đúng khi không đọc/ghi được. */
     const KEY = 'vc-fraud-hidden';
     const readFlag = () => { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } };
     const writeFlag = () => { try { localStorage.setItem(KEY, '1'); } catch (e) {} };
@@ -199,7 +175,6 @@ function initShared(root) {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pop.hidden) close(); });
   }
 
-  /* Khối đóng/mở dùng chung: nút [data-acc] điều khiển panel kế tiếp */
   root.querySelectorAll('[data-acc]').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.acc__item');
@@ -208,7 +183,6 @@ function initShared(root) {
     });
   });
 
-  /* Tab dùng chung: [data-tabs] chứa nút [data-tab] và panel [data-tab-panel] */
   root.querySelectorAll('[data-tabs]').forEach(group => {
     group.querySelectorAll('[data-tab]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -226,12 +200,9 @@ function initShared(root) {
   });
 }
 
-/* Dựng một trang con: khung chung + phần thân riêng */
 function mountPage({ page, hero, body }) {
   const root = document.getElementById('site');
   root.className = `page-inner page-${page}`;
-  /* Feedback 24/09: cảnh báo lừa đảo CHỈ nằm ở trang chủ. Trang con bỏ hẳn
-     dải cảnh báo trên chân trang. */
   root.innerHTML = header(page) + pageHero(hero) + body + footer();
   initShared(root);
   return root;

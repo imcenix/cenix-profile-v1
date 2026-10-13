@@ -1,4 +1,3 @@
-/* ESG — giữ nội dung và trật tự của trang gốc, tái cấu trúc theo hướng image-led. */
 const ESG_IMG = `${IMG}esg/`;
 
 const ESG_STEPS = [
@@ -54,8 +53,8 @@ VC.mountPage({
     </div>
   </div>
   <div class="wrap eg-report-row">
-    <a class="eg-report eg-report--main" href="#"><span>ESG Annual Report</span><strong>2025</strong><em>Download report <i>↓</i></em></a>
-    <a class="eg-report" href="#"><span>ESG Annual Report</span><strong>2024</strong><em>Download report <i>↓</i></em></a>
+    <a class="eg-report eg-report--main" href="https://vinacapital.com/wp-content/uploads/2025/10/ESG-Annual-Report-2025.pdf" target="_blank" rel="noopener"><span>ESG Annual Report</span><strong>2025</strong><em>Download report <i>↓</i></em></a>
+    <a class="eg-report" href="https://vinacapital.com/wp-content/uploads/2024/10/VinaCapital-2024-ESG-Report.pdf" target="_blank" rel="noopener"><span>ESG Annual Report</span><strong>2024</strong><em>Download report <i>↓</i></em></a>
     <div class="eg-report__note"><b>Transparency year after year</b><p>Progress, targets and the impacts that matter most across everything we invest in.</p></div>
   </div>
 </section>
@@ -67,7 +66,7 @@ VC.mountPage({
     <h2>One framework,<br>every decision</h2>
     <p>Our Responsible Investment Policy sets out how VinaCapital integrates ESG considerations into research, analysis, investment decision-making and stewardship.</p>
     <p>ESG issues are overseen at the highest level by our Group CEO, Group CIO and the Chairman of our ESG Committee, and are put into practice by experienced research and ESG teams.</p>
-    <a class="btn btn--ghost" href="#">View the policy <i>↗</i></a>
+    <a class="btn btn--ghost" href="https://vinacapital.com/wp-content/uploads/2022/09/VCAM-RC-2022-Responsible-Investment-policy-public.pdf" target="_blank" rel="noopener">View the policy <i>↗</i></a>
   </div>
 </section>
 
@@ -109,9 +108,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- Feedback 24/09: gộp "An ecosystem with a shared goal" và khối vuông nhỏ
-     "circular economy" bên dưới thành một section. Ảnh không có chữ nên
-     dùng bản đã trả lại độ sáng gốc (ảnh gốc trên web khách bị phủ tối sẵn). -->
 <section class="eg-partners">
   <div class="wrap eg-partners__grid">
     <div class="eg-partners__copy">

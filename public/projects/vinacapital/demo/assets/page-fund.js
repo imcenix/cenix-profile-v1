@@ -1,26 +1,13 @@
-/* ==========================================================================
-   TRANG CHI TIẾT QUỸ MỞ — khuôn dùng chung cho mọi quỹ
-   --------------------------------------------------------------------------
-   Thứ tự mục bám đúng trang quỹ trên vinacapital.com:
-     Tổng quan (giới thiệu + bảng so sánh) → Biểu đồ NAV + bảng theo năm + NAV
-     → Báo cáo quỹ → Ban đầu tư → Dải trích dẫn mức rủi ro → Lợi ích
-     → Thông tin quỹ → Báo cáo NAV → Tài liệu quỹ → Hướng dẫn đầu tư
-     → Công cụ hoạch định ngân sách → Đại lý phân phối.
-   Dữ liệu: FUNDS / FUND_COMMON (fund-data.js), FUND_NAV (fund-nav-<mã>.js).
-   Biểu đồ vẽ bằng SVG, không dùng thư viện.
-   ========================================================================== */
-
 const KEY = document.body.dataset.fund || 'vesaf';
 const F = FUNDS[KEY];
 const C = FUND_COMMON;
 const SVGNS = 'http://www.w3.org/2000/svg';
-const COL = { fund: '#cb2b1a', index: '#333B52' };   // giữ đúng cặp màu biểu đồ trang gốc
+const COL = { fund: '#cb2b1a', index: '#333B52' };
 
 const num = (v, d = 2) => v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
 const neg = s => String(s).trim().startsWith('-');
 const link = k => C[k];
 
-/* Danh sách tài liệu: hiện 5 dòng đầu, nút "Load more" mở phần còn lại */
 const SHOW = 5;
 const docList = (rows, id) => `
   <ul class="fd-docs" id="${id}">
@@ -50,7 +37,6 @@ VC.mountPage({
   </div>
 </nav>
 
-<!-- 1. Giới thiệu + bảng so sánh -->
 <section class="sect fd-intro" id="overview">
   <div class="wrap fd-intro__grid">
     <div class="fd-intro__main">
@@ -84,7 +70,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 2. Biểu đồ NAV + bảng theo năm + NAV -->
 <section class="sect sect--paper fd-perf" id="performance">
   <div class="wrap">
     <div class="fd-perf__head">
@@ -125,7 +110,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 3. Báo cáo quỹ -->
 <section class="sect fd-list" id="fund-factsheets">
   <div class="wrap fd-list__grid">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Reports</p><h2>Fund Factsheets</h2></div>
@@ -133,7 +117,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 4. Ban đầu tư -->
 <section class="sect sect--paper fd-team" id="investment-team">
   <div class="wrap">
     <div class="shead">
@@ -149,14 +132,12 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 5. Dải trích dẫn mức rủi ro — nền neo theo màn hình như trang chủ -->
 <section class="fd-quote" data-fd-fixed>
   <div class="fd-quote__bg"><img src="${IMG}${F.riskBg}" alt="" loading="lazy"></div>
   <span class="fd-quote__scrim" aria-hidden="true"></span>
   <div class="wrap fd-quote__in"><p>${F.risk}</p></div>
 </section>
 
-<!-- 6. Lợi ích -->
 <section class="sect fd-why">
   <div class="wrap">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Benefits</p><h2>Why should you invest in ${F.code}</h2></div>
@@ -166,7 +147,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 7. Thông tin quỹ -->
 <section class="sect sect--paper fd-info" id="fund-info">
   <div class="wrap">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Overview</p><h2>${F.code} information</h2></div>
@@ -176,7 +156,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 8. Báo cáo NAV -->
 <section class="sect fd-list" id="nav-reports">
   <div class="wrap fd-list__grid">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Daily & weekly</p><h2>NAV Reports</h2></div>
@@ -184,7 +163,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 9. Tài liệu quỹ -->
 <section class="sect sect--paper fd-list" id="fund-documents">
   <div class="wrap">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Legal documents</p><h2>Fund Documents</h2></div>
@@ -194,7 +172,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 10. Hướng dẫn đầu tư -->
 <section class="sect fd-how" id="how-to-invest">
   <div class="wrap">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Get started</p><h2>How to invest</h2></div>
@@ -208,7 +185,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 11. Công cụ hoạch định ngân sách -->
 <section class="sect sect--sand fd-calc" id="budget-tool">
   <div class="wrap">
     <div class="fd-list__head"><p class="eyebrow eyebrow--rule">Plan ahead</p><h2>Budget planning tool</h2></div>
@@ -243,7 +219,6 @@ VC.mountPage({
   </div>
 </section>
 
-<!-- 12. Đại lý phân phối -->
 <section class="sect fd-dist">
   <div class="wrap">
     <h2 class="fd-dist__t">Learn more about VinaCapital open-ended funds at:</h2>
@@ -254,7 +229,6 @@ VC.mountPage({
 <div class="fd-tip" id="fd-tip" hidden></div>`
 });
 
-/* ================================================================ tiện ích */
 const $ = s => document.querySelector(s);
 const el = (tag, attrs = {}, parent) => {
   const n = document.createElementNS(SVGNS, tag);
@@ -277,13 +251,11 @@ function niceStep(span, target) {
   return (m < 1.5 ? 1 : m < 3 ? 2 : m < 7 ? 5 : 10) * p;
 }
 
-/* "Load more" cho các danh sách */
 document.querySelectorAll('[data-more]').forEach(b => b.addEventListener('click', () => {
   document.querySelectorAll(`#${b.dataset.more} li[hidden]`).forEach(li => { li.hidden = false; });
   b.remove();
 }));
 
-/* ======================================================= biểu đồ NAV ngày */
 const SERIES = (() => {
   const src = (window.FUND_NAV || {})[KEY];
   if (!src) return null;
@@ -300,7 +272,7 @@ const SERIES = (() => {
 
 const fmtDate = ms => { const d = new Date(ms); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; };
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-function idxAt(ms) {             // điểm dữ liệu gần thời điểm ms nhất (tìm nhị phân)
+function idxAt(ms) {
   const t = SERIES.t; let lo = 0, hi = t.length - 1;
   while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (t[mid] <= ms) lo = mid; else hi = mid; }
   return ms - t[lo] < t[hi] - ms ? lo : hi;
@@ -334,7 +306,6 @@ function drawNav() {
     el('line', { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), class: 'fd-grid' }, svg);
     el('text', { x: m.l - 8, y: y(v) + 4, class: 'fd-tick', 'text-anchor': 'end' }, svg).textContent = Math.round(v).toLocaleString('en-US');
   }
-  /* trục thời gian: năm khi khung dài, tháng khi khung ngắn */
   const spanDays = (t1 - t0) / 864e5;
   const d0 = new Date(t0);
   const ticks = [];
@@ -358,7 +329,6 @@ function drawNav() {
   });
   el('line', { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b, class: 'fd-ax' }, svg);
 
-  /* hai đường — thưa điểm khi quá dày so với số pixel */
   const n = view.b - view.a + 1, stride = Math.max(1, Math.floor(n / (W - m.l - m.r)));
   [['b', COL.index], ['a', COL.fund]].forEach(([s, c]) => {
     let d = '';
@@ -367,7 +337,6 @@ function drawNav() {
     el('path', { d, fill: 'none', stroke: c, 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, svg);
   });
 
-  /* lớp rê chuột: đường dọc + 2 chấm + ô số liệu */
   const cross = el('line', { y1: m.t, y2: H - m.b, class: 'fd-cross', visibility: 'hidden' }, svg);
   const dots = [COL.fund, COL.index].map(c => el('circle', { r: 4.5, fill: c, stroke: '#fff', 'stroke-width': 2, visibility: 'hidden' }, svg));
   const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, class: 'fd-hit' }, svg);
@@ -380,8 +349,6 @@ function drawNav() {
     dots[0].setAttribute('cx', X); dots[0].setAttribute('cy', y(a[k])); dots[0].setAttribute('visibility', 'visible');
     dots[1].setAttribute('cx', X); dots[1].setAttribute('cy', y(b[k])); dots[1].setAttribute('visibility', 'visible');
     setRead(k);
-    /* ô số liệu nằm cạnh đường dọc (bên phải, sát mép phải thì lật sang trái),
-       không đè lên dòng số liệu phía trên biểu đồ */
     tip.innerHTML = `<b>${fmtDate(t[k])}</b><span><i style="background:${COL.fund}"></i>${F.short}<strong>${num(a[k])}</strong></span><span><i style="background:${COL.index}"></i>${F.benchmark}<strong>${num(b[k])}</strong></span>`;
     tip.hidden = false;
     tip.classList.add('fd-tip--side');
@@ -399,7 +366,6 @@ function drawNav() {
   setRead(view.b);
 }
 
-/* thanh chọn khoảng thời gian bên dưới: kéo 2 tay nắm hoặc kéo cả khung */
 function drawBrush() {
   if (!SERIES) return;
   const box = $('#nav-brush');
@@ -469,7 +435,6 @@ document.querySelectorAll('[data-range]').forEach(btn => btn.addEventListener('c
   drawNav(); drawBrush();
 }));
 
-/* ======================================================= dải nền neo */
 const fixedBands = [...document.querySelectorAll('[data-fd-fixed]')];
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!reduce) {
@@ -490,7 +455,6 @@ if (!reduce) {
   paint();
 }
 
-/* ======================================================= công cụ tính */
 const fmtM = v => Math.round(v).toLocaleString('en-US');
 function calcRows() {
   const n = Math.min(25, Math.max(1, parseInt($('#c-years').value, 10) || 1));
@@ -500,12 +464,12 @@ function calcRows() {
   let v = 0;
   for (let yr = 1; yr <= n; yr++) {
     const start = v;
-    for (let mo = 0; mo < 12; mo++) v = v * (1 + r) + pm;   // góp cuối mỗi tháng, lãi kép theo tháng
+    for (let mo = 0; mo < 12; mo++) v = v * (1 + r) + pm;
     rows.push({ yr, start, paid: pm * 12, gain: v - start - pm * 12, end: v });
   }
   return rows;
 }
-const TABLE_ROWS = 9;   // như trang gốc: hiện 9 năm, "Learn more" mở phần còn lại
+const TABLE_ROWS = 9;
 function drawCalc() {
   const rows = calcRows(), last = rows[rows.length - 1];
   const total = last.end >= 1000 ? `VND ${(last.end / 1000).toLocaleString('en-US', { maximumFractionDigits: 1 })} billion` : `VND ${fmtM(last.end)} million`;
@@ -543,7 +507,6 @@ $('#calc-form').addEventListener('submit', e => { e.preventDefault(); drawCalc()
 document.querySelectorAll('#calc-form input').forEach(i => i.addEventListener('change', drawCalc));
 $('#c-more').addEventListener('click', e => { document.querySelectorAll('#c-rows tr[hidden]').forEach(tr => { tr.hidden = false; }); e.currentTarget.hidden = true; });
 
-/* ======================================================= khởi động */
 function drawAll() { drawNav(); drawBrush(); drawCalc(); }
 drawAll();
 let rz;

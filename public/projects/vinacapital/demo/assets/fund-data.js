@@ -1,16 +1,3 @@
-/* ==========================================================================
-   DỮ LIỆU QUỸ — KHUÔN CHUNG cho mọi trang fund-<mã>.html
-   --------------------------------------------------------------------------
-   Nội dung, thứ tự mục và câu chữ lấy ĐÚNG theo trang quỹ trên vinacapital.com
-   (bản tiếng Anh). Riêng số liệu cập nhật hằng ngày (NAV, tổng tài sản, lợi
-   nhuận từ đầu năm) lấy ở bản tiếng Việt vì bản tiếng Anh còn hiển thị NAV 2022.
-   Nguồn VESAF: vinacapital.com/investment-solutions/onshore-funds/vesaf/
-   (đọc ngày 28/09/2026). Chuỗi NAV ngày nằm ở fund-nav-<mã>.js.
-
-   Thêm quỹ mới: chép khối `vesaf`, đổi dữ liệu, tạo fund-<mã>.html với
-   data-fund="<mã>" và nạp fund-nav-<mã>.js. Phần hiển thị không phải sửa.
-   ========================================================================== */
-
 const VC_FILES = 'https://vinacapital.com/wp-content/uploads/';
 
 const FUNDS = {
@@ -23,7 +10,6 @@ const FUNDS = {
     asOf: '24/09/2026',
     benchmark: 'VN-Index',
 
-    /* Bảng so sánh đầu trang: [nhãn, quỹ, chỉ số] — đúng 6 dòng lợi nhuận như trang gốc */
     returns: [
       ['YTD return (<em>2026</em>) (%)', 'As of 24/09/2026', '-6.0', '-0.5'],
       ['2025 return (%)', '', '6.3', '40.9'],
@@ -35,7 +21,6 @@ const FUNDS = {
     fundSize: '2,317.6',
     dataNote: 'Note: If report date data is unavailable, the most recent preceding trading day’s data will be automatically displayed.',
 
-    /* Bảng kết quả hoạt động theo năm (dưới biểu đồ) */
     annual: [
       ['2025', '6.3%', '40.9%'],
       ['2024', '22.1%', '12.1%'],
@@ -77,8 +62,6 @@ const FUNDS = {
       ['why-app.svg', 'VINACAPITAL MIO application on the web and mobile which enables investors to manage their portfolios anytime, anywhere.']
     ],
 
-    /* Overview — VINACAPITAL-VESAF INFORMATION: liệt kê đủ như trang gốc.
-       Giá trị là mảng thì hiển thị thành nhiều dòng. */
     info: [
       ['Fund structure', 'Open-ended fund domiciled in Vietnam and regulated by SSC'],
       ['Inception date', '18 April 2017'],
@@ -132,7 +115,6 @@ const FUNDS = {
   }
 };
 
-/* Phần dùng chung cho mọi quỹ mở trong nước */
 const FUND_COMMON = {
   mio: 'https://mio.vinacapital.com/',
   transfer: `${VC_FILES}2023/10/Money-Transfer-Instructions-EN.pdf`,

@@ -1,49 +1,37 @@
-/* ==========================================================================
-   TIN TỨC & PHÂN TÍCH — giữ nguyên tuyến nội dung
-   vinacapital.com/vi/news-insights
-   Năm phần như trang gốc: Tin mới nhất · Phân tích · Videos · Báo cáo vĩ mô ·
-   Việt Nam qua các con số. Danh sách rút gọn cho bản demo.
-
-   NGẮT DÒNG: tiêu đề đã có `text-wrap:balance` trong style.css. Chỗ nào không
-   được phép tách (tên riêng, cụm định danh) thì buộc bằng &nbsp; ngay tại đây.
-   ========================================================================== */
-
 const LEADNEWS = 'Press releases, market insights, monthly macroeconomic reports and video programs produced by VinaCapital’s research team.';
 
-/* Tin nổi bật đầu trang */
 const HEADLINE = {
   date: '20/08/2026',
   cat: 'News',
   img: 'news/news-1.webp',
   title: 'VinaCapital deepens its partnerships and shares expertise to create lasting value for partners and clients',
+  href: 'https://vinacapital.com/news-insights/',
   excerpt: 'At VinaCapital, we believe a successful partnership goes well beyond the distribution of investment products. Real value is created when both sides share expertise, experience and market perspective to bring clients the solutions that suit them best.'
 };
 
 const NEWS_ROWS = [
-  ['19/08/2026', 'VinaCapital partners with MB Securities to distribute open-ended fund certificates', 'News'],
-  ['29/07/2026', 'Addition of Vietcombank Securities Company, Ltd to the list of distribution partner for VinaCapital’s open-ended funds', 'News'],
-  ['16/06/2026', 'VinaCapital Lists Vietnam’s First Two Strategic-Beta ETFs', 'News'],
-  ['12/06/2026', 'VinaCapital Updates Names and Investment Strategies of Its Open-Ended Funds', 'News'],
-  ['14/05/2026', 'VinaCapital partners with CV Securities to distribute open-ended fund certificates', 'News'],
-  ['18/04/2026', 'VinaCapital Selected to Co-Lead HCMC’s Venture Capital Fund Supporting Innovation Ecosystem', 'News']
+  ['19/08/2026', 'VinaCapital partners with MB Securities to distribute open-ended fund certificates', 'News', 'https://vinacapital.com/news-insights/'],
+  ['29/07/2026', 'Addition of Vietcombank Securities Company, Ltd to the list of distribution partner for VinaCapital’s open-ended funds', 'News', 'https://vinacapital.com/wp-content/uploads/2026/07/VCFM-Announcement.pdf'],
+  ['16/06/2026', 'VinaCapital Lists Vietnam’s First Two Strategic-Beta ETFs', 'News', 'https://vinacapital.com/wp-content/uploads/2026/06/VinaCapital-lists-Vietnams-first-two-strategic-beta-ETFs.pdf'],
+  ['12/06/2026', 'VinaCapital Updates Names and Investment Strategies of Its Open-Ended Funds', 'News', 'https://vinacapital.com/wp-content/uploads/2026/06/Media-Release_VinaCapital-updates-names-and-investment-strategies-of-its-OEFs.pdf'],
+  ['14/05/2026', 'VinaCapital partners with CV Securities to distribute open-ended fund certificates', 'News', 'https://vinacapital.com/news-insights/'],
+  ['18/04/2026', 'VinaCapital Selected to Co-Lead HCMC’s Venture Capital Fund Supporting Innovation Ecosystem', 'News', 'https://vinacapital.com/wp-content/uploads/2026/04/Media-Release_VinaCapital-selected-to-co-lead-HCMC-VC-Fund.pdf']
 ];
 
-/* Ảnh minh hoạ cho ba tin có hình gốc */
 const NEWS_CARDS = [
-  ['19/08/2026', 'A new partnership with MB Securities', 'Extending the distribution network for open-ended fund certificates to individual investors nationwide.', 'news/news-2.webp'],
-  ['16/06/2026', 'Vietnam’s first two strategic-beta ETFs', 'VN50 Growth and VNMITECH are now listed, adding a low-cost passive option for investors.', 'news/news-3.webp'],
-  ['18/04/2026', 'Co-leading HCMC’s Venture Capital Fund', 'VinaCapital has been selected to co-lead the first venture capital fund initiated by the city.', 'news/news-4.webp']
+  ['19/08/2026', 'A new partnership with MB Securities', 'Extending the distribution network for open-ended fund certificates to individual investors nationwide.', 'news/news-2.webp', 'https://vinacapital.com/news-insights/'],
+  ['16/06/2026', 'Vietnam’s first two strategic-beta ETFs', 'VN50 Growth and VNMITECH are now listed, adding a low-cost passive option for investors.', 'news/news-3.webp', 'https://vinacapital.com/wp-content/uploads/2026/06/VinaCapital-lists-Vietnams-first-two-strategic-beta-ETFs.pdf'],
+  ['18/04/2026', 'Co-leading HCMC’s Venture Capital Fund', 'VinaCapital has been selected to co-lead the first venture capital fund initiated by the city.', 'news/news-4.webp', 'https://vinacapital.com/wp-content/uploads/2026/04/Media-Release_VinaCapital-selected-to-co-lead-HCMC-VC-Fund.pdf']
 ];
 
-/* Phân tích — tab theo năm như trang gốc */
 const INSIGHTS = {
   years: ['2026', '2025', '2024'],
   '2026': [
-    ['22/06/2026', 'Vietnam’s International Financial Center (VIFC): Not the Next Dubai'],
-    ['04/06/2026', 'Priced for Crisis, Primed for Growth: Vietnam’s Bifurcated Stock Market'],
-    ['05/03/2026', 'Iran War: Modest Impact on Vietnam'],
-    ['29/01/2026', 'Vietnam’s Path to an Investment-Grade Rating'],
-    ['22/01/2026', 'Looking Ahead at 2026']
+    ['22/06/2026', 'Vietnam’s International Financial Center (VIFC): Not the Next Dubai', 'https://vinacapital.com/wp-content/uploads/2026/06/VinaCapital-Insights-Vietnams-International-Financial-Center.pdf'],
+    ['04/06/2026', 'Priced for Crisis, Primed for Growth: Vietnam’s Bifurcated Stock Market', 'https://vinacapital.com/wp-content/uploads/2026/06/20260602VinaCapital-Insights-Priced-for-Crisis-Primed-for-Growth.pdf'],
+    ['05/03/2026', 'Iran War: Modest Impact on Vietnam', 'https://vinacapital.com/wp-content/uploads/2026/03/VinaCapital-Insights_Iran-War-Modest-Impact-on-Vietnam.pdf'],
+    ['29/01/2026', 'Vietnam’s Path to an Investment-Grade Rating', 'https://vinacapital.com/wp-content/uploads/2026/02/VinaCapital-Insights_Vietnams-Path-to-an-Investment-Grade-Rating.pdf'],
+    ['22/01/2026', 'Looking Ahead at 2026', 'https://vinacapital.com/wp-content/uploads/2026/01/20260119_VinaCapital-Insights_Looking-Ahead-at-2026.pdf']
   ]
 };
 
@@ -66,10 +54,10 @@ const MACRO = {
   title: 'Vietnam’s economy month by month',
   intro: 'Macro commentary compiled by our research team, bringing together the key data and short notes on the main indicators.',
   items: [
-    ['Vietnam Macroeconomic Commentary: July 2026', '18/08/2026'],
-    ['Vietnam Macroeconomic Commentary: June 2026', '28/07/2026'],
-    ['Vietnam Macroeconomic Commentary: May 2026', '28/07/2026'],
-    ['Vietnam Macroeconomic Commentary: April 2026', '18/05/2026']
+    ['Vietnam Macroeconomic Commentary: July 2026', '18/08/2026', 'https://vinacapital.com/wp-content/uploads/2026/08/20260811-Monthly-Macro-Summary-July-2026.pdf'],
+    ['Vietnam Macroeconomic Commentary: June 2026', '28/07/2026', 'https://vinacapital.com/wp-content/uploads/2026/07/20260710-Monthly-Macro-Summary-June-2026.pdf'],
+    ['Vietnam Macroeconomic Commentary: May 2026', '28/07/2026', 'https://vinacapital.com/wp-content/uploads/2026/06/20260612-Monthly-Macro-Summary-May-2026.pdf'],
+    ['Vietnam Macroeconomic Commentary: April 2026', '18/05/2026', 'https://vinacapital.com/wp-content/uploads/2026/05/20260512-Monthly-Macro-Summary-April-2026.pdf']
   ]
 };
 
@@ -100,7 +88,7 @@ VC.mountPage({
       <p>Official announcements on products, distribution partners and the Group’s milestones.</p>
     </div>
 
-    <a class="feat" href="#">
+    <a class="feat" href="${HEADLINE.href}" target="_blank" rel="noopener">
       <div class="feat__media"><img src="${IMG}${HEADLINE.img}" alt="" aria-hidden="true" fetchpriority="high"></div>
       <div>
         <p class="feat__meta"><b>${HEADLINE.cat}</b><i>·</i><time>${HEADLINE.date}</time></p>
@@ -111,7 +99,7 @@ VC.mountPage({
     </a>
 
     <div class="nlist">
-      ${NEWS_ROWS.map(n => `<a class="nrow" href="#">
+      ${NEWS_ROWS.map(n => `<a class="nrow" href="${n[3]}" target="_blank" rel="noopener">
         <time>${n[0]}</time>
         <h3>${n[1]}</h3>
         <span>${n[2]}</span>
@@ -119,7 +107,7 @@ VC.mountPage({
     </div>
 
     <div class="cards" style="margin-top:clamp(34px,3.6vw,52px)">
-      ${NEWS_CARDS.map(c => `<a class="card" href="#">
+      ${NEWS_CARDS.map(c => `<a class="card" href="${c[4]}" target="_blank" rel="noopener">
         <div class="card__media"><img src="${IMG}${c[3]}" alt="" aria-hidden="true" loading="lazy"></div>
         <div class="card__b">
           <p class="feat__meta"><time>${c[0]}</time></p>
@@ -144,7 +132,7 @@ VC.mountPage({
       </div>
       ${INSIGHTS.years.map((y, i) => `<div data-tab-panel="${y}"${i === 0 ? '' : ' hidden'}>
         ${INSIGHTS[y]
-          ? `<div class="nlist">${INSIGHTS[y].map(a => `<a class="nrow" href="#"><time>${a[0]}</time><h3>${a[1]}</h3><span>Insight</span></a>`).join('')}</div>`
+          ? `<div class="nlist">${INSIGHTS[y].map(a => `<a class="nrow" href="${a[2]}" target="_blank" rel="noopener"><time>${a[0]}</time><h3>${a[1]}</h3><span>Insight</span></a>`).join('')}</div>`
           : `<p class="tabs__empty">The ${y} insights archive is loaded from the content management system.</p>`}
       </div>`).join('')}
     </div>
@@ -158,7 +146,7 @@ VC.mountPage({
       <p>${VIDEOS.intro}</p>
     </div>
     <div class="vids">
-      ${VIDEOS.items.map(v => `<a class="vid" href="#">
+      ${VIDEOS.items.map(v => `<a class="vid" href="https://www.youtube.com/channel/UCqL7QHG9Xp0TzkLNGblrNNw" target="_blank" rel="noopener">
         <div class="vid__media">
           <img src="${IMG}${v[2]}" alt="" aria-hidden="true" loading="lazy">
           <span class="vid__play" aria-hidden="true">▶</span>
@@ -177,7 +165,7 @@ VC.mountPage({
       <p>${MACRO.intro}</p>
     </div>
     <div class="rows">
-      ${MACRO.items.map(m => `<a class="row2" href="#">
+      ${MACRO.items.map(m => `<a class="row2" href="${m[2]}" target="_blank" rel="noopener">
         <h3>${m[0]}</h3>
         <time>${m[1]}</time>
         <i>Download PDF ↓</i>
@@ -193,7 +181,7 @@ VC.mountPage({
     <p class="eyebrow eyebrow--rule">Vietnam by Numbers</p>
     <h2>Vietnam by<br>the numbers</h2>
     <p>A set of key economic and sector data compiled by VinaCapital’s research team, updated each month as charts and tables — with limited commentary, so the data can do the talking.</p>
-    <a class="btn" href="#">View the latest data set <i>→</i></a>
+    <a class="btn" href="https://vinacapital.com/wp-content/uploads/2026/06/Vietnam-By-Number_May-26.pdf" target="_blank" rel="noopener">View the latest data set <i>→</i></a>
   </div>
 </section>
 

@@ -1,13 +1,3 @@
-/* ==========================================================================
-   KHO BÀI VIẾT KIẾN THỨC ĐẦU TƯ — dùng chung cho education.html (khối Learning
-   3 tab) và education-library.html (trang đầy đủ, đánh số trang).
-
-   Tên bài và đường dẫn là bài THẬT trên vinacapital.com/investment-education
-   (đọc ngày 24/09/2026). Trang gốc chưa chia bài theo cấp độ Basic /
-   Advanced / General knowledge — cách chia dưới đây là đề xuất để khách
-   duyệt; khi nối CMS thì chỉ cần gắn nhãn cấp độ cho từng bài.
-   ========================================================================== */
-
 const EDU_BASE = 'https://vinacapital.com';
 
 const LEARN = {
@@ -64,8 +54,6 @@ const LEARN = {
   ]
 };
 
-/* Toàn bộ bài cho trang thư viện: bài chính + các bài nhỏ của từng tab,
-   bỏ trùng theo tiêu đề. */
 const LEARN_ALL = (() => {
   const seen = new Set();
   const out = [];

@@ -1,12 +1,3 @@
-/* ==========================================================================
-   TUYỂN DỤNG — giữ nguyên tuyến nội dung vinacapital.com/vi/careers
-   Sáu phần như trang gốc: Về chúng tôi · Giá trị · Văn hoá · Ngôi nhà thứ hai ·
-   Kỳ vọng với ứng viên · Vị trí tuyển dụng · Chương trình thực tập.
-
-   NGẮT DÒNG: tiêu đề dùng `text-wrap:balance` (style.css); cụm từ không được
-   tách nằm sau &nbsp; ngay trong nội dung.
-   ========================================================================== */
-
 const CLEAD = 'VinaCapital is an employer of choice for investment and finance professionals in Vietnam — a top 100 employer across all industries and a top three employer in Financial Services for the last 10 years.';
 
 const CINTRO = {
@@ -92,7 +83,6 @@ const EXPECT = {
   label: 'What VinaCapital expects',
   title: 'Who are we looking for?',
   quote: 'Your motivation is always promoted when you become a “VinaCapitalist”.',
-  /* bản cho dải ảnh lớn: ngắt dòng chủ động, không để câu tự rớt chữ */
   band: 'Your motivation is always promoted<br>when you become a “VinaCapitalist”',
   body: [
     'VinaCapital looks for dynamic, highly motivated, career-oriented individuals. The Group offers employment across many professional areas, principally in investment, finance, real estate, accounting and audit.',
@@ -105,12 +95,12 @@ const JOBS = {
   title: '6 roles in 2 locations',
   intro: 'Explore new opportunities with VinaCapital. Applications are reviewed and answered within 10 working days.',
   items: [
-    ['Investment Associate — VinaLiving', 'Ho Chi Minh City', 'Real Estate'],
-    ['Sector Analyst', 'Ho Chi Minh City', 'Research'],
-    ['Senior Associate, Product Management', 'Ho Chi Minh City', 'Product'],
-    ['Economics Manager', 'Ho Chi Minh City', 'Research'],
-    ['Financial Advisory Manager, Wealth Management', 'Hanoi', 'Advisory'],
-    ['Accounting Manager — VinaLiving', 'Ho Chi Minh City', 'Accounting']
+    ['Investment Associate — VinaLiving', 'Ho Chi Minh City', 'Real Estate', 'https://vinacapital.com/careers/investment-associate-_-vinaliving/'],
+    ['Sector Analyst', 'Ho Chi Minh City', 'Research', 'https://vinacapital.com/careers/sector-analyst/'],
+    ['Senior Associate, Product Management', 'Ho Chi Minh City', 'Product', 'https://vinacapital.com/careers/senior-associate-product-management/'],
+    ['Economics Manager', 'Ho Chi Minh City', 'Research', 'https://vinacapital.com/careers/economics-manager-2/'],
+    ['Financial Advisory Manager, Wealth Management', 'Hanoi', 'Advisory', 'https://vinacapital.com/careers/financial-advisory-manager-wealth-management/'],
+    ['Accounting Manager — VinaLiving', 'Ho Chi Minh City', 'Accounting', 'https://vinacapital.com/careers/accounting-manager-_-vinaliving/']
   ]
 };
 
@@ -248,7 +238,7 @@ VC.mountPage({
       <p>${JOBS.intro}</p>
     </div>
     <div class="rows">
-      ${JOBS.items.map(j => `<a class="row2 row2--job" href="#">
+      ${JOBS.items.map(j => `<a class="row2 row2--job" href="${j[3]}" target="_blank" rel="noopener">
         <h3>${j[0]}</h3>
         <span>${j[1]}</span>
         <i>Apply →</i>
@@ -264,7 +254,7 @@ VC.mountPage({
     <p class="eyebrow eyebrow--rule">${INTERN.label}</p>
     <h2>${INTERN.title}</h2>
     <p>${INTERN.intro}</p>
-    <a class="btn" href="#">Explore now <i>→</i></a>
+    <a class="btn" href="https://vinacapital.com/careers/" target="_blank" rel="noopener">Explore now <i>→</i></a>
   </div>
 </section>
 

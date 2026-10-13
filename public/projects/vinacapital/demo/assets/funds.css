@@ -1,238 +1,36 @@
-/* ==========================================================================
-   TRANG THU LEAD — Quỹ mở VinaCapital
-   Dùng chung token màu/chữ trong style.css, còn lại là bố cục riêng.
-   Tiền tố .lp- (landing page) để không đụng vào các trang khác.
-   ========================================================================== */
+.funds-page{background:#f5f3f0}
+.funds-head{background:#f5f3f0}.funds-head .brand img{height:31px}
+.fund-hero{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:flex-end;min-height:720px;margin-top:8px;margin-bottom:28px;padding:28px;overflow:hidden;border-radius:34px;background:#eef0f1}
+.fund-hero__visual{position:absolute;inset:0;z-index:-2;overflow:hidden;background:#f4f4f2}.fund-hero__visual::before{content:"";position:absolute;z-index:0;inset:-34px -34px -34px 50%;background:url(images/funds/hero.jpg) center/cover no-repeat;filter:blur(26px);opacity:.2}.fund-hero__visual::after{content:"";position:absolute;z-index:2;left:54%;right:0;top:0;bottom:0;background:linear-gradient(90deg,rgba(244,244,242,.06),rgba(239,240,240,.6));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.fund-hero__visual img{position:absolute;z-index:1;left:0;top:50%;width:auto;max-width:none;height:100%;object-fit:contain;object-position:left center;transform:translateY(-50%)}
+.consult{position:relative;z-index:3;width:min(430px,39%);margin-right:4px;padding:32px;border:1px solid rgba(255,255,255,.78);border-radius:26px;background:rgba(249,249,247,.91);box-shadow:0 12px 28px rgba(17,30,43,.1);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:translateX(-120px)}
+.consult h1{max-width:11ch;margin:14px 0 0;font-size:clamp(38px,4vw,58px);font-weight:600;line-height:1;letter-spacing:-.055em;text-wrap:balance}.consult__lead{max-width:43ch;margin:16px 0 0;color:#454c59;font-size:13px;line-height:1.62}
+.consult__form{display:grid;gap:10px;margin-top:23px}.consult__form label span{display:block;margin:0 0 6px;color:#454c59;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.consult__form input,.consult__form select{width:100%;height:44px;padding:0 12px;border:1px solid rgba(25,35,45,.14);border-radius:10px;outline:none;background:rgba(255,255,255,.78);color:var(--ink);transition:border .2s,background .2s}.consult__form input:focus,.consult__form select:focus{border-color:var(--red);background:#fff}.consult__form .is-invalid{border-color:var(--red);background:#fff7f7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.consult__form .btn{width:100%;margin-top:3px}.consult__fine{margin:0;color:#454c59;font-size:8.5px;line-height:1.5}.form-status{margin:0;padding:10px 12px;border-left:3px solid #2c9b73;background:#fff;color:#3e4b57;font-size:12px;line-height:1.5}.form-status.is-error{border-color:var(--red)}
+.section-tabs{position:sticky;top:0;z-index:45;background:rgba(245,243,240,.91);border-bottom:1px solid rgba(31,44,58,.09);backdrop-filter:blur(16px)}.section-tabs .wrap{display:flex;align-items:center;justify-content:center;gap:clamp(18px,3vw,46px);min-height:58px;overflow-x:auto;scrollbar-width:none}.section-tabs a{flex:none;color:#505b66;font-size:11px;font-weight:600;text-decoration:none}.section-tabs a:last-child{color:var(--red)}
+.why{padding:clamp(70px,7vw,100px) 0}.why__head{display:grid;grid-template-columns:.42fr 1.58fr;gap:30px;align-items:start;margin-bottom:40px}.why__head h2{max-width:none;margin:0;font-size:clamp(38px,4.2vw,58px);font-weight:600;line-height:1.05;letter-spacing:-.05em;text-wrap:pretty}.title-line{display:block}.why__head .title-line{white-space:nowrap}
+.why__grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.why-card{position:relative;min-height:260px;padding:24px;border:1px solid #e4e2df;border-radius:22px;background:#fff;transition:transform .24s,box-shadow .24s}.why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.why-card--feature{background:#e21b23;color:#fff}.why-card__index{font-size:9px;font-weight:700;letter-spacing:.14em;opacity:.5}.why-card img{position:absolute;right:22px;top:22px;width:42px;height:42px;object-fit:contain}.why-card--feature img{filter:brightness(0) invert(1)}.why-card h3,.why-card--feature h3{max-width:12ch;margin:112px 0 10px;font-size:clamp(19px,1.7vw,25px);line-height:1.08;letter-spacing:-.035em;text-wrap:balance}.why-card p{max-width:28ch;margin:0;color:inherit;font-size:11.5px;line-height:1.6;opacity:.72}
+.funds-section{padding:clamp(70px,7vw,105px) 0;background:#fff}.section-head{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end;margin-bottom:44px}.section-head h2,.voices h2,.about-funds h2{max-width:17ch;margin:16px 0 0;font-size:clamp(40px,4.8vw,64px);font-weight:600;line-height:1.02;letter-spacing:-.055em;text-wrap:balance}.section-head>p{max-width:46ch;margin:0;color:var(--muted);font-size:13.5px;line-height:1.7}
+.fund-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fund-card{align-self:start;overflow:hidden;border:1px solid #e2e5e7;border-radius:20px;background:#f8f8f7;transition:border .2s,box-shadow .2s}.fund-card:hover{border-color:#d1d5d8;box-shadow:0 18px 44px rgba(25,38,51,.07)}
+.fund-more{display:grid;grid-template-columns:58px 1fr 28px;gap:18px;align-items:center;width:100%;min-height:150px;margin:0;padding:24px;background:none;border:0;color:var(--ink);text-align:left;cursor:pointer}.fund-card__icon{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#fff;color:var(--red);box-shadow:0 10px 26px rgba(26,39,51,.07)}.fund-card__icon svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.fund-card__title{display:block}.fund-code{display:block;color:var(--red);font-size:8.5px;letter-spacing:.1em}.fund-card__title strong{display:block;margin-top:8px;font-size:clamp(21px,1.9vw,28px);line-height:1.05;letter-spacing:-.035em}.fund-card__title small{display:block;max-width:42ch;margin-top:8px;color:#454c59;font-size:11.5px;line-height:1.55}.fund-card__plus{font-size:22px;font-weight:300;transition:transform .25s}.fund-card.is-open .fund-card__plus{transform:rotate(45deg)}
+.fund-detail{display:none;padding:0 24px}.fund-card.is-open .fund-detail{display:block;padding-bottom:24px}.fund-detail p{margin:0;padding-top:18px;border-top:1px solid #dfe2e4;color:#53606d;font-size:12px;line-height:1.65}.fund-detail a{display:inline-block;margin-top:14px;color:var(--red);font-size:9px;font-weight:700;letter-spacing:.08em;text-decoration:none;text-transform:uppercase}.disclaimer{max-width:100ch;margin:22px 0 0;color:#454c59;font-size:9px;line-height:1.65}
+.voices{padding:clamp(70px,8vw,110px) 0}.voices__head{display:grid;grid-template-columns:.42fr 1.58fr;gap:30px;margin-bottom:38px}.voices__head h2{max-width:20ch;margin-top:0}.voices__stage{position:relative}.voice-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(275px,31%);gap:12px;overflow-x:auto;padding:6px 2px 24px;scroll-snap-type:x mandatory;scrollbar-width:none}.voice-track::-webkit-scrollbar{display:none}.voice{display:flex;flex-direction:column;min-height:305px;margin:0;padding:24px;border:1px solid #e1e4e5;border-radius:22px;background:#fff;scroll-snap-align:start}.voice>img{width:68px;height:68px;border-radius:50%;object-fit:cover;filter:saturate(.85)}.voice figcaption{display:flex;flex:1;flex-direction:column}.voice blockquote{margin:24px 0 26px;color:#2b3540;font-size:16px;font-weight:500;line-height:1.45;letter-spacing:-.02em}.voice figcaption b{margin-top:auto;font-size:12px}.voice figcaption span{max-width:32ch;margin-top:5px;color:#454c59;font-size:9.5px;line-height:1.5}.voice-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}.voice-controls button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #d6dade;border-radius:50%;background:#fff;color:#25303a;font-size:17px;cursor:pointer;transition:background .2s,color .2s}.voice-controls button:hover{background:var(--red);color:#fff}
+.about-funds{position:relative;min-height:570px;padding:clamp(80px,8vw,115px) 0;color:#fff}.about-funds__bg,.about-funds__shade{position:absolute;inset:0;width:100%;height:100%}.about-funds__bg{object-fit:cover}.about-funds__shade{background:linear-gradient(90deg,rgba(14,23,33,.92) 0%,rgba(14,23,33,.67) 54%,rgba(14,23,33,.38) 100%)}.about-funds__in{position:relative;z-index:2;display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.about-funds .eyebrow{color:#ff868a}.about-funds h2{max-width:13ch;font-size:clamp(40px,4.4vw,60px)}.about-funds__in>div>p:not(.eyebrow){max-width:51ch;margin:20px 0 0;color:rgba(255,255,255,.72);font-size:13px;line-height:1.7}.about-funds .btn{margin-top:26px}.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.about-stats article{min-height:146px;padding:26px;border:1px solid rgba(255,255,255,.22);border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}.about-stats b{display:block;color:#fff;font-size:clamp(38px,4vw,58px);line-height:1;letter-spacing:-.05em}.about-stats span{display:block;margin-top:13px;color:rgba(255,255,255,.7);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.footer-link{display:inline-block;margin-top:12px;color:#ff868a;font-size:11px;font-weight:700;text-decoration:none;text-transform:uppercase}
+@media(max-width:1120px){.fund-hero{min-height:690px}.consult{width:min(440px,47%);transform:translateX(-48px)}.why__head,.section-head,.voices__head{grid-template-columns:1fr}.why__head h2,.section-head h2,.voices h2{max-width:21ch}.why__grid{grid-template-columns:repeat(3,1fr)}.about-funds__in{grid-template-columns:1fr;gap:45px}.about-stats{max-width:740px}}
+@media(max-width:820px){.fund-hero{display:grid;min-height:auto;padding:0;overflow:visible;background:transparent}.fund-hero__visual{position:relative;z-index:auto;width:100%;height:auto;aspect-ratio:2263/1876;overflow:hidden;border-radius:26px;background:#f4f4f2}.fund-hero__visual::before,.fund-hero__visual::after{display:none}.fund-hero__visual img{position:static;width:100%;max-width:100%;height:100%;object-fit:contain;transform:none}.consult{width:100%;margin:10px 0 0;padding:34px;border-radius:26px;transform:none}.why__head .title-line{white-space:normal}.why__grid{display:flex;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:none}.why-card{flex:0 0 250px;scroll-snap-align:start}.fund-grid{grid-template-columns:1fr}.voice-track{grid-auto-columns:minmax(270px,47%)}}
+@media(max-width:640px){.fund-hero__visual{height:auto;border-radius:22px}.consult{padding:28px 21px;border-radius:22px}.consult h1{font-size:43px}.form-row{grid-template-columns:1fr}.section-tabs .wrap{justify-content:flex-start}.why__head h2,.section-head h2,.voices h2,.about-funds h2{font-size:38px}.why-card{flex-basis:225px;min-height:240px}.why-card h3,.why-card--feature h3{margin-top:100px}.fund-more{grid-template-columns:48px 1fr 24px;gap:14px;min-height:138px;padding:19px}.fund-card__icon{width:48px;height:48px;border-radius:14px}.fund-card__icon svg{width:27px;height:27px}.fund-card__title strong{font-size:21px}.fund-card__title small{font-size:10.5px}.fund-card.is-open .fund-detail{padding:0 19px 20px}.fund-detail{padding:0 19px}.voice-track{grid-auto-columns:82%}.voice{min-height:300px}.about-funds{min-height:720px}.about-funds__shade{background:rgba(14,23,33,.76)}.about-stats article{min-height:120px;padding:19px}.about-stats b{font-size:34px}}
+.about-stats article{display:flex;min-height:162px;flex-direction:column;justify-content:flex-end}
+.about-stats article:first-child{border-color:transparent;background:linear-gradient(145deg,#a8131f,#dc303a 68%,#ed5e64);box-shadow:0 18px 44px rgba(120,8,16,.25)}
+.about-stats b{font-size:clamp(46px,4.6vw,68px);line-height:.9;letter-spacing:-.055em}
+.about-stats span{margin-top:16px}.about-stats article:first-child span{color:rgba(255,255,255,.84)}
+@media(max-width:640px){.about-stats article{min-height:136px}.about-stats b{font-size:40px}}
 
-/* ---------- Header: logo về trang chủ + 5 tab của nhóm trang ----------
-   Năm tab đều là neo trong cùng trang, đúng như trang gốc. Thanh dính trên
-   cùng nên mọi mục phải có scroll-margin-top, nếu không tiêu đề bị che. */
-.skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 18px;background:var(--red);color:#fff;font-weight:700}
-.skip:focus{left:0}
-
-/* Thanh điều hướng dùng nguyên khối .hdr của trang index (định nghĩa trong
-   style.css): nằm đè lên banner, chữ trắng in hoa, gạch đỏ dưới mục đang
-   xem, đổi nền khi cuộn qua banner. Ở đây chỉ thêm vài điểm riêng. */
-.hdr__nav{min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.hdr__nav::-webkit-scrollbar{display:none}
-/* mờ dần ở mép phải để biết là còn tab bị khuất, kéo ngang được */
-.hdr__nav.has-more{mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent);
-  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 34px),transparent)}
-.hdr__nav.has-more.at-end{mask-image:linear-gradient(90deg,transparent,#000 34px);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 34px)}
-
-/* Thanh đè lên banner nên chỉ chừa lề khi nó đã dính trên cùng */
-#dang-ky{scroll-margin-top:0}
-#cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:84px}
-
-/* ---------- Banner chính: ảnh tràn màn hình như trang chủ ----------
-   Form nằm ĐÈ lên banner (kính mờ) chứ không tách thành ô riêng bên cạnh. */
-.lp-hero{position:relative;display:flex;align-items:center;
-  min-height:clamp(540px,80vh,800px);padding:calc(84px + clamp(20px,2.2vw,34px)) 0 clamp(26px,2.8vw,40px);
-  background:var(--ink-deep)}
-/* overflow để ở lớp ảnh, KHÔNG để ở section: form cao hơn màn hình thì
-   section phải giãn ra, để ở section sẽ cắt mất ô tải app bên dưới */
-.lp-hero__bg{position:absolute;inset:0;overflow:hidden}
-.lp-hero__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
-.lp-hero__scrim{position:absolute;inset:0;background:
-  linear-gradient(94deg,rgba(8,14,22,.82) 0%,rgba(8,14,22,.6) 38%,rgba(8,14,22,.36) 58%,rgba(8,14,22,.6) 100%),
-  linear-gradient(rgba(8,14,22,.34),rgba(8,14,22,0) 34%,rgba(8,14,22,.5))}
-
-.lp-hero .hero__shapes{z-index:1}
-.lp-hero__grid{position:relative;z-index:2;display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(360px,432px);
-  gap:clamp(28px,4vw,72px);align-items:center}
-
-.lp-hero__copy{color:#fff}
-.lp-hero__copy .eyebrow{color:#fff}
-.lp-hero__copy .eyebrow::before{background:#fff}
-.lp-hero h1{max-width:16ch;margin-top:14px;font-size:clamp(32px,3.9vw,56px);font-weight:700;
-  line-height:1.16;letter-spacing:-.04em;text-transform:uppercase;text-wrap:balance;
-  text-shadow:0 2px 26px rgba(4,9,16,.45)}
-.lp-hero__desc{max-width:44ch;margin-top:15px;color:rgba(255,255,255,.9);font-size:clamp(15.5px,1.1vw,17px);line-height:1.74}
-.lp-hero__pts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
-.lp-hero__pts li{padding:8px 14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.lp-hero .btn{margin-top:22px}
-
-.lp-side{display:flex;flex-direction:column;gap:14px}
-
-/* ---------- Kính mờ ----------
-   Nền tối nhẹ + làm mờ ảnh phía sau: giữ được cảm giác trong suốt mà chữ
-   trắng vẫn đủ tương phản dù ảnh thành phố có chỗ rất sáng.
-   ::before là vệt sáng chéo, ::after là viền trong — hai lớp này tạo cảm
-   giác "khối kính" thay vì một mảng phẳng bán trong suốt. */
-.lp-glass{position:relative;isolation:isolate;
-  background:linear-gradient(152deg,rgba(255,255,255,.14) 0%,rgba(255,255,255,.035) 44%,rgba(255,255,255,.07) 100%),
-             rgba(10,17,27,.66);
-  backdrop-filter:blur(26px) saturate(150%);
-  -webkit-backdrop-filter:blur(26px) saturate(150%);
-  border:1px solid rgba(255,255,255,.3);
-  box-shadow:0 26px 70px rgba(4,9,16,.45),0 2px 10px rgba(4,9,16,.22)}
-.lp-glass::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(118% 72% at 6% -10%,rgba(255,255,255,.2),transparent 56%)}
-.lp-glass::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(255,255,255,.1),
-             inset 1px 0 0 rgba(255,255,255,.14),inset -1px 0 0 rgba(255,255,255,.14)}
-/* Trình duyệt không hỗ trợ backdrop-filter (Firefox cũ) → nền đặc, vẫn đọc được */
-@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
-  .lp-glass{background:linear-gradient(152deg,rgba(255,255,255,.12),rgba(255,255,255,.04)),rgba(10,17,26,.9)}
-  .lp-hero__pts li{background:rgba(255,255,255,.2)}
-}
-
-/* ---------- Form thu lead ---------- */
-.lp-form{padding:clamp(18px,1.6vw,24px);color:#fff}
-.lp-form h2{font-size:clamp(18px,1.55vw,21px);font-weight:700;line-height:1.26;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance}
-.lp-form__lead{margin-top:7px;color:rgba(255,255,255,.9);font-size:13.5px;line-height:1.55}
-.lp-form input,.lp-form .lp-f2{margin-top:9px}
-.lp-f2{display:block}
-.lp-f2>span{display:block;margin-bottom:4px;color:rgba(255,255,255,.94);font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
-.lp-form input,.lp-form select{width:100%;padding:9px 12px;background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.34);color:#fff;font:inherit;font-size:15px;transition:.2s}
-.lp-form select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,rgba(255,255,255,.7) 50%),linear-gradient(135deg,rgba(255,255,255,.7) 50%,transparent 50%);
-  background-position:calc(100% - 19px) 50%,calc(100% - 13px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:38px}
-.lp-form option{background:var(--ink);color:#fff}
-.lp-form input::placeholder{color:rgba(255,255,255,.55)}
-.lp-form input:focus,.lp-form select:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.12)}
-.lp-form input.is-bad,.lp-form select.is-bad{border-color:#ff8f7f}
-.lp-form__submit{width:100%;justify-content:space-between;margin-top:16px;cursor:pointer}
-.lp-form__consent{margin-top:11px;color:rgba(255,255,255,.84);font-size:11px;line-height:1.5}
-.lp-form__note{margin-top:6px;color:rgba(255,255,255,.74);font-size:11px;line-height:1.55}
-.lp-form__ok{margin-top:14px;padding:11px 13px;background:rgba(255,255,255,.1);border-left:3px solid #7ddba0;
-  color:#fff;font-size:13.5px;line-height:1.6}
-.lp-form__ok.is-bad{border-left-color:#ff8f7f}
-
-/* ---------- Ô tải app ---------- */
-.lp-app{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  padding:clamp(14px,1.3vw,18px) clamp(18px,1.7vw,24px);color:#fff}
-.lp-app .eyebrow{color:#fff}
-.lp-app .eyebrow::before{background:#fff}
-.lp-app h3{margin:8px 0 4px;font-size:16px;font-weight:700;letter-spacing:-.025em;text-transform:uppercase;color:#fff}
-.lp-app p{max-width:30ch;color:rgba(255,255,255,.88);font-size:13px;line-height:1.55}
-.lp-app__btns{display:flex;flex-wrap:wrap;gap:8px}
-
-/* ---------- Khối chung ---------- */
-.lp-sect{padding:clamp(48px,5vw,76px) 0;background:#fff}
-.lp-sect--sand{background:var(--sand)}
-.lp-head{margin-bottom:clamp(24px,2.6vw,36px)}
-.lp-head h2{font-size:clamp(25px,2.7vw,38px);font-weight:700;line-height:1.22;letter-spacing:-.035em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
-.lp-head p{max-width:62ch;margin-top:12px;color:#6b7280;font-size:16px;line-height:1.72}
-.lp-head--light h2{color:#fff}
-.lp-head--light p{color:rgba(255,255,255,.78)}
-
-/* ---------- Lưới quỹ: bấm vào xổ chi tiết ---------- */
-.lp-funds{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
-.lp-fund{background:#fff;display:flex;flex-direction:column}
-/* Thẻ cao bằng nhau nên đẩy cụm số + biểu đồ xuống đáy: hai thẻ cùng hàng
-   thì con số nằm ngang nhau, không so le. */
-.lp-fund__t{display:flex;flex-direction:column;align-items:stretch;flex:1;width:100%;
-  padding:clamp(22px,2.1vw,28px);text-align:left;cursor:pointer;transition:.22s}
-.lp-fund__t:hover{background:var(--paper)}
-.lp-fund__ma{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;color:var(--red);font-size:12.5px;font-weight:700;letter-spacing:.09em}
-.lp-fund__ma em{font-style:normal;padding:3px 8px;background:var(--sand);color:#6b7280;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
-.lp-fund__ten{display:block;margin-top:11px;font-size:17px;font-weight:700;line-height:1.35;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-.lp-fund__pt{display:flex;gap:10px;margin-top:12px;color:#5d6470;font-size:14.5px;line-height:1.62;text-wrap:pretty}
-.lp-fund__bq{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap}
-.lp-fund__bq b{font-size:26px;font-weight:700;letter-spacing:-.04em;color:var(--ink)}
-.lp-fund__bq small{color:#6b7280;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.lp-fund__more{display:inline-flex;align-items:center;gap:9px;margin-top:15px;color:var(--red);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.lp-fund__more i{font-style:normal;font-size:16px;line-height:1}
-.lp-fund.is-open .lp-fund__more i{transform:rotate(45deg)}
-.lp-fund__b{display:none;padding:0 clamp(22px,2.1vw,28px) clamp(24px,2.3vw,30px)}
-.lp-fund.is-open .lp-fund__b{display:block}
-.lp-fund__desc{color:#5d6470;font-size:14.5px;line-height:1.7}
-.lp-tab{width:100%;margin-top:16px;border-collapse:collapse;font-size:14px}
-.lp-tab th,.lp-tab td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:right}
-.lp-tab thead th{border-bottom:2px solid var(--ink);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.lp-tab tbody th{text-align:left;font-weight:500;color:#6b7280}
-.lp-tab thead th:first-child,.lp-tab tbody th{text-align:left}
-.lp-tab td{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:700}
-.lp-tab td:last-child{color:#8b929c;font-weight:500}
-.lp-fund__b .tlink{margin-top:18px}
-.lp-disc{max-width:90ch;margin-top:22px;color:#6b7280;font-size:12.5px;line-height:1.7}
-
-/* ---------- Lý do ---------- */
-.lp-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.lp-why article{padding:clamp(24px,2.3vw,32px);background:#fff}
-.lp-why h3{margin:16px 0 9px;font-size:17px;font-weight:700;line-height:1.32;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
-.lp-why p{color:#6b7280;font-size:14.5px;line-height:1.68}
-/* .lp-why article (0,1,1) mạnh hơn .lp-why__cta (0,1,0) nên phải viết kèm
-   article, nếu không thẻ này mất nền tối và chữ trắng thành vô hình. */
-.lp-why article.lp-why__cta{display:flex;flex-direction:column;justify-content:center;gap:14px;
-  padding:clamp(24px,2.3vw,32px);background:var(--ink)}
-.lp-why article.lp-why__cta h3{color:#fff;margin:0;font-size:18px}
-.lp-why article.lp-why__cta p{color:rgba(255,255,255,.78)}
-.lp-why article.lp-why__cta .btn{margin-top:4px;align-self:flex-start}
-
-/* ---------- Nhà đầu tư nói gì ---------- */
-.lp-says{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,2.4vw,32px)}
-.lp-says figure{margin:0;padding:clamp(24px,2.4vw,32px);background:var(--paper);border-left:3px solid var(--red)}
-.lp-says blockquote{margin:0;color:#3c4453;font-family:VCSerif,Georgia,serif;font-size:clamp(16px,1.35vw,18.5px);line-height:1.7}
-.lp-says figcaption{margin-top:18px}
-.lp-says figcaption b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
-.lp-says figcaption > span > span{display:block;margin-top:4px;color:#5f6572;font-size:12.5px;line-height:1.55}
-
-/* ---------- Về VinaCapital ---------- */
-/* Chữ nằm ĐÈ lên ảnh thành phố, không phải dải ảnh rồi mới tới khối chữ. */
-.lp-about{position:relative;display:flex;align-items:center;overflow:hidden;
-  min-height:clamp(430px,46vw,580px);padding:clamp(54px,5.6vw,84px) 0;background:var(--ink-deep);color:#fff}
-.lp-about__bg{position:absolute;inset:0}
-.lp-about__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 54%}
-.lp-about__scrim{position:absolute;inset:0;background:
-  linear-gradient(100deg,rgba(13,19,31,.86) 0%,rgba(13,19,31,.7) 48%,rgba(13,19,31,.54) 100%),
-  linear-gradient(rgba(13,19,31,.32),rgba(13,19,31,0) 42%,rgba(13,19,31,.46))}
-.lp-about .wrap{position:relative;z-index:2}
-.lp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3vw,48px)}
-.lp-stats strong{display:block;font-size:clamp(26px,3vw,42px);font-weight:700;letter-spacing:-.045em;line-height:1}
-.lp-stats article:first-child strong{color:#ff8a76}
-.lp-stats span{display:block;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.22);
-  color:rgba(255,255,255,.84);font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-
-.lp-fund__so{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
-
-/* ---------- Icon ---------- */
-.lp-ic{display:block;width:54px;height:auto}
-.lp-ico{flex:none;width:19px;height:19px;margin-top:1px;color:var(--red)}
-
-/* ---------- Nút cửa hàng ứng dụng ----------
-   Badge nền trắng vì ô này nền tối. Không bọc thêm khung nào bên ngoài.
-   Bản chạy thật phải thay bằng file badge chính chủ của Apple và Google. */
-.lp-store{display:block;width:clamp(140px,11vw,158px);line-height:0;text-transform:none;letter-spacing:normal;
-  transition:transform .2s,opacity .2s}
-.lp-store svg{width:100%;height:auto;display:block}
-.lp-store:hover{transform:translateY(-2px);opacity:.88}
-
-/* ---------- Ảnh đại diện tạm bằng chữ cái đầu ---------- */
-.lp-says figure{position:relative;overflow:hidden}
-.lp-says__q{position:absolute;top:-16px;right:10px;color:var(--red);opacity:.12;
-  font-family:VCSerif,Georgia,serif;font-size:130px;line-height:1;pointer-events:none}
-.lp-says figcaption{display:flex;align-items:center;gap:14px}
-.lp-says figcaption .lp-says__av{display:grid;place-items:center;flex:none;width:46px;height:46px;
-  margin-top:0;background:var(--ink);color:#fff;font-size:15px;font-weight:700;letter-spacing:.04em}
-
-/* ---------- Responsive ---------- */
-@media(max-width:1080px){
-  .lp-hero{min-height:0;padding:clamp(40px,6vw,64px) 0}
-  .lp-hero__grid{grid-template-columns:1fr;gap:30px}
-  .lp-hero__copy{max-width:640px}
-  .lp-hero__scrim{background:linear-gradient(rgba(8,14,22,.56),rgba(8,14,22,.72))}
-  .lp-funds{grid-template-columns:1fr}
-  .lp-why{grid-template-columns:1fr 1fr}
-  .lp-says{grid-template-columns:1fr}
-  .lp-stats{grid-template-columns:1fr 1fr;gap:28px}
-}
-@media(max-width:680px){
-  .hdr__nav{gap:16px}
-  /* nhãn ở đây là "Đăng ký" chứ không phải "MiO" nên phải gọn lại kẻo rớt dòng */
-  .hdr__mio{padding:10px 13px;font-size:10.5px;letter-spacing:.07em}
-  #cac-quy,#vi-sao,#noi-gi,#ve-vinacapital{scroll-margin-top:72px}
-  .lp-app{display:block}
-  .lp-app__btns{margin-top:14px}
-  .lp-why{grid-template-columns:1fr}
-  .lp-about{min-height:0}
-  .lp-stats{grid-template-columns:1fr 1fr;gap:22px}
-  .lp-fund__bq b{font-size:23px}
-  .lp-tab{font-size:13px}
-  .lp-tab th,.lp-tab td{padding:8px 6px}
-}
+.section-head>p{font-weight:500}
+.section-head>p{font-size:15px}
+.consult__lead{font-size:14.5px}
+.consult__fine{font-size:10.5px}
+.why-card p{font-size:13px;opacity:.9}
+.fund-card__title small{font-size:13px}
+.disclaimer{font-size:11px}
+.voice figcaption span{font-size:11px}

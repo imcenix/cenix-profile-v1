@@ -1,21 +1,8 @@
-/* ==========================================================================
-   VinaCapital — Option 01 · Bold Editorial
-   Homepage. Copy follows the official English site (vinacapital.com/en).
-
-   Client feedback applied 18/09/2026:
-   · hero is a still image, no video — IT flagged page weight on WordPress
-   · brand wedges pulled to the right edge so the skyline stays crisp
-   · "Seven asset classes" promoted to sit directly under Investment Solutions,
-     sharing one card language but kept as its own section
-   · "Our Presence" figures are no longer boxed in
-   ========================================================================== */
-
 const HERO = {
   label: 'Vietnam’s leading multi-disciplinary investment manager',
   lines: ['Creating value', 'from Vietnam’s', 'remarkable growth'],
   body: 'As Vietnam’s leading multi-disciplinary investment manager, we are uniquely positioned to create value and share the opportunities and benefits of the country’s growth across every asset class.',
   cta: 'About us',
-  /* Ảnh tĩnh thay cho video: nhẹ hơn ~85% và nét hơn sau khi khử mù + tăng nét */
   still: 'hcmc-hero',
   alt: 'Ho Chi Minh City waterfront seen from above',
   foot: 'Vietnam · Long-term growth',
@@ -44,13 +31,9 @@ const SOLUTIONS = {
   more: 'Find out more'
 };
 
-/* Bảy loại tài sản — section riêng, đặt ngay dưới Giải pháp đầu tư.
-   Hai khối liên kết về nội dung nên dùng chung ngôn ngữ thẻ, nhưng vẫn tách
-   section để giữ ý nghĩa riêng. Không link, không hover: đây là cụm thông tin. */
 const ASSETS = {
   label: 'One multi-asset platform',
   title: 'Seven asset\u00A0classes',
-  intro: 'Every asset class runs on the same investment process and risk framework, letting investors access Vietnam’s growth at the level that suits them.',
   items: [
     'Listed Equity',
     'Fixed Income',
@@ -62,10 +45,6 @@ const ASSETS = {
   ]
 };
 
-
-/* Hai dải ảnh ngang làm "điểm nghỉ" giữa các section.
-   Ảnh cao hơn khung và trôi dọc bên trong khi cuộn — khung đứng yên, ảnh chạy.
-   Chữ giữ ở mức một câu: đây là chỗ để mắt nghỉ, không phải chỗ đọc. */
 const STRIPS = {
   city: {
     img: 'hcmc-band-city.webp',
@@ -89,8 +68,8 @@ const NEWS = {
   lead: {
     date: '28/10/2025',
     title: 'VinaCapital’s Investor Conference highlights the ‘Vietnam 2.0’ vision',
-    img: 'investor.jpg',
-    alt: 'VinaCapital leadership on stage at the annual Investor Conference'
+    img: 'news-insight.jpg',
+    alt: 'VinaCapital speaker presenting on stage at an investment forum'
   },
   rows: [
     ['29/07/2026', 'Addition of Vietcombank Securities Company, Ltd to the list of distribution partners for VinaCapital’s open-ended funds'],
@@ -131,12 +110,6 @@ const PRESENCE = {
   ]
 };
 
-/* -------------------------------------------------------------------------
-   IMG, corner, shapes, header, fraudBand, footer, initShared đến từ shared.js
-   ------------------------------------------------------------------------- */
-
-
-/* Một dải nghỉ. `data-px` để motion.js ghi biến --p, CSS lo phần trôi ảnh. */
 const strip = (k) => {
   const d = STRIPS[k];
   return `
@@ -222,10 +195,6 @@ ${header('home')}
 </section>
 
 <section class="assets" id="assets">
-  <!-- Feedback 24/09: dải ảnh "One country. Every asset class." bên dưới lặp
-       lại đúng ý của tiêu đề này. Nay ảnh lên trên làm nền, cụm tiêu đề nằm
-       trên ảnh, bỏ hẳn dải ảnh riêng. Vẫn giữ hiệu ứng nền neo khi cuộn. -->
-  <!-- 25/09: đưa 7 ô vào luôn trong khối ảnh, ô dạng kính trong (liquid glass). -->
   <div class="strip assets__hero" data-fixed>
     <div class="strip__bg"><img src="${IMG}${STRIPS.city.img}" alt="${STRIPS.city.alt}" loading="lazy"></div>
     <span class="strip__scrim" aria-hidden="true"></span>
@@ -235,7 +204,6 @@ ${header('home')}
           <p class="eyebrow eyebrow--rule" data-rv>${ASSETS.label}</p>
           <h2 data-rv style="--d:.08s">${ASSETS.title}</h2>
         </div>
-        <p data-rv style="--d:.14s">${ASSETS.intro}</p>
       </div>
       <div class="wrap assets__body">
         <div class="assets__grid" data-rv-group>
@@ -313,7 +281,6 @@ ${fraudPopup()}`;
 
 function init(root) {
   initShared(root);
-  /* tagline mờ rồi nổi dần lên khi vào trang */
   const hero = root.querySelector('.hero');
   if (hero) requestAnimationFrame(() => hero.classList.add('is-in'));
 }

@@ -1,4 +1,3 @@
-/* CONTACT — official contact routes and offices from vinacapital.com/contact. */
 const CONTACT_ROUTES = [
   {
     no: '01', label: 'Investor relations',
@@ -77,7 +76,7 @@ VC.mountPage({
 
 <section class="contact-direct">
   <div class="wrap contact-direct__grid">
-    <div><p class="eyebrow eyebrow--rule">Direct access</p><h2>Manage your investment through MiO</h2><p>Current investors can securely access their portfolio, place orders and review transactions through VinaCapital MiO.</p><a class="btn" href="#">Open MiO <i>↗</i></a></div>
+    <div><p class="eyebrow eyebrow--rule">Direct access</p><h2>Manage your investment through MiO</h2><p>Current investors can securely access their portfolio, place orders and review transactions through VinaCapital MiO.</p><a class="btn" href="https://mio.vinacapital.com/" target="_blank" rel="noopener">Open MiO <i>↗</i></a></div>
     <div class="contact-direct__mark"><span>MiO</span><p>Your VinaCapital investment<br>in one secure place.</p></div>
   </div>
 </section>
@@ -85,7 +84,7 @@ VC.mountPage({
 <section class="contact-safe" id="official-channels">
   <div class="wrap contact-safe__grid">
     <div><p class="eyebrow">Investor protection</p><h2>Use official channels only.</h2></div>
-    <div><p>Advice about VinaCapital open-ended fund certificates is provided only by VinaCapital consultants or employees of officially appointed distribution agents.</p><p>Fund certificates can only be transacted through MiO or official distribution partners. Never transfer funds to personal or unverified bank accounts.</p><a class="tlink" href="#canh-bao">Read the full fraud warning <i>↓</i></a></div>
+    <div><p>Advice about VinaCapital open-ended fund certificates is provided only by VinaCapital consultants or employees of officially appointed distribution agents.</p><p>Fund certificates can only be transacted through MiO or official distribution partners. Never transfer funds to personal or unverified bank accounts.</p><a class="tlink" href="index.html#canh-bao">Read the full fraud warning <i>→</i></a></div>
   </div>
 </section>`
 });

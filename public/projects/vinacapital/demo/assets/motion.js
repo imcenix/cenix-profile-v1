@@ -1,44 +1,22 @@
-/* ==========================================================================
-   VinaCapital — lớp chuyển động, CHỈ dùng cho trang chủ
-   --------------------------------------------------------------------------
-   Không thư viện. Hai cơ chế duy nhất:
-
-   1. IntersectionObserver  → gắn class .is-in cho [data-rv] khi vào khung nhìn.
-      Mọi hiệu ứng hiện ra đều là CSS transition, chạy một lần rồi thôi.
-   2. Một vòng requestAnimationFrame  → ghi biến CSS --p (0→1) cho [data-px]
-      và --hp cho banner. CSS tự tính transform từ hai biến đó.
-
-   Chỉ đụng tới `transform` và `opacity` nên trình duyệt xử lý trên GPU, không
-   gây reflow. Toàn bộ file ~6KB, không cần GSAP/Lenis như các site tham khảo.
-
-   KHÔNG cướp quyền cuộn (smooth-scroll ảo). Ngành tài chính đọc là chính;
-   cuộn trễ nhịp làm người dùng khó chịu và hỏng trợ năng.
-
-   Tôn trọng prefers-reduced-motion: tắt sạch, nội dung hiện đầy đủ.
-   ========================================================================== */
-
 (function () {
   const root = document.documentElement;
 
-  /* Ai bật "giảm chuyển động" thì không bật lớp này — CSS sẽ để mọi thứ hiện sẵn */
   const tatMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (tatMotion) return;
 
   root.classList.add('has-motion');
 
-  /* ---------------------------------------------------------------- 1. Hiện ra */
   const cho = [...document.querySelectorAll('[data-rv]')];
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
       e.target.classList.add('is-in');
-      io.unobserve(e.target);           /* chạy một lần, không lặp lại khi cuộn ngược */
+      io.unobserve(e.target);
     });
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
 
   cho.forEach((el) => {
-    /* các phần tử cùng nhóm hiện lệch nhau một nhịp */
     const nhom = el.closest('[data-rv-group]');
     if (nhom) {
       const anhEm = [...nhom.querySelectorAll('[data-rv]')];
@@ -47,15 +25,10 @@
     io.observe(el);
   });
 
-  /* Banner hiện ngay, không chờ cuộn */
   const hero = document.querySelector('.hero');
   if (hero) requestAnimationFrame(() => hero.classList.add('is-in'));
 
-  /* ------------------------------------------------- 2. Ảnh trôi trong khung */
   const px = [...document.querySelectorAll('[data-px]')];
-  /* Nền neo theo màn hình: khung trượt qua, ảnh đứng yên như dán vào cửa sổ
-     trình duyệt. Không dùng background-attachment:fixed vì iOS Safari không
-     chạy và máy yếu bị giật — ở đây chỉ là một phép translate, GPU lo hết. */
   const fixedBg = [...document.querySelectorAll('[data-fixed]')];
   const hdr = document.querySelector('.hdr');
   let cao = window.innerHeight;
@@ -65,14 +38,11 @@
     cho_ve = false;
     const y = window.scrollY;
 
-    /* banner: ảnh lùi chậm hơn tốc độ cuộn */
     if (hero) {
       const h = hero.offsetHeight || cao;
       root.style.setProperty('--hp', Math.min(1, Math.max(0, y / h)).toFixed(4));
     }
 
-    /* mỗi khung ảnh: --p = 0 khi mép trên vừa chạm đáy màn hình, = 1 khi mép
-       dưới vừa rời khỏi đỉnh. CSS dịch ảnh trong khoảng đó. */
     for (const el of px) {
       const r = el.getBoundingClientRect();
       if (r.bottom < -200 || r.top > cao + 200) continue;
@@ -80,15 +50,12 @@
       el.style.setProperty('--p', Math.min(1, Math.max(0, p)).toFixed(4));
     }
 
-    /* nền neo: dịch ngược đúng bằng khoảng cách từ đỉnh màn hình tới khung,
-       nên lớp nền luôn nằm đúng vị trí cửa sổ dù khung đã trôi tới đâu */
     for (const el of fixedBg) {
       const r = el.getBoundingClientRect();
       if (r.bottom < -300 || r.top > cao + 300) continue;
       el.style.setProperty('--fx', Math.round(-r.top));
     }
 
-    /* header đổi nền khi rời khỏi banner — KHÔNG đổi kích thước logo */
     if (hdr) hdr.classList.toggle('is-stuck', y > (hero ? hero.offsetHeight - 90 : 120));
   }
 
@@ -102,8 +69,6 @@
   window.addEventListener('resize', () => { cao = window.innerHeight; xepLich(); }, { passive: true });
   ve();
 
-  /* ------------------------------------------------------- 3. Số chạy lên */
-  /* Tách phần số ra khỏi tiền tố/hậu tố: "USD 3.8bn" → "USD " + 3.8 + "bn" */
   const doSo = (s) => {
     const m = s.match(/^(\D*?)([\d.,]+)(.*)$/s);
     if (!m) return null;
@@ -123,7 +88,6 @@
       if (!d) return;
       const batDau = performance.now();
       const dai = 1400;
-      /* easing expo-out: nhanh lúc đầu, dừng êm — giống nhịp của các mục khác */
       const ease = (t) => (t >= 1 ? 1 : 1 - Math.pow(2, -10 * t));
       el.style.fontVariantNumeric = 'tabular-nums';
       (function buoc(now) {

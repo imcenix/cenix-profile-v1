@@ -1,9 +1,3 @@
-/* ==========================================================================
-   GIẢI PHÁP ĐẦU TƯ — giữ nguyên tuyến nội dung
-   vinacapital.com/vi/investment-solutions
-   13 quỹ rút còn nhóm tiêu biểu cho bản demo; cấu trúc khối giữ nguyên.
-   ========================================================================== */
-
 const LEAD = 'As Vietnam’s leading multi-disciplinary asset manager, VinaCapital offers local and international investors the opportunity to share in Vietnam’s growth across seven asset classes.';
 
 const DO3 = ['Fund Performance', 'How to Invest', 'Fund Details'];
@@ -55,7 +49,7 @@ const SERVICES = {
 
 const ALT = {
   label: 'Alternative investments',
-  title: 'Beyond the listed market',
+  title: 'Private capital investment',
   intro: 'VinaCapital’s alternative investment platform spans technology, real estate, infrastructure, energy and private equity.',
   items: [
     {
@@ -85,15 +79,31 @@ const ALT = {
   ]
 };
 
-/* Quỹ đã có trang chi tiết (demo: VESAF). Quỹ khác thêm vào đây khi có trang. */
 const PAGE = { 'VINACAPITAL-VESAF': 'fund-vesaf.html' };
+const EXT_FUND = {
+  'VinaCapital Vietnam Opportunity Fund': ['https://vof.vinacapital.com/', 'https://vinacapital.com/investment-solutions/offshore-funds/vof/how-to-invest/', 'https://vinacapital.com/investment-solutions/offshore-funds/vof/overview/'],
+  'VCG Partners Vietnam Fund': ['https://vinacapital.com/investment-solutions/offshore-funds/vvf/', 'https://vinacapital.com/investment-solutions/offshore-funds/vvf/#how-to-invest', 'https://vinacapital.com/investment-solutions/offshore-funds/vvf/'],
+  'VINACAPITAL-VDEF': ['https://vinacapital.com/investment-solutions/onshore-funds/vdef/', 'https://vinacapital.com/investment-solutions/onshore-funds/vdef/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vdef/'],
+  'VINACAPITAL-VEOF': ['https://vinacapital.com/investment-solutions/onshore-funds/veof/', 'https://vinacapital.com/investment-solutions/onshore-funds/veof/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/veof/'],
+  'VINACAPITAL-VMEEF': ['https://vinacapital.com/investment-solutions/onshore-funds/vmeef/', 'https://vinacapital.com/investment-solutions/onshore-funds/vmeef/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vmeef/'],
+  'VINACAPITAL-VIBF': ['https://vinacapital.com/investment-solutions/onshore-funds/vibf/', 'https://vinacapital.com/investment-solutions/onshore-funds/vibf/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vibf/'],
+  'VINACAPITAL-VFF': ['https://vinacapital.com/investment-solutions/onshore-funds/vff/', 'https://vinacapital.com/investment-solutions/onshore-funds/vff/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vff/'],
+  'VINACAPITAL-VLBF': ['https://vinacapital.com/investment-solutions/onshore-funds/vlbf/', 'https://vinacapital.com/investment-solutions/onshore-funds/vlbf/#how-to-invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vlbf/'],
+  'VinaCapital VN100 ETF': ['https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn100-etf/', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn100-etf/#Invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn100-etf/'],
+  'VinaCapital VN50 Growth ETF': ['https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn50-growth-etf/', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn50-growth-etf/#Invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vn50-growth-etf/'],
+  'VinaCapital VNMITECH ETF': ['https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vnmitech-etf/', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vnmitech-etf/#Invest', 'https://vinacapital.com/investment-solutions/onshore-funds/vinacapital-vnmitech-etf/']
+};
+const SERVICE_URL = ['https://vinacapital.com/investment-solutions/onshore-funds/segregated-accounts/', 'https://vinacapital.com/investment-solutions/onshore-funds/insurance-linked-products/', 'https://vinacapital.com/investment-solutions/onshore-funds/wealthbuilder/'];
+const fundKey = code => code.replace(/\u00a0/g, ' ');
+const fundHref = (code, i) => PAGE[code] ? PAGE[code] + ['#performance', '#how-to-invest', ''][i] : EXT_FUND[fundKey(code)] ? EXT_FUND[fundKey(code)][i] : 'https://vinacapital.com/investment-solutions/';
+const fundTarget = code => PAGE[code] ? '' : ' target="_blank" rel="noopener"';
 
 const fundRows = list => `
 <div class="funds">
   ${list.map(f => `<article class="fund">
-    <div class="fund__id"><b>${PAGE[f[0]] ? `<a href="${PAGE[f[0]]}">${f[0]}</a>` : f[0]}</b><span>${f[1]}</span></div>
+    <div class="fund__id"><b><a href="${fundHref(f[0], 2)}"${fundTarget(f[0])}>${f[0]}</a></b><span>${f[1]}</span></div>
     <p>${f[2]}</p>
-    <div class="fund__do">${DO3.map((d, i) => `<a href="${PAGE[f[0]] ? PAGE[f[0]] + ['#performance', '#how-to-invest', ''][i] : '#'}">${d} →</a>`).join('')}</div>
+    <div class="fund__do">${DO3.map((d, i) => `<a href="${fundHref(f[0], i)}"${fundTarget(f[0])}>${d} →</a>`).join('')}</div>
   </article>`).join('')}
 </div>`;
 
@@ -153,11 +163,8 @@ VC.mountPage({
       <p class="eyebrow eyebrow--rule">${SERVICES.label}</p>
       <h2>${SERVICES.title}</h2>
     </div>
-    <!-- Feedback 24/09: ảnh cũ (cầu, toà nhà…) không đúng chủ đề nên tạm bỏ
-         ảnh, dùng thẻ chữ. Khi có ảnh đúng ý (ký hợp đồng / tư vấn / bắt tay)
-         thì thêm lại khối .card__media và bỏ lớp cards--text. -->
     <div class="cards cards--text">
-      ${SERVICES.items.map((s, i) => `<a class="card" href="#">
+      ${SERVICES.items.map((s, i) => `<a class="card" href="${SERVICE_URL[i]}" target="_blank" rel="noopener">
         <div class="card__b">
           <b class="card__no">${String(i + 1).padStart(2, '0')}</b>
           <h3>${s[0]}</h3>
@@ -175,9 +182,6 @@ VC.mountPage({
       <div><p class="eyebrow eyebrow--rule">${ALT.label}</p><h2>${ALT.title}</h2></div>
       <p>${ALT.intro}</p>
     </div>
-    <!-- Feedback 24/09: thẻ nổi lên khi rê chuột; bấm thẻ mở website công ty
-         thành viên chính, bấm từng nhãn mở website của công ty đó. Nhãn nào
-         chưa có website riêng (Long An Power, quỹ năng lượng) thì để chữ thường. -->
     <div class="numgrid numgrid--2 numgrid--link">
       ${ALT.items.map((it, i) => `<article>
         <b>${String(i + 1).padStart(2, '0')}</b>

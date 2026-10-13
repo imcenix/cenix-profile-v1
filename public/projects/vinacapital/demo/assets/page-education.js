@@ -1,4 +1,3 @@
-/* Kiến thức đầu tư — thư viện tài chính giàu hình ảnh, theo trật tự trang gốc. */
 const EDU_IMG = `${IMG}education/`;
 
 const FAQS = [
@@ -28,10 +27,6 @@ VC.mountPage({
   <div class="wrap subnav__in"><a href="#kien-thuc">Learning</a><a href="#video">Financial Prosperity</a><a href="#faqs">FAQs</a></div>
 </nav>
 
-<!-- Feedback 24/09: gộp 4 khối cũ (mở đầu, 3 chủ đề, "Every goal in life",
-     "Open-ended funds A to Z") thành MỘT khối Learning có 3 tab. Mỗi tab dựng
-     giống mục News ở trang chủ: 1 bài lớn có ảnh bên trái, các bài nhỏ chỉ
-     có tiêu đề bên phải. "See all articles" mở trang thư viện đánh số trang. -->
 <section class="ed-learn" id="kien-thuc">
   <div class="wrap">
     <div class="shead">
@@ -66,10 +61,6 @@ VC.mountPage({
 
 <section class="ed-video" id="video">
   <div class="wrap ed-video__head"><div><p class="eyebrow eyebrow--rule">Investment video series</p><h2>Financial Prosperity</h2></div><p>Financial stories told visually and simply — each episode a small step towards understanding money better.</p></div>
-  <!-- Feedback 24/09: video làm dạng dọc (9:16). Ảnh bìa hiện có là ảnh ngang
-       của YouTube (chữ in sẵn trong ảnh) nên không cắt — đặt nguyên ảnh giữa
-       khung dọc, nền là chính ảnh đó làm mờ. Khi khách có ảnh bìa dọc thì bỏ
-       lớp .ed-video__fill và cho ảnh phủ kín khung. -->
   <div class="wrap ed-video__grid ed-video__grid--v">
     <a href="https://www.youtube.com/watch?v=7usMn_n0atI" target="_blank" rel="noopener"><span class="ed-video__thumb"><img class="ed-video__fill" src="${EDU_IMG}video-01.jpg" alt="" aria-hidden="true" loading="lazy"><img src="${EDU_IMG}video-01.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 01</small><b>Starting your investment journey the right way</b></a>
     <a href="https://www.youtube.com/watch?v=6f_mRe9nnwo" target="_blank" rel="noopener"><span class="ed-video__thumb"><img class="ed-video__fill" src="${EDU_IMG}video-02.jpg" alt="" aria-hidden="true" loading="lazy"><img src="${EDU_IMG}video-02.jpg" alt="Financial education video" loading="lazy"><i>▶</i></span><small>Financial Prosperity · Episode 02</small><b>Understanding your goals and risk appetite</b></a>
@@ -79,7 +70,7 @@ VC.mountPage({
 
 <section class="ed-faq" id="faqs">
   <div class="wrap ed-faq__grid">
-    <div class="ed-faq__head"><p class="eyebrow eyebrow--rule">Frequently asked questions</p><h2>Answers before you begin</h2><p>Common questions about open-ended funds, performance, transactions and choosing the solution that fits.</p><a class="tlink" href="#">See all 26 questions <i>→</i></a></div>
+    <div class="ed-faq__head"><p class="eyebrow eyebrow--rule">Frequently asked questions</p><h2>Answers before you begin</h2><p>Common questions about open-ended funds, performance, transactions and choosing the solution that fits.</p><a class="tlink" href="https://vinacapital.com/investment-education/#faqs" target="_blank" rel="noopener">See all 26 questions <i>→</i></a></div>
     <div class="acc ed-faq__list">${FAQS.map((f, i) => `<div class="acc__item${i === 0 ? ' is-open' : ''}"><button data-acc aria-expanded="${i === 0}"><span>${String(i+1).padStart(2,'0')}</span><b>${f[0]}</b><i>+</i></button><div class="acc__panel"><p>${f[1]}</p></div></div>`).join('')}</div>
   </div>
 </section>
