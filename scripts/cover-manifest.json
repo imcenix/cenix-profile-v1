@@ -1442,5 +1442,33 @@
   {
     "path": "assets/news/ambi-26-trieu-do-ung-dung-ai-nghe-ngam-ca-ngay/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/10/Ambi-by-Mistlabs.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/openai-nhan-vien-bi-bat-gan-may-ghi-am-phong-hop/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/openai-employee-product-recording.jpg?w=1145"
+  },
+  {
+    "path": "assets/news/character-ai-nop-ho-so-pha-san-disney-mua-tai-san/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/04/Screenshot-2025-04-22-at-1.24.23PM.png?resize=1200,672"
+  },
+  {
+    "path": "assets/news/google-play-cho-phep-app-vibe-code-rieng-tu/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/PersonalApps_desktop_16x9_Static.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/facebook-your-algorithm-tu-chinh-feed-bang-loi-noi/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/YourAlgorithm-FB.png"
+  },
+  {
+    "path": "assets/news/bumble-13-ty-usd-ve-tay-ithaca-holdings/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/04/Bumble-new-logo.jpg?resize=1200,810"
+  },
+  {
+    "path": "assets/news/toa-an-buoc-openai-giao-ho-so-tuyen-dung-vu-apple/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/OpenAI-logo-in-Seoul.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/amex-intent-intelligence-ngan-ai-agent-mua-nham/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/amex-GettyImages-171311164.jpg?resize=1200,800"
   }
 ]
