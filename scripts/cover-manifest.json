@@ -1554,5 +1554,29 @@
   {
     "path": "assets/news/waymo-toi-canada-toronto-thu-thach-mua-dong/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/08/waymo-ojai.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/microsoft-guardian-agents-ai-agent-ke-noi-gian/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Networked-AI-swarm-with-glowing-nodes.png?resize=1200,600"
+  },
+  {
+    "path": "assets/news/amazon-torchneuron-chuyen-pytorch-sang-trainium/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/03/GettyImages-2205217071.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/nvidia-nemotron-3-5-model-mo-chay-agent-tren-pc/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/11/GettyImages-2183848501.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/opencode-bi-tan-cong-1-4-phan-tram-nguoi-dung-console/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/cyberatttack.jpg?w=612"
+  },
+  {
+    "path": "assets/news/tenstorrent-1-5-ty-do-dinh-gia-6-2-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/08/rnuUXh8kprc7HfoRAGgTvZ-1200-80.jpg?w=970"
+  },
+  {
+    "path": "assets/news/apple-siet-app-nudify-bait-and-switch-app-store/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v1.jpg?resize=1200,675"
   }
 ]
