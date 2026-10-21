@@ -1578,5 +1578,33 @@
   {
     "path": "assets/news/apple-siet-app-nudify-bait-and-switch-app-store/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v1.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/meta-muse-10-trieu-luot-tai-40-ngay/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/meta-muse-app-GettyImages-2293792137.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/chatgpt-khoa-chat-bang-pin-face-id/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/gemini-personal-intelligence-tren-xe-hoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/04/Gemini-google-vehicles.jpeg?w=1200"
+  },
+  {
+    "path": "assets/news/my-yeu-cau-co-quan-lien-bang-go-deepseek/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2195703830.jpg?w=1024"
+  },
+  {
+    "path": "assets/news/google-torchtpu-mo-nguon-ganh-nvidia/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/05/GettyImages-2215577882.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/figma-dylan-field-mcp-khong-hoan-hao/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1233645802.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/yelp-check-for-me-ai-goi-nha-hang-hoi-gio-cho/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Yelp-waitlist.jpg?resize=1200,675"
   }
 ]
