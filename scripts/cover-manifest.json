@@ -1606,5 +1606,33 @@
   {
     "path": "assets/news/yelp-check-for-me-ai-goi-nha-hang-hoi-gio-cho/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/10/Yelp-waitlist.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/php-lo-hong-nsa-canh-bao-ai-tim-ra/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2021/12/GettyImages-460689215.jpg?resize=1200,801"
+  },
+  {
+    "path": "assets/news/meta-phat-25-ty-usd-new-mexico/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/mark-zuckerberg-meta-connect.jpg?resize=1200,799"
+  },
+  {
+    "path": "assets/news/flapping-airplanes-1-ty-usd-dinh-gia-6-ty/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/02/Flapping-Airplanes-founders-photo.jpg?resize=1200,821"
+  },
+  {
+    "path": "assets/news/gm-onstar-tro-ly-ai-cadillac-lyriq-2027/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/OnStar-AI-Assistant.jpg?resize=1200,624"
+  },
+  {
+    "path": "assets/news/walmart-agent-gateway-amazon-chan-ai-agent/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2018/01/gettyimages-903923942.jpeg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/recursive-flint-model-code-chay-tren-laptop/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/05/GettyImages-2157738833.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-de-xuat-luat-an-toan-ai-50-nguoi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/08/GettyImages-2282033342.jpg?w=1024"
   }
 ]
