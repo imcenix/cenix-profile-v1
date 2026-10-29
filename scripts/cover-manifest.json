@@ -1682,5 +1682,25 @@
   {
     "path": "assets/news/ios-27-2-siri-ai-nho-hoi-thoai-160-ban-va/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/09/Siri-feat-iOS-27.jpg?resize=1200,648"
+  },
+  {
+    "path": "assets/news/microsoft-thu-10-ty-usd-tu-openai-mot-quy/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/07/GettyImages-2153474575.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/macbook-pro-man-hinh-cam-ung-gia-toi-da-14549-usd/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Apple-MacBook-Pro-with-PROLED-XDR-Display-lifestyle-travel-261028_big.jpg.large_2x.jpg?w=1200"
+  },
+  {
+    "path": "assets/news/google-dua-quang-cao-ai-mode-ra-toan-cau-khi-search-tang-cham/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/google-logo.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-ra-bao-cao-cho-doanh-nghiep-thay-ro-tien-ai-di-dau/cover.gif",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/claude-enterprise-social-smartreports-five-beats-gray200-animated-1080x608-v032.gif?w=1080"
+  },
+  {
+    "path": "assets/news/chrome-autofill-ai-biet-luc-gmail-de-dien-form/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/autofill-ai-chrome.jpg?resize=1200,643"
   }
 ]
