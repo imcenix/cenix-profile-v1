@@ -4,7 +4,7 @@ slug: spacexsi-gom-x-premium-grok-cursor-mot-goi
 category: cong-nghe
 date: 2026-10-15
 author: Cenix
-excerpt: ""The X Subscription" nhét chat AI, agent và công cụ lập trình vào một hóa đơn để cạnh tranh OpenAI và Anthropic."
+excerpt: "“The X Subscription” nhét chat AI, agent và công cụ lập trình vào một hóa đơn để cạnh tranh OpenAI và Anthropic."
 cover: cover.jpg
 source_name: "TechCrunch"
 source_url: "https://techcrunch.com/2026/10/13/spacexsi-bundles-x-premium-grok-and-cursor-into-one-subscription/"

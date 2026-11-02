@@ -1,5 +1,5 @@
 ---
-title: "Marissa Mayer dùng AI viết lời giới thiệu con gái — và câu "chưa nghĩ kỹ" gây tranh cãi"
+title: "Marissa Mayer dùng AI viết lời giới thiệu con gái — và câu “chưa nghĩ kỹ” gây tranh cãi"
 slug: marissa-mayer-dazzle-ai-xa-roi-nguoi-dung
 category: xu-huong
 date: 2026-10-30
