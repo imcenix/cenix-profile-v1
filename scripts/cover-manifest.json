@@ -1746,5 +1746,25 @@
   {
     "path": "assets/news/nvidia-bao-lanh-no-nscale-trung-tam-du-lieu-anthropic/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/03/GettyImages-2235971874.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/anthropic-s1a-sap-dat-nguong-tu-cai-thien-rsi/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/11/Recursive-Neural-Spiral-in-Circuitry.png?resize=1200,600"
+  },
+  {
+    "path": "assets/news/binance-mo-lai-rut-tien-sau-vu-hack-6-3-ty-usd/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/binance-2206279918.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/pixel-11-pro-fold-review-nhe-hon-ben-hon-nhung-it-moi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/10/Pixel-11-fold-feat.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/chatgpt-gop-tab-chat-va-work-thanh-mot/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/openai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/ford-cong-bo-cam-ket-rieng-tu-du-lieu-xe/cover.jpeg",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/02/ford-blue-cruise.jpeg?resize=1200,900"
   }
 ]
