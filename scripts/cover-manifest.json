@@ -1790,5 +1790,37 @@
   {
     "path": "assets/news/new-york-times-kien-brave-cao-buoc-cao-noi-dung/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2024/08/brave-browser.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/meta-mua-conductor-startup-code-ai/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/mark-zuckerberg-ray-bans.png?resize=1200,653"
+  },
+  {
+    "path": "assets/news/nothing-thiet-bi-ai-dau-tien-thang-12/cover.webp",
+    "url": "https://techcrunch.com/wp-content/uploads/2024/02/2560x2040_5fe778b6-8919-4143-bf11-8d86af754f52_2192x.webp?resize=1200,956"
+  },
+  {
+    "path": "assets/news/snapchat-vuot-30-trieu-thue-bao-tra-phi/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/07/GettyImages-647104884.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/waymo-chia-tay-doc-quyen-uber-2028/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/waymo-ojai-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/sequoia-tai-co-cau-dong-london-arc-scouts/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2023/01/Screen-Shot-2023-01-13-at-3.33.43-PM.png?resize=1200,649"
+  },
+  {
+    "path": "assets/news/fal-gap-doi-dinh-gia-16-ty-usd-ha-tang-inference/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2022/12/GettyImages-1268605503.jpg?resize=1200,420"
+  },
+  {
+    "path": "assets/news/anthropic-flashprove-chung-minh-danh-tinh-model-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294192768.jpg?resize=1200,798"
+  },
+  {
+    "path": "assets/news/uber-chi-4-chuyen-xe-dat-bang-ai-agent/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/07/uber-getty.jpg?resize=1200,800"
   }
 ]
