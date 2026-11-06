@@ -1822,5 +1822,25 @@
   {
     "path": "assets/news/uber-chi-4-chuyen-xe-dat-bang-ai-agent/cover.jpg",
     "url": "https://techcrunch.com/wp-content/uploads/2026/07/uber-getty.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/claude-personal-finance-phan-tich-chi-tieu/cover.png",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/11/Claude-Personal-Finance-2.png?resize=1200,675"
+  },
+  {
+    "path": "assets/news/airbnb-ai-agent-du-lich-nua-dau-2027/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2025/05/Airbnb-Summer-feat.jpg?resize=1200,675"
+  },
+  {
+    "path": "assets/news/meta-muse-voice-goi-video-voi-avatar-ai/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/09/muse-ai-meta.jpg?w=1200"
+  },
+  {
+    "path": "assets/news/apple-giam-ngan-sach-ai-noi-bo/cover.jpg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/06/iphone-usb-cable.jpg?resize=1200,800"
+  },
+  {
+    "path": "assets/news/aina-ring-nhan-ai-agent-nhan-co-man-hinh/cover.jpeg",
+    "url": "https://techcrunch.com/wp-content/uploads/2026/11/Aina-Ring-Hands.jpeg?resize=1200,805"
   }
 ]
